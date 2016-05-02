@@ -1,0 +1,54 @@
+// +----------------------------------------------------------------------+
+// | editEase 1.5ish - ok I give up on versioning 						  |
+// | $date:  03 November 2009                                             |
+// +----------------------------------------------------------------------+
+// | By Stephen Neate (http://code.google.com/p/editease/)                |
+// | Copyright (c) 2007/2009 Stephen Neate                                |
+// | Licensed under the MIT License:                                      |
+// | -- http://www.opensource.org/licenses/mit-license.php                |
+// +----------------------------------------------------------------------+
+// | editEase REQUIREMENTS (TESTED WITH)                                  |
+// +----------------------------------------------------------------------+
+// | PHP  (5.1.2 - 5.2+)                                                  /
+// | Apache (1.3.7 - 1.3.9, 2.2+)                                         /
+// | jQuery (1.2.6+)    *required                                         /
+// +----------------------------------------------------------------------+
+
+*** Start Installation ***
+
+ * Upload the _ee directory to your website and CHMOD 0777 or 0757 the 
+   config.php file so it can be edited
+ * Point browser to _ee/_eeInstall.php and fill in the form
+ * CHMOD the inc files that can be edited
+ * Delete _eeInstall.php file
+ 
+*** End Installation ***
+
+
+*** Start Activation ***
+
+ * Reference editease.jquery.js (or the .min version) on each editable page
+   don't forget to reference jQuery of course
+ * Add the activate script to the pages you wish to edit
+ * thats it :)
+
+*** End Activation ***
+
+
+*** Activation Script ***
+
+$(document).ready(function(){
+	// load editEase login link and data into the page
+	$("someDiv").editease(); <- can accept two variables
+});
+
+	// example with custom link name
+	$("someDiv").editease('my admin');
+
+	// example with overiding default path
+	$("someDiv").editease('my admin','/demo/_ee'); 
+	
+	!important - The second variable with the overiding default path
+	is useful when the folder _ee/ is not at the root of your website
+	ie. its in a sub directory, on a local computer etc...
+	

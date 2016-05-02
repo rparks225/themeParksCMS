@@ -1,0 +1,1 @@
+<h1 style="text-align:left;" class="fancy"> <?php echo $heading; ?></h1>
