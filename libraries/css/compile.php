@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$a = '/dankVision';
+$a = '/themeParksCMS';
 require_once $_SERVER['DOCUMENT_ROOT'].''.$a.'/includes/db.php';
 require_once $_SERVER['DOCUMENT_ROOT'].''.$a.'/includes/settings.php';
 

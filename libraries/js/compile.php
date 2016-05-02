@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$a = '/dankVision';
+$a = '/themeParksCMS';
 $root = $_SERVER['DOCUMENT_ROOT'];
 $path = ''.$a.'/libraries/js/';
 
