@@ -8,10 +8,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 ##Styles Compile
-RewriteRule ^style http://localhost/themeParks/libraries/css/compile.php [NC]
+RewriteRule ^style http://localhost/themeParksCMS/libraries/css/compile.php [NC]
 
 ##Style
-RewriteRule ^js http://localhost/themeParks/libraries/js/compile.php [NC]
+RewriteRule ^js http://localhost/themeParksCMS/libraries/js/compile.php [NC]
 
 ##Home
 RewriteRule ^Home index.php?url=home [NC]
@@ -147,4 +147,4 @@ ExpiresDefault "access plus 1 month”
     Header set Connection keep-alive
 </ifModule>
 
-ErrorDocument 404 http://www.healthybabyessentials.com/newSite/404
+ErrorDocument 404 http://localhost/themeParksCMS/404
