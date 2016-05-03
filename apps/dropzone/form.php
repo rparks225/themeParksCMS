@@ -8,6 +8,7 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
 
     }
 
+$query = false;
 
 if($mysqli->connect_errno){
 	
@@ -15,31 +16,46 @@ if($mysqli->connect_errno){
 	echo 'not connected';
 	
 	}
-	
-require_once '../cms/model/update_model.php';
-$method = false;
-$location = false;
-$query = false;
 
-//updates the record
-  if(isset($_POST['submit'])){
+//Sets everything up.
+$album = isset($_POST['album'])? $_POST['album']: '';
 
-$method = 'submit';
-$location = 'gallery';
-$site = $dbName;
-$album = $_POST['album'];
-		
-	  if(isset($_POST['album'])){
-		 
-		  $theme = addslashes($_POST['theme']);
-		  
-	  $query = 'INSERT INTO  `'.$site.'`.`'.$location.'` (`Id` ,`Gallery` ,`Title` ,`Order`)VALUES (NULL ,  \''.$album.'\',  \''.$title.'\', NULL);';
-	  
-	   }
-  };
+$ds          = DIRECTORY_SEPARATOR;  //1
 
-  $update = new update();
-  $update->uped($location,$query,$method);
+$storeFolder = 'upload/'.$album.'';   //2
+
+if (!file_exists($storeFolder) && isset($_REQUEST['addGal'])) {
+
+    $old = umask(0);
+    mkdir($storeFolder, 0777, true);
+    umask($old);
+
+    //updates the record
+    if(isset($_POST['addGal'])){
+
+        $method = 'submit';
+        $location = 'gallery';
+        $site = $dbName;
+        $newName = 'me';
+        $album = $_POST['album'];
+
+        if(isset($_POST['addGal'])){
+
+            $querys = 'INSERT INTO  `'.$site.'`.`'.$location.'` (`Id`, `Gallery`, `Cover`, `Title`, `Order`)VALUES (NULL ,  \''.$album.'\', \''.$newName.'\', \''.$album.'\', NULL);';
+            
+
+            global $mysqli;
+
+            if($result = $mysqli->query($querys)){
+                
+            echo $querys;
+            echo '<script>alert("Album: '.$album.' has been successfully added!")</script>';
+                
+            }
+        }
+    };
+
+}
   
 
 ?>
@@ -93,12 +109,13 @@ $album = $_POST['album'];
             
 		    <div role="tabpanel" class="tab-pane" id="edit">
 		    	
-                <form action="index.php" method="post">
+                <form method="post">
 
                     <div class="form-inline">    
                         <label>Add New Gallery</label><br>
                             <input class="form-control" type="text" name="album" id="album" />
-                            <button type="submit" class="form-control btn btn-primary" name="submit">
+                        <input class="form-control" type="hidden" name="addGal" id="addGal" />
+                            <button type="submit" class="form-control btn btn-primary">
                                 <span class="glyphicon glyphicon-plus"></span>
                             </button>
                     </div>

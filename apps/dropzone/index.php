@@ -2,7 +2,6 @@
 
 require_once '../../includes/db.php';
 require_once '../../includes/settings.php';
-require_once '../../apps/cms/model/delete_model.php';
 
 $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle');
 
@@ -24,21 +23,6 @@ if($mysqli->connect_errno){
 	
 	}
 
-
-//Sets everything up.
-$album = isset($_POST['album'])? $_POST['album']: '';
-
-$ds          = DIRECTORY_SEPARATOR;  //1
- 
-$storeFolder = 'upload/'.$album.'';   //2
-
-if (!file_exists($storeFolder)) {
-	$old = umask(0);
-    mkdir($storeFolder, 0777, true);
-	umask($old);
-	echo '<script>alert("Album: '.$album.' has been successfully added!")</script>';
-}
-
 //Adds images to folders 
 if (!empty($_FILES)) {
      
@@ -53,14 +37,14 @@ if (!empty($_FILES)) {
     if(move_uploaded_file($tempFile,$targetFile)){
 		
 		$location = 'images';
-		$site = $dbName;
+		$site = $db_name;
 		$album = $_POST['album'];
 		
 		 $query = 'INSERT INTO `'.$dbName.'`.`images` (`Id`, `Image`, `Title`, `Album`, `Order`) VALUES (NULL, \''.$fileName.'\', \''.$fileName.'\', \''.$album.'\', NULL);';
   
 		$mysqli->query($query);
         echo '<script>location.href = "'.$sUrl.'apps/dropzone/"</script>';
-		echo '<script>alert("Album: '.$album.' has been successfully added!")</script>';
+		echo '<script>alert("Image(s): '.$album.' has been successfully added!")</script>';
 		
 		} //6
      
@@ -179,27 +163,15 @@ function directory($directory){
 
 };
 
-	
-	if(!isset($_SESSION[''.$sessKey.''])){
-		
-		header('Location: '.$sUrl.'');
-		
-		}else{
-			
-			include 'form.php';
-			
-			}
-
-
 if(isset($_REQUEST['delete'])){
-      
+
     $site = "{$db_name}";
     $location = $_REQUEST['loc'];
     $im = $_REQUEST['img'];
     $tab = $_REQUEST['table'];
 
     if(isset($location)){
-        
+
         $query = 'DELETE FROM `'.$site.'`.`'.$tab.'` WHERE `'.$tab.'`.`Image` = "'.$im.'"';
 
         global $mysqli;
@@ -217,9 +189,19 @@ if(isset($_REQUEST['delete'])){
             echo '<script>location.href = "'.$sUrl.'apps/dropzone/"</script>';
 
         }
-        
+
     }
 
 };
+	
+	if(!isset($_SESSION[''.$sessKey.''])){
+		
+		header('Location: '.$sUrl.'');
+		
+		}else{
+			
+			include 'form.php';
+			
+			}
 
 ?>
