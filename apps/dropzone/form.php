@@ -17,47 +17,6 @@ if($mysqli->connect_errno){
 	
 	}
 
-//Sets everything up.
-$album = isset($_POST['album'])? $_POST['album']: '';
-
-$ds          = DIRECTORY_SEPARATOR;  //1
-
-$storeFolder = 'upload/'.$album.'';   //2
-
-if (!file_exists($storeFolder) && isset($_REQUEST['addGal'])) {
-
-    $old = umask(0);
-    mkdir($storeFolder, 0777, true);
-    umask($old);
-
-    //updates the record
-    if(isset($_POST['addGal'])){
-
-        $method = 'submit';
-        $location = 'gallery';
-        $site = $dbName;
-        $newName = 'me';
-        $album = $_POST['album'];
-
-        if(isset($_POST['addGal'])){
-
-            $querys = 'INSERT INTO  `'.$site.'`.`'.$location.'` (`Id`, `Gallery`, `Cover`, `Title`, `Order`)VALUES (NULL ,  \''.$album.'\', \''.$newName.'\', \''.$album.'\', NULL);';
-            
-
-            global $mysqli;
-
-            if($result = $mysqli->query($querys)){
-                
-            echo $querys;
-            echo '<script>alert("Album: '.$album.' has been successfully added!")</script>';
-                
-            }
-        }
-    };
-
-}
-  
-
 ?>
 
 <!DOCTYPE html>
@@ -108,21 +67,53 @@ if (!file_exists($storeFolder) && isset($_REQUEST['addGal'])) {
 		    </div>
             
 		    <div role="tabpanel" class="tab-pane" id="edit">
-		    	
-                <form method="post">
 
                     <div class="form-inline">    
                         <label>Add New Gallery</label><br>
-                            <input class="form-control" type="text" name="album" id="album" />
-                        <input class="form-control" type="hidden" name="addGal" id="addGal" />
-                            <button type="submit" class="form-control btn btn-primary">
+                        <button class="form-control btn btn-primary" data-toggle="modal" data-target="#addGals">
                                 <span class="glyphicon glyphicon-plus"></span>
                             </button>
                     </div>
-                    
-				</form>
                 
 		    </div>
+              
+              <!-- Modal -->
+              <div class="modal fade" id="addGals" tabindex="-1" role="dialog" aria-labelledby="addGalsLabel">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Add new gallery.</h4>
+                          </div>
+                          <div class="modal-body">
+                              
+                              <form action="index.php" method="post">
+                                      
+                                      <div class="form-group">
+                                          <label for="album">Gallery Name</label>
+                                          <input class="form-control" type="text" name="album" id="album" />
+                                      </div>
+                                      
+                                      <div class="form-group">
+                                              <label for="title">Gallery Title</label>
+                                              <input class="form-control" type="text" name="title" id="title" />
+                                          </div>
+                                  
+                                      <input class="form-control" type="hidden" name="addGal" id="addGal" />
+                                  
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  <input type="submit" class="btn btn-primary" value="Save changes" />
+                                  
+                              </form>        
+                              
+                          </div>
+                          <div class="modal-footer">
+                    
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!--Close Modal-->
               
               <div role="tabpanel" class="tab-pane" id="images">
                   <div class="form-group">

@@ -23,6 +23,47 @@ if($mysqli->connect_errno){
 	
 	}
 
+//Sets everything up.
+$album = isset($_POST['album'])? $_POST['album']: '';
+
+$ds          = DIRECTORY_SEPARATOR;  //1
+
+$storeFolder = 'upload/'.$album.'';   //2
+
+if (!file_exists($storeFolder) && isset($_REQUEST['addGal'])) {
+
+    $old = umask(0);
+    mkdir($storeFolder, 0777, true);
+    umask($old);
+
+    //updates the record
+    if(isset($_POST['addGal'])){
+
+        $method = 'submit';
+        $location = 'gallery';
+        $site = $dbName;
+        $newName = 'me';
+        $album = $_POST['album'];
+        $title = $_POST['title'];
+
+        if(isset($_POST['addGal'])){
+
+            $querys = 'INSERT INTO  `'.$site.'`.`'.$location.'` (`Id`, `Gallery`, `Cover`, `Title`, `Order`)VALUES (NULL ,  \''.$album.'\', \''.$newName.'\', \''.$title.'\', NULL);';
+
+
+            global $mysqli;
+
+            if($result = $mysqli->query($querys)){
+                
+                echo '<script>alert("Album: '.$album.' has been successfully added!")</script>';
+                echo '<script>location.href = "'.$sUrl.'apps/dropzone/"</script>';
+
+            }
+        }
+    };
+
+}
+
 //Adds images to folders 
 if (!empty($_FILES)) {
      
@@ -43,8 +84,8 @@ if (!empty($_FILES)) {
 		 $query = 'INSERT INTO `'.$dbName.'`.`images` (`Id`, `Image`, `Title`, `Album`, `Order`) VALUES (NULL, \''.$fileName.'\', \''.$fileName.'\', \''.$album.'\', NULL);';
   
 		$mysqli->query($query);
-        echo '<script>location.href = "'.$sUrl.'apps/dropzone/"</script>';
 		echo '<script>alert("Image(s): '.$album.' has been successfully added!")</script>';
+        echo '<script>location.href = "'.$sUrl.'apps/dropzone/"</script>';
 		
 		} //6
      
