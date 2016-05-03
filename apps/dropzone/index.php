@@ -42,13 +42,12 @@ if (!file_exists($storeFolder) && isset($_REQUEST['addGal'])) {
         $method = 'submit';
         $location = 'gallery';
         $site = $dbName;
-        $newName = 'me';
         $album = $_POST['album'];
         $title = $_POST['title'];
 
         if(isset($_POST['addGal'])){
 
-            $querys = 'INSERT INTO  `'.$site.'`.`'.$location.'` (`Id`, `Gallery`, `Cover`, `Title`, `Order`)VALUES (NULL ,  \''.$album.'\', \''.$newName.'\', \''.$title.'\', NULL);';
+            $querys = 'INSERT INTO  `'.$site.'`.`'.$location.'` (`Id`, `Gallery`, `Cover`, `Title`, `Order`)VALUES (NULL ,  \''.$album.'\', NULL, \''.$title.'\', NULL);';
 
 
             global $mysqli;
