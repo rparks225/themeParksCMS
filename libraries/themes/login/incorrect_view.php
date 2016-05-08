@@ -12,8 +12,7 @@
 		
 		newEE('wrong');
         
-            $content = new model();
-            $content->query('SELECT * FROM U_sers', 'login');
+            tpBlock('login');
         
         ?>
         

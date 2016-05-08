@@ -25,7 +25,7 @@ jQuery.fn.editease = function(linkName,epath) {
 /* default path file for editEase 'This should be all you need to edit' */
 if (epath === undefined) {
 	// if path provided this is the default
-	 eePath = '/themeParksCMS/apps/_ee/';
+     eePath = '/themeParksCMS/apps/_ee/';
      sitePath = 'http://localhost/themeParksCMS/';
 }else{
 	// otherwise use provided path

@@ -32,7 +32,7 @@
         
         <br><br>
     
-    <a style="position:relative;left:0px;top:20px;color:black;" class="col-md-12" href="/napolitano/Home/Main">&larr; Home</a>    
+    <a style="color:black;" class="col-md-12" href="<?php echo ROOT; ?>Home">&larr; Home</a>    
     
 </div>
 
