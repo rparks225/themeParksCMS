@@ -5,7 +5,8 @@ $url = new cms();
 $url->parseUrl();
 $tits = array($url->parseUrl());
 
-$siteN = "Dankvision Medias";
+global $sName;
+$siteN = "{$sName}";
 
 $metaKey = array(
 
