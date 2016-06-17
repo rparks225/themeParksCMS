@@ -36,9 +36,8 @@ if($mysqli->connect_errno){
 	</head>
     
 	<body>
-		<h1 style="text-align:left;" class="fancy">Upload</h1>
-        <hr>
-		<div style="width:100%;margin:10px auto 0;padding:10px;" role="tabpanel">
+
+		<div style="width:100%;margin:0px auto 0;padding:0px;" role="tabpanel">
 
 
 		  <!-- Nav tabs -->

@@ -8,7 +8,7 @@ if($result = $mysqli->query($query)){
 
 
         $sName = $row['settings_siteName'];
-        $sUrl = "http://{$_SERVER['HTTP_HOST']}/baneCare/";
+        $sUrl = "http://{$_SERVER['HTTP_HOST']}/themeParksCMS/";
         $sCaptcha = $row['settings_captchaKey'];
         $theme = $row['theme'];
         $cmsPath = $row['settings_cmsPath'];
