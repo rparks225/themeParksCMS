@@ -25,8 +25,8 @@ jQuery.fn.editease = function(linkName,epath) {
 /* default path file for editEase 'This should be all you need to edit' */
 if (epath === undefined) {
 	// if path provided this is the default
-     eePath = '/themeParksCMS/apps/_ee/';
-     sitePath = 'http://localhost/themeParksCMS/';
+     eePath = '/baneCare/apps/_ee/';
+     sitePath = 'http://localhost/baneCare/';
 }else{
 	// otherwise use provided path
 	eePath = epath;
@@ -352,7 +352,7 @@ function popData(showThis,title){
 		closeHTML: "",
 		containerCss: {
 			backgroundColor:'#ffffff',
-			height: 500,
+			height: 200,
 			padding: 20,
 			width: 500
 		},
@@ -503,7 +503,7 @@ function popData(showThis,title){
 		containerCss: {},
 		dataId: 'simplemodal-data',
 		dataCss: {},
-		minHeight: 300,
+		minHeight: 100,
 		minWidth: 300,
 		maxHeight: null,
 		maxWidth: null,

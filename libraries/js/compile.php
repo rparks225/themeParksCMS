@@ -1,8 +1,14 @@
 <?php
+
 ob_start();
-$a = '/themeParksCMS';
+require_once '../../includes/db.php';
+require_once '../../includes/settings.php';
+global $cmsPath;
+global $sUrl;
+
+
 $root = $_SERVER['DOCUMENT_ROOT'];
-$path = ''.$a.'/libraries/js/';
+$path = ''.$cmsPath.'libraries/js/';
 
 $files = scandir($root . $path);
 
@@ -14,8 +20,7 @@ foreach($files as $v){
 	
 	}else{
 	
-    echo '
-    
+echo '
 /*=================================
       '.$v.'
 ==================================*/
@@ -45,7 +50,7 @@ ob_end_clean();
 if(file_exists('themeParks-Scripts.js')){
     
     echo '<h1>Complete! jQuery Libraries has been Compiled<h1>';
-    echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="http://localhost'.$a.'/Home">Home</a>';
+    echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="http://'.$_SERVER['HTTP_HOST'].'/Home">Home</a>';
     
 }else{
     
@@ -67,4 +72,3 @@ if(file_exists('themeParks-Scripts.js')){
 }
     
     
-?>

@@ -1,0 +1,1 @@
+<h1 class="valign light white-text"><br><?php echo $heading; ?></h1>

@@ -155,10 +155,10 @@ if(count($fileData) > 0){
 // start display
 		asort($fileData); // sort by name directory count then file path etc...
 				$fCount = count($fileData);
-				foreach ($fileData as &$v) {
+				/*foreach ($fileData as &$v) {
 
 /*Aligned in this manner for ease of view source*/
-if($stripe==='stripe '){$stripe='';}else{$stripe='stripe ';}
+    /*if($stripe==='stripe '){$stripe='';}else{$stripe='stripe ';}
 
 if($v[type]!=='dir'&&$v[perm]==='0777'||$v[type]!=='dir'&&$v[perm]==='0757'||$v[type]!=='dir'&&$v[perm]==='0755'){
 	echo "
@@ -191,7 +191,7 @@ if($v[type]!=='dir'&&$v[perm]==='0777'||$v[type]!=='dir'&&$v[perm]==='0757'||$v[
 	echo "</tr>";
 }
 
-	 }
+	 }*/
 
 	 }
 

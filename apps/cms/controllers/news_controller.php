@@ -25,8 +25,22 @@ class news{
 			global $nav;
 			tpView('news','news');
 			
-		}else{
+        }else if($nav == 'accreditations' || $nav == 'community'){
+            
+            tpView('news','accred');
+            
+        }else{
 			
+            $links = array(
+                'news',
+                'accreditations',
+                'community'
+            );
+            
+            if(title() == $links){
+                echo 'Here';
+            }
+            
 			require_once 'libraries/themes/'.theme().'/views/news/news_singleView.php';
 			
 			}

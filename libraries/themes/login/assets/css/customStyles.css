@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+nav {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+header,
+.main,
+h1,
+footer {
+    padding-left: 240px;
+}
+
+.parallax-container {
+    height: 250px;
+}
+
+
+/*====================
+Media Queries
+====================*/
+
+@media (max-width:80.063em) {
+    /* Pixel size 1281.008px */
+}
+
+@media (max-width:74.9375em) {
+    /* Pixel size 1199px */
+}
+
+@media (max-width:64.063em) {
+    /* Pixel size 1281.008px */
+}
+
+@media only screen and (max-width: 992px) {
+    header,
+    .main,
+    h1,
+    footer {
+        padding-left: 0;
+    }
+}
+
+@media (max-width:61.9375em) {
+    /* Pixel size 991px bootstrap break point */
+}
+
+@media (max-width:60.063em) {
+    /* Pixel size 961.008px */
+}
+
+@media (max-width:54.063em) {
+    /* Pixel size 865.008px */
+}
+
+@media (max-width:47.9375em) {
+    /* Pixel size 767px bootstrap SM Breaking point*/
+}
+
+@media (max-width:40.063em) {
+    /* Pixel size 641.008px */
+}
+
+@media (max-width:30.063em) {
+    /* Pixel size 481.008px */
+}
+
+@media screen and (max-width:20em) {
+    /* Pixel size 320px */
+}

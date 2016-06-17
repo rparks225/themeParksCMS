@@ -12,7 +12,7 @@
 		
 		newEE('wrong');
         
-            tpBlock('login');
+            tpAdmin('login');
         
         ?>
         

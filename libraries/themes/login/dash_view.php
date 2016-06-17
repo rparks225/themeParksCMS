@@ -10,130 +10,105 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
     
 $site = "{$dbName}";  
 ?>
-<!-- Open Content area-->
-      
-       <?php 
-		  //Heading
-		  $query = 'SELECT * FROM `page` WHERE `Title` LIKE "'.title().'"';
-		  $block = 'heading';
-		  $name = new model();
-		  $name->query($query,$block);
-		  
-		   ?>
-            
-          <hr/><br>
-          
-          
-     <div class="col-md-4 col-xs-12" style="padding:0;">
-                  
-               <div class="col-md-12 admin" style="text-align:left;border:1px solid grey;border-radius:10px;">
-                  <h3 style="text-align:left;">Change Theme</h3>
-              
-                 <hr>
-                                          
-               <div><strong>Current Theme:</strong><span> <?php echo theme(); ?> theme</span></div> 
-              
-              <form method="post">
-             
-              <div class="form-group" style="text-align:left;margin-left:0px;">
-                       
-                       <select class="form-control col-md-12" name="theme">
-                           <option value="default">Select</option>
-                           
-                           <?php
-    
-                              $directory = 'libraries/themes';
-                              $blocks = 'theme';
-							  $other = false;
-                              direct($directory,$blocks,$other);
-                           
-                           ?>
-                           
-                       </select>
-                       
-                        <div class="form-group">
-                        
-                           <br><br>
-                     
-                         <input type="submit" class="btn btn-primary" name="changed" value="Submit" />
-                   
+
+    <!--Open Theme Changer-->
+    <div class="col s12 m6 l4">
+        <div style="padding:0;" class="card col s12">
+
+            <div class="card-image waves-effect waves-block waves-red">
+                <img styel="width:100%;" class="activator" src="<?php echo ROOT; ?>libraries/themes/<?php echo theme(); ?>/screenshot.png">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Current Theme:<i class="material-icons right">more_vert</i></span>
+                <p>
+                    <a href="#">
+                        <?php echo theme(); ?> theme
+                    </a>
+                </p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Change Theme<i class="material-icons right">close</i></span>
+                <form method="post" action="">
+
+                    <div class="row">
+
+                        <div class="input-field">
+
+                            <select name="theme">
+                                <option value="default" selected disabled>Please Select a Theme</option>
+                                <?php
+
+                            $directory = 'libraries/themes';
+                            $blocks = 'theme';
+                            $other = false;
+                            tpDirect($directory,$blocks,$other);
+
+                            ?>
+
+                            </select>
+
                         </div>
-                   
-                </div> 
-              
-              </form>
-              
-				  <?php
-				  
-				   $method = 'changed';
-				   $location = 'Theme';
-				   
-                  //updates the record
-					  if(isset($_POST[''.$method.''])){
-							  
-						  if(isset($_POST['theme'])){
-							 
-							  $theme = addslashes($_POST['theme']);
-							  
-							  $query = 'UPDATE `'.$site.'`.`'.$location.'` SET `Theme` = \''.$theme.'\'';
-						  
-						   }
-					   
-					  };
-					  
-					  $update = new update();
-					  $update->uped($location,$query,$method);
-					  ?>
-                   
-                   <hr/>
-              
-                  </div>         
-                                                    
-              </div>
-              
-               <div class="col-md-8 col-xs-12">
-                                    
-                        <div class="col-md-12 admin" style="border:1px solid grey;border-radius:10px;">
-                        
-                            <h3>Quick Blog Post</h3>
-                            
-                                <hr><br>                            
-									<?php
-									
-									$query = "SELECT * FROM post LIMIT 1";
-									$block = 'insert_form';
-									$method = 'inserted';
-                                    $location = 'post';
-									
-									$post = new model();
-									$post->query($query,$block);
-									
-									if(isset($_POST[''.$method.''])){
-										
-										if(isset($_POST['id'])){
-											
-											$id = mysqli_real_escape_string($_POST['id']);
-											$title = addslashes($_POST['title']);
-											$img = addslashes($_POST['img']);
-											$script = addslashes($_POST['post']);
-											$Date = addslashes($_POST['date']);
-											
-											$query = 'INSERT INTO `'.$site.'`.`'.$location.'` (`Id`, `Title`, `Image`, `Description`, `Date`) VALUES (NULL, \''.$title.'\', \''.$img.'\', \''.$script.'\', \''.$Date.'\')';
-														  
-														  }
-													  
-													  };
 
-                                    $insert = new update();
-									$insert->uped($location,$query,$method);
-                                    
-                                    ?>
-                        
+                        <button class="btn waves-effect waves-red" type="submit" name="changed" value="Submit">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+
                     </div>
-               
-         </div>
-<div class="clearfix">&nbsp;</div>
-<div class="clearfix">&nbsp;</div>
-      
-<!-- Close Content area-->
 
+                </form>
+                <?php
+                $method = 'changed';
+                $location = 'Theme';
+
+                //updates the record
+                if(isset($_POST[''.$method.''])){
+
+                    if(isset($_POST['theme'])){
+
+                        $theme = addslashes($_POST['theme']);
+
+                        $query = 'UPDATE `'.$site.'`.`'.$location.'` SET `Theme` = \''.$theme.'\'';
+
+                    }
+
+                };
+
+                $update = new update();
+                $update->uped($location,$query,$method);
+                ?>
+            </div>
+
+        </div>
+    </div>
+    <!--Close Theme Changer-->
+
+
+    <!--Open Quick Blog-->
+    <?php
+
+    tpAdmin('insert_form');
+    $method = 'inserted';
+    $location = 'post';
+
+    if(isset($_POST[''.$method.''])){
+
+        if(isset($_POST['id'])){
+
+            $id = mysqli_real_escape_string($_POST['id']);
+            $title = addslashes($_POST['title']);
+            $img = addslashes($_POST['img']);
+            $script = addslashes($_POST['post']);
+            $Date = addslashes($_POST['date']);
+            $imgCap = addslashes($_POST['cap']);
+
+            $query = 'INSERT INTO `'.$site.'`.`'.$location.'` (`Id`, `Title`, `Image`, `Description`, `Date`, `Caption`) VALUES (NULL, \''.$title.'\', \''.$img.'\', \''.$script.'\', \''.$Date.'\', \''.$imgCap.'\')';
+
+        }
+
+    };
+
+    $insert = new update();
+    $insert->uped($location,$query,$method);
+
+    ?>
+        <!--Close Quick Blog-->

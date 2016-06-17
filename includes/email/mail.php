@@ -1,7 +1,7 @@
 <?php
-$a = '/dankVision';
-require_once $_SERVER['DOCUMENT_ROOT'].''.$a.'/includes/db.php';
-require_once $_SERVER['DOCUMENT_ROOT'].''.$a.'/includes/settings.php';
+$locs = getcwd();
+include $locs.'/includes/db.php';
+require_once $locs.'/includes/settings.php';
 
 $mail = new PHPMailer;
 

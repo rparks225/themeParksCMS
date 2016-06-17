@@ -48,7 +48,7 @@ global $sName;
 	
 	}	
 	
-public function pages(){
+public function pages( $nav = '' ){
 
 global $sName;
 	
@@ -61,8 +61,16 @@ global $sName;
 		}else{
 			
 			require_once 'libraries/themes/login/header.php';
-		
-				require_once 'libraries/themes/login/dash_page.php';
+
+                if($nav == ''){
+                    
+                    require_once 'libraries/themes/login/dash_page.php';
+                    
+                }else{
+                    
+                    require_once 'libraries/themes/login/dash_pgUpdate.php';
+                    
+                }
 			
 			require_once 'libraries/themes/login/footer.php';		
 			
@@ -71,7 +79,7 @@ global $sName;
 	
 	}	
     
-public function post(){
+public function post( $nav = '' ){
 
 global $sName;
 	
@@ -84,8 +92,16 @@ global $sName;
 		}else{
 			
 			require_once 'libraries/themes/login/header.php';
-		
-				require_once 'libraries/themes/login/dash_post.php';
+        
+                if($nav == ''){
+                    
+                    require_once 'libraries/themes/login/dash_post.php';
+                    
+                }else{
+                    
+                    require_once 'libraries/themes/login/dash_pstUpdate.php';
+                    
+                }
 			
 			require_once 'libraries/themes/login/footer.php';		
 			

@@ -9,7 +9,7 @@
              <br><br>
         <?php
         
-            tpBlock('login');
+            tpAdmin('login');
         
         ?>
         

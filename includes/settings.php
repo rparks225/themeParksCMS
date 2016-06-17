@@ -8,7 +8,7 @@ if($result = $mysqli->query($query)){
 
 
         $sName = $row['settings_siteName'];
-        $sUrl = $row['settings_siteUrl'];
+        $sUrl = "http://{$_SERVER['HTTP_HOST']}/baneCare/";
         $sCaptcha = $row['settings_captchaKey'];
         $theme = $row['theme'];
         $cmsPath = $row['settings_cmsPath'];

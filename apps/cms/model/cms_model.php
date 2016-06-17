@@ -28,238 +28,52 @@ class model{
 		if($result = $mysqli->query($query)){
 			
 			while($row = $result->fetch_assoc()){
-	
-				if(isset($row['Id'])){
-					
-					$id = $row['Id'];
-					
-					}else{
-						
-						}
-						
-				if(isset($row['Title'])){
-					
-					$title = $row['Title'];
-					
-					}else{
-						
-						}
-				
-				if(isset($row['Html'])){
-					
-					$html = $row['Html'];
-					
-					}else{
-						
-						}
-						
-				if(isset($row['Description'])){
-					
-					$script = $row['Description'];
-					
-					}else{
-						
-						}
-						
-				if(isset($row['Links'])){
-					
-					$links = $row['Links'];
-					
-					}else{
-						
-						}	
-						
-				if(isset($row['Image'])){
-					
-					$img = $row['Image'];
-					
-					}else{
-						
-						}	
-						
-				if(isset($row['Alt'])){
-					
-					$alt = $row['Alt'];
-					
-					}else{
-						
-						}	
-						
-				if(isset($row['Price'])){
-					
-					$price = $row['Price'];
-					
-					}else{
-						
-						}
-						
-				if(isset($row['Gallery'])){
-					
-					$album = $row['Gallery'];
-					
-					}else{
-						
-						}	
-						
-				if(isset($row['Links'])){
-					
-					$link = $row['Links'];
-					
-					}else{
-						
-						}
-						
-				if(isset($row['First'])){
-						
-						$first = $row['First'];
-						
-						}else{
-							
-							}	
-							
-					if(isset($row['Last'])){
-						
-						$last = $row['Last'];
-						
-						}else{
-							
-							}	
-						
-					if(isset($row['Email'])){
-						
-						$email = $row['Email'];
-						
-						}else{
-							
-							}	
-							
-					if(isset($row['Phone'])){
-						
-						$phone = $row['Phone'];
-						
-						}else{
-							
-							}		
-							
-					if(isset($row['State'])){
-						
-						$state = $row['State'];
-						
-						}else{
-							
-							}	
-						
-					if(isset($row['Message'])){
-						
-						$message = $row['Message'];
-						
-						}else{
-							
-							}	
-							
-					if(isset($row['Date'])){
-						
-						$date = $row['Date'];
-						
-						}else{
-							
-							}	
-							
-					if(isset($row['Heading'])){
-						
-						$heading = $row['Heading'];
-						
-						}else{
-							
-							}	
-							
-					if(isset($row['KeyWords'])){
-						
-						$keywords = $row['KeyWords'];
-						
-						}else{
-							
-							}		
-							
-					if(isset($row['Editable'])){
-						
-						$edit = $row['Editable'];
-						
-						}else{
-							
-							}
-							
-					if(isset($row['Job'])){
-						
-						$job = $row['Job'];
-						
-						}else{
-							
-							}		
-							
-					if(isset($row['Facility'])){
-						
-						$facility = $row['Facility'];
-						
-						}else{
-							
-							}	
-							
-					if(isset($row['Updated'])){
-						
-						$update = $row['Updated'];
-						
-						}else{
-							
-							}	
-							
-					if(isset($row['Cover'])){
-						
-						$cover = $row['Cover'];
-						
-						}else{
-							
-							}
-							
-					if(isset($row['Album'])){
-						
-						$gallery = $row['Album'];
-						
-						}else{
-							
-							}	
-							
-					if(isset($row['fourth'])){
-						
-						$fourth = $row['fourth'];
-						
-						}else{
-							
-							}
-							
-					if(isset($row['Badges'])){
-						
-						$badges = $row['Badges'];
-						
-						}else{
-							
-							}		
-							
-					if(isset($row['Company'])){
-						
-						$company = $row['Company'];
-						
-						}else{
-							
-							}	
-							
-					if(isset($row['Grade'])){
-						
-						$grade = $row['Grade'];
-						
-						}else{
-							
-							}																										
+                
+                $loops = array(
+                    'Id'=>'id',
+                    'Title'=>'title',
+                    'Html'=>'html',
+                    'Description'=>'script',
+                    'Links'=>'links',
+                    'Image'=>'img',
+                    'Alt'=>'alt',
+                    'Price'=>'price',
+                    'Gallery'=>'album',
+                    'Links'=>'link',
+                    'First'=>'first',
+                    'Last'=>'last',
+                    'Email'=>'email',
+                    'Phone'=>'phone',
+                    'State'=>'state',
+                    'Message'=>'message',
+                    'Date'=>'date',
+                    'Heading'=>'heading',
+                    'KeyWords'=>'keywords',
+                    'Editable'=>'edit',
+                    'Job'=>'job',
+                    'Facility'=>'facility',
+                    'Updated'=>'update',
+                    'Cover'=>'cover',
+                    'Album'=>'gallery',
+                    'fourth'=>'fourth',
+                    'Badges'=>'badges',
+                    'Company'=>'company',
+                    'Grade'=>'grade',
+                    'Caption'=>'imgCap'
+                );
+                
+                foreach($loops as $loop => $val){
+                    
+                    if(isset($row[$loop])){
+
+                        $$val = $row[$loop];
+
+                        }else{
+
+                        }
+                    
+                };			
+ 
 						
 				   // Creates html block if it doesnt exist or just returns the already existing block		
 				  $filename = 'libraries/themes/'.theme().'/html_blocks/'.$block.'.php';

@@ -5,9 +5,7 @@
 <?php tpCompile('js'); ?>
 
 <!--Open Google Analytics-->
-        
-    <script defer src="https://www.google.com/recaptcha/api.js" type="text/javascript"></script>
-        
+          <script defer src="https://www.google.com/recaptcha/api.js" type="text/javascript"></script>
 <!--Close Google Analytics-->
                                     
     <script> 
@@ -27,7 +25,13 @@
             });
         });
     </script>
-
+<?php
+  if(title() == 'facility' || title() == 'baneNorth' || title() == 'baneSouth' || title() == 'baneMetroBoston' || title() == 'baneWest'){
+      tpBlock('scripts');
+      echo '<script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhi8nQkpG3JBkg0w9wbsW5jEdu3eUSdp0"></script>';
+     
+  };
+?>
 <?php 
 global $sName;
 $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
@@ -53,12 +57,6 @@ $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
              
 ?>
  
-
-<!--Type Kit scripts-->
-<script src="https://use.typekit.net/yfy1zau.js"></script>
-<script>try{Typekit.load({ defer: true });}catch(e){}</script>
-<!--Close Typekit-->
-
 <!--Close All Scripts-->
 
 </body>

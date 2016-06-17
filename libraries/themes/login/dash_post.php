@@ -18,61 +18,43 @@ $site = "{$dbName}";
     <div class="clearfix"></div>
   <hr>
 
-      <table class="table table-hover">
+        <div class="table-responsive">
 
-          <tbody>
+              <table class="table table-hover">
 
-          <tr class="active" style="color:black;">
-              <td>Post Title</td>
-              <td>Body Copy</td>
-              <td>Image</td>
-              <td>Date</td>
-              <td>Updated</td>
-              <td>Edit</td>
-              <td>Delete</td>
+                  <tbody>
 
-          </tr>
+                  <tr class="active" style="color:black;">
+                      <td>Post Title</td>
+                      <td>Body Copy</td>
+                      <td>Image</td>
+                      <td>Image Caption</td>
+                      <td>Date</td>
+                      <td>Updated</td>
+                      <td>Edit</td>
+                      <td>Delete</td>
 
-          <?php 
+                  </tr>
 
-          $location = 'post';		 
-          $block = "tableRow";
-          $query = "SELECT * FROM post";
-          $method = 'edited';
+                  <?php 
 
-          //query's the db 
-          $table = new model();
-          $table->query($query,$block);
+                  $block = "tableRow";
+                  $query = "SELECT * FROM post";
 
-          //deletes records
-          $delete = new delete();
-          $delete->del($location);
+                  //query's the db 
+                  $table = new admin_model();
+                  $table->query($query,$block);
 
+                  //deletes records
+                  $delete = new delete();
+                  $delete->del($location);
 
-          //updates the record
-          if(isset($_POST[''.$method.''])){
+                  ?>
 
-              if(isset($_POST['id'])){
+                  </tbody>
 
-                  $id = addslashes($_POST['id']);
-                  $title = addslashes($_POST['title']);
-                  $img = addslashes($_POST['img']);
-                  $script = addslashes($_POST['post']);
-                  $Date = addslashes($_POST['date']);
+              </table>
 
-                  $query = 'UPDATE `'.$site.'`.`'.$location.'` SET `Title` = \''.$title.'\', `Image` = \''.$img.'\', `Description` = \''.$script.'\', `Updated` = \''.$Date.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
-
-               }
-
-          };
-
-          $update = new update();
-          $update->uped($location,$query,$method);
-
-          ?>
-
-          </tbody>
-
-      </table>
+        </div>    
     
 </div>         

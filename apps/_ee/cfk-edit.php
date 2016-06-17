@@ -16,51 +16,64 @@ $realData = file_get_contents("".$_SERVER['DOCUMENT_ROOT'].$eeCpath."/".$_GET['f
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title>Content Editor</title>
-	 <!--<script type="text/javascript" src="<?php echo $eeJs;?>/lib/ckeditor/ckeditor.js"></script> -->
+	 <script type="text/javascript" src="<?php echo $eeJs;?>/lib/ckeditor/ckeditor.js"></script> 
         
-    <script src="//cdn.ckeditor.com/4.5.1/full/ckeditor.js"></script>
+      <!--<script src="//cdn.ckeditor.com/4.5.1/full/ckeditor.js"></script>-->
     
 	<style type="text/css">
 		html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote, pre, form, fieldset, table, th, td { background: none; margin: 0; padding: 0; border: 0 ; }
 		body {  font: 62.5% "Century Gothic", Geneva, Verdana, Arial, Helvetica, sans-serif; color: #4C1803;padding:10px;}
-		#content {background: #fff;width:100%;}
+        #content {background: #fff;width:100%;height:100}
+        .btn{
+            padding:10px;
+            border-radius:4px;
+            border:none;
+            }   
+        .btn:hover{
+            cursor:pointer;
+            }   
+        .btn.one{
+            background:#0980b0;
+            color:white;
+            border:1px solid grey;
+        }
+        .btn.two{
+            background:#72aa5c;
+            color:white;
+            border:1px solid grey;
+        }
+        .btn.one:hover, .btn.two:hover{
+            background:none;
+            border:1px solid grey;
+            color:black;
+        }
+        .cke_contents{
+            //height:330px!important;
+        }
 	</style>
+      
   </head>
 <body>
   <div id="content">
 	<form name="edit_now" id="edit_now" action="cfk-action.php" method="post">
-		<textarea id="eeta-<?php echo $_GET['file'];?>" name="eeta-<?php echo $_GET['file'];?>" style="height:80%;" rows="15" cols="80"><?php echo $realData;?></textarea>
+		<textarea id="eeta-<?php echo $_GET['file'];?>" name="eeta-<?php echo $_GET['file'];?>" rows="10" cols="20"><?php echo $realData;?></textarea>
 		<script type="text/javascript">
 		//<![CDATA[
 			CKEDITOR.replace( 'eeta-<?php echo $_GET['file'];?>', {
-		        toolbar : [
-				    ['Source','-','Save','-','Templates'],
-				    ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
-				    ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
-				    ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
-				    '/',
-				    ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
-				    ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
-				    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-				    ['Link','Unlink','Anchor'],
-				    ['Image','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
-				    '/',
-				    ['Styles','Format','Font','FontSize'],
-				    ['TextColor','BGColor'],
-				    ['Maximize', 'ShowBlocks','-','About','Class']
-				],
+                skin: 'icy_orange,<?php echo $eeJs;?>/lib/ckeditor/skins/icy_orange/',
 				filebrowserBrowseUrl : '<?php echo $eeJs;?>/cfk_image_list.php',
 		        filebrowserWindowWidth : 250,
-		        filebrowserWindowHeight : 400,
+		        filebrowserWindowHeight : 200,
+                
     		});
-            
+            CKEDITOR.dtd.$removeEmpty['span'] = false;
 		//]]>
 		</script>
 		<input type="hidden" value="eeta-<?php echo $_GET['file'];?>" name="tVal" />
 		<input type="hidden" value="<?php echo $_GET['file'];?>" name="file" />
 		<br/>
-		<button type="submit">Save Changes</button>
-		<button onclick="self.parent.closeEditing('<?php echo $_GET['file'];?>','xxlee');" >Cancel Editing</button>
+		<button class="btn one" type="submit">Save Changes</button>
+		<button class="btn two" onclick="self.parent.closeEditing('<?php echo $_GET['file'];?>','xxlee');" >Cancel Editing</button>
 	</form>
   </div>
 </body>

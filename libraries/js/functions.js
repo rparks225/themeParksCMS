@@ -80,7 +80,7 @@
     $( "#sortable" ).sortable({
 		update: function (event, ui){
 		var data = $(this).sortable('serialize');
-		$.post('libraries/themes/dank/views/gallery/save_order.php', data, function(theResponse) {
+		$.post('libraries/themes/bane/views/gallery/save_order.php', data, function(theResponse) {
 			
 			console.log(theResponse);
 			
@@ -98,7 +98,7 @@
     $( "#sort" ).sortable({
 		update: function (event, ui){
 		var data = $(this).sortable('serialize');
-		$.post('libraries/themes/dank/views/gallery/gal_order.php', data, function(theResponse) {
+		$.post('libraries/themes/bane/views/gallery/gal_order.php', data, function(theResponse) {
 			
 			console.log(theResponse);
 			
@@ -189,39 +189,5 @@ $("img.lazy").lazyload({
     effect : "fadeIn"
 });
      
-/*========================
-   HBE Custome Scripts
-=========================*/
-     
- $(document).ready(function() {
-
-        //product hover
-        $('div.wrap').hover(function() {
-           $(this).children('.floater').fadeToggle('fast');
-        });
-
-        //Checks window position then fades in button
-        $(window).scroll(function() {
-
-            if($(window).scrollTop() > 50){
-                $('span.top').fadeIn('slow');
-            }else{
-                $('span.top').fadeOut('slow');
-            };
-
-         });
-
-        //button scroll to top
-        $('span.top').click(function() {
-                $('html, body').animate({
-                    scrollTop:0
-                }, 'slow');
-            });
- 
-    });  
-     
-    $(document).ready(function() {
-        $('.affix img').fadeOut('slow');
-    }); 
      
 });      

@@ -1,5 +1,7 @@
 <?php 
 
+include '../cms/model/admin_model.php';
+
 $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle');
 
     foreach($vars as $var){
@@ -30,7 +32,7 @@ if($mysqli->connect_errno){
 
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" />
-        <style>body{padding:20px;}</style>
+        
 	</head>
     
 	<body>
@@ -74,6 +76,38 @@ if($mysqli->connect_errno){
                                 <span class="glyphicon glyphicon-plus"></span>
                             </button>
                     </div>
+                <div class="clearfix">&nbsp;</div>
+                
+                <div class="table-responsive">
+
+                    <table class="table table-hover">
+
+                        <tbody>
+
+                            <tr class="active" style="color:black;">
+                                <td>Id</td>
+                                <td>Gallery Name</td>
+                                <td>Cover Image</td>
+                                <td>Page Title</td>
+                                <td>Sort Order</td>
+                                <td>Edit</td>
+                                <td>Delete</td>
+                            </tr>
+
+                                <?php
+
+                                $query = 'SELECT * FROM gallery';
+                                $block = 'galList';
+                                $tab = new admin_model();
+                                $tab->query($query,$block);
+
+                                ?>
+                            
+                        </tbody>
+                        
+                    </table>
+                    
+                </div>
                 
 		    </div>
               
@@ -85,6 +119,7 @@ if($mysqli->connect_errno){
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               <h4 class="modal-title" id="myModalLabel">Add new gallery.</h4>
                           </div>
+                          
                           <div class="modal-body">
                               
                               <form action="index.php" method="post">

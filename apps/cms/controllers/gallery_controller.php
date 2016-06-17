@@ -89,20 +89,80 @@ class gallery{
 		
 				  <div class="container">
 				  
-					  <div class="row-fluid">';
+					  <div class="row">';
+                
+                if(title(2) == 'Abbott-House' || title(2) == 'Bostonian' || title(2) == 'Devereux-House' || title(2) == 'Rosewood'){
+
+                         $page = array(
+                        ''.title(2).'-skilled-nursing-home-rehabilitation'=>''.implode(' ',explode('-',title(2))).'',
+                        ''.title(2).'-skilled-programs-services'=>'Programs/Services',
+                        ''.title(2).'-leadership-team'=>'Leadership',
+                        ''.title(2).'-skilled-nursing-photo-gallery'=>'Photo Gallery',
+                        ''.title(2).'-virtual-tours'=>'Virtual Tours',
+                        ''.title(2).'-Alliance'=>'Alliance Health',
+                        ''.title(2).'-contact-referrals'=>'Contact and Referrals',
+                        );
+
+                }else if(title(2) == 'Sugar-Hill'){
+                    
+                     $page = array(
+                        ''.title(2).'-assisted-living-home-rehabilitation'=>''.implode(' ',explode('-',title(2))).'',
+                        ''.title(2).'-assisted-living-programs-services'=>'Programs/Services',
+                        ''.title(2).'-leadership-team'=>'Leadership',
+                        ''.title(2).'-assisted-living-photo-gallery'=>'Photo Gallery',
+                        ''.title(2).'-virtual-tours'=>'Virtual Tours',
+                        ''.title(2).'-contact-referrals'=>'Contact and Referrals',
+                        );
+                    
+                }else if(title(2) == 'Hancock-Park'){
+
+                         $page = array(
+                        ''.title(2).'-skilled-nursing-home-rehabilitation'=>''.implode(' ',explode('-',title(2))).'',
+                        ''.title(2).'-skilled-programs-services'=>'Programs/Services',
+                        ''.title(2).'-leadership-team'=>'Leadership',
+                        ''.title(2).'-skilled-nursing-photo-gallery'=>'Photo Gallery',
+                        ''.title(2).'-virtual-tours'=>'Virtual Tours',
+                        ''.title(2).'-Assisted-Living-Residency'=>'Assisted Living Residency',
+                        ''.title(2).'-contact-referrals'=>'Contact and Referrals',
+                        );
+                    
+                    }else{
+
+                        $page = array(
+                        ''.title(2).'-skilled-nursing-home-rehabilitation'=>''.implode(' ',explode('-',title(2))).'',
+                        ''.title(2).'-skilled-programs-services'=>'Programs/Services',
+                        ''.title(2).'-leadership-team'=>'Leadership',
+                        ''.title(2).'-skilled-nursing-photo-gallery'=>'Photo Gallery',
+                        ''.title(2).'-virtual-tours'=>'Virtual Tours',
+                        ''.title(2).'-contact-referrals'=>'Contact and Referrals',
+                        );
+
+                    };
+                
+                        tpBlock('sideBar');
+                        secNav($page);
 					  
-						  echo '<div class="col-md-8">
-							  
-								  <br><br><br>
+						  echo '<div class="col-md-9">
 								   
 									  ';
 
+                                $title = title(2);
+                                global $pages;
+
+                                    $add = $pages[$title]['add'];
+                                    $phone = $pages[$title]['phone'];              
+
+                                    $trail = array(''.$add.'',''.$phone.'');
+
+                                    breadcrumbs($trail);
+            
                                      $query = 'SELECT * FROM `gallery` WHERE `Gallery` LIKE \''.$nav.'\'';
                                      $block = 'title';
                                      $images = new model();
                                      $images->query($query,$block);
 
 									  echo'
+                                      <hr>
 								  								  
 								  <ul style="list-style:none;text-align:left;padding:0;">
 								 
@@ -125,15 +185,10 @@ class gallery{
 								  <br><br>
 								   <span class="stuff"></span>
 							  
-							  <a class="col-md-offset-5 col-md-2" href="'.ROOT.'Gallery">&larr; Back</a>
+							  <a class="col-md-offset-5 col-md-2" href="javascript:history.go(-1)">&larr; Back</a>
 						  
 						  </div>
                           <br><br><br>
-                          ';
-                                  
-                           tpBlock('sideBar');
-					  
-                            echo '
 					
 					  </div>
 				   

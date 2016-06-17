@@ -10,94 +10,87 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
 
 ?>
 
-<h1 class="fancy" style="text-align:left;">Settings</h1>
+    <form class="form" method="post">
 
-<hr>
-<div class="clearfix"></div>
+        <input type="hidden" name="id" value="<?php echo $id; ?>" />
 
-<form class="form" method="post">
-    
-    <h3>Site Settings</h3>
-    
-    <input type="hidden" name="id" value="<?php echo $id; ?>" />
+        <div class="col s6 form-group">
 
-        <div class="col-md-6 form-group">
-
-            <label for="settings_siteName">Site Name:</label>    
+            <label for="settings_siteName">Site Name:</label>
             <input class="form-control" id="settings_siteName" name="settings_siteName" value="<?php echo $sName; ?>" />
         </div>
-    
-    <div class="col-md-6 form-group">
-    
-        <label for="settings_siteUrl">Site URL:</label>    
-        <input class="form-control" id="settings_siteUrl" name="settings_siteUrl" value="<?php echo $sUrl ?>" />
-    </div>
-    
-    <div class="col-md-6 form-group">
-    
-        <label for="settings_dbName">Database Name:</label>    
-        <input class="form-control" id="settings_dbName" name="settings_dbName" value="<?php echo $dbName ?>" />
-    </div>
-    
-        <div class="clearfix">&nbsp;</div>
-    
-    <h3>Googple Captcha Settings</h3>
-    
-         <div class="col-md-12 form-group">
 
-            <label for="settings_captchaKey">Public Key:</label>    
-            <input class="form-control" id="settings_captchaKey" name="settings_captchaKey" value="<?php echo $sCaptcha; ?>" />
-         </div>
-    
-    <div class="clearfix">&nbsp;</div>
-    
-        <h3>CMS Settings</h3>
-    
-    <div class="col-md-6 form-group">
+        <div class="col s6 form-group">
 
-        <label for="settings_cmsPath">CMS Path:</label>    
-        <input class="form-control" id="settings_cmsPath" name="settings_cmsPath" value="<?php echo $cmsPath; ?>" />
-    </div>
-    
+            <label for="settings_siteUrl">Site URL:</label>
+            <input class="form-control" id="settings_siteUrl" name="settings_siteUrl" value="<?php echo $sUrl ?>" />
+        </div>
+
         <div class="col-md-6 form-group">
 
-            <label for="settings_eePath">EE Path:</label>    
+            <label for="settings_dbName">Database Name:</label>
+            <input class="form-control" id="settings_dbName" name="settings_dbName" value="<?php echo $dbName ?>" />
+        </div>
+
+        <div class="clearfix">&nbsp;</div>
+
+        <h3>Googple Captcha Settings</h3>
+
+        <div class="col-md-12 form-group">
+
+            <label for="settings_captchaKey">Public Key:</label>
+            <input class="form-control" id="settings_captchaKey" name="settings_captchaKey" value="<?php echo $sCaptcha; ?>" />
+        </div>
+
+        <div class="clearfix">&nbsp;</div>
+
+        <h3>CMS Settings</h3>
+
+        <div class="col s6 form-group">
+
+            <label for="settings_cmsPath">CMS Path:</label>
+            <input class="form-control" id="settings_cmsPath" name="settings_cmsPath" value="<?php echo $cmsPath; ?>" />
+        </div>
+
+        <div class="col s6 form-group">
+
+            <label for="settings_eePath">EE Path:</label>
             <input class="form-control" id="settings_eePath" name="settings_eePath" value="<?php echo $eePath; ?>" />
         </div>
-    
-    <div class="clearfix">&nbsp;</div>
-    
+
+        <div class="clearfix">&nbsp;</div>
+
         <h3>Contact Settings</h3>
-    
-    <div class="col-md-6 form-group">
 
-        <label for="settings_emailHost">Email Host:</label>    
-        <input class="form-control" id="settings_emailHost" name="settings_emailHost" value="<?php echo $emailHost; ?>" />
-    </div>
-    
-        <div class="col-md-6 form-group">
+        <div class="col s6 form-group">
 
-            <label for="settings_emailAuth">Email Authentication:</label>    
+            <label for="settings_emailHost">Email Host:</label>
+            <input class="form-control" id="settings_emailHost" name="settings_emailHost" value="<?php echo $emailHost; ?>" />
+        </div>
+
+        <div class="col s6 form-group">
+
+            <label for="settings_emailAuth">Email Authentication:</label>
             <input class="form-control" id="settings_emailAuth" name="settings_emailAuth" value="<?php echo $emailAuth; ?>" />
         </div>
-    
-    <div class="col-md-6 form-group">
 
-        <label for="settings_emailUser">Email Username:</label>    
-        <input class="form-control" id="settings_emailUser" name="settings_emailUser" value="<?php echo $emailUser; ?>" />
-    </div>
-    
-        <div class="col-md-6 form-group">
+        <div class="col s6 form-group">
 
-            <label for="settings_emailPass">Email Password:</label>    
+            <label for="settings_emailUser">Email Username:</label>
+            <input class="form-control" id="settings_emailUser" name="settings_emailUser" value="<?php echo $emailUser; ?>" />
+        </div>
+
+        <div class="col s6 form-group">
+
+            <label for="settings_emailPass">Email Password:</label>
             <input class="form-control" id="settings_emailPass" name="settings_emailPass" value="<?php echo $emailPass; ?>" />
         </div>
-    
-    <div class="col-md-6 form-group">
 
-        <label for="settings_emailEncrypt">Email Encryption:</label>    
-        <select class="form-control" id="settings_emailEncrypt" name="settings_emailEncrypt">
-            <?php 
+        <div class="col s6 form-group">
+
+            <label for="settings_emailEncrypt">Email Encryption:</label>
+            <select class="form-control" id="settings_emailEncrypt" name="settings_emailEncrypt">
+                <?php 
             
                 $encs = array('Select','tls','ssl','no ssl');
             
@@ -115,54 +108,54 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
 
                     };
             
-            ?>  
-        </select>    
-    </div>
-    
-        <div class="col-md-6 form-group">
+            ?>
+            </select>
+        </div>
 
-            <label for="settings_emailPort">Email Port:</label>    
+        <div class="col s6 form-group">
+
+            <label for="settings_emailPort">Email Port:</label>
             <input class="form-control" id="settings_emailPort" name="settings_emailPort" value="<?php echo $emailPort; ?>" />
         </div>
-    
-    <div class="col-md-6 form-group">
 
-        <label for="settings_emailFrom">Email From:</label>    
-        <input class="form-control" id="settings_emailFrom" name="settings_emailFrom" value="<?php echo $emailFrom; ?>" />
-    </div>
-    
-        <div class="col-md-6 form-group">
+        <div class="col s6 form-group">
 
-            <label for="settings_emailName">Email From Name:</label>    
+            <label for="settings_emailFrom">Email From:</label>
+            <input class="form-control" id="settings_emailFrom" name="settings_emailFrom" value="<?php echo $emailFrom; ?>" />
+        </div>
+
+        <div class="col s6 form-group">
+
+            <label for="settings_emailName">Email From Name:</label>
             <input class="form-control" id="settings_emailName" name="settings_emailName" value="<?php echo $emailName; ?>" />
         </div>
-    
-    <div class="col-md-12 form-group">
 
-        <label for="settings_emailAddress">Email Admin Address:</label>    
-        <input class="form-control" id="settings_emailAddress" name="settings_emailAddress" value="<?php echo $emailAdd; ?>" />
-    </div>
-    
-        <div class="col-md-6 form-group">
+        <div class="col-md-12 form-group">
 
-            <label for="settings_emailReply">Email Reply Email:</label>    
+            <label for="settings_emailAddress">Email Admin Address:</label>
+            <input class="form-control" id="settings_emailAddress" name="settings_emailAddress" value="<?php echo $emailAdd; ?>" />
+        </div>
+
+        <div class="col s6 form-group">
+
+            <label for="settings_emailReply">Email Reply Email:</label>
             <input class="form-control" id="settings_emailReply" name="settings_emailReply" value="<?php echo $emailReply; ?>" />
         </div>
-    
-    <div class="col-md-6 form-group">
 
-        <label for="settings_emailReplyTitle">Email Reply Email Title:</label>    
-        <input class="form-control" id="settings_emailReplyTitle" name="settings_emailReplyTitle" value="<?php echo $eReplyTitle; ?>" />
-    </div>
-    
-    <input type="submit" name="edited" class="btn btn-primary" value="Edit" />
+        <div class="col s6 form-group">
 
-<div class="clearfix">&nbsp;</div>
-<div class="clearfix">&nbsp;</div>
-    
-</form>
+            <label for="settings_emailReplyTitle">Email Reply Email Title:</label>
+            <input class="form-control" id="settings_emailReplyTitle" name="settings_emailReplyTitle" value="<?php echo $eReplyTitle; ?>" />
+        </div>
 
-<?php
+        <input type="submit" name="edited" class="btn btn-primary" value="Edit" />
+
+        <div class="clearfix">&nbsp;</div>
+        <div class="clearfix">&nbsp;</div>
+
+    </form>
+
+    <?php
 
 $location = 'Settings';
 $method = 'edited';

@@ -50,7 +50,7 @@ $site = "{$dbName}";
                    
                    ?>
                    
-                   <?php tpBlock('prodAdd'); ?>
+                   <?php tpAdmin('prodAdd'); ?>
           
             <div class="table-responsive">
                 
@@ -78,7 +78,7 @@ $site = "{$dbName}";
 					  $method = 'edited';
 					   
 					  //query's the db 
-					  $table = new model();
+					  $table = new admin_model();
                       $table->query($query,$block);
 					  
 					  //deletes records

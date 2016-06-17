@@ -1,11 +1,13 @@
 <?php
 ob_start();
-$a = '/themeParksCMS';
-require_once $_SERVER['DOCUMENT_ROOT'].''.$a.'/includes/db.php';
-require_once $_SERVER['DOCUMENT_ROOT'].''.$a.'/includes/settings.php';
+
+require_once '../../includes/db.php';
+require_once '../../includes/settings.php';
+global $cmsPath;
+global $sUrl;
 
 $root = $_SERVER['DOCUMENT_ROOT'];
-$path = '/'.$a.'/libraries/css/';
+$path = $cmsPath.'libraries/css/';
 echo '@charset "UTF-8";
 /* CSS Document */';
 
@@ -13,7 +15,7 @@ $files = scandir($root . $path);
 
 foreach($files as $v){
 	
-	if($v == '.DS_Store' || $v == '.' || $v == '..' || $v == 'compile.php'){
+	if($v == '.DS_Store' || $v == '.' || $v == '..' || $v == 'compile.php' || $v == "car.css"){
 	
 	echo '';
 	
@@ -50,7 +52,7 @@ ob_end_clean();
 if(file_exists('themeParks-styles.css')){
     	
     echo '<h1>Complete! CSS has been Compiled<h1>';
-    echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="http://localhost'.$a.'/Home">Home</a>';
+    echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="'.$sUrl.$cmsPath.'Home">Home</a>';
     
 }else{
     
