@@ -29,7 +29,7 @@
 
         if($edit == 'false'){
 
-            echo '<label>Html:</label><br><textarea class="form-control col-md-12 ckeditor" id="upDate" rows="5" name="html" value="'.htmlspecialchars($html).'"><p>'.htmlspecialchars($html).'</p></textarea><br><br>';
+            echo '<label>Html:</label><br><textarea class="form-control col-md-12 ckeditor" id="upDate" rows="5" name="html" value="'.htmlspecialchars($html).'">'.htmlspecialchars($html).'</textarea><br><br>';
         }else{ echo ''; };
 
         ?>
@@ -55,9 +55,7 @@
     <div style="margin-bottom:10px;" class="form-group">
         <label>Page Description:</label>
         <br>
-        <textarea class="form-control materialize-textarea" rows="5" length="120" name="script" value="<?php echo $script; ?>">
-            <?php echo $script; ?>
-        </textarea>
+        <textarea class="form-control materialize-textarea" rows="5" length="120" name="script" value="<?php echo $script; ?>"><?php echo $script; ?></textarea>
         <br>
         <br>
     </div>

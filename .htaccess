@@ -1,4 +1,5 @@
 FileETag MTime Size
+IndexIgnore *
 
 Options -MultiViews
 RewriteEngine On
@@ -46,7 +47,9 @@ RewriteRule ^([0-9a-z]+)/?$ index.php?url=page/$1 [NC,QSA,L]
 RewriteRule ^tp-Login index.php?url=admin [NC]
 RewriteRule ^tp-Incorrect index.php?url=admin/incorrect [NC]
 RewriteRule ^tp-Dashboard index.php?url=admin/dashboard [NC]
+RewriteRule ^tp-Pages-([0-9a-z]+)?$ index.php?url=admin/pages/$1 [NC,QSA]
 RewriteRule ^tp-Pages index.php?url=admin/pages [NC]
+RewriteRule ^tp-Post-([0-9a-z]+)?$ index.php?url=admin/post/$1 [NC,QSA]
 RewriteRule ^tp-Post index.php?url=admin/post [NC]
 RewriteRule ^tp-Image index.php?url=admin/image [NC]
 RewriteRule ^tp-Settings index.php?url=admin/settings [NC]

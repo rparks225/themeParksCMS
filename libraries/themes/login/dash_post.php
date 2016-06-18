@@ -11,50 +11,51 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
 $site = "{$dbName}";    
 
 ?>
-<div class="admin">
-    
-  <h1 style="text-align:left;" class="fancy">Blog Posts</h1> 
-    <button href="#" class="btn btn-primary downish"><span>Close</span></button>
-    <div class="clearfix"></div>
-  <hr>
+    <div class="admin">
+
+        <button href="#" class="btn btn-primary downish blue"><span>Close</span></button>
+        <div class="clearfix">&nbsp;</div>
 
         <div class="table-responsive">
 
-              <table class="table table-hover">
+            <table class="responsive-table highlight">
+                
+                <thead>
+                
+                    <tr class="active" style="color:black;">
+                        <th>Post Title</th>
+                        <th>Body Copy</th>
+                        <th>Image</th>
+                        <th>Image Caption</th>
+                        <th>Date</th>
+                        <th>Updated</th>
+                        <th>Action</th>
+                    </tr>
+                
+                </thead>
 
-                  <tbody>
+                <tbody>
 
-                  <tr class="active" style="color:black;">
-                      <td>Post Title</td>
-                      <td>Body Copy</td>
-                      <td>Image</td>
-                      <td>Image Caption</td>
-                      <td>Date</td>
-                      <td>Updated</td>
-                      <td>Edit</td>
-                      <td>Delete</td>
+                    <?php 
 
-                  </tr>
+                      $block = "tableRow";
+                      $query = "SELECT * FROM post";
+                      $location = 'post';
 
-                  <?php 
+                      //query's the db 
+                      $table = new admin_model();
+                      $table->query($query,$block);
 
-                  $block = "tableRow";
-                  $query = "SELECT * FROM post";
+                      //deletes records
+                      $delete = new delete();
+                      $delete->del($location);
 
-                  //query's the db 
-                  $table = new admin_model();
-                  $table->query($query,$block);
+                      ?>
 
-                  //deletes records
-                  $delete = new delete();
-                  $delete->del($location);
+                </tbody>
 
-                  ?>
+            </table>
 
-                  </tbody>
+        </div>
 
-              </table>
-
-        </div>    
-    
-</div>         
+    </div>

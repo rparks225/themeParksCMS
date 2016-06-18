@@ -21,30 +21,31 @@
 
     <td>
 
-        <a href="<?php echo ROOT.'tp-Pages-'.$id; ?>" type="button" class="waves-effect waves-red btn-floating btn-large">
+        <div style="position:relative;top:0;right:0;" class="fixed-action-btn horizontal">
+            <a class="btn-floating btn-large blue">
+                <i class="large material-icons">add</i>
+            </a>
+        <ul>
+        <li><a href="<?php echo ROOT.'tp-Pages-'.$id; ?>" type="button" class="waves-effect waves-light btn-floating btn-large orange">
 
             <i class="material-icons left">mode_edit</i>
 
-        </a>
-
-    </td>
-
-
-    <td>
-
-        <button type="button" class="waves-effect waves-light btn-floating btn-large red" data-toggle="modal" data-target="#myModal-<?php echo $id; ?>">
+        </a></li>
+        
+        <li><a class="modal-trigger waves-effect waves-light btn-floating btn-large red" data-toggle="modal" href="#myModal-<?php echo $id; ?>">
 
             <i class="material-icons left">delete</i>
 
-        </button>
-
+        </a></li>
+        </ul>    
+        </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="myModal-<?php echo $id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal" id="myModal-<?php echo $id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
                         <h4 class="modal-title" id="myModalLabel">Are you sure you want to delete - Id# <?php echo $id; ?></h4>
                     </div>
                     <div class="modal-body">

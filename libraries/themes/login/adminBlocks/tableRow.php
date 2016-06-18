@@ -28,49 +28,50 @@
 
     <td>
 
-        <button href="<?php echo ROOT.'tp-Post-'.$id; ?>" type="button" class="waves-effect waves-red btn">
+        <div style="position:relative;top:0;right:0;" class="fixed-action-btn horizontal">
+            <a class="btn-floating btn-large blue">
+                <i class="large material-icons">add</i>
+            </a>
+            <ul>
 
-            <i class="material-icons left">mode_edit</i>
+                <li><a href="<?php echo ROOT.'tp-Post-'.$id; ?>" type="button" class="orange waves-effect waves-red btn-floating btn-large">
 
-        </button>
+                    <i class="material-icons left">mode_edit</i>
 
-    </td>
+                </a></li>
 
+                <li><a class="modal-trigger waves-effect waves-light btn-floating btn-large red" data-toggle="modal" href="#myModal-<?php echo $id; ?>">
 
-    <td>
+                    <i class="material-icons left">delete</i>
 
-        <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#myModal-<?php echo $id; ?>">
+                </a></li>
+            </ul>
+        </div>
 
-            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                <!-- Delete Modal -->
+                <div class="modal fade" id="myModal-<?php echo $id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
 
-        </button>
+                                <h4 class="modal-title" id="myModalLabel">Are you sure you want to delete - Id# <?php echo $id; ?></h4>
+                            </div>
+                            <div class="modal-body">
 
+                                <form method="post" style="text-align:center;">
 
-        <!-- Delete Modal -->
-        <div class="modal fade" id="myModal-<?php echo $id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Are you sure you want to delete - Id# <?php echo $id; ?></h4>
-                    </div>
-                    <div class="modal-body">
+                                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                    <input type="submit" name="delete" class="btn btn-default" value="Delete" />
 
-                        <form method="post" style="text-align:center;">
+                                </form>
+                                <br>
+                                <br>
 
-                            <input type="hidden" name="id" value="<?php echo $id; ?>">
-                            <input type="submit" name="delete" class="btn btn-default" value="Delete" />
-
-                        </form>
-                        <br>
-                        <br>
-
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!--Close Delete Modal-->
-
+                <!--Close Delete Modal-->
     </td>
 
 </tr>

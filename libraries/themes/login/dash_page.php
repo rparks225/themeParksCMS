@@ -52,18 +52,22 @@ $site = "{$dbName}";
             <div class="table-responsive">
 
 
-                <table class="table table-hover">
+                <table class="responsive-table highlight">
+                    
+                    <thead>
+                    
+                        <tr class="active" style="color:black;">
+                            <th>Page</th>
+                            <th>Editable</th>
+                            <th>Page Title</th>
+                            <th>Meta Keywords</th>
+                            <th>Meta Desciption</th>
+                            <th>Action</th>
+                        </tr>    
+                    
+                    </thead>
 
                     <tbody>
-
-                        <tr class="active" style="color:black;">
-                            <td>Page</td>
-                            <td>Editable</td>
-                            <td>Page Title</td>
-                            <td>Meta Keywords</td>
-                            <td>Meta Desciption</td>
-                            <td>Edit</td>
-                            <td>Delete</td>
 
                             <?php 
 				      

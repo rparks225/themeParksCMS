@@ -42,7 +42,7 @@
 <body>
 
     <!--Open Nav-Sidebar-->
-    <nav class="#00838f cyan darken-0 light">
+    <nav style="position:relative;z-index:9999999;" class="#00838f cyan darken-0 light">
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">view_module</i></a>
         <ul id="slide-out" class="#424242 grey darken-3 side-nav fixed">
             <br>
@@ -67,6 +67,7 @@
                             </ul>
                         </div>
                     </li>
+                </ul>    
             </li>
             <li><a class="white-text  waves-effect waves-red" href="<?php echo ROOT; ?>tp-Image"><i class="material-icons left">perm_media</i>Image Library</a></li>
             <li><a class="white-text  waves-effect waves-red" href="<?php echo ROOT; ?>tp-Settings"><i class="material-icons left">settings</i>Settings</a></li>
