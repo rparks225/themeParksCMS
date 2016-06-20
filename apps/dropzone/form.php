@@ -21,7 +21,6 @@ if($mysqli->connect_errno){
 
 ?>
 
-<<<<<<< HEAD
     <!DOCTYPE html>
     <html lang="en">
 
@@ -58,43 +57,6 @@ if($mysqli->connect_errno){
                         <select class="form-control" id="albumChoice">
                             <option class="active" value="">select</option>
                             <?php 
-=======
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    	<link rel="stylesheet" href="css/dropzone.css" />
-    	<link rel="stylesheet" href="css/basic.css" />
-    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
-
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" />
-        
-	</head>
-    
-	<body>
-
-		<div style="width:100%;margin:0px auto 0;padding:0px;" role="tabpanel">
-
-
-		  <!-- Nav tabs -->
-		  <ul class="nav nav-tabs" role="tablist">
-		    <li role="presentation" class="active"><a href="#add" aria-controls="add" role="tab" data-toggle="tab">Add Photos</a></li>
-		    <li role="presentation"><a href="#edit" aria-controls="edit" role="tab" data-toggle="tab">Add New Gallery</a></li>
-              <li role="presentation"><a href="#images" aria-controls="images" role="tab" data-toggle="tab">Edit Images</a></li>
-		  </ul>
-
-		  <!-- Tab panes -->
-		  <div class="tab-content"><br>
-		    <div role="tabpanel" class="tab-pane active" id="add">
-                <div class="form-group">
-                    <strong>Select Album</strong>
-                    <i>*Please refresh the page after upload is complete</i>
-                    <select class="form-control" id="albumChoice">
-                        <option class="active" value="">select</option>
-                        <?php 
->>>>>>> origin/master
 
                         direct('upload/');
 
