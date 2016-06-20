@@ -54,6 +54,40 @@ jQuery.fn.editease = function (linkName, epath) {
         }
     );
 
+<<<<<<< HEAD
+=======
+
+/* default path file for editEase 'This should be all you need to edit' */
+if (epath === undefined) {
+	// if path provided this is the default
+     eePath = '/themeParksCMS/apps/_ee/';
+     sitePath = 'http://localhost/themeParksCMS/';
+}else{
+	// otherwise use provided path
+	eePath = epath;
+}
+
+
+// if no login link text provided this is the default
+if (linkName === undefined) {
+	var linkName = '';
+}
+
+/*#### This little function activates the system ####*/
+jQuery("head").append('<link rel="stylesheet" type="text/css" media="all" href="'+eePath+'/editease.css">');
+if(linkName==='undefined'){var linkName ='Admin';}
+var lgnLink = '<a href="javascript:void(0)" onclick="loginModal()" class="eelgn" title="editEase - click to login and edit"><span>'+linkName+'</span></a><div id="eelogin" style="display:none;"><a class="modalCloseImg simplemodal-close" title="Close"></a><div class="customDialog"><h1>Login Now</h1><div class="text">Login to <strong>editEase</strong> to manage your content.<form action="javascript:void(0)" method="post" onsubmit="return doLogin(\'login\');" id="loginform"><fieldset><span class="warning">Your "username" or "password" don\'t appear to be valid.  Please try again.</span><label for="username">Username</label><input type="text" name="username" id="username" maxlength="100" value=""/><label for="password">Password</label><input type="password" name="password" id="password" maxlength="100" value=""/><button type="submit" id="eesbt">&nbsp;&nbsp;LOGIN&nbsp;&nbsp;</button></fieldset></form></div></div></div>';
+jQuery(this).append(lgnLink);
+
+ jQuery.post(""+eePath+"/session.php",
+	function(data){
+		if(jQuery.trim(data)==='eeloggedin'){
+		eeLive();
+		}
+	 }
+ );
+    
+>>>>>>> origin/master
 };
 
 // check if install file still exists
