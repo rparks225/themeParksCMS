@@ -1,4 +1,5 @@
 <!--You are on the (<?php echo title(); ?>) page-->
+<?php global $userName; ?>
 <!DOCTYPE html>
 <html lang="">
 
@@ -102,7 +103,7 @@
             <div style="padding:0 40px;" class="row">
 
                 <!--Open Welcome-->
-                <h5 style="color:black;">Welcome Back - <span class="#00838f cyan-text text-darken-0 light">Rob Parks</span></h5>
+                <h5 style="color:black;">Welcome Back - <span class="#00838f cyan-text text-darken-0 light"><?php echo $userName; ?></span></h5>
                 <hr>
                 <br>
                 <br>

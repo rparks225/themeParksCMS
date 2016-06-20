@@ -8,7 +8,8 @@ if($result = $mysqli->query($query)){
 
 
         $sName = $row['settings_siteName'];
-        $sUrl = "http://{$_SERVER['HTTP_HOST']}/themeParksCMS/";
+        $userName = $row['settings_uName'];
+        $sUrl = $row['settings_siteUrl'];
         $sCaptcha = $row['settings_captchaKey'];
         $theme = $row['theme'];
         $cmsPath = $row['settings_cmsPath'];
@@ -33,7 +34,7 @@ if($result = $mysqli->query($query)){
 
 };       
 
-$vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle');
+$vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle','userName');
 
     foreach($vars as $var){
 

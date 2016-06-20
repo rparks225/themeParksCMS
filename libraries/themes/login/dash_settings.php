@@ -1,6 +1,6 @@
 <?php
 
-$vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle');
+$vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle','userName');
 
     foreach($vars as $var){
 
@@ -13,6 +13,12 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
     <form class="form" method="post">
 
         <input type="hidden" name="id" value="<?php echo $id; ?>" />
+        
+        <div class="col s6 form-group">
+
+            <label for="settings_uName">User Name:</label>
+            <input class="form-control" id="settings_uName" name="settings_uName" value="<?php echo $userName ?>" />
+        </div>
 
         <div class="col s6 form-group">
 
@@ -26,7 +32,7 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
             <input class="form-control" id="settings_siteUrl" name="settings_siteUrl" value="<?php echo $sUrl ?>" />
         </div>
 
-        <div class="col-md-6 form-group">
+        <div class="col s6 form-group">
 
             <label for="settings_dbName">Database Name:</label>
             <input class="form-control" id="settings_dbName" name="settings_dbName" value="<?php echo $dbName ?>" />
@@ -167,6 +173,7 @@ if(isset($_POST[''.$method.''])){
 
     $id = addslashes($_POST['id']);  
     $sName = addslashes($_POST['settings_siteName']);
+    $userName = addslashes($_POST['settings_uName']);
     $sUrl = addslashes($_POST['settings_siteUrl']);
     $sCaptcha = addslashes($_POST['settings_captchaKey']);
     $cmsPath = addslashes($_POST['settings_cmsPath']);
@@ -184,7 +191,7 @@ if(isset($_POST[''.$method.''])){
     $eReplyTitle = addslashes($_POST['settings_emailReplyTitle']);
     $dbName = addslashes($_POST['settings_dbName']);
 
-    $query = 'UPDATE `'.$dbName.'`.`'.$location.'` SET `Id` = \''.$id.'\', `settings_siteName` = \''.$sName.'\', `settings_siteUrl` = \''.$sUrl.'\', `settings_captchaKey` = \''.$sCaptcha.'\', `settings_cmsPath` = \''.$cmsPath.'\', `settings_eePath` = \''.$eePath.'\', `settings_emailHost` = \''.$emailHost.'\', `settings_emailAuth` = \''.$emailAuth.'\', `settings_emailUser` = \''.$emailUser.'\', `settings_emailPass` = \''.$emailPass.'\', `settings_emailEncrypt` = \''.$emailEnc.'\', `settings_emailPort` = \''.$emailPort.'\', `settings_emailFrom` = \''.$emailFrom.'\', `settings_emailName` = \''.$emailName.'\', `settings_emailAddress` = \''.$emailAdd.'\', `settings_emailReply` = \''.$emailReply.'\', `settings_emailReplyTitle` = \''.$eReplyTitle.'\', `settings_dbName` = \''.$dbName.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
+        $query = 'UPDATE `'.$dbName.'`.`'.$location.'` SET `Id` = \''.$id.'\', `settings_siteName` = \''.$sName.'\', `settings_uName` = \''.$userName.'\', `settings_siteUrl` = \''.$sUrl.'\', `settings_captchaKey` = \''.$sCaptcha.'\', `settings_cmsPath` = \''.$cmsPath.'\', `settings_eePath` = \''.$eePath.'\', `settings_emailHost` = \''.$emailHost.'\', `settings_emailAuth` = \''.$emailAuth.'\', `settings_emailUser` = \''.$emailUser.'\', `settings_emailPass` = \''.$emailPass.'\', `settings_emailEncrypt` = \''.$emailEnc.'\', `settings_emailPort` = \''.$emailPort.'\', `settings_emailFrom` = \''.$emailFrom.'\', `settings_emailName` = \''.$emailName.'\', `settings_emailAddress` = \''.$emailAdd.'\', `settings_emailReply` = \''.$emailReply.'\', `settings_emailReplyTitle` = \''.$eReplyTitle.'\', `settings_dbName` = \''.$dbName.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
 
     }
 
