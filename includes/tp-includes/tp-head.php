@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<!--You are on the (<?php echo title(2); ?>) page.-->    
     
 <!--Open Meta Tags-->    
 

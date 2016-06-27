@@ -140,7 +140,7 @@ class gallery{
                     };
                 
                         tpBlock('sideBar');
-                        secNav($page);
+                        //secNav($page);
 					  
 						  echo '<div class="col-md-9">
 								   
@@ -149,12 +149,12 @@ class gallery{
                                 $title = title(2);
                                 global $pages;
 
-                                    $add = $pages[$title]['add'];
-                                    $phone = $pages[$title]['phone'];              
+                                    //$add = $pages[$title]['add'];
+                                    //$phone = $pages[$title]['phone'];              
 
-                                    $trail = array(''.$add.'',''.$phone.'');
+                                    //$trail = array(''.$add.'',''.$phone.'');
 
-                                    breadcrumbs($trail);
+                                    //breadcrumbs($trail);
             
                                      $query = 'SELECT * FROM `gallery` WHERE `Gallery` LIKE \''.$nav.'\'';
                                      $block = 'title';

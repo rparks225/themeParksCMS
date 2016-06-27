@@ -1,6 +1,6 @@
         /*=================================
-                              01jquery1.12.0.min.js
-                        ==================================*/
+                                      01jquery1.12.0.min.js
+                                ==================================*/
 
         // JavaScript Document
         /*! jQuery v1.12.0 | (c) jQuery Foundation | jquery.org/license */
@@ -12519,18 +12519,18 @@
             })
         });
 
-        /*========================
+/*========================
             Functions . Js
-        ========================*/
+========================*/
 
-        // JavaScript Document
+// JavaScript Document
 
-        // Start Jquery
+// Start Jquery
         $(document).ready(function () {
 
-            /*========================
+    /*========================
             	     prettyphoto
-            =========================*/
+    =========================*/
 
             $("a[rel^='prettyPhoto']").prettyPhoto({
                 default_width: 853
@@ -12539,9 +12539,9 @@
                 , theme: 'facebook'
             });
 
-            /*=========================
+    /*=========================
              Dashboard edit animation
-            ==========================*/
+    ==========================*/
             $('.loading').delay(500).fadeOut(500);
 
             $('select#change').on('change', function () {
@@ -12562,9 +12562,9 @@
 
             });
 
-            /*========================
+    /*========================
               Menu toggle animation	
-            =========================*/
+    =========================*/
             $('div.admin button.downish').toggle(
 
                 function () {
@@ -12581,9 +12581,9 @@
 
             );
 
-            /*==================
+    /*==================
                 Dropzone.js 
-            ==================*/
+    ==================*/
 
             $(document).ready(function () {
                 $('#albumChoice').change(function () {
@@ -12600,15 +12600,15 @@
                 });
             });
 
-            /*===================			
+    /*===================			
                Image Draggable
-            ===================*/
+    ===================*/
 
             $(function () {
                 $("#sortable").sortable({
                     update: function (event, ui) {
                         var data = $(this).sortable('serialize');
-                        $.post('libraries/themes/bane/views/gallery/save_order.php', data, function (theResponse) {
+                        $.post('libraries/themes/login/adminBlocks/save_order.php', data, function (theResponse) {
 
                             console.log(theResponse);
 
@@ -12626,7 +12626,7 @@
                 $("#sort").sortable({
                     update: function (event, ui) {
                         var data = $(this).sortable('serialize');
-                        $.post('libraries/themes/bane/views/gallery/gal_order.php', data, function (theResponse) {
+                        $.post('libraries/themes/login/adminBlocks/gal_order.php', data, function (theResponse) {
 
                             console.log(theResponse);
 
@@ -12640,7 +12640,7 @@
 
             });
 
-            /*========================
+    /*========================
     adjusting font size
 ==========================*/
             $('#smaller').click(function () {
@@ -12670,9 +12670,9 @@
                 }
             });
 
-            /*================
+    /*================
                 Date Picker
-            =================*/
+    =================*/
             $(function () {
                 $("#datepicker").datepicker({
                     showOn: "button"
@@ -12683,7 +12683,7 @@
             });
 
 
-            /*===================
+    /*===================
      Form Validate
 =====================*/
             $(document).ready(function () {
@@ -12708,9 +12708,11 @@
 
                 });
 
+                $('.logo').fadeIn('slow');
+
             });
 
-            /*===================
+    /*===================
       Lazy Loader
 =====================*/
             $("img.lazy").lazyload({

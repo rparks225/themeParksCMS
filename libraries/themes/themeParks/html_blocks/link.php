@@ -1,0 +1,1 @@
+<li class="<?php active($title); ?>"><a href="<? echo ROOT; ?><? echo $title; ?>"><? echo $title; ?></a></li>
