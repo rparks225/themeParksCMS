@@ -75,6 +75,24 @@ $site = "{$dbName}";
 
                 $update = new update();
                 $update->uped($location,$query,$method);
+                
+                
+                //updates the record
+                if(isset($_POST[''.$method.''])){
+                    
+                    $location = 'settings';
+                    if(isset($_POST['theme'])){
+
+                        $theme = addslashes($_POST['theme']);
+
+                        $query = 'UPDATE `'.$site.'`.`'.$location.'` SET `theme` = \''.$theme.'\'';
+
+                    }
+
+                };
+
+                $updated = new update();
+                $updated->uped($location,$query,$method);
                 ?>
             </div>
 
