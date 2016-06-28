@@ -3,13 +3,13 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-md-5 col-sm-6">
+            <div class="col-md-4 col-sm-6">
                 <h3>About Us</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
                 <img width="25%" src="images/tplogo.png" alt="" class="pull-left img-responsize" />
             </div>
 
-            <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <h3>Quick Links</h3>
                 <ul class="pull-left">
                     <li><a href="#">Mission</a></li>
@@ -17,7 +17,7 @@
                     <li><a href="#">Packages</a></li>
                     <li><a href="#">Services</a></li>
                 </ul>
-                <ul class="pull-left">
+                <ul style="margin-left:40px;" class="pull-left">
                     <li><a href="#">Rates</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Admin Login</a></li>
