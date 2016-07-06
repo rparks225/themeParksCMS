@@ -60,16 +60,6 @@ RewriteRule ^tp-Products index.php?url=admin/products [NC]
 RewriteRule ^News-all$           index.php?url=news/Posts [NC]
 RewriteRule ^News-Post-([0-9]+)$ index.php?url=news/Posts/$1 [NC,QSA]
 
-##Renamed Pages
-RewriteRule ^Our-Standards index.php?url=page/OurStandards [NC]
-RewriteRule ^Breastfeeding-Basics index.php?url=page/breastfeedingBasics [NC]
-RewriteRule ^Insurance-Provided-Breast-Pumps index.php?url=page/insuranceProvidedBreastPump [NC]
-RewriteRule ^Community-Resource-Guide index.php?url=page/communityResourcesGuide [NC]
-RewriteRule ^Breast-Pump-Trouble-Shooting index.php?url=page/breastPumpTroubleShooting [NC]
-RewriteRule ^Customer-Satisfaction-Survey index.php?url=contact/survey [NC]
-RewriteRule ^Breast-Pump-Rental index.php?url=contact/rental [NC]
-RewriteRule ^Connect index.php?connect [NC]
-
 
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
