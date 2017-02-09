@@ -1,38 +1,76 @@
-<!--You are on the (<?php echo title(); ?>) page-->
 <?php global $userName; ?>
 <!DOCTYPE html>
 <html lang="">
+    
+    <!--You are on the (<?php echo title(2); ?>) page-->
 
-<head>
-    <!--Open Meta Tags-->
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
     <?php
-        $query = 'SELECT * FROM `page` WHERE `Title` LIKE "'.title().'"';
-        $block = 'metaScript';
-        $metaScript = new model();
-        $metaScript->query($query, $block);
-        ?>
 
-        <meta name=viewport content="width=device-width, initial-scale=1">
+    if(links() == 'http://autozqfg.pairserver.com/tp-Pages-'.title(2).'' || links() == 'http://autozqfg.pairserver.com/tp-Jobs-'.title(2).''){
 
-        <?php 
+        echo '<title>ThemeParks CMS - Add/Edit: '.title(2).'</title>';
 
-        if(title() == 'dashboard' || title() == 'pages'){
-            echo '<meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="-1">';
-        }    
-        ?>
+    }else{
 
-            <!--Close Meta Tags-->
+        echo '<title>ThemeParks CMS - '.ucwords(title(2)).'</title>';
 
-            <link rel="shortcut icon" href="icon.ico">
-            <!-- Compiled and minified CSS -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" />
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-            <link href="<?php echo ROOT; ?>libraries/themes/login/assets/css/customStyles.css" type="text/css" rel="stylesheet" />
+    }
 
-            <style>
-                
-            </style>
+
+    ?>    
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <?php 
+
+    //Auto logout script time out 1hr 30min
+    global $destroy;
+    global $sName;
+    $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
+    if(isset($_SESSION[''.$sessKey.''])){
+        echo $destroy;
+    };
+
+    ?>        
+
+    <?php 
+
+    if(title() == 'dashboard' || title() == 'pages'){
+        echo '<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">';
+    }  
+
+    ?>
+
+    <!--Close Meta Tags-->
+
+    <link rel="shortcut icon" href="icon.ico">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="<?php echo ROOT; ?>libraries/themes/login/assets/css/customStyles.css" type="text/css" rel="stylesheet" />
+
+    <style>
+        div#eepanel {
+            display:none;
+        }
+        .cke_dialog{
+            border: 1px solid grey;
+            box-shadow: 2px 2px 10px;
+        }
+        select.cke_dialog_ui_input_select{
+            display:block!important;
+        }
+        .cke_reset_all textarea, .cke_reset_all input[type="text"], .cke_reset_all input[type="password"] {
+            cursor: text;
+            margin:0;
+            height:25px;
+        }.cke_button__inlinesave{
+            display:none!important;
+        }
+        .input-field label {
+            top: -0.2rem!important;
+        }
+    </style>
 
             <!--[if IE]>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -63,7 +101,7 @@
                         <a class="white-text  collapsible-header waves-effect waves-red"><i class="material-icons left">mode_edit</i>Edit Site</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a class="waves-effect waves-red" href="<?php echo ROOT; ?>tp-Pages"><i class="material-icons left">note_add</i>Edit Page</a></li>
+                                <li><a class="waves-effect waves-red" href="<?php echo ROOT; ?>tp-Pages-1"><i class="material-icons left">note_add</i>Edit Page</a></li>
                                 <li><a class="waves-effect waves-red" href="<?php echo ROOT; ?>tp-Post"><i class="material-icons left">assignment</i>Edit Posts</a></li>
                             </ul>
                         </div>
@@ -73,7 +111,8 @@
             <li><a class="white-text  waves-effect waves-red" href="<?php echo ROOT; ?>tp-Image"><i class="material-icons left">perm_media</i>Image Library</a></li>
             <li><a class="white-text  waves-effect waves-red" href="<?php echo ROOT; ?>tp-Settings"><i class="material-icons left">settings</i>Settings</a></li>
             <li><a class="white-text  waves-effect waves-red" href="<?php echo ROOT; ?>Home"><i class="material-icons left">web</i>View Site</a></li>
-            <li><a class="white-text  waves-effect waves-red" href="#"><i class="material-icons left">business</i>New Job</a></li>
+<!--            <li><a class="white-text  waves-effect waves-red" href="#"><i class="material-icons left">business</i>New Job</a></li>-->
+            <li><a class="white-text  waves-effect waves-red" href="tp-login" onclick="eelogout();"><i class="material-icons left">power_settings_new</i>Logout</a></li>
             </ul>
     </nav>
     <!--Close Nav-Sidebar-->
@@ -90,7 +129,7 @@
             $heading->query($query,$block);		  
             ?>
         </div>
-        <div class="parallax"><img class="responsive-img" src="<?php echo ROOT; ?>libraries/themes/login/assets/images/header.png"></div>
+        <div class="parallax"><img class="responsive-img" src="<?php echo ROOT; ?>libraries/themes/login/assets/images/header.jpg"></div>
     </div>
     <!--Close Parallax Image-->
 

@@ -66,10 +66,13 @@ global $sName;
                     
                     require_once 'libraries/themes/login/dash_page.php';
                     
-                }else{
-                    
+                }else if(links() == ROOT.'tp-Pages-Update-'.title(2).''){
+
                     require_once 'libraries/themes/login/dash_pgUpdate.php';
                     
+                }else if ($nav != ''){
+
+                    require_once 'libraries/themes/login/dash_page.php';
                 }
 			
 			require_once 'libraries/themes/login/footer.php';		

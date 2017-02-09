@@ -8,15 +8,45 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
 
     }
     
-$site = "{$dbName}";  
+$site = "{$dbName}"; 
 ?>
+    
+<!--Open Quick Blog-->
+<?php
+
+tpAdmin('insert_form');
+$method = 'inserted';
+$location = 'post';
+
+if(isset($_POST[''.$method.''])){
+
+    if(isset($_POST['id'])){
+
+        $id = mysqli_real_escape_string($_POST['id']);
+        $title = addslashes($_POST['title']);
+        $img = addslashes($_POST['img']);
+        $script = addslashes($_POST['post']);
+        $Date = addslashes($_POST['date']);
+        $imgCap = addslashes($_POST['cap']);
+
+        $query = 'INSERT INTO `'.$site.'`.`'.$location.'` (`Id`, `Title`, `Image`, `Description`, `Date`, `Caption`) VALUES (NULL, \''.$title.'\', \''.$img.'\', \''.$script.'\', \''.$Date.'\', \''.$imgCap.'\')';
+
+    }
+
+};
+
+$insert = new update();
+$insert->uped($location,$query,$method);
+
+?>
+<!--Close Quick Blog-->
 
     <!--Open Theme Changer-->
     <div class="col s12 m6 l4">
         <div style="padding:0;" class="card col s12">
 
             <div class="card-image waves-effect waves-block waves-red">
-                <img styel="width:100%;" class="activator" src="<?php echo ROOT; ?>libraries/themes/<?php echo theme(); ?>/screenshot.png">
+                <img styel="width:100%;" class="activator" src="<?php echo ROOT; ?>libraries/themes/<?php echo theme().'/screenshot.jpg'; ?>">
             </div>
             <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">Current Theme:<i class="material-icons right">more_vert</i></span>
@@ -38,12 +68,12 @@ $site = "{$dbName}";
                                 <option value="default" selected disabled>Please Select a Theme</option>
                                 <?php
 
-                            $directory = 'libraries/themes';
-                            $blocks = 'theme';
-                            $other = false;
-                            tpDirect($directory,$blocks,$other);
+                                    $directory = 'libraries/themes';
+                                    $blocks = 'theme';
+                                    $other = false;
+                                    tpDirect($directory,$blocks,$other);
 
-                            ?>
+                                ?>
 
                             </select>
 
@@ -99,34 +129,3 @@ $site = "{$dbName}";
         </div>
     </div>
     <!--Close Theme Changer-->
-
-
-    <!--Open Quick Blog-->
-    <?php
-
-    tpAdmin('insert_form');
-    $method = 'inserted';
-    $location = 'post';
-
-    if(isset($_POST[''.$method.''])){
-
-        if(isset($_POST['id'])){
-
-            $id = mysqli_real_escape_string($_POST['id']);
-            $title = addslashes($_POST['title']);
-            $img = addslashes($_POST['img']);
-            $script = addslashes($_POST['post']);
-            $Date = addslashes($_POST['date']);
-            $imgCap = addslashes($_POST['cap']);
-
-            $query = 'INSERT INTO `'.$site.'`.`'.$location.'` (`Id`, `Title`, `Image`, `Description`, `Date`, `Caption`) VALUES (NULL, \''.$title.'\', \''.$img.'\', \''.$script.'\', \''.$Date.'\', \''.$imgCap.'\')';
-
-        }
-
-    };
-
-    $insert = new update();
-    $insert->uped($location,$query,$method);
-
-    ?>
-        <!--Close Quick Blog-->

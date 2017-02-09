@@ -5,6 +5,7 @@ require_once '../../includes/db.php';
 require_once '../../includes/settings.php';
 global $cmsPath;
 global $sUrl;
+global $theme;
 
 $root = $_SERVER['DOCUMENT_ROOT'];
 $path = $cmsPath.'libraries/css/';
@@ -15,7 +16,7 @@ $files = scandir($root . $path);
 
 foreach($files as $v){
 	
-	if($v == '.DS_Store' || $v == '.' || $v == '..' || $v == 'compile.php' || $v == "car.css"){
+	if(substr($v,-3) != 'css'){
 	
 	echo '';
 	
@@ -52,7 +53,7 @@ ob_end_clean();
 if(file_exists('themeParks-styles.css')){
     	
     echo '<h1>Complete! CSS has been Compiled<h1>';
-    echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="'.$sUrl.$cmsPath.'Home">Home</a>';
+    echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="http://'.$_SERVER['HTTP_HOST'].'/newSite/Home">Home</a>';
     
 }else{
     

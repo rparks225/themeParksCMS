@@ -1,8 +1,8 @@
 
+<?php global $salt; ?>
+<div class="col-md-12" style="text-align:center;">  
 
-<div class="col-md-12">  
-
-<h1 class="fancy" style="text-align:left;"> Login </h1>
+    <h1 class="fancy"> Login </h1>
      
      <hr>     
      
@@ -26,7 +26,7 @@
                 
               </div>  
                 
-                <button style="position:relative;left:-55px;top:-30px;" class="btn btn-default" id="eesbt" type="submit">LOGIN</button>
+                <button style="position:relative;left:-55px;top:-30px;" class="btn btn-warning" id="eesbt" type="submit">LOGIN</button>
             
             </form>
         
@@ -35,5 +35,7 @@
     <a style="position:relative;left:0px;top:20px;color:black;" class="col-md-12" href="<?php echo ROOT; ?>Home">&larr; Home</a>    
     
 </div>
+    
+    
 
     

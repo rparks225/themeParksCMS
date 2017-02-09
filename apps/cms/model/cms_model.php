@@ -18,8 +18,6 @@ class model{
 			return $other;
 	
 			}else{
-			
-			
 				
 			}
 		
@@ -59,7 +57,12 @@ class model{
                     'Badges'=>'badges',
                     'Company'=>'company',
                     'Grade'=>'grade',
-                    'Caption'=>'imgCap'
+                    'Caption'=>'imgCap',
+                    'Nav'=>'navs',
+                    'Navorder'=>'navOrder',
+                    'Location'=>'location',
+                    'Locationtext'=>'locText',
+                    'navId'=>'navId',
                 );
                 
                 foreach($loops as $loop => $val){

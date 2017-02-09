@@ -2,17 +2,27 @@ FileETag MTime Size
 IndexIgnore *
 
 Options -MultiViews
-RewriteEngine On
+RewriteEngine On 
+
+
+## 301’s ##
+redirect 301 old/page/name.html http://new/page/name.html
+redirect 301 old/page/name.html http://new/page/name.html
+redirect 301 old/page/name.html http://new/page/name.html
+redirect 301 old/page/name.html http://new/page/name.html
+redirect 301 old/page/name.html http://new/page/name.html
+redirect 301 old/page/name.html http://new/page/name.html
+## 301’s ##
 
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 ##Styles Compile
-RewriteRule ^style http://localhost/themeParksCMS/libraries/css/compile.php [NC]
+RewriteRule ^tp-style /newSite/libraries/css/compile.php [NC]
 
 ##Style
-RewriteRule ^js http://localhost/themeParksCMS/libraries/js/compile.php [NC]
+RewriteRule ^tp-js /newSite/libraries/js/compile.php [NC]
 
 ##Home
 RewriteRule ^Home index.php?url=home [NC]
@@ -47,6 +57,7 @@ RewriteRule ^([0-9a-z]+)/?$ index.php?url=page/$1 [NC,QSA,L]
 RewriteRule ^tp-Login index.php?url=admin [NC]
 RewriteRule ^tp-Incorrect index.php?url=admin/incorrect [NC]
 RewriteRule ^tp-Dashboard index.php?url=admin/dashboard [NC]
+RewriteRule ^tp-Pages-Update-([0-9a-z]+)?$ index.php?url=admin/pages/$1 [NC,QSA]
 RewriteRule ^tp-Pages-([0-9a-z]+)?$ index.php?url=admin/pages/$1 [NC,QSA]
 RewriteRule ^tp-Pages index.php?url=admin/pages [NC]
 RewriteRule ^tp-Post-([0-9a-z]+)?$ index.php?url=admin/post/$1 [NC,QSA]
@@ -60,6 +71,8 @@ RewriteRule ^tp-Products index.php?url=admin/products [NC]
 RewriteRule ^News-all$           index.php?url=news/Posts [NC]
 RewriteRule ^News-Post-([0-9]+)$ index.php?url=news/Posts/$1 [NC,QSA]
 
+
+##Speed Updates##
 
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
@@ -104,25 +117,25 @@ ExpiresDefault "access plus 1 month”
   BrowserMatch ^Mozilla/4 gzip-only-text/html
   BrowserMatch ^Mozilla/4\.0[678] no-gzip
   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-</IfModule>
+  
+  #The following line is enough for .js and .css
+  AddOutputFilter DEFLATE js css
 
-<IfModule mod_deflate.c>
-    #The following line is enough for .js and .css
-    AddOutputFilter DEFLATE js css
+#The following line also enables compression by file content type, for the following list of Content-Type:s
+AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml
 
-    #The following line also enables compression by file content type, for the following list of Content-Type:s
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml
-
-    #The following lines are to avoid bugs with some browsers
-    BrowserMatch ^Mozilla/4 gzip-only-text/html
-    BrowserMatch ^Mozilla/4\.0[678] no-gzip
-    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html 
+#The following lines are to avoid bugs with some browsers
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html 
+  
 </IfModule>
 
 <IfModule mod_headers.c>
-  <FilesMatch "\.(js|css|xml|gz)$">
-    Header append Vary: Accept-Encoding
-  </FilesMatch>
+<FilesMatch "\.(ttf|ttc|otf|eot|woff|font.css|css|js|gif|png|jpeg|svg|svgz|ico|webp)$">
+Header set Access-Control-Allow-Origin "*"
+Header append Vary: Accept-Encoding
+</FilesMatch>
 </IfModule>
 
 <ifModule mod_gzip.c>
@@ -136,8 +149,17 @@ ExpiresDefault "access plus 1 month”
   mod_gzip_item_include handler ^cgi-script$
 </ifModule>
 
-<ifModule mod_headers.c>
-    Header set Connection keep-alive
-</ifModule>
+##<ifModule mod_deflate.c>
+##<Files *.html>
+##SetOutputFilter DEFLATE
+##</Files>
+##</ifModule>
 
-ErrorDocument 404 http://localhost/themeParksCMS/404
+AddType application/vnd.ms-fontobject    .eot
+AddType application/x-font-opentype      .otf
+AddType image/svg+xml                    .svg
+AddType application/x-font-ttf           .ttf
+AddType application/font-woff            .woff
+AddType application/font-woff2           .woff2
+
+ErrorDocument 404 http://localhost/newSite/404

@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-<!--You are on the (<?php echo title(2); ?>) page.-->    
     
-<!--Open Meta Tags-->    
-
+<!--Open Meta Tags-->
+    
 <?php
-$query = 'SELECT * FROM `page` WHERE `Title` LIKE "'.title(2).'"';
-$block = 'metaScript';
-$metaScript = new model();
-$metaScript->query($query, $block);
+
+        if(title(2) == ''){
+            
+            $query = 'SELECT * FROM `page` WHERE `Title` LIKE "Home"';
+            $block = 'metaScript2';
+            
+        }else{
+
+            $query = 'SELECT * FROM `page` WHERE `Title` LIKE "'.title(2).'"';
+            $block = 'metaScript2';
+
+        }    
+    
+        $metaScript = new model();
+        $metaScript->query($query, $block);
+
 ?>
     
-<meta name=viewport content="width=device-width, initial-scale=1">   
+<meta name=viewport content="width=device-width, initial-scale=1">
+<?php 
+
+    //Auto logout script time out 1hr 30min
+    global $destroy;
+    global $sName;
+    $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
+    if(isset($_SESSION[''.$sessKey.''])){
+        echo $destroy;
+        global $inline;
+        $inline = ' class="tp edit" contenteditable="true"';
+    };
+
+?>        
     
 <?php 
 
@@ -26,34 +49,22 @@ $metaScript->query($query, $block);
 
 
 <!--Open Styles code-->
-<?php tpCompile('styles'); ?>
+    
+    <style type="text/css">html{ opacity: 0; -webkit-transition: opacity ease-in-out .5s; -moz-transition: opacity ease-in-out .5s; -o-transition: opacity ease-in-out .5s; transition: opacity ease-in-out .5s;} html.iactive{ opacity: 1; } #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { border: 1px dotted grey; }.edit[contenteditable=true]:focus { border: none!important;padding-top:20px; } .cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}
+<?php 
+    global $style;
+    if(isset($style)){ echo $style; }else{ $style == false; }; 
+?>   
+</style>
+  
 <!--Close Styles-->
 
 
-<!--Custom Styles-->
+<!--Open favicon-->
 
-<style type="text/css">
-      #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}
-      
-      <?php global $style; ?>
-      <?php if(isset($style)){ echo $style; }else{ $style == false; }; ?>
-  </style>
-  
-<!--Custom Styles-->
-
-
-<!--Open Styles-->
-
-<?php 
-    
-    if(theme() == 'default'){
-        
-    echo '<link href="'.ROOT.'libraries/css/car.css" type="text/css" rel="stylesheet" />';
-    };
-?>    
     <link rel="SHORTCUT ICON" href="<?php echo ROOT; ?>images/icon.ico">
     
-<!--Close Styles--> 
+<!--Close favicon--> 
 
 
 <!--Open IE Fix-->
@@ -68,8 +79,9 @@ $metaScript->query($query, $block);
     <![endif]-->
 
 <!--Close IE Fix-->
-
+    <?php tpCompile('styles'); ?>
+    
 </head>
 
-<?php tpInc('header'); ?>
+    <?php tpInc('header'); ?>
 

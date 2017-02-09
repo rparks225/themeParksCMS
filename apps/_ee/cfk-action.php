@@ -6,6 +6,6 @@ $htmlData = str_replace("\n", " ", $htmlData); //remove carriage returns. why ? 
 ?>
 <script type="text/javascript">
 <!--
-onload = self.parent.closeEditing('<?php echo $_POST['file'];?>','<?php echo $htmlData;?>');
+    onload = self.parent.closeEditing('<?php echo $_POST['file'];?>','<?php echo $htmlData;?>');
 -->
 </script>

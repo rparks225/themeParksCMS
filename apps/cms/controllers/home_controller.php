@@ -2,18 +2,11 @@
 
 class home{
 
-	public function index(){
+	public function home( $nav = '' ){
 		
-        if(links() == ROOT){
-            
-            header('Location: '.ROOT.'Home');
-        }
-        
         tpReq('head');
 		
-		
 			tpView('home','home');
-		
 		
 		tpReq('foot');
 		

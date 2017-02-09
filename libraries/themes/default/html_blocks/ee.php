@@ -1,9 +1,9 @@
-
+<?php global $inline; ?>
 
 <!-- Open Content Area -->
-<div class="e-ease ee:wwig" id="_<? echo $title ?>">
+<div id="_<?php echo title(2) ?>"<?php echo $inline; ?>>
                        
-	   <? newEE($title); ?>
+	   <?php newEE(title(2)); ?>
                        
 </div>
 <!-- Close Content Area -->

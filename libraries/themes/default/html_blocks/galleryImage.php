@@ -1,9 +1,9 @@
   
-<li id="<?php echo 'item-'.$id; ?>" style="height:200px;padding-left:0;" class="col-md-4">
+<li id="<?php echo 'item-'.$id; ?>"  class="col-md-4" style="overflow:hidden;height:300px;margin-bottom:15px;">
   
-    <a href="<?php echo ROOT; ?>apps/dropzone/upload/<? echo $gallery; ?>/<? echo $img; ?>" rel="prettyPhoto[<?php echo $gallery; ?>]"><br>
+    <a href="<?php echo ROOT; ?>apps/dropzone/upload/<?php echo $gallery; ?>/<?php echo $img; ?>" rel="prettyPhoto[<?php echo $gallery; ?>]">
         
-        <img class="lazy" data-gallery="<?php echo $gallery; ?>" style="width:100%;position:relative;top:-10px;" alt="<? echo $img; ?>" data-original="<?php echo ROOT; ?>apps/dropzone/upload/<? echo $gallery; ?>/<? echo $img; ?>" /><br>
+        <img class="lazy" width="100%" data-gallery="<?php echo $gallery; ?>" alt="<?php echo $img; ?>" data-original="<?php echo ROOT; ?>apps/dropzone/upload/<?php echo $gallery; ?>/<?php echo $img; ?>" />
         
     </a>
   

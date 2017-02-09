@@ -1,6 +1,6 @@
-<div class="col s12 m6 l8">
+<div class="col s12 m12 l12">
     <div class="row">
-        <div style="padding:10px 40px 40px;" class="card  col s12">
+        
             <h3>Quick Blog Post</h3>
 
             <div class="row">
@@ -55,5 +55,5 @@
 
             </div>
         </div>
-    </div>
+    
 </div>

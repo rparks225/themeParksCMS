@@ -1,38 +1,56 @@
 
- <!--Open Cont area-->
-  <div class="cont" id="<?php echo title(); ?>">
-      <div class="container">
-          <div class="row">
-          
-          <br><br><br>
-   
-              <div class="col-md-8">
-                  <h2 class="fancy"><?php echo $heading ?></h2><br>
-                  
-                  <?php 
-					   
-					   if($edit == 'false'){
-						   
-						   echo $html;
-						   
-						   }else{
-							   
-							   include 'libraries/themes/'.theme().'/html_blocks/ee.php';
-							   
-							   }
-                       
-						?>
-                 
-                  <br><br>
-                  
-              </div>
-              
-                  <?php require_once 'libraries/themes/'.theme().'/html_blocks/sideBar.php'?>
-                  
-          </div>
-          
-      </div>
-  </div>
-  <!--Close Cont area-->
-   <br><br>
+<!--Open Cont area-->
+
+ 
+<div class="cont" id="int">   
+
+    <div class="fancyCont">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-4 hidden-sm-down">
+                    <hr>
+                </div>
+
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <h1><?php echo $heading ?></h1>
+                </div>
+
+                <div class="col-md-4 col-sm-4 hidden-sm-down">
+                    <hr>
+                </div>
+
+            </div>
+        </div>    
+    </div>
+
+    <div class="fancyCont">
+
+        <div class="container">
+            <div class="row">
+                
+                <?php 
+
+                        if($edit == 'false'){
+
+                            echo $html;
+
+                        }else{
+
+                            tpBlock('ee');
+
+                        };
+
+                ?>
+
+            </div>
+        </div>
+
+    </div>
+
+    <?php tpBlock('fancyIsh'); ?>
+
+</div>  
+ 
+<!--Close Cont area-->
     

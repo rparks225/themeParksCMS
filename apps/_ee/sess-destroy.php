@@ -17,9 +17,13 @@ $_SESSION = array();
 
 // If it's desired to kill the session, also delete the session cookie.
 // Note: This will destroy the session, and not just the session data!
-if (isset($_COOKIE[session_name(''.$sessKey.'')])) {
-    setcookie(session_name(''.$sessKey.''), '', time()-42000, '/');
-}
+//if (isset($_COOKIE[$_SESSION[''.$sessKey.'']])) {
+//    setcookie(session_name(''.$sessKey.''), '', time()-42000, '/');
+//}
+
+echo '<script>alert("You Have Been Logged Out. Thank You For Using themeParks CMS.");</script>';
+header('Location: '.ROOT.'Home');
 
 // Finally, destroy the session.
 session_destroy();
+

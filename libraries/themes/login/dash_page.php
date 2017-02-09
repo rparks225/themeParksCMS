@@ -12,13 +12,19 @@ $site = "{$dbName}";
 
 ?>
 
-    <!-- Open Content area-->
+    <!-- Open Content area(<?php echo $nav; ?>)-->
 
+<div class="col s3">
     <button class="waves-effect waves-red btn modal-trigger" data-target="addPage" class="btn modal-trigger">Add new page</button>
+</div>
+
+<div class="col s9">
+    
+</div>    
     <br/>
     <br/>
 
-    <?php 
+                    <?php 
 						$method = 'inserted';
 						$location = 'page';
 						$query = false;	
@@ -69,26 +75,68 @@ $site = "{$dbName}";
 
                     <tbody>
 
-                            <?php 
-				      
-					  $location = 'page';		 
-					  $block = "tableRow2";
-					  $query = "SELECT * FROM `page` ORDER BY `page`.`Editable` ASC ";
-					  $method = 'edited';
-					   
-					  //query's the db 
-					  $table = new admin_model();
-                      $table->query($query,$block);
-					  
-					  //deletes records
-					  $delete = new delete();
-					  $delete->del($location);
-					  
-					  ?>
+                      <?php 
+                        
+                          $nav = title(2);
+                        
+                              if($nav == 'pages'){
 
+                                  $nav = 0;
+                                  $nums = '';
+                                  $limit = '';
+
+                              }else if($nav == 1){ 
+
+                                  $nav = 0;
+                                  $limit = ",10";
+                                  $nums = 'LIMIT '.$nav;
+
+                              }else{
+
+                                  $nav = --$nav;
+                                  $limit = ",10";
+                                  $nav = $nav*10+(1);
+                                  $nums = 'LIMIT '.$nav;
+                              }
+
+
+                          $location = 'page';		 
+                          $block = "tableRow2";
+                          $query = "SELECT * FROM `page` ORDER BY `page`.`Editable` ASC $nums $limit";
+                          $method = 'edited';
+
+                          //query's the db 
+                          $table = new admin_model();
+                          $table->query($query,$block);
+
+                          //deletes records
+                          $delete = new delete();
+                          $delete->del($location);
+
+					  ?>
+                        
                     </tbody>
 
                 </table>
+                
+            </div>
+
+            <div class="clearfix"></div>
+
+                    <div class="col s2">&nbsp;</div>
+
+            <div class="col s8" style="text-align:center;">
+
+                <!--Start Pageinate-->
+                    <?php
+
+                    $table = 'page';
+                    $limit = 10;
+                    $currentPage = 'tp-Pages';
+                    paginate($table,$limit,$currentPage);
+
+                    ?>
+                <!--Close Pageinate-->
 
             </div>
 

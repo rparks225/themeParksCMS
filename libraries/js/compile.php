@@ -14,7 +14,7 @@ $files = scandir($root . $path);
 
 foreach($files as $v){
 	
-	if($v == '.DS_Store' || $v == '.' || $v == '..' || $v == 'compile.php' || $v == 'functions.js'){
+    if(substr($v,-2) != 'js' || $v == 'functions.js' || $v == '01jquery3.11.1.min.js'){
 	
 	echo '';
 	

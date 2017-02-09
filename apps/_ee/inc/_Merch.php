@@ -1,1 +1,0 @@
-<p>This part of the site is not yet available.</p>  <p>Until then click here to go back to the home page.</p>  <p><a href="http://localhost/themeParks/Home">&lt;-- Home</a></p> 

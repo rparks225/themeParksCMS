@@ -1,23 +1,10 @@
 
-<h1 style="margin-left:20px;"><? echo $heading ?></h1>
+<?php
 
-    <hr/>
+$query = 'SELECT * FROM page WHERE Title LIKE \''.title(2).'\' ';
+$block = 'single';
 
-      <br><br><br>               
+$page = new model();
+$page->pages($query, $block);	
 
-		<?php 
-        
-        if($edit == 'false'){
-        
-        echo $htm;
-        
-        }else{
-        
-        include 'apps/cms/views/pages/html_blocks/ee.php';
-        
-        }
-        
-        ?>
-                                
-    
-    
+?>    

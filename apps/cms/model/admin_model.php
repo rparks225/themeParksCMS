@@ -60,7 +60,9 @@ class admin_model{
                     'Company'=>'company',
                     'Grade'=>'grade',
                     'Caption'=>'imgCap',
-                    'Order'=>'order'
+                    'Order'=>'order',
+                    'navId'=>'navId',
+                    'COUNT(Id)'=>'count'
                 );
 
                 foreach($loops as $loop => $val){

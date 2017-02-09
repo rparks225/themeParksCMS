@@ -1,1 +1,0 @@
-<h1 class="fancy"><?php echo $title; ?></h1>

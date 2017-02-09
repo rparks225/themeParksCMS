@@ -1,37 +1,33 @@
-<?php
-$back = --$id;
-?>
 
-<div style="margin-bottom:20px;" class="bloggy">
+<div class="col-md-8">  
 
-    <div>
-    
-            <div class="col-md-8" style="padding-left:0;">  
-                                 
-                    <p style="text-align:left;">Posted - <i><? echo $date; ?></i></p>
-                
-                <p style="height:auto;overflow:hidden;text-align:left;"><? echo strip_tags($script); ?>...</p>
-            
-            </div>
-        
-                <div class="col-md-4 imgBox" style="overflow:hidden;height:auto;padding-right:0;">
-                
-                     <a href="<? echo ROOT ?>apps/dropzone/upload/Posts/<?php echo $img;?>" rel="prettyPhoto"><img style="width:100%;" src="<? echo ROOT ?>apps/dropzone/upload/Posts/<? if(!empty($img)){echo $img;}else{ echo 'image.png';} ?>" alt="<? echo $img; ?>" style="width: 140px; height: 140px;" /></a><br>
-                
-                </div>
-        
-            <p>&nbsp;</p>
-        
-        <p style="text-align:right;">
-        
-            <p style="text-align:right;">
-                <a class="btn btn-warning" href="<?php if($back == '0'){ echo 'News-All'; }else{ echo 'News-Post-'.$back.''; } ?>" role="button">&laquo; Previous Posts</a>
-            </p>
-        
-        </p>
-    
-    </div>
+            <p>Posted - <i><?php echo $date; ?></i></p>
+
+    <p>
+            <span>
+                    <?php echo $script; ?>
+            </span>
+    </p>
 
 </div>
+       
+        
+<div class="col-md-4">
 
+     <a href="<? echo ROOT ?>apps/dropzone/upload/Posts/<?php echo $img;?>" rel="prettyPhoto">
+             <img class="img-responsive pull-right" width="100%" src="<? echo ROOT ?>apps/dropzone/upload/Posts/<? if(!empty($img)){echo $img;}else{ echo 'image.png';} ?>" alt="<? echo $img; ?>" />
+     </a>
+     
+     <br>
+     
+            <div class="clearfix">&nbsp;</div>
+            <div class="clearfix">&nbsp;</div>
+    
+    <a class="btn btn-warning pull-right" href="<?php echo ROOT;?>News-All" role="button">&laquo; Previous Posts</a>
+
+</div>
+        
+        
+                
+    
         

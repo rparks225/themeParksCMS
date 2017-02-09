@@ -1,1 +1,0 @@
-<p><a href="<?php echo ROOT.'News-Post-'.$id; ?>"><strong><?php echo $title; ?></strong> <br><span class="dates"><?php echo $date; ?></span></a></p><br>

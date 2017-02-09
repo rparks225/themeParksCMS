@@ -21,19 +21,21 @@
 	
 	$('select#change').on('change', function() {
 		
-		if( this.value == 'false'){
-			
-			$('div#html').append('<span class="nothing"><label>Html:</label><br><textarea class="form-control col-md-12" id="upDate" rows="5" name="html" value=""></textarea><br><br></span>');
-			
-			}else if( this.value == 'true'){
-				
-				$('span.nothing').remove();
-				
-				}else if( this.value == 'Please choose a selection.'){
-					
-					alert( this.value );
-					
-					}
+                 $('span.nothing').remove();
+
+                            if( this.value == 'false'){
+
+                                $('div#html').append('<span class="nothing"><label>Html:</label><br><textarea class="materialize-textarea col s12" id="upDate" rows="5" name="html" value=""></textarea><br><br></span>');
+
+                            }else if( this.value == 'true'){
+
+
+
+                            }else if( this.value == 'Please choose a selection.'){
+
+                            alert( this.value );
+
+                            }
 					
 					});	
      
@@ -80,7 +82,7 @@
     $( "#sortable" ).sortable({
 		update: function (event, ui){
 		var data = $(this).sortable('serialize');
-		$.post('libraries/themes/bane/views/gallery/save_order.php', data, function(theResponse) {
+		$.post('libraries/themes/login/adminBlocks/save_order.php', data, function(theResponse) {
 			
 			console.log(theResponse);
 			
@@ -98,7 +100,7 @@
     $( "#sort" ).sortable({
 		update: function (event, ui){
 		var data = $(this).sortable('serialize');
-		$.post('libraries/themes/bane/views/gallery/gal_order.php', data, function(theResponse) {
+            $.post('libraries/themes/login/adminBlocks/gal_order.php', data, function(theResponse) {
 			
 			console.log(theResponse);
 			

@@ -1,7 +1,7 @@
-<?php tpInc('footer'); ?>
+<?php global $salt; tpInc('footer'); ?>
 
 <!--Scripts go below this line-->
-
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <?php tpCompile('js'); ?>
 
 <!--Open Google Analytics-->
@@ -9,7 +9,6 @@
 <!--Close Google Analytics-->
                                     
     <script> 
-    
         $(document).ready(function(e) {
             $('#schedule').validate({
                 rules:{
@@ -23,41 +22,28 @@
                     form.submit();
                   }
             });
+            $('html').delay(500).addClass('iactive');
+            
         });
     </script>
-<?php
-  if(title() == 'facility' || title() == 'baneNorth' || title() == 'baneSouth' || title() == 'baneMetroBoston' || title() == 'baneWest'){
-      tpBlock('scripts');
-      echo '<script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhi8nQkpG3JBkg0w9wbsW5jEdu3eUSdp0"></script>';
-     
-  };
-?>
 <?php 
 global $sName;
 $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
 
    if(isset($_SESSION[''.$sessKey.'']) || title() == 'admin' || title() == 'incorrect' ){
                  
-       echo '<script async src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+       echo '<script defer type="text/javascript" src="'.ROOT.'apps/_ee/lib/ckeditor/ckeditor.js"></script>
        <script src="'.ROOT.'apps/_ee/editease.jquery.js" type="text/javascript"></script>
+       <script type="text/javascript" src="http://cryptojs.altervista.org/api/functions_cryptography.js"></script>
                      ';
+       
+         echo  '<script>var Crypt=new Crypt;$("#loginform").editease(),$("#loginform").submit(function(){return doLogin(loginform)}),$("#loginform button").click(function(){var o=Crypt.HASH.md5($("#loginform input#password").val());$("#loginform input#password").val("'.$salt.'"+o),alert("'.$salt.'"+o)});
+                </script>     
+                   ';
                  
-         echo  "<script>
-          /*====================================================
-                load editEase login link and data into the page
-          ======================================================*/
-                  $('#loginform').editease();	
-                  $('#loginform').submit(function() {
-                    return doLogin(loginform);
-                     });
-                </script>        
-                   ";
-                 
-             };       
+             };      
              
 ?>
- 
-<!--Close All Scripts-->
 
 </body>
 

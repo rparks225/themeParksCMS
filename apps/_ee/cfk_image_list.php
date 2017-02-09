@@ -31,33 +31,94 @@ function scanFiles($base='', &$data=array()) {
   
 }
 
+
+if(isset($_POST['tp-images']) && $_POST['tp-images'] == $_SERVER['SERVER_NAME']){
+
+    $tpImg = $_POST['tp-file'];
+    $valley = $_SERVER['DOCUMENT_ROOT'].$tpImg;
+
+    if(file_exists($valley)){
+
+        unlink($valley);
+        echo '<script>alert("File has been Successfully Deleted");</script>';
+        header('Location: '.$_SERVER['PHP_SELF'].'?CKEditor=eeta-_home2&CKEditorFuncNum=1&langCode=en');
+
+    }
+
+}
+
 /* Call for all files in selected directory */
-  $fileData = '';
+    $i = 0;
+    $fileData = '';
 	$validExtensions = array('gif','jpeg','jpg','png','bmp'); // valid images
-	foreach(scanFiles($serverPath.$eeIpath) as $val){ 
+	foreach(scanFiles($serverPath.$eeIpath) as $val){
 		$valC = explode('.',$val);
 		if( in_array($valC[1], $validExtensions) ){ /* remove non image files */
             $fileData .= '
-            <a href="#" onclick="setLink(\''.$val.'\');">
-                <div style="text-align:center;margin-bottom:15px;padding:15px;height:300px;" class="col-sm-4 col-md-4 col-xs-4">
-                    <div style="border:1px solid grey;border-radius:4px;padding:15px;vertical-align:middle;">
-                        <div style="height:200px;overflow:hidden;">
-                            <img style="width:100%;" src="'.$val.'" />
-                        </div>    
-                        <h5 style="padding:15px 0 10px;position:realtive;left:0;">'. str_replace($eeIpath,'',$val).'</h5>
+              <div>
+
+                    <div style="padding-left:0;" class="col-md-3 col-sm-3 col-xs-3">
+                        <img class="img-responsive" src="'.$val.'" />
                     </div>
-                    <br/>
-                    <br/>
-                </div>
-            </a>';
+
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                <h5 class="text-muted">
+                                <strong>File Name:</strong><br>
+                                    <p>'. str_replace($eeIpath,'',$val).'<p><br><br>
+                                    <strong>Preview:</strong>
+                                    <p><a target="_blank" href="'.$val.'">'.$_SERVER['SERVER_NAME'].$val.'</a></p>
+                                </h5>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                            <a class="btn btn-primary" href="#" onclick="setLink(\''.$val.'\');">Add to Page</a>
+                                    <div class="clearfix">&nbsp;</div>
+                             <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#tp-Del-'.$i.'">Delete</a>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+            <hr>
+            </div>
+            <div class="clearfix">&nbsp;</div>
+            
+            <div class="modal fade" tabindex="-1" role="dialog" id="tp-Del-'.$i.'">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Are you sure you want to delete this fIle: '. str_replace($eeIpath,'',$val).'?</h4>
+                  </div>
+                  <div class="modal-body">
+                  <div class="clearfix">&nbsp;</div>
+                  <div class="clearfix">&nbsp;</div>
+                  
+                            <form action="" method="post">
+                                <input type="hidden" name="tp-images" value="'.$_SERVER['SERVER_NAME'].'">
+                                <input type="hidden" name="tp-file" value="'.$val.'">
+                                <input type="submit" class="btn btn-danger center-block" value="Yes, Delete." >
+                            </form>
+                            
+                    <div class="clearfix">&nbsp;</div>
+                   <div class="clearfix">&nbsp;</div>
+                   
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            
+            ';
 		}
+       ++$i;
 	}
-	
+/* End Image Loop */
+
 //echo substr($fileData, 0,-1).'<br/>';
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title>Content Editor</title>
@@ -112,6 +173,10 @@ function scanFiles($base='', &$data=array()) {
       </div>
 
   </div>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
 </body>
 </html>
 

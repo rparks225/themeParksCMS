@@ -1,5 +1,5 @@
 
-<div class="col-md-4 rPosts">
+<div class="col-md-3 rPosts">
 
     <h2 class="fancy">Recent Posts</h2><br>
     

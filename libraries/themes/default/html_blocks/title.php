@@ -1,1 +1,2 @@
-<h2 class="fancy"><?php echo $title; ?></h2>
+
+<?php echo $album; ?>

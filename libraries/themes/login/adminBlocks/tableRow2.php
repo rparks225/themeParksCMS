@@ -26,7 +26,7 @@
                 <i class="large material-icons">add</i>
             </a>
         <ul>
-        <li><a href="<?php echo ROOT.'tp-Pages-'.$id; ?>" type="button" class="waves-effect waves-light btn-floating btn-large orange">
+        <li><a href="<?php echo ROOT.'tp-Pages-Update-'.$id; ?>" type="button" class="waves-effect waves-light btn-floating btn-large orange">
 
             <i class="material-icons left">mode_edit</i>
 

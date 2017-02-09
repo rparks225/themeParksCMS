@@ -24,8 +24,8 @@ jQuery.fn.editease = function (linkName, epath) {
 /* default path file for editEase 'This should be all you need to edit' */
 if (epath === undefined) {
 	// if path provided this is the default
-     eePath = '/themeParksCMS/apps/_ee/';
-     sitePath = 'http://localhost/themeParksCMS/';
+    eePath = '/newSite/apps/_ee/';
+    sitePath = 'http://localhost/newSite/';
 }else{
 	// otherwise use provided path
 	eePath = epath;
@@ -231,6 +231,11 @@ function bindEE() {
 
 }
 
+function ppClose(){
+    $.prettyPhoto.close();
+    location.reload();
+}
+
 function unbindEE() {
     jQuery(".e-ease").each(function () {
         var v = '#' + jQuery(this).attr("id");
@@ -349,8 +354,36 @@ function eeCancel(tVal) {
 
 
 function closeEditing(tVal, nData) {
-    jQuery.modal.close();
+    //jQuery.modal.close();
     $.prettyPhoto.close();
+       
+    if (nData !== 'xxlee') {
+        var jQuerycontents = jQuery.post("" + eePath + "/getfile.php", {
+            file: tVal
+            , eData: "save"
+            , nData: nData
+        }, function (data) {
+            jQuery('#' + tVal).html(data);
+            jQuery('#' + tVal).removeClass("edithoverActive");
+            jQuery('#ed-' + tVal).fadeOut("slow");
+            jQuery('#ee-' + tVal).fadeIn("medium");
+            jQuery('#ma-' + tVal).fadeOut("fast", function () {
+                jQuery('#ma-' + tVal).remove();
+            });
+        });
+    } else {
+        jQuery('#' + tVal).removeClass("edithoverActive");
+        jQuery('#ed-' + tVal).fadeOut("slow");
+        jQuery('#ee-' + tVal).fadeIn("medium");
+        jQuery('#ma-' + tVal).fadeOut("medium", function () {
+            jQuery('#ma-' + tVal).remove();
+        });
+    }
+
+}
+function closeEditing2(tVal, nData) {
+    //jQuery.modal.close();
+
     if (nData !== 'xxlee') {
         var jQuerycontents = jQuery.post("" + eePath + "/getfile.php", {
             file: tVal
@@ -460,11 +493,11 @@ function popData(showThis, title) {
  */
 ;
 (function ($) {
-    var ie6 = $.browser.msie && parseInt($.browser.version) == 6 && typeof window['XMLHttpRequest'] != "object"
+    /* var ie6 = $.browser.msie && parseInt($.browser.version) == 6 && typeof window['XMLHttpRequest'] != "object"
         , ieQuirks = null
         , w = [];
 
-    /*
+    
      * Stand-alone function to create a modal dialog.
      * 
      * @param {string, object} data A string, jQuery object or DOM object

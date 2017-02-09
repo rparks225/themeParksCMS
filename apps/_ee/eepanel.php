@@ -20,7 +20,7 @@ include("config.php");
 <div id="eepanelWrap">
     <div class="ec"> <a href="<?php echo newPath; ?>tp-Dashboard"><img style="width:50px;top:-3px;position:relative;" src="<?php echo $eeJs;?>/img/logo.png" alt="editEase control panel" class="eeimg"/></a>
 		<div class="eeimgs">
-				<?php if($fileSystem==1){?><a href="javascript:void(0)" id="eefilest" title="online File Manager click to show-hide"><img src="<?php echo $eeJs;?>/img/folder_explore.png" alt="online File Manager click to show-hide"/></a><?php } ?>
+				<?php //if($fileSystem==1){?><!--<a href="javascript:void(0)" id="eefilest" title="online File Manager click to show-hide"><img src="<?php echo $eeJs;?>/img/folder_explore.png" alt="online File Manager click to show-hide"/></a>--><?php //} ?>
 				<!--<a href="javascript:void(0)" id="eehelpt" title="editEase help click to show-hide"><img src="<?php echo $eeJs;?>/img/help-i.gif" alt="editEase help click to show-hide"/></a>
 				<a href="javascript:void(0)" id="eeinfot" title="editEase information click to show-hide"><img src="<?php echo $eeJs;?>/img/information-i.gif" alt="editEase information click to show-hide"/></a>-->
 				<a href="tp-Login" onClick="eelogout();" id="eeinclo" title="logout of editEase"><img src="<?php echo $eeJs;?>/img/cross-i.gif" alt="logout of editEase"/></a>

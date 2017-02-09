@@ -29,7 +29,7 @@ div#eepanel {
     z-index: 99999999;
 }
 
-div#eepanel a:first-child{
+div#eepanel .eeimg, .ec strong{
     display:none;
 }
 

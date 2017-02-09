@@ -2,7 +2,7 @@
 ob_start('ob_gzhandler');
 
 header("Content-Type: text/html; charset=utf-8");
-header('Cache-Control: max-age=300, must-revalidate');
+header("Cache-Control: max-age=2592000");
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 300) . " GMT");
 
 include 'includes/functions.php';

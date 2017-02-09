@@ -1,33 +1,53 @@
 
 
 <!--Open Cont area-->
-  <div class="cont">
-      <div class="container">
-          <div class="row">
-          
-          <br><br><br>
-   
-              <div class="col-md-8">
-                  <h2 class="fancy"><?php echo 'All - '.title(); ?></h2><br>
-                  
-                  <?php 
-				 
-					  $query = 'SELECT * FROM post';
-					  $block = 'feature';
-					  $heading = new model();
-					  
-					  $heading->query($query,$block);
-				  ?>
+
+<div class="cont" id="int">   
+
+    <div class="fancyCont">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-4 hidden-xs">
+                    <hr>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <h1><?php echo 'All - <span class="blueish">'.title().'</span>'; ?></h1>
+                </div>
+
+                <div class="col-md-4 col-sm-4 hidden-xs">
+                    <hr>
+                </div>
+
+            </div>
+        </div>    
+    </div>
+
+    <div class="fancyCont">
+
+        <div class="container">
+            <div class="row">
+
+                <?php 
+
+                $query = 'SELECT * FROM post';
+                $block = 'feature';
+                $heading = new model();
+
+                $heading->query($query,$block);
                 
-                  <div class="clearfix"></div>
-                 
-              </div>
-              
-                  <?php require_once 'libraries/themes/'.theme().'/html_blocks/sideBar.php'?>
-                  
-          </div>
-          
-      </div>
-  </div>
-  <!--Close Cont area-->
+                ?>
+
+            </div>
+        </div>
+
+    </div>
+
+    <?php tpBlock('fancyIsh'); ?>
+
+</div>  
+
+<!--Close Cont area-->
+ 
   

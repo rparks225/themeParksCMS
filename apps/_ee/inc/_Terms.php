@@ -1,1 +1,0 @@
-<p>Our skilled nursing staff assists in the provision of routine healthcare needs, such as meiidication management, blood pressure monitoring, and coordinating medical care with outside health professionals. Cooperative Elder...</p>

@@ -34,7 +34,10 @@ if($result = $mysqli->query($query)){
 
 };       
 
-$vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle','userName');
+$salted = md5(date('Y/m/d:h-i').'Yell0wcard');
+$salt = hash('sha256', $salted);
+
+$vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle','userName','salt');
 
     foreach($vars as $var){
 

@@ -1,1 +1,1 @@
-<h1 style="text-align:left;" class="fancy"> <? echo $heading; ?></h1>
+<h1 style="text-align:left;" class="fancy"> <?php echo $heading; ?></h1>

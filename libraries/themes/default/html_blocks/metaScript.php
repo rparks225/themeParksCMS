@@ -1,11 +1,11 @@
 
 <?php
-
+global $sName;
 $url = new cms();
 $url->parseUrl();
 $tits = array($url->parseUrl());
 
-$siteN = "themeParks";
+$siteN = "{$sName}";
 
 $metaKey = array(
 
