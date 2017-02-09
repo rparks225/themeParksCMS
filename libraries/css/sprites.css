@@ -1,4 +1,4 @@
-.apple, .behance, .drupal, .facebook, .instagram, .linkedin, .pinterest, .rss, .skype, .soundcloud, .tumblr, .twitter, .vimeo, .wordpress, .youtube, .logo{
+.apple, .behance, .drupal, .facebook, .instagram, .linkedin, .pinterest, .rss, .skype, .soundcloud, .tumblr, .twitter, .vimeo, .wordpress, .youtube, /*.logo*/{
 	background: url(../images/sprites.png) no-repeat;
 }
 
@@ -92,9 +92,9 @@
 	height: 24px;
 }
 
-.logo{
+/*.logo{
 	background-position: -86px -37px ;
 	width: 242px;
 	height: 195px;
-}
+}*/
 

@@ -67,7 +67,7 @@ class model{
                     if(isset($row[$loop])){
 
                         $$val = $row[$loop];
-
+  
                         }else{
 
                         }

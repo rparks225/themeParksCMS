@@ -105,7 +105,7 @@ function navi($page){
     
     foreach($page as $link => $title){
          if(links() == ROOT.$link){
-             $a = 'active';
+             $a = 'active2';
          }else{
              $a = 'inactive';
          };

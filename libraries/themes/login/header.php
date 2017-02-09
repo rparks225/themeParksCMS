@@ -31,7 +31,7 @@
             <link href="<?php echo ROOT; ?>libraries/themes/login/assets/css/customStyles.css" type="text/css" rel="stylesheet" />
 
             <style>
-
+                
             </style>
 
             <!--[if IE]>
