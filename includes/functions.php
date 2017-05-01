@@ -272,7 +272,7 @@ session_name(''.$sessKey.'');
 
 
 /*====================================================
-                                               Html minify
+                   Html minify
 ====================================================*/
 function sanitize_output($buffer) {
 
@@ -307,9 +307,9 @@ $destroy = '<meta http-equiv="refresh" content="1800;url='.ROOT.'apps/_ee/sess-d
 /*====================================================
            Checks for Theme Functions
 ====================================================*/
-if(file_exists($_SEREVER[HTTP_HOST].'libraries/themes/'.theme().'/themeFunctions.php')){
+if(file_exists($_SERVER['DOCUMENT_ROOT'].$cmsPath.'libraries/themes/'.theme().'/themeFunctions.php')){
     
-    include $_SEREVER[HTTP_HOST].'libraries/themes/'.theme().'/themeFunctions.php';
+    include $_SERVER['DOCUMENT_ROOT'].$cmsPath.'libraries/themes/'.theme().'/themeFunctions.php';
     
 }
 

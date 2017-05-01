@@ -15,14 +15,17 @@
 /* IMPORTANT!!! Do not comment or remove uncommented settings in this file
    even if you are using session configuration.
    See http://kcfinder.sunhater.com/install for setting descriptions */
+//include $_SERVER['DOCUMENT_ROOT'].'/includes/db.php';
+//include $_SERVER['DOCUMENT_ROOT'].'/includes/setting.php';
+//global $cmsPath;
 
+global $cmsPath;
 return array(
-
 
 // GENERAL SETTINGS
 
     'disabled' => false,
-    'uploadURL' => "/newSite/images/",
+    'uploadURL' => "{$cmsPath}images/",
     'uploadDir' => "",
     'theme' => "dark",
 

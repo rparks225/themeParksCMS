@@ -18,14 +18,16 @@
 
 // you shouldn't need to edit below this line //
 // +----------------------------------------------------------------------+
+var cmsPath = 'themeParksCMS/';
 
 jQuery.fn.editease = function (linkName, epath) {
 
 /* default path file for editEase 'This should be all you need to edit' */
 if (epath === undefined) {
 	// if path provided this is the default
-    eePath = '/newSite/apps/_ee/';
-    sitePath = 'http://localhost/newSite/';
+    eePath = '/' + cmsPath + 'apps/_ee/';
+    sitePath = '//:' + window.location.hostname + '/' + cmsPath;
+    //alert(sitePath);
 }else{
 	// otherwise use provided path
 	eePath = epath;
@@ -119,7 +121,7 @@ function doLogin(login) {
                 display: "block"
             });
             jQuery("#eesbt").removeAttr("disabled");
-            window.location.replace("" + sitePath + "tp-Incorrect");
+            window.location.replace("/" + cmsPath + "tp-Incorrect");
         } else {
             jQuery(".warning").html('Welcome back, loading editEase now, please wait a moment');
             jQuery(".warning").addClass("success");
@@ -133,7 +135,7 @@ function doLogin(login) {
             jQuery(".warning").css({
                 display: "none"
             });
-            window.location.replace("" + sitePath + "tp-Dashboard");
+            window.location.replace("/" + cmsPath + "tp-Dashboard");
         }
     });
     return false;

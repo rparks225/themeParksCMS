@@ -11,7 +11,8 @@
   *   @license http://opensource.org/licenses/LGPL-3.0 LGPLv3
   *      @link http://kcfinder.sunhater.com
   */
-
+include '../../../../includes/db.php';
+include '../../../../includes/settings.php';
 require "core/bootstrap.php";
 $browser = "kcfinder\\browser"; // To execute core/bootstrap.php on older
 $browser = new $browser();      // PHP versions (even PHP 4)

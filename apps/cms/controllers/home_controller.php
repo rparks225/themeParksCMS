@@ -2,16 +2,16 @@
 
 class home{
 
-	public function home( $nav = '' ){
-		
+    public function index( $nav = '' ){
+
         tpReq('head');
-		
-			tpView('home','home');
-		
-		tpReq('foot');
-		
-	
-	}
+
+        tpView('home','home');
+
+        tpReq('foot');
+
+
+    }
     
 
 }

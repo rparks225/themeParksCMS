@@ -162,4 +162,4 @@ AddType application/x-font-ttf           .ttf
 AddType application/font-woff            .woff
 AddType application/font-woff2           .woff2
 
-ErrorDocument 404 http://localhost/newSite/404
+ErrorDocument 404 http://localhost/themeParksCMS/404
