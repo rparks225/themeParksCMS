@@ -7,7 +7,7 @@
     <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
     <?php
 
-    if(links() == 'http://autozqfg.pairserver.com/tp-Pages-'.title(2).'' || links() == 'http://autozqfg.pairserver.com/tp-Jobs-'.title(2).''){
+    if(links() == ROOT.'tp-Pages-'.title(2).'' || links() == ROOT.'tp-Jobs-'.title(2).''){
 
         echo '<title>ThemeParks CMS - Add/Edit: '.title(2).'</title>';
 

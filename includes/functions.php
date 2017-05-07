@@ -114,6 +114,7 @@ function newEE($title){
       Loops through files in directory
 =============================================*/
 function direct($directory, $blocks, $other){
+    if(isset($other)){ echo $other; }
       if (! is_dir($directory)) {
           exit('Invalid diretory path');
       }
@@ -274,28 +275,41 @@ session_name(''.$sessKey.'');
 /*====================================================
                    Html minify
 ====================================================*/
-function sanitize_output($buffer) {
 
-    $search = array(
-        '/\>[^\S ]+/s',  // strip whitespaces after tags, except space
-        '/[^\S ]+\</s',  // strip whitespaces before tags, except space
-        '/(\s)+/s',       // shorten multiple whitespace sequences
-        '/<!--(.|\s)*?-->/'    // strip comments
-    );
+function compress($switch){
+    
+    if($switch == 'true'){
+        function sanitize_output($buffer) {
 
-    $replace = array(
-        '>',
-        '<',
-        '\\1',
-        ''
-    );
+            $search = array(
+                '/\>[^\S ]+/s',  // strip whitespaces after tags, except space
+                '/[^\S ]+\</s',  // strip whitespaces before tags, except space
+                '/(\s)+/s',       // shorten multiple whitespace sequences
+                '/<!--(.|\s)*?-->/'    // strip comments
+            );
 
-    $buffer = preg_replace($search, $replace, $buffer);
+            $replace = array(
+                '>',
+                '<',
+                '\\1',
+                ''
+            );
 
-    return $buffer;
+            $buffer = preg_replace($search, $replace, $buffer);
+
+            return $buffer;
+        }
+
+        ob_start("sanitize_output");
+        
+    }else{
+        
+        echo '<!--Html Compression is '.$switch.'-->
+';
+        
+    }
+    
 }
-
-ob_start("sanitize_output");
 
 
 /*====================================================

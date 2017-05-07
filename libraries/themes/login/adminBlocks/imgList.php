@@ -1,4 +1,4 @@
-<div style="" class="row hid" id="<?php echo $album; ?>">
+<div style="display:none;" class="row hid" id="<?php echo $album; ?>">
 
     <?php
     $query = 'SELECT * FROM images';
