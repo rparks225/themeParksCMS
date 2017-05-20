@@ -1,1 +1,1 @@
-<h1 class="col-md-12 front" style="text-align:center;"><?php echo $heading ?></h1>
+<h1 class="col-md-12 front" style="text-align:center;">{{ heading }}</h1>

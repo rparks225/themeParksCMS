@@ -1,1 +1,7 @@
-<p><a href="<?php echo ROOT.'News-Post-'.$id; ?>"><strong><?php echo $title; ?></strong> <br><span class="dates"><?php echo $date; ?></span></a></p><br>
+<hr>
+<p>
+    <a href="{% echo ROOT %}News-Post-{{ id }}">
+        <strong>{{ title }}</strong> 
+        <br> <span class="dates">{{ date }}</span>
+    </a>
+</p>

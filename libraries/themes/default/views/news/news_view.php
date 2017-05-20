@@ -1,5 +1,3 @@
-
-
 <!--Open Cont area-->
 
 <div class="cont" id="int">   
@@ -13,7 +11,7 @@
                 </div>
 
                 <div class="col-md-4 col-sm-4 col-xs-12">
-                    <h1><?php echo 'All - <span class="blueish">'.title().'</span>'; ?></h1>
+                    <h1>All - {% echo title(2) %}</h1>
                 </div>
 
                 <div class="col-md-4 col-sm-4 hidden-xs">
@@ -31,11 +29,10 @@
 
                 <?php 
 
-                $query = 'SELECT * FROM post';
-                $block = 'feature';
-                $heading = new model();
-
-                $heading->query($query,$block);
+                    $query = 'SELECT * FROM post';
+                    $block = 'feature';
+                    $heading = new model();
+                    $heading->query($query,$block);
                 
                 ?>
 
@@ -44,7 +41,7 @@
 
     </div>
 
-    <?php tpBlock('fancyIsh'); ?>
+        {# tpBlock('fancyIsh') #}
 
 </div>  
 

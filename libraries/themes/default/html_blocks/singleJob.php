@@ -1,15 +1,15 @@
-<p><?php echo $facility.' - Center'; ?></p>
+<p>{{ facility }} - Center</p>
 
 <br/>
 
-<p><?php echo $script; ?></p>
+<p>{{ script }}</p>
 <br>
 
  <form method="post" action="" style="text-align:left;width:80%;">
  
         <div class="form-group">
         <label>Job Name</label>
-        <input name="text" class="form-control" id="" disabled value="<?php echo $job; ?>" />
+            <input name="text" class="form-control" id="" disabled value="{{ job }}" />
         </div>
                             
         <div class="form-group">

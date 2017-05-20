@@ -1,12 +1,8 @@
 <?php
-
 require_once 'includes/PHPMailer/PHPMailerAutoload.php';
 require_once 'includes/email/mail.php';
 global $sName;
-global $inline;
-
 ?>
-
 
 <!--Open Cont area-->
 
@@ -39,12 +35,12 @@ global $inline;
                 
                 <div class="offset-md-1 col-md-10">
 
-                       <div id="_Contact" <?php echo $inline; ?>>
-                           <?php newEE('Contact'); ?>
+                       <div id="_Contact" {% echo $inline %}>
+                           {# newEE('Contact') #}
                        </div>
 
                         <br>
-                        <?php echo $msg1; ?>
+                            {% echo $msg1 %}
                         <form method="post" id="schedule" action="">
 
                             <input type="hidden" name="op" value="" />
@@ -76,7 +72,7 @@ global $inline;
 
                             <div class="clearfix"></div> 
 
-                            <?php echo $captcha; ?>
+                                {% echo $captcha %}
 
                             <input class="btn btn-default" type="submit" name="shortForm" value="Submit" />
 
@@ -89,7 +85,7 @@ global $inline;
 
     </div>
 
-    <?php tpBlock('fancyIsh'); ?>
+    {# tpBlock('fancyIsh') #}
 
 </div>  
 

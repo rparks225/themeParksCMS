@@ -81,12 +81,11 @@ class gallery{
 
         };
 
+             tpReq('head');
 
-                         tpReq('head');
+                     tpView('gallery','images');
 
-                                 tpView('gallery','images');
-
-                         tpReq('foot');
+             tpReq('foot');
 
        }
 

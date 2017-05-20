@@ -63,20 +63,13 @@ class model{
                     'Location'=>'location',
                     'Locationtext'=>'locText',
                     'navId'=>'navId',
-                );
-                
-                foreach($loops as $loop => $val){
-                    
-                    if(isset($row[$loop])){
-
-                        $$val = $row[$loop];
-  
-                        }else{
-
-                        }
-                    
-                };			
+                );	
  
+                foreach($loops as $loop => $val){
+                    if(isset($row[$loop])){
+                        $val = $row[$loop];
+                    }
+                };		
 						
 				   // Creates html block if it doesnt exist or just returns the already existing block		
 				  $filename = 'libraries/themes/'.theme().'/html_blocks/'.$block.'.php';
@@ -92,8 +85,23 @@ class model{
 				  fclose($fileNew);
 				  
 				  }else{
-						include 'libraries/themes/'.theme().'/html_blocks/'.$block.'.php';
-						
+                      
+                          $fileConts = file_get_contents($filename);
+                      
+                          foreach($loops as $loop => $val){
+                              if(isset($row[$loop])){
+                                  $val = $row[$loop];
+                                  
+                                  $rep = '/\{\{ '. $loops[$loop] .' \}\}/';
+                                  $fileConts = preg_replace($rep,$val,$fileConts);
+                              }
+                          };		
+                          $rep1 = '/\{\% echo (.*?) \%\}/';
+                          $rep2 = '/\{\# (.*?) \#\}/';
+                          $fileConts = preg_replace($rep1,'<?php echo ($1) ?>',$fileConts);
+                          $fileConts = preg_replace($rep2,'<?php ($1) ?>',$fileConts);
+                          eval(' ?>'.$fileConts.'<?php ');
+                            
 					  }
 					  
 				}

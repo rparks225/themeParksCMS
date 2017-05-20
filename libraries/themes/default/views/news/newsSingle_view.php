@@ -12,12 +12,14 @@
                 </div>
 
                 <div class="col-md-8 col-sm-8 col-xs-12">
-                    <h3><?php
-                        $query = 'SELECT * FROM post WHERE ID LIKE '.title(2).'';
-                        $block = 'post_heading';
-                        $heading = new model();
-                        $heading->query($query,$block);
-                        ?></h3>
+                    <h3>
+                       <?php
+                            $query = 'SELECT * FROM post WHERE ID LIKE '.title(2).'';
+                            $block = 'post_heading';
+                            $heading = new model();
+                            $heading->query($query,$block);
+                        ?>
+                    </h3>
                 </div>
 
                 <div class="col-md-2 col-sm-2 hidden-xs">
@@ -34,10 +36,10 @@
             <div class="row">
 
                 <?php
-                $query = 'SELECT * FROM post WHERE ID LIKE '.title(2).'';
-                $block = 'post';
-                $heading = new model();
-                $heading->query($query,$block);
+                    $query = 'SELECT * FROM post WHERE ID LIKE '.title(2).'';
+                    $block = 'post';
+                    $heading = new model();
+                    $heading->query($query,$block);
                 ?>
 
             </div>
@@ -45,7 +47,7 @@
 
     </div>
 
-    <?php tpBlock('fancyIsh'); ?>
+    {# tpBlock('fancyIsh') #}
 
 </div>  
 

@@ -1,39 +1,46 @@
-<?php global $nav; ?>
 <!--Open Content area-->
-<div class="cont">
+<div class="cont" id="int">
+   
+   <div class="fancyCont">
+       <div class="container">
+           <div class="row">
+               <h1>Employment - {% echo title() %}</h1>
+           </div>
+       </div>
+   </div>
+   
+    <div class="fancyCont">
+        <div class="container">
+            <div class="row">
+               
+                {# tpBlock('sideBar') #}
+               
+                <div class="col-md-9">                        
+                        <div class="pull-right" id="textSize">
+                            <strong>Text Size: <span id="smaller"> A</span> <span id="bigger">A</span></strong>
+                        </div>  
+                                              
+                    <?php 
 
-    <div class="container">
-    
-        <div class="row-fluid">
-        
-            <br><br>
-        
-            <div class="col-md-8">
-            
-                <h1>Employment - <?php echo title(); ?></h1>
-                    <br>
-                    <div id="textSize"><strong>Text Size: <span id="smaller"> A</span> <span id="bigger">A</span></strong></div>
-                    <br>
+                        $query = 'SELECT * FROM careers WHERE Job LIKE "'.title().'"';
+                        $block = 'singleJob';
+                        $other = title(2);
+
+                        $job = new model();
+                        $job->extra($query,$block,$other);
+
+                    ?>
+                    
+                </div>
                 
-                <?php 
-                
-                $query = 'SELECT * FROM careers WHERE Job LIKE "'.title().'"';
-                $block = 'singleJob';
-                $other = $nav;
-                
-                $job = new model();
-                $job->extra($query,$block,$other);
-                
-                ?>
-				
-            
             </div>
-            
-            <?php tpBlock('sideBar'); ?>
-        
-        </div>
-        
+        </div>        
     </div>
+    
+    {# tpBlock('fancyish') #}
     
 </div>
 <!--Close Content area-->
+
+
+

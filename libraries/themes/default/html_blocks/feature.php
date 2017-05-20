@@ -1,32 +1,52 @@
+<?php
+$newscript = substr(strip_tags('{{ script }}'), 0, 255);
+?>                          
+<div class="col-md-8 col-sm-8 col-xs-12">  
 
-    <div class="col-md-8 col-sm-8 col-xs-12">  
+    <h2 class="text-muted">{{ title }}</h2><br>
 
-            <h2 class="text-muted"><?php echo $title; ?></h2><br>
+      <p>Posted - <i>{{ date }}</i></p>
 
-                    <p>Posted - <i><?php echo $date; ?></i></p>
+    <p>{% echo $newscript %}...</p>
 
-            <p><?php echo substr(strip_tags($script), 0, 255); ?>...</p>
-
-    </div>
+</div>
         
     
-        <div class="col-md-4 col-sm-4 col-xs-12">
-
-            <a href="<?php echo ROOT ?>apps/dropzone/upload/Posts/<?php echo $img;?>" rel="prettyPhoto">
-                    <img class="lazy img-fluid pull-right" data-original="<?php echo ROOT ?>apps/dropzone/upload/Posts/<?php if(!empty($img)){echo $img;}else{ echo 'image.png';} ?>" alt="<? echo $img; ?>" />
-            </a>
-
-                    <div class="clearfix">&nbsp;</div>
-                    <div class="clearfix">&nbsp;</div>
-
-            <a class="btn btn-warning pull-right" href="<?php echo ROOT; ?>News-Post-<?php echo $id; ?>" role="button">View Post &raquo;</a>
-
-        </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
         
+        <?php if(!empty('{{ img }}')): ?>
 
-        <div class="clearfix">&nbsp;</div>                
+            <a href="{% echo ROOT %}apps/dropzone/upload/Posts/{{ img }}" rel="prettyPhoto">
+
+                <img width="100%" 
+                     class="lazy img-fluid pull-right" 
+                     data-original="{% echo ROOT %}apps/dropzone/upload/Posts/{{ img }}" 
+                     alt="{{ img }}" />
+            </a>
+        
+        <?php else: ?>
+               
+            <a href="{% echo ROOT %}apps/dropzone/upload/Posts/image.png" rel="prettyPhoto">
+
+                <img width="100%" 
+                     class="lazy img-fluid pull-right" 
+                     data-original="{% echo ROOT %}apps/dropzone/upload/Posts/image.png" 
+                     alt="image.png" />
+            </a> 
+                
+        <?php endif; ?>
+
+                <div class="clearfix">&nbsp;</div>
+                <div class="clearfix">&nbsp;</div>
+
+        <a class="btn btn-warning pull-right" href="{% echo ROOT %}News-Post-{{ id }}" role="button">View Post &raquo;</a>
+
+    </div>
+
+
+    <div class="clearfix">&nbsp;</div>                
         
 <hr>
        
-        <div class="clearfix">&nbsp;</div> 
+    <div class="clearfix">&nbsp;</div> 
         

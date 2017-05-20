@@ -221,7 +221,14 @@ function tpCompile($e){
      Finds a defined Block to be viewed on page
 ====================================================*/
 function tpBlock($blocks){        
-    require_once 'libraries/themes/'.theme().'/html_blocks/'.$blocks.'.php';    
+    global $inline;
+    $path = 'libraries/themes/'.theme().'/html_blocks/'.$blocks.'.php';
+    $fileConts = file_get_contents($path);
+    $rep = '/\{\% echo (.*?) \%\}/';
+    $rep1 = '/\{\# (.*?) \#\}/';
+    $fileConts = preg_replace($rep,'<?php echo ($1) ?>',$fileConts);
+    $fileConts = preg_replace($rep1,'<?php ($1) ?>',$fileConts);
+    eval(' ?>'.$fileConts.'<?php ');
 };
 
 
@@ -237,15 +244,29 @@ function tpAdmin($blocks){
    Finds a defined theme header, footer, and CSS for page head, foot and css compiler
 ======================================================================================*/
 function tpInc($inc){        
-    require_once 'libraries/themes/'.theme().'/'.$inc.'.php';    
+    $path = 'libraries/themes/'.theme().'/'.$inc.'.php';
+    global $inline;
+    $fileConts = file_get_contents($path);
+    $rep = '/\{\% echo (.*?) \%\}/';
+    $rep1 = '/\{\# (.*?) \#\}/';
+    $fileConts = preg_replace($rep,'<?php echo ($1) ?>',$fileConts);
+    $fileConts = preg_replace($rep1,'<?php ($1) ?>',$fileConts);
+    eval(' ?>'.$fileConts.'<?php ');
 };
 
 
 /*====================================================
          Finds a defined View for controller
 ====================================================*/
-function tpView($folder,$view){        
-    require_once 'libraries/themes/'.theme().'/views/'.$folder.'/'.$view.'_view.php';
+function tpView($folder,$view){      
+    global $inline;
+    $path = 'libraries/themes/'.theme().'/views/'.$folder.'/'.$view.'_view.php';
+    $fileConts = file_get_contents($path);
+    $rep = '/\{\% echo (.*?) \%\}/';
+    $rep1 = '/\{\# (.*?) \#\}/';
+    $fileConts = preg_replace($rep,'<?php echo ($1) ?>',$fileConts);
+    $fileConts = preg_replace($rep1,'<?php ($1) ?>',$fileConts);
+    eval(' ?>'.$fileConts.'<?php ');
 };
 
 

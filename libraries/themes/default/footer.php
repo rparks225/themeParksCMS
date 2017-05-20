@@ -1,5 +1,3 @@
-<?php global $inline; ?>
-
 <!--Open Footer-->
 <footer>
     
@@ -7,8 +5,8 @@
        
             <div class="row">
 
-                    <div id="_footer"<?php echo $inline; ?>>
-                        <?php newEE('footer'); ?>
+                    <div id="_footer"{% echo $inline %}>
+                        {# newEE('footer') #}
                     </div>
 
             </div>

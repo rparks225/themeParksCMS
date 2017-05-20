@@ -6,7 +6,7 @@ class home{
 
         tpReq('head');
 
-        tpView('home','home');
+            tpView('home','home');
 
         tpReq('foot');
 

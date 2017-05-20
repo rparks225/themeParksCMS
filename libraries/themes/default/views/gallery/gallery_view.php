@@ -1,8 +1,6 @@
 <?php 
-
 global $sName;
 $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
-
 ?>
 
 <!--Open Cont area-->
@@ -34,17 +32,20 @@ $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
         <div class="container">
             <div class="row">
 
-                <span<?php if(isset($_SESSION[''.$sessKey.''])){ echo ' id="sort"'; }else{}; ?>>
+                <span<?php 
+                      if(isset($_SESSION[''.$sessKey.''])):
+                           echo ' id="sort"';
+                      endif
+                      ?>>
 
                     <?php
 
-                    $query = 'SELECT * FROM  `gallery` ORDER BY  `gallery`.`Order` ASC LIMIT 0 , 30';
-                    $block = 'galName';
-                    $title = new model();
-                    $title->query($query,$block);
+                        $query = 'SELECT * FROM  `gallery` ORDER BY  `gallery`.`Order` ASC LIMIT 0 , 30';
+                        $block = 'galName';
+                        $title = new model();
+                        $title->query($query,$block);
 
-                    ?>
-
+                    ?> 
                 </span>
 
             </div>
@@ -52,7 +53,7 @@ $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
 
     </div>
 
-    <?php tpBlock('fancyIsh'); ?>
+    {# tpBlock('fancyIsh') #}
 
 </div>  
 

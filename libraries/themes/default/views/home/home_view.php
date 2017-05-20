@@ -1,14 +1,13 @@
 <?php
 /*=============================================
   
-                Block to call dynamic cms portion
+Block to call dynamic cms portion
 
-                <div class="e-ease ee:wwig" id="changeThis">
-                    <?php newEE('changeThis'); ?>
-                </div>
+<div id="_changeThis"{% echo $inline %}>
+    {# newEE('changeThis') #}
+</div>
 
 =============================================*/
-global $inline;
 ?>
 
 <div class="cont">   
@@ -17,9 +16,9 @@ global $inline;
         <div class="container">
             <div class="row">
 
-                <div id="_home1"<?php echo $inline; ?>>
+                <div id="_home1"{% echo $inline %}>
 
-                        <?php newEE('home1'); ?>
+                    {# newEE('home1') #}
 
                 </div>
 
@@ -33,9 +32,9 @@ global $inline;
             <div class="row">
                 
                 
-                <div id="_home2"<?php echo $inline; ?>>
+                <div id="_home2"{% echo $inline %}>
 
-                    <?php newEE('home2'); ?>
+                    {# newEE('home2') #}
 
                 </div>
                 
@@ -67,9 +66,9 @@ global $inline;
         <div class="container">
             <div class="row">
                
-                <div id="_home3"<?php echo $inline; ?>>
+                <div id="_home3"{% echo $inline %}>
 
-                    <?php newEE('home3'); ?>
+                    {# newEE('home3') #}
 
                 </div>
                

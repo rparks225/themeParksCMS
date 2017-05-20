@@ -11,10 +11,10 @@
         
         <ul><br>
         <li class="title">The Arlington Center</li>
-            <li><a href="<?php echo ROOT; ?>Services-Arlington">Services</a></li>
-                <li><a href="<?php echo ROOT; ?>Enrollment-Arlington">Enrollment Info</a></li>
-                <li><a href="<?php echo ROOT; ?>Contact-Arlington">Contact/ Map</a></li>
-            <li><a href="<?php echo ROOT; ?>">Virtual Tours</a></li>
+            <li><a href="{% echo ROOT %}Services-Arlington">Services</a></li>
+                <li><a href="{% echo ROOT %}Enrollment-Arlington">Enrollment Info</a></li>
+                <li><a href="{% echo ROOT %}Contact-Arlington">Contact/ Map</a></li>
+            <li><a href="{% echo ROOT %}">Virtual Tours</a></li>
         </ul>
         
         </div>
@@ -27,10 +27,10 @@
             
             <ul><br>
             <li class="title">The Burlington Center</li>
-                <li><a href="<?php echo ROOT; ?>Services-Burlington">Services</a></li>
-                    <li><a href="<?php echo ROOT; ?>Enrollment-Burlington">Enrollment Info</a></li>
-                    <li><a href="<?php echo ROOT; ?>Contact-Burlington">Contact/ Map</a></li>
-                <li><a href="<?php echo ROOT; ?>">Virtual Tours</a></li>
+                <li><a href="{% echo ROOT %}Services-Burlington">Services</a></li>
+                    <li><a href="{% echo ROOT %}Enrollment-Burlington">Enrollment Info</a></li>
+                    <li><a href="{% echo ROOT %}Contact-Burlington">Contact/ Map</a></li>
+                <li><a href="{% echo ROOT %}">Virtual Tours</a></li>
             </ul>
             
             </div>
@@ -43,10 +43,10 @@
                 
                 <ul><br>
                 <li class="title">The Concord Center</li>
-                    <li><a href="<?php echo ROOT; ?>Services-Concord">Services</a></li>
-                        <li><a href="<?php echo ROOT; ?>Enrollment-Concord">Enrollment Info</a></li>
-                        <li><a href="<?php echo ROOT; ?>Contact-Concord">Contact/ Map</a></li>
-                    <li><a href="<?php echo ROOT; ?>">Virtual Tours</a></li>
+                    <li><a href="{% echo ROOT %}Services-Concord">Services</a></li>
+                        <li><a href="{% echo ROOT %}Enrollment-Concord">Enrollment Info</a></li>
+                        <li><a href="{% echo ROOT %}Contact-Concord">Contact/ Map</a></li>
+                    <li><a href="{% echo ROOT %}">Virtual Tours</a></li>
                 </ul>
                 
                 </div>
@@ -59,10 +59,10 @@
             
             <ul><br>
             <li class="title">The Groton Center</li>
-                <li><a href="<?php echo ROOT; ?>Services-Groton">Services</a></li>
-                    <li><a href="<?php echo ROOT; ?>Enrollment-Groton">Enrollment Info</a></li>
-                    <li><a href="<?php echo ROOT; ?>Contact-Groton">Contact-Contact/ Map</a></li>
-                <li><a href="<?php echo ROOT; ?>">Virtual Tours</a></li>
+                <li><a href="{% echo ROOT %}Services-Groton">Services</a></li>
+                    <li><a href="{% echo ROOT %}Enrollment-Groton">Enrollment Info</a></li>
+                    <li><a href="{% echo ROOT %}Contact-Groton">Contact-Contact/ Map</a></li>
+                <li><a href="{% echo ROOT %}">Virtual Tours</a></li>
             </ul>
             
             </div>
@@ -75,10 +75,10 @@
         
         <ul><br>
         <li class="title">The Milton Center</li>
-            <li><a href="<?php echo ROOT; ?>Services-Milton">Services</a></li>
-                <li><a href="<?php echo ROOT; ?>Enrollment-Milton">Enrollment Info</a></li>
-                <li><a href="<?php echo ROOT; ?>Contact-Milton">Contact/ Map</a></li>
-            <li><a href="<?php echo ROOT; ?>">Virtual Tours</a></li>
+            <li><a href="{% echo ROOT %}Services-Milton">Services</a></li>
+                <li><a href="{% echo ROOT %}Enrollment-Milton">Enrollment Info</a></li>
+                <li><a href="{% echo ROOT %}Contact-Milton">Contact/ Map</a></li>
+            <li><a href="{% echo ROOT %}">Virtual Tours</a></li>
         </ul>
         
         </div>

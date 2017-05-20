@@ -56,27 +56,7 @@
 </div>
 
 <hr />
-<div class="btgrid">
-<div class="row row-1">
-<div class="col col-md-2">
-<div class="content">
-<p>&nbsp;</p>
-</div>
-</div>
-
-<div class="col col-md-8 copywrite">
-<div class="content">
-<p>&copy;Copyright 2016 ThemeParks Cms Inc. All rights reserved.<br />
+<p style="text-align: center;">&copy;Copyright 2016 ThemeParks Cms Inc. All rights reserved.<br />
 Veniam ut et aliquam. Ratione tempora, excepturi eveniet cupiditaes.</p>
 
-<p><a href="tp-login">Admin Login</a></p>
-</div>
-</div>
-
-<div class="col col-md-2">
-<div class="content">
-<p>&nbsp;</p>
-</div>
-</div>
-</div>
-</div>
+<p style="text-align: center;"><a href="tp-login">Admin Login</a></p>

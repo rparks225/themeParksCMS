@@ -1,15 +1,9 @@
 <?php
-
 global $sName;
-
 $sort = false;
-
 $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
-
 if(isset($_SESSION[$sessKey])){
-    
     $sort = 'id="sortable"';
-    
 }
 ?>
 
@@ -26,7 +20,8 @@ if(isset($_SESSION[$sessKey])){
                 </div>
 
                 <div class="col-md-4 col-sm-4 col-xs-12">
-                    <h1> <?php
+                    <h1> 
+                       <?php
                         
                         $title = title(2);
                         global $pages;
@@ -36,7 +31,8 @@ if(isset($_SESSION[$sessKey])){
                         $images2 = new model();
                         $images2->query($query,$block);
 
-                        ?></h1>
+                        ?>
+                    </h1>
                 </div>
 
                 <div class="col-md-4 col-sm-4 hidden-xs">
@@ -54,14 +50,14 @@ if(isset($_SESSION[$sessKey])){
 
                 <ul style="list-style:none;padding:0;">
 
-                            <div <?php echo $sort; ?>>
+                           <div {% echo $sort %}>
 
                                 <?php							 								 
 
-                                $query = 'SELECT * FROM `images` WHERE `Album` LIKE \''.title(2).'\' ORDER BY `images`.`Order` ASC ';
-                                $block = 'galleryImage';
-                                $images = new model();
-                                $images->query($query,$block);
+                                    $query = 'SELECT * FROM `images` WHERE `Album` LIKE \''.title(2).'\' ORDER BY `images`.`Order` ASC ';
+                                    $block = 'galleryImage';
+                                    $images = new model();
+                                    $images->query($query,$block);
 
                                 ?>						      
 
@@ -84,7 +80,7 @@ if(isset($_SESSION[$sessKey])){
 
     </div>
 
-    <?php tpBlock('fancyIsh'); ?>
+    {# tpBlock('fancyIsh') #}
 
 </div>  
 

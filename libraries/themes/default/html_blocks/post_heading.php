@@ -1,1 +1,1 @@
-<?php echo $title; ?>
+{{ title }}

@@ -1,7 +1,5 @@
-
 <!--Open Cont area-->
 
- 
 <div class="cont" id="int">   
 
     <div class="fancyCont">
@@ -13,7 +11,7 @@
                 </div>
 
                 <div class="col-md-4 col-sm-12 col-xs-12">
-                    <h1><?php echo $heading ?></h1>
+                    <h1>{{ heading }} - {{ edit }}</h1>
                 </div>
 
                 <div class="col-md-4 col-sm-4 hidden-sm-down">
@@ -28,29 +26,25 @@
 
         <div class="container">
             <div class="row">
+
+                <?php if({{ edit }} == false): ?>
+                   
+                    {{ html }}
+                    
+                <?php else: ?>
+                   
+                    {# tpBlock('ee') #}
+                    
+                <?php endif; ?>
                 
-                <?php 
-
-                        if($edit == 'false'){
-
-                            echo $html;
-
-                        }else{
-
-                            tpBlock('ee');
-
-                        };
-
-                ?>
-
+                
             </div>
         </div>
 
     </div>
 
-    <?php tpBlock('fancyIsh'); ?>
+    {# tpBlock('fancyish') #}
 
 </div>  
  
 <!--Close Cont area-->
-    

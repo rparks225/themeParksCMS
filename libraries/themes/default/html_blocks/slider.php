@@ -1,5 +1,4 @@
- <!-- Carousel
-    ================================================== -->
+<!-- Carousel  -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -10,7 +9,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" width="960px" height="500ox" src="<?php echo ROOT; ?>images/slides/slide1.jpg" alt="First slide">
+          <img class="first-slide" width="960px" height="500ox" src="{% echo ROOT %}images/slides/slide1.jpg" alt="First slide">
           <div class="container">
             <!--<div class="carousel-caption">
               <h1>Example headline.<br></h1>
@@ -21,7 +20,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" width="960px" height="500ox" src="<? echo ROOT; ?>images/slides/slide2.jpg" alt="Second slide">
+          <img class="second-slide" width="960px" height="500ox" src="{% echo ROOT %}images/slides/slide2.jpg" alt="Second slide">
           <div class="container">
             <!--<div class="carousel-caption">
               <h1>Another example headline.</h1>
@@ -31,7 +30,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="third-slide" width="960px" height="500ox" src="<? echo ROOT; ?>images/slides/slide3.jpg" alt="Third slide">
+          <img class="third-slide" width="960px" height="500ox" src="{% echo ROOT %}images/slides/slide3.jpg" alt="Third slide">
           <div class="container">
             <!--<div class="carousel-caption">
               <h1>One more for good measure.</h1>
@@ -42,7 +41,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="fourth-slide" width="960px" height="500ox" src="<? echo ROOT; ?>images/slides/slide4.jpg" alt="Fourth slide">
+          <img class="fourth-slide" width="960px" height="500ox" src="{% echo ROOT %}images/slides/slide4.jpg" alt="Fourth slide">
           <div class="container">
             <!--<div class="carousel-caption">
               <h1>One more for good measure.</h1>
@@ -61,6 +60,6 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div><!-- /.carousel -->
-
-<div class="container marketing">
+    </div>
+    
+<!-- /.carousel -->

@@ -1,9 +1,11 @@
   
-<li id="<?php echo 'item-'.$id; ?>"  class="col-md-4" style="overflow:hidden;height:300px;margin-bottom:15px;">
+<li id="{% echo 'item-{{ id }}' %}"  class="col-md-4" style="overflow:hidden;height:300px;margin-bottom:15px;">
   
-    <a href="<?php echo ROOT; ?>apps/dropzone/upload/<?php echo $gallery; ?>/<?php echo $img; ?>" rel="prettyPhoto[<?php echo $gallery; ?>]">
+    <a href="{% echo ROOT %}apps/dropzone/upload/{{ gallery }}/{{ img }}" rel="prettyPhoto[{{ gallery }}]">
         
-        <img class="lazy" width="100%" data-gallery="<?php echo $gallery; ?>" alt="<?php echo $img; ?>" data-original="<?php echo ROOT; ?>apps/dropzone/upload/<?php echo $gallery; ?>/<?php echo $img; ?>" />
+        <img class="lazy" width="100%" data-gallery="{{ gallery }}" 
+             alt="{{ img }}" 
+             data-original="{% echo ROOT %}apps/dropzone/upload/{{ gallery }}/{{ img }}" />
         
     </a>
   

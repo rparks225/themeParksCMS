@@ -1,5 +1,3 @@
-
-
 <!-- Open Content Area -->  
  <div class="cont">
     <div class="row" style="text-align:center;">
@@ -12,7 +10,7 @@
                 
                     <br><br>
             
-            <a href="<? echo ROOT ?>Home">&larr; Home</a>
+            <a href="{% echo ROOT %}Home">&larr; Home</a>
             
         </div>
     

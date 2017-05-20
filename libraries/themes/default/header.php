@@ -1,3 +1,22 @@
+<?php 
+
+$pages = array(
+    'Home'=>'Home',
+    '#About'=>array(
+        'About'=>'About Us',
+        'theTeam'=>'Meet The Team',
+        'Services'=>'Services',
+        'Board'=>'Members of the Board',
+    ),
+    'News-all'=>'News',
+    '#Gallery'=>array(
+        'Gallery'=>'Image Gallery',
+        'Tours'=>'Virtual Tours'    
+    ),
+    'Contact'=>'Contact'
+);
+
+?>
 
 <body>
     
@@ -14,27 +33,9 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <?php 
-
-                            $pages = array(
-                                'Home'=>'Home',
-                                '#About'=>array(
-                                'About'=>'About Us',
-                                'theTeam'=>'Meet The Team',
-                                'Services'=>'Services',
-                                'Board'=>'Members of the Board',
-                            ),
-                                'News-all'=>'News',
-                                '#Gallery'=>array(
-                                'Gallery'=>'Image Gallery',
-                                'Tours'=>'Virtual Tours'    
-                            ),
-                            'Contact'=>'Contact'
-                            );
-
-                            navi($pages);
-
-                    ?>
+                    
+                    {# navi($pages) #}
+                    
                 </ul>
             </div>
             <!--/.nav-collapse -->
