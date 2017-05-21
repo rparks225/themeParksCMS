@@ -1,8 +1,6 @@
-<?php
-require_once 'includes/PHPMailer/PHPMailerAutoload.php';
-require_once 'includes/email/mail.php';
-global $sName;
-?>
+{# require_once 'includes/PHPMailer/PHPMailerAutoload.php' #}
+{# require_once 'includes/email/mail.php' #}
+<?php global $sName; ?>
 
 <!--Open Cont area-->
 

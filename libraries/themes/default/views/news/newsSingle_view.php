@@ -13,12 +13,10 @@
 
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <h3>
-                       <?php
-                            $query = 'SELECT * FROM post WHERE ID LIKE '.title(2).'';
-                            $block = 'post_heading';
-                            $heading = new model();
-                            $heading->query($query,$block);
-                        ?>
+                        {# $query = 'SELECT * FROM post WHERE ID LIKE '.title(2).'' #}
+                        {# $block = 'post_heading' #}
+                        {# $heading = new model() #}
+                        {# $heading->query($query,$block) #}
                     </h3>
                 </div>
 
@@ -35,12 +33,10 @@
         <div class="container">
             <div class="row">
 
-                <?php
-                    $query = 'SELECT * FROM post WHERE ID LIKE '.title(2).'';
-                    $block = 'post';
-                    $heading = new model();
-                    $heading->query($query,$block);
-                ?>
+                {# $query = 'SELECT * FROM post WHERE ID LIKE '.title(2).'' #}
+                {# $block = 'post' #}
+                {# $heading = new model() #}
+                {# $heading->query($query,$block) #}
 
             </div>
         </div>

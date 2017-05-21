@@ -1,7 +1,5 @@
-<?php 
-global $sName;
-$sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
-?>
+<?php global $sName; ?>
+{# $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'') #}
 
 <!--Open Cont area-->
 
@@ -32,11 +30,11 @@ $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
         <div class="container">
             <div class="row">
 
-                <span<?php 
-                      if(isset($_SESSION[''.$sessKey.''])):
-                           echo ' id="sort"';
-                      endif
-                      ?>>
+                <span
+                      {-- if isset($_SESSION[''.$sessKey.'']) --}
+                           {% echo ' id="sort"' %}
+                      {-- endif --}
+                      >
 
                     <?php
 

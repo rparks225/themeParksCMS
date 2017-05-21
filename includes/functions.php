@@ -217,18 +217,37 @@ function tpCompile($e){
 };
 
 
+/*===============================================================
+     Renders Views, Blocks and Loops for easier to read sytax.
+===============================================================*/
+function tmpltRender($path){
+    global $inline;
+    $fileConts = file_get_contents($path);
+    $search = array(
+        '/\{\% echo (.*?) \%\}/',
+        '/\{\# (.*?) \#\}/',
+        '/\{\-\- if (.*?) \-\-\}/',
+        '/\{\-\- else \-\-\}/',
+        '/\{\-\- endif \-\-\}/',
+    );
+    $replace = array(
+        '<?php echo ($1); ?>',
+        '<?php ($1); ?>',
+        '<?php if ($1) : ?>',
+        '<?php else : ?>',
+        '<?php endif; ?>',
+    );
+    $fileConts = preg_replace($search,$replace,$fileConts);
+    eval(' ?>'.$fileConts.'<?php ');
+};
+
+
 /*====================================================
      Finds a defined Block to be viewed on page
 ====================================================*/
 function tpBlock($blocks){        
-    global $inline;
     $path = 'libraries/themes/'.theme().'/html_blocks/'.$blocks.'.php';
-    $fileConts = file_get_contents($path);
-    $rep = '/\{\% echo (.*?) \%\}/';
-    $rep1 = '/\{\# (.*?) \#\}/';
-    $fileConts = preg_replace($rep,'<?php echo ($1) ?>',$fileConts);
-    $fileConts = preg_replace($rep1,'<?php ($1) ?>',$fileConts);
-    eval(' ?>'.$fileConts.'<?php ');
+    tmpltRender($path);
 };
 
 
@@ -245,13 +264,7 @@ function tpAdmin($blocks){
 ======================================================================================*/
 function tpInc($inc){        
     $path = 'libraries/themes/'.theme().'/'.$inc.'.php';
-    global $inline;
-    $fileConts = file_get_contents($path);
-    $rep = '/\{\% echo (.*?) \%\}/';
-    $rep1 = '/\{\# (.*?) \#\}/';
-    $fileConts = preg_replace($rep,'<?php echo ($1) ?>',$fileConts);
-    $fileConts = preg_replace($rep1,'<?php ($1) ?>',$fileConts);
-    eval(' ?>'.$fileConts.'<?php ');
+    tmpltRender($path);
 };
 
 
@@ -259,14 +272,8 @@ function tpInc($inc){
          Finds a defined View for controller
 ====================================================*/
 function tpView($folder,$view){      
-    global $inline;
     $path = 'libraries/themes/'.theme().'/views/'.$folder.'/'.$view.'_view.php';
-    $fileConts = file_get_contents($path);
-    $rep = '/\{\% echo (.*?) \%\}/';
-    $rep1 = '/\{\# (.*?) \#\}/';
-    $fileConts = preg_replace($rep,'<?php echo ($1) ?>',$fileConts);
-    $fileConts = preg_replace($rep1,'<?php ($1) ?>',$fileConts);
-    eval(' ?>'.$fileConts.'<?php ');
+    tmpltRender($path);
 };
 
 

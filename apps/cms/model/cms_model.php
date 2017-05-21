@@ -96,10 +96,21 @@ class model{
                                   $fileConts = preg_replace($rep,$val,$fileConts);
                               }
                           };		
-                          $rep1 = '/\{\% echo (.*?) \%\}/';
-                          $rep2 = '/\{\# (.*?) \#\}/';
-                          $fileConts = preg_replace($rep1,'<?php echo ($1) ?>',$fileConts);
-                          $fileConts = preg_replace($rep2,'<?php ($1) ?>',$fileConts);
+                          $search = array(
+                              '/\{\% echo (.*?) \%\}/',
+                              '/\{\# (.*?) \#\}/',
+                              '/\{\-\- if (.*?) \-\-\}/',
+                              '/\{\-\- else \-\-\}/',
+                              '/\{\-\- endif \-\-\}/',
+                          );
+                          $replace = array(
+                              '<?php echo ($1); ?>',
+                              '<?php ($1); ?>',
+                              '<?php if ($1) : ?>',
+                              '<?php else : ?>',
+                              '<?php endif; ?>',
+                          );
+                          $fileConts = preg_replace($search,$replace,$fileConts);
                           eval(' ?>'.$fileConts.'<?php ');
                             
 					  }

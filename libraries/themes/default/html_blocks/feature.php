@@ -1,6 +1,5 @@
-<?php
-$newscript = substr(strip_tags('{{ script }}'), 0, 255);
-?>                          
+{# $newscript = substr(strip_tags('{{ script }}'), 0, 255) #}
+
 <div class="col-md-8 col-sm-8 col-xs-12">  
 
     <h2 class="text-muted">{{ title }}</h2><br>
@@ -14,7 +13,7 @@ $newscript = substr(strip_tags('{{ script }}'), 0, 255);
     
     <div class="col-md-4 col-sm-4 col-xs-12">
         
-        <?php if(!empty('{{ img }}')): ?>
+        {-- if (!empty('{{ img }}')) --}
 
             <a href="{% echo ROOT %}apps/dropzone/upload/Posts/{{ img }}" rel="prettyPhoto">
 
@@ -24,7 +23,7 @@ $newscript = substr(strip_tags('{{ script }}'), 0, 255);
                      alt="{{ img }}" />
             </a>
         
-        <?php else: ?>
+        {-- else --}
                
             <a href="{% echo ROOT %}apps/dropzone/upload/Posts/image.png" rel="prettyPhoto">
 
@@ -34,7 +33,7 @@ $newscript = substr(strip_tags('{{ script }}'), 0, 255);
                      alt="image.png" />
             </a> 
                 
-        <?php endif; ?>
+        {-- endif --}
 
                 <div class="clearfix">&nbsp;</div>
                 <div class="clearfix">&nbsp;</div>

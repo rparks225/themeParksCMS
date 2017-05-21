@@ -26,15 +26,11 @@
 
         <div class="container">
             <div class="row">
-
-                <?php 
-
-                    $query = 'SELECT * FROM post';
-                    $block = 'feature';
-                    $heading = new model();
-                    $heading->query($query,$block);
                 
-                ?>
+                {# $query = 'SELECT * FROM post' #}
+                {# $block = 'feature' #}
+                {# $heading = new model() #}
+                {# $heading->query($query,$block) #}
 
             </div>
         </div>
