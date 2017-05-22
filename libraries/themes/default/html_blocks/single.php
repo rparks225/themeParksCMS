@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="col-md-4 col-sm-12 col-xs-12">
-                    <h1>{{ heading }} - {{ edit }}</h1>
+                    <h1>{{ heading }}</h1>
                 </div>
 
                 <div class="col-md-4 col-sm-4 hidden-sm-down">
@@ -27,15 +27,15 @@
         <div class="container">
             <div class="row">
 
-                <?php if({{ edit }} == false): ?>
+                {-- if ({{ edit }} == false) --}
                    
                     {{ html }}
                     
-                <?php else: ?>
+                {-- else --}
                    
                     {# tpBlock('ee') #}
                     
-                <?php endif; ?>
+                {-- endif --}
                 
                 
             </div>

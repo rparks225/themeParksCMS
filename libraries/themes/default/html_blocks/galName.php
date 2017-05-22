@@ -1,28 +1,28 @@
-<?php 
+<?php global $inline; ?>
 
-global $inline; 
+{-- if (!empty('{{ cover }}')) --}   
+    {# $bg = 'apps/dropzone/upload/{{ album }}/{{ cover }}' #}    
+{-- else --}     
+    {# $bg = '' #}    
+{-- endif --}
 
-if(!empty('{{ cover }}')):
-    $bg = 'apps/dropzone/upload/{{ album }}/{{ cover }}';
-else: 
-    $bg = ''; 
-endif;
 
-?>
    <div id="list-{{ id }}" class="sOrd">
     
-        <div class="col-md-4" style="height:250px;background:url('{% echo $bg %}') no-repeat;background-size:cover;">
+        <div class="col-md-4" 
+             style="height:250px;background:url('{% echo $bg %}') no-repeat;background-size:cover;">
+             
         </div>
         
         <div class="col-md-8">
         
                 <h3>
                         <a href="{% echo ROOT %}Gallery-{{ album }}">
-                                <?php if(empty($title)): ?>
-                                    {{ album }}
-                                <?php else: ?> 
-                                    {{ title }}
-                                <?php endif; ?>
+                            {-- if (empty('{{ title }}')) --}
+                                {{ album }}
+                            {-- else --}
+                                {{ title }}
+                            {-- endif --}
                         </a>
                 </h3>
 

@@ -1,4 +1,4 @@
-{# $newscript = substr(strip_tags('{{ script }}'), 0, 255) #}
+<?php $newscript = substr(strip_tags('{{ script }}'), 0, 255); ?>
 
 <div class="col-md-8 col-sm-8 col-xs-12">  
 

@@ -1,8 +1,14 @@
-<?php $img = '{{ img }}'; ?>
+{-- if (!empty('{{ img }}')) --}
+    {# $newImg = '{{ img }}' #}
+{-- else --}
+    {# $newImg = 'image.png' #}
+{-- endif --}
 
 <div class="col-md-8">  
 
-        <p>Posted - <i>{{ date }}</i></p>
+        <p>Posted - <b><i>{{ date }}</i></b></p>
+        
+    <div class="clearfix">&nbsp;</div>
 
     <p>
         <span>
@@ -11,7 +17,6 @@
     </p>
 
 </div>
-       
         
 <div class="col-md-4">
 
@@ -20,13 +25,7 @@
          <img class="img-responsive pull-right" 
               alt="{{ img }}"
               width="100%" 
-              src="{% echo ROOT %}apps/dropzone/upload/Posts/<?php 
-               if(!empty('{{ img }}')):
-                     echo $img;
-               else:
-                      echo 'image.png';
-               endif;       
-              ?>" />
+              src="{% echo ROOT %}apps/dropzone/upload/Posts/{% echo $newImg %}" />
               
      </a>
      

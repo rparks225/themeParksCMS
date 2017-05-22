@@ -35,15 +35,12 @@
                            {% echo ' id="sort"' %}
                       {-- endif --}
                       >
-
-                    <?php
-
-                        $query = 'SELECT * FROM  `gallery` ORDER BY  `gallery`.`Order` ASC LIMIT 0 , 30';
-                        $block = 'galName';
-                        $title = new model();
-                        $title->query($query,$block);
-
-                    ?> 
+                      
+                    {# $query = 'SELECT * FROM  `gallery` ORDER BY  `gallery`.`Order` ASC LIMIT 0 , 30' #}
+                    {# $block = 'galName' #}
+                    {# $title = new model() #}
+                    {# $title->query($query,$block) #}
+                    
                 </span>
 
             </div>
