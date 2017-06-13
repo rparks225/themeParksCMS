@@ -34,7 +34,7 @@
             <div class="clearfix">&nbsp;</div>
             <div class="clearfix">&nbsp;</div>
     
-    <a class="btn btn-warning pull-right" href="{% echo ROOT %}>News-All" role="button">&laquo; Previous Posts</a>
+    <a class="btn btn-warning pull-right" href="{% echo ROOT %}News-All" role="button">&laquo; Previous Posts</a>
 
 </div>
         

@@ -33,8 +33,7 @@
                 <span
                       {-- if isset($_SESSION[''.$sessKey.'']) --}
                            {% echo ' id="sort"' %}
-                      {-- endif --}
-                      >
+                      {-- endif --}>
                       
                     {# $query = 'SELECT * FROM  `gallery` ORDER BY  `gallery`.`Order` ASC LIMIT 0 , 30' #}
                     {# $block = 'galName' #}

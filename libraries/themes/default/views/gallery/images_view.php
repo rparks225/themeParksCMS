@@ -1,6 +1,7 @@
 <?php global $sName; ?>
 {# $sort = false #}
 {# $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'') #}
+
 {-- if isset($_SESSION[$sessKey]) --}
     {# $sort = 'id="sortable"' #}
 {-- endif --}

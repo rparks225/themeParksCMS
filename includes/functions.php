@@ -332,7 +332,7 @@ function compress($switch){
         
     }else{
         
-        echo '<!--Html Compression is '.$switch.'-->
+        echo '<!-- Html Compression is OFF -->
 ';
         
     }

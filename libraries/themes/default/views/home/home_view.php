@@ -31,14 +31,12 @@ Block to call dynamic cms portion
         <div class="container">
             <div class="row">
                 
-                
                 <div id="_home2"{% echo $inline %}>
 
                     {# newEE('home2') #}
 
                 </div>
                 
-
             </div>
         </div>
 
@@ -110,12 +108,15 @@ Block to call dynamic cms portion
 
                 <div class="col-md-12">
                     <form class="form-group">
+                       
                         <div class="input-group">
                             <span class="input-group-addon" id="basic-addon1">Sign up today!</span>
                             <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
                         </div>
+                        
                     </form>
                 </div>
+                
             </div>
         </div>
 
