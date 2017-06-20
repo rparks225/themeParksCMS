@@ -355,4 +355,27 @@ if(file_exists($_SERVER['DOCUMENT_ROOT'].$cmsPath.'libraries/themes/'.theme().'/
     
 }
 
+/*=======================
+Preview Button
+=======================*/
+function previewButton(){
+    global $sName;
+    $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
+    if(isset($_SESSION[''.$sessKey.''])){
+        echo '
+        <button class="btn tpPreview"
+                       style="position:fixed;
+                                   top:49px;
+                                   left:0;
+                                   background:rgb(30,172,186);
+                                   font-size:14pt;
+                                   border-radius:0;
+                                   color:white;
+                                   z-index:999999;">
+            <span class="changed">Preview</span> Page
+        </button>
+        ';
+    }
+}
+
 ?>

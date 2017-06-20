@@ -4,7 +4,7 @@
  $(document).ready(function() {
             
 /*========================
-	     prettyphoto
+prettyphoto
 =========================*/
 
         $("a[rel^='prettyPhoto']").prettyPhoto({
@@ -15,7 +15,7 @@
             });
      
 /*=========================
- Dashboard edit animation
+Dashboard edit animation
 ==========================*/
 	$('.loading').delay(500).fadeOut(500);
 	
@@ -40,7 +40,7 @@
 					});	
      
 /*========================
-  Menu toggle animation	
+Menu toggle animation	
 =========================*/	
 	$('div.admin button.downish').toggle(
 		
@@ -56,7 +56,7 @@
 		); 	     
 		
 /*==================
-    Dropzone.js 
+Dropzone.js 
 ==================*/	
 
 	$(document).ready(function(){
@@ -75,7 +75,7 @@
 			});	
 
 /*===================			
-   Image Draggable
+Image Draggable
 ===================*/
 
   $(function() {
@@ -115,7 +115,7 @@
   }); 
   
  /*========================
-    adjusting font size
+adjusting font size
 ==========================*/
     $('#smaller').click(function(){
     	var currentSize = parseInt($(".cont p").css('font-size'));
@@ -145,7 +145,7 @@
     });
 	
 /*================
-    Date Picker
+Date Picker
 =================*/
 	$(function() {
     $( "#datepicker" ).datepicker({
@@ -158,7 +158,7 @@
   
  
  /*===================
-     Form Validate
+Form Validate
 =====================*/ 
 $(document).ready(function() {
 	
@@ -185,11 +185,36 @@ $(document).ready(function() {
 	});	  
 
  /*===================
-      Lazy Loader
+Lazy Loader
 =====================*/ 
-$("img.lazy").lazyload({
+$(".lazy").lazyload({
     effect : "fadeIn"
 });
      
+     
+/*=======================
+Preview Button
+=======================*/
+     $('.tpPreview').click(function() {
+
+         $('.changed').empty();
+
+         if( $('.edit').attr('contenteditable') ){
+
+             jQuery.each(CKEDITOR.instances, function(){
+                 eval("CKEDITOR.instances."+this.name+".destroy()"); });
+             $('.edit').removeAttr('contenteditable');
+             $('.changed').append('Edit');
+
+         }else{
+
+
+             $('.edit').attr('contenteditable','true');
+             $('.changed').append('Preview');
+             CKEDITOR.inlineAll();
+
+         }
+
+     });     
      
 });      
