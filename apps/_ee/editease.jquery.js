@@ -18,15 +18,15 @@
 
 // you shouldn't need to edit below this line //
 // +----------------------------------------------------------------------+
-var cmsPath = 'themeParksCMS/';
+var cmsPath = '/';
 
 jQuery.fn.editease = function (linkName, epath) {
 
 /* default path file for editEase 'This should be all you need to edit' */
 if (epath === undefined) {
 	// if path provided this is the default
-    eePath = '/' + cmsPath + 'apps/_ee/';
-    sitePath = '//:' + window.location.hostname + '/' + cmsPath;
+    eePath = cmsPath + 'apps/_ee/';
+    sitePath = '//:' + window.location.hostname + cmsPath;
     //alert(sitePath);
 }else{
 	// otherwise use provided path

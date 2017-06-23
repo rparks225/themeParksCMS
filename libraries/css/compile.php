@@ -14,6 +14,14 @@ echo '@charset "UTF-8";
 
 $files = scandir($root . $path);
 
+function compress($buffer) {
+    /* remove comments */
+    $buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
+    /* remove tabs, spaces, newlines, etc. */
+    $buffer = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $buffer);
+    return $buffer;
+}
+
 foreach($files as $v){
 	
 	if(substr($v,-3) != 'css'){
@@ -63,12 +71,12 @@ if(file_exists('themeParks-styles.css')){
     echo '<p>Do you want to compile Css?</p>';
     echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="javascript:window.location.reload();" type="button">Yes Compile Css!</a>';
 
-    file_put_contents('themeParks-styles.css',$comp);
+        file_put_contents('themeParks-styles.css',compress($comp));
     
     }else{
         
         header("Content-type: text/css; charset: UTF-8");
-        echo $comp;
+        echo compress($comp);
         
     }
     

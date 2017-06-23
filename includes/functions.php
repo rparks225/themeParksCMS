@@ -105,7 +105,10 @@ function newEE($title){
       return $fileNew;
       fclose($fileNew);				  
       }else{
-            include 'apps/_ee/inc/_'.$title.'.php';
+            
+            $path = 'apps/_ee/inc/_'.$title.'.php';
+            tmpltRender($path);
+          
           }	
 	};
 
@@ -365,14 +368,13 @@ function previewButton(){
         echo '
         <button class="btn tpPreview"
                        style="position:fixed;
-                                   top:49px;
-                                   left:0;
-                                   background:rgb(30,172,186);
-                                   font-size:14pt;
+                                   top:7px;
+                                   right:37px;
+                                   background:rgba(30,172,186,0);
                                    border-radius:0;
                                    color:white;
                                    z-index:999999;">
-            <span class="changed">Preview</span> Page
+            <span class="changed">Edit</span> Page
         </button>
         ';
     }

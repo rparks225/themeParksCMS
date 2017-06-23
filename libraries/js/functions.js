@@ -190,12 +190,18 @@ Lazy Loader
 $(".lazy").lazyload({
     effect : "fadeIn"
 });
-     
+         
      
 /*=======================
 Preview Button
-=======================*/
-     $('.tpPreview').click(function() {
+=======================*/   
+ if( $('.edit').attr('contenteditable') ){     
+     jQuery.each(CKEDITOR.instances, function(){
+     eval("CKEDITOR.instances."+this.name+".destroy()"); });
+     $('.edit').removeAttr('contenteditable');
+ }
+     
+ $('.tpPreview').click(function() {
 
          $('.changed').empty();
 

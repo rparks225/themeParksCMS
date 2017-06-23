@@ -3,9 +3,9 @@
         //ini_set("display_errors", 0);
 
         // Main Connection
-        $db_host = "localhost";
-        $db_user = "root";
+        $db_host = "";
+        $db_user = "";
         $db_pass = "";
-        $db_name = "themeParks";
+        $db_name = "";
         $mysqli = new mysqli($db_host,$db_user,$db_pass,$db_name);
         

@@ -11,7 +11,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.extraPlugins = 'filebrowser,sourcedialog,fontawesome,inlinesave,lineutils,widget';
     config.contentsCss = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css';
     config.allowedContent = true; 
-    config.filebrowserBrowseUrl = '//' + window.location.hostname + '/themeParksCMS/apps/_ee/lib/kcfinder/browse.php';
+    config.filebrowserBrowseUrl = '//' + window.location.hostname + '/apps/_ee/lib/kcfinder/browse.php';
     
     config.removeButtons = 'Form,NewPage,Templates,Glyphicons,About,Smiley,Table,wenzgmap,Checkbox,Radio,Textarea, Flash,Language,Blockquote,Textfield,Button,SpecialChar,PageBreak,Flash,Iframe,BidiLtr,BidiRtl,Subscript,Superscript,TextField,Select,ImageButton,HiddenField,Find,Replace,ShowBlocks';
 
