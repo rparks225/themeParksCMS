@@ -26,7 +26,7 @@ jQuery.fn.editease = function (linkName, epath) {
 if (epath === undefined) {
 	// if path provided this is the default
     eePath = cmsPath + 'apps/_ee/';
-    sitePath = '//:' + window.location.hostname + cmsPath;
+    sitePath = '//' + window.location.hostname + cmsPath;
     //alert(sitePath);
 }else{
 	// otherwise use provided path
@@ -121,7 +121,7 @@ function doLogin(login) {
                 display: "block"
             });
             jQuery("#eesbt").removeAttr("disabled");
-            window.location.replace("/" + cmsPath + "tp-Incorrect");
+            window.location.replace( sitePath + "tp-Incorrect");
         } else {
             jQuery(".warning").html('Welcome back, loading editEase now, please wait a moment');
             jQuery(".warning").addClass("success");
@@ -135,7 +135,7 @@ function doLogin(login) {
             jQuery(".warning").css({
                 display: "none"
             });
-            window.location.replace("/" + cmsPath + "tp-Dashboard");
+            window.location.replace( sitePath + "tp-Dashboard");
         }
     });
     return false;
