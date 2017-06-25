@@ -70,6 +70,9 @@
         .input-field label {
             top: -0.2rem!important;
         }
+        #eeInit{
+            display:none;
+        }
     </style>
 
             <!--[if IE]>

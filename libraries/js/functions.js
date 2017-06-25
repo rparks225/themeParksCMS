@@ -201,26 +201,4 @@ Preview Button
      $('.edit').removeAttr('contenteditable');
  }
      
- $('.tpPreview').click(function() {
-
-         $('.changed').empty();
-
-         if( $('.edit').attr('contenteditable') ){
-
-             jQuery.each(CKEDITOR.instances, function(){
-                 eval("CKEDITOR.instances."+this.name+".destroy()"); });
-             $('.edit').removeAttr('contenteditable');
-             $('.changed').append('Edit');
-
-         }else{
-
-
-             $('.edit').attr('contenteditable','true');
-             $('.changed').append('Preview');
-             CKEDITOR.inlineAll();
-
-         }
-
-     });     
-     
 });      

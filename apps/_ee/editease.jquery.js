@@ -18,7 +18,7 @@
 
 // you shouldn't need to edit below this line //
 // +----------------------------------------------------------------------+
-var cmsPath = '/';
+var cmsPath = '/themeParkscms/';
 
 jQuery.fn.editease = function (linkName, epath) {
 
@@ -423,13 +423,7 @@ function popData(showThis, title) {
         }
         , overlayClose: true
     });
-}
-
-
-
-
-
-
+}  
 
 /*
  * SimpleModal 1.3.3 - jQuery Plugin

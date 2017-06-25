@@ -50,7 +50,7 @@
 
 <!--Open Styles code-->
     
-    <style type="text/css">html{ opacity: 0; -webkit-transition: opacity ease-in-out .5s; -moz-transition: opacity ease-in-out .5s; -o-transition: opacity ease-in-out .5s; transition: opacity ease-in-out .5s;} html.iactive{ opacity: 1; } #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { border: 1px dotted grey; }.edit[contenteditable=true]:focus { border: none!important;padding-top:20px; } .cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}
+    <style type="text/css">html{ opacity: 0; -webkit-transition: opacity ease-in-out .5s; -moz-transition: opacity ease-in-out .5s; -o-transition: opacity ease-in-out .5s; transition: opacity ease-in-out .5s;} html.iactive{ opacity: 1; } #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { border: 1px dotted grey; }.edit[contenteditable=true]:focus { border: none!important;padding-top:20px; }.cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}
 <?php 
     global $style;
     if(isset($style)){ echo $style; }else{ $style == false; }; 

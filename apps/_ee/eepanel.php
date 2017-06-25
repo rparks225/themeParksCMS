@@ -15,32 +15,44 @@
 // | jQuery (1.2.6+)    *required                                         /
 // +----------------------------------------------------------------------+
 include("config.php");
+global $userName;
 ?>
 
-<div id="eepanel" style="position:fixed;">
-    <div id="eepanelWrap">
-        <div class="ec"> <a href="<?php echo newPath; ?>tp-Dashboard"><img style="width:50px;top:-3px;position:relative;" src="<?php echo $eeJs;?>/img/logo.png" alt="editEase control panel" class="eeimg"/></a>
-           
-<!--
-            <ul class="pull-right" style="list-style:none;">
-               <li style="display:inline-block;"><a href="">Dashboard</a></li>
-                                                          <li style="display:inline-block;"><a href="">Add Page</a></li>
-               <li style="display:inline-block;"><a href="">Add Post</a></li>
-                                                          <li style="display:inline-block;"><a href="">Images</a></li>
-           </ul>
--->
-           
-            <div class="eeimgs">
-                    <a href="tp-Login" onClick="eelogout();" id="eeinclo" title="logout of editEase"><img src="<?php echo $eeJs;?>/img/cross-i.gif" alt="logout of editEase"/></a>
-            </div>
-            <strong><a href="<?php echo newPath; ?>tp-Dashboard" style="color:white;">ThemeParks CMS</a> </strong> <?php if( count($pages)> 0){?><?php foreach ($pages as &$v) {	$pd = explode("|", $v);	echo "<span class='dash'>  <a href='$pd[1]'>$pd[0]</a>  |</span>";	}?><?php } ?>
-                <br />
-                <br />
-            </div>
-    </div>
+<ul class="ee_sideNav">
+    <li style="text-align:center;"> <img style="width:200px;top:-20px;position:relative;" src="<?php echo $eeJs;?>/img/logo.png" alt="editEase control panel" class="eeimg" /> </li>
+    <li>
+        <hr>
+    </li>
+    <li> <a href="tp-Dashboard">Back to Dashboard</a> </li>
+    <li> <a href="tp-Pages">Edit Page</a> </li>
+    <li> <a href="tp-Post">Edit Post</a> </li>
+    <li> <a style="text-align:left;border-radius:0;" href="#" onclick="event.preventDefault()" class="btn tpPreview"><span class="changed">Preview</span> Page</a> </li>
+    <li> <a href="#" class="openSide" onclick="event.preventDefault()">Close Side bar</a> </li>
+    <li> <a href="tp-Login" onClick="eelogout();">Logout</a> </li>
+</ul>
 
+<div id="eepanel">
+    <div id="eepanelWrap">
+        <div class="ec">
+            <div class="eeimgs">
+                <div href="#" class="btn openSide" style="color:white;font-size:16pt;margin-top:-15px;"> <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </div>
+            </div> <strong>
+            <a href="<?php echo newPath; ?>tp-Dashboard" style="color:white;">You Are logged in as: <span style="color:#1EACBA;"><?php echo $userName; ?></span></a> 
+            </strong> </div>
+    </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+<div id="eeInit"> <i id="eeIni" class="fa fa-2x fa-angle-double-up" aria-hidden="true"></i> </div>
+
+<script>
+$(document).ready(function(){$('.openSide').click(function(){if($('.ee_sideNav').position().left==0){$('.ee_sideNav').animate({left:"-315px"},"300")}else{$('.ee_sideNav').animate({left:"0px"},"300")}});$('#eeInit').click(function(){if($('.ee_sideNav').position().left==0){$('.ee_sideNav').animate({left:"-315px"},"300")}
+if($('#eeIni').hasClass('fa-angle-double-up')){$('#eeIni').removeClass('fa-angle-double-up');$('#eeIni').addClass('fa-angle-double-down')}else{$('#eeIni').removeClass('fa-angle-double-down');$('#eeIni').addClass('fa-angle-double-up');$('.ee_sideNav').animate({left:"0px"},"300")}
+$('#eepanel').slideToggle()});$('.tpPreview').click(function(){$('.changed').empty();if($('.edit').attr('contenteditable')){jQuery.each(CKEDITOR.instances,function(){eval("CKEDITOR.instances."+this.name+".destroy()")});$('.edit').removeAttr('contenteditable');$('.changed').append('Edit')}else{$('.edit').attr('contenteditable','true');$('.changed').append('Preview');CKEDITOR.inlineAll()}})})
+</script>
+
+
+
+
 
 
 

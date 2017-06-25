@@ -1,4 +1,3 @@
-{# previewButton() #}
 
 <!--Open Footer-->
 <footer>    

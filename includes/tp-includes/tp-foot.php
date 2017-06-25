@@ -37,7 +37,7 @@ $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
        <script type="text/javascript" src="http://cryptojs.altervista.org/api/functions_cryptography.js"></script>
                      ';
        
-         echo  '<script>var Crypt=new Crypt;$("#loginform").editease(),$("#loginform").submit(function(){return doLogin(loginform)}),$("#loginform button").click(function(){var o=Crypt.HASH.md5($("#loginform input#password").val());$("#loginform input#password").val("'.$salt.'"+o),alert("'.$salt.'"+o)});
+         echo  '<script>var Crypt=new Crypt;$("#loginform").editease(),$("#loginform").submit(function(){return doLogin(loginform)}),$("#loginform button").click(function(){var o=Crypt.HASH.md5($("#loginform input#password").val());$("#loginform input#password").val("'.$salt.'"+o)});
                 </script>     
                    ';
                  
