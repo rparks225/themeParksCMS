@@ -26,7 +26,7 @@ global $userName;
     <li> <a href="tp-Dashboard">Back to Dashboard</a> </li>
     <li> <a href="tp-Pages">Edit Page</a> </li>
     <li> <a href="tp-Post">Edit Post</a> </li>
-    <li> <a style="text-align:left;border-radius:0;" href="#" onclick="event.preventDefault()" class="btn tpPreview"><span class="changed">Preview</span> Page</a> </li>
+    <li> <a style="text-align:left;border-radius:0;" href="#" onclick="event.preventDefault()" class="btn tpPreview"><span class="changed">Edit</span> Content</a> </li>
     <li> <a href="#" class="openSide" onclick="event.preventDefault()">Close Side bar</a> </li>
     <li> <a href="tp-Login" onClick="eelogout();">Logout</a> </li>
 </ul>
