@@ -14,7 +14,7 @@
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati corrupti molestiae deserunt porro harum.</p>
 
-<p><a href="/newSite/News-all">Read More...</a></p>
+<p><a href="News-all">Read More...</a></p>
 </div>
 </div>
 
@@ -26,16 +26,16 @@
 <div class="row row-1">
 <div class="col col-md-6">
 <div class="content">
-<p><a href="/newSite/Home">Home</a><br />
-<a href="/newSite/About">About</a><br />
-<a href="/newSite/News-all">News</a></p>
+<p><a href="Home">Home</a><br />
+<a href="About">About</a><br />
+<a href="News-all">News</a></p>
 </div>
 </div>
 
 <div class="col col-md-6">
 <div class="content">
-<p><a href="/newSite/Gallery">Gallery</a><br />
-<a href="/newSite/Contact">Contact</a></p>
+<p><a href="Gallery">Gallery</a><br />
+<a href="Contact">Contact</a></p>
 </div>
 </div>
 </div>

@@ -63,6 +63,7 @@ class model{
                     'Location'=>'location',
                     'Locationtext'=>'locText',
                     'navId'=>'navId',
+                    'COUNT(*)'=>'count'
                 );	
  
                 foreach($loops as $loop => $val){
@@ -163,8 +164,18 @@ class model{
 
 		$this->query($query, $block, $other);
 		
-		}		
+		}
+    
+    public function rows($query){
+
+        global $mysqli;
+        //$newQuery = 'Select COUNT(*) '.substr($query,8);
+        $result = $mysqli->query($query);
+        $row = $result->fetch_assoc();
+        return $row['COUNT(*)'];
+
+    }
 					
-	}
+}
 	
 	

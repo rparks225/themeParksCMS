@@ -9,7 +9,7 @@ class page{
                         if($nav == ''){
 
                                //require_once 'libraries/themes/'.theme().'/html_blocks/404.php';
-                               header('Location: http://localhost/cesi/404');
+                               header('Location: '.ROOT.'404');
 
                          }else{
                              
