@@ -15,6 +15,7 @@ if(isset($userNames)){
 	
 	if($userNames[$_GET['username']]===$_GET['password']&&$_GET['username']&$_GET['password']){
 		$_SESSION[''.$sessKey.''] = 'eeloggedin';
+        $_SESSION['user'] = $_GET['username'];
 		echo 'success';
 	}else{
 		echo 'fail';
