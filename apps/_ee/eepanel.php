@@ -54,8 +54,8 @@ global $userName;
 <div id="eeInit"> <i id="eeIni" class="fa fa-2x fa-angle-double-up" aria-hidden="true"></i> </div>
 
 <script>
-$(document).ready(function(){$('.openSide').click(function(){if($('.ee_sideNav').position().left==0){$('.ee_sideNav').animate({left:"-315px"},"300");$('.overlay').fadeOut('slow')}else{$('.ee_sideNav').animate({left:"0px"},"300");$('.overlay').fadeIn('slow')}});$('#eeInit').click(function(){if($('.ee_sideNav').position().left==0){$('.ee_sideNav').animate({left:"-315px"},"300")}
-if($('#eeIni').hasClass('fa-angle-double-up')){$('#eeIni').removeClass('fa-angle-double-up');$('#eeIni').addClass('fa-angle-double-down')}else{$('#eeIni').removeClass('fa-angle-double-down');$('#eeIni').addClass('fa-angle-double-up');$('.ee_sideNav').animate({left:"0px"},"300")}
+$(document).ready(function(){$('.openSide').click(function(){if($('.ee_sideNav').position().left==0){$('.ee_sideNav').animate({left:"-315px"},"300");$('.overlay').fadeOut('slow')}else{$('.ee_sideNav').animate({left:"0px"},"300");$('.overlay').fadeIn('slow')}});$('#eeInit').click(function(){if($('.ee_sideNav').position().left==0){$('.overlay').fadeOut('slow');$('.ee_sideNav').animate({left:"-315px"},"300")}
+if($('#eeIni').hasClass('fa-angle-double-up')){$('#eeIni').removeClass('fa-angle-double-up');$('#eeIni').addClass('fa-angle-double-down')}else{$('#eeIni').removeClass('fa-angle-double-down');$('#eeIni').addClass('fa-angle-double-up');$('.overlay').fadeIn('slow');$('.ee_sideNav').animate({left:"0px"},"300")}
 $('#eepanel').slideToggle()});$('.tpPreview').click(function(){$('.overlay').fadeOut('slow');$('.ee_sideNav').animate({left:"-315px"},"300");$('.changed').empty();if($('.edit').attr('contenteditable')){jQuery.each(CKEDITOR.instances,function(){eval("CKEDITOR.instances."+this.name+".destroy()")});$('.edit').removeAttr('contenteditable');$('.changed').append('Edit')}else{$('.edit').attr('contenteditable','true');$('.changed').append('Preview');CKEDITOR.inlineAll()}});$('.overlay').click(function(){$('.ee_sideNav').animate({left:"-315px"},"300");$('.overlay').fadeOut('slow')})});
 </script>
 

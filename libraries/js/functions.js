@@ -193,7 +193,7 @@ $(".lazy").lazyload({
          
      
 /*=======================
-Preview Button
+Preview Button init
 =======================*/   
  if( $('.edit').attr('contenteditable') ){     
      jQuery.each(CKEDITOR.instances, function(){
