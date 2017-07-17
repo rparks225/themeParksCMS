@@ -1,17 +1,23 @@
-<?php global $sName; ?>
+<?php 
 
-{-- if ( "{{ script }}" == "false" ) --}
+global $sName; 
+$script = substr(strip_tags('{{ script }}'),0,155);
+$title = str_replace(' ', ', ', '{{ title }}');
+    
+?>
 
-    {# header('HTTP/1.0 404 Not Found') #}
-    <title>{% echo $sName %} - 404 error page</title>
-    <link rel="canonical" href="{% echo ROOT %}404">    
-    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+{-- if ( links() == ROOT.'Gallery-'.title(2) ) --}
+
+    <title>{% echo $sName %} - {{ title }}</title>
+    <meta name="keywords" content="{% echo $sName %}, {{ album }}" />
+    <meta name="description" content="{{ album }}" />
+    <link rel="canonical" href="{% echo links() %}">
 
 {-- else --}
 
-    <title>{% echo $sName %} - {{ heading }}</title>
-    <meta name="keywords" content="{{ keywords }}" />
-    <meta name="description" content="{{ script }}" />
+    <title>{% echo $sName %} - {{ title }}</title>
+    <meta name="keywords" content="{% echo $sName %}, {% echo $title %}" />
+    <meta name="description" content="{% echo $script %}" />
     <link rel="canonical" href="{% echo links() %}">
 
 {-- endif --}

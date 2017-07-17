@@ -169,8 +169,8 @@ class model{
     public function rows($query){
 
         global $mysqli;
-        //$newQuery = 'Select COUNT(*) '.substr($query,8);
-        $result = $mysqli->query($query);
+        $newQuery = 'SELECT COUNT(*) '.substr($query,8);
+        $result = $mysqli->query($newQuery);
         $row = $result->fetch_assoc();
         return $row['COUNT(*)'];
 

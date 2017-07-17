@@ -36,6 +36,13 @@
                 {# $block = 'post' #}
                 {# $heading = new model() #}
                 {# $heading->query($query,$block) #}
+                {# $rows = $heading->rows($query) #}
+                
+                {-- if ($rows == 0) --}
+                
+                    {# header('Location: 404') #}
+                
+                {-- endif --}
 
             </div>
         </div>

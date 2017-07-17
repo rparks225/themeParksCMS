@@ -2,7 +2,7 @@
 <div class="row row-1">
 <div class="col col-md-6">
 <div class="content">
-<p><img class="img-fluid lazy" data-original="https://unsplash.it/500/500/?random" style="width: 100%;" /></p>
+<p><img class="img-fluid lazy" data-original="https://unsplash.it/500/500/?random" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" style="width: 100%;" /></p>
 </div>
 </div>
 

@@ -2,15 +2,13 @@
 {# $block = 'single' #}
 {# $page = new model() #}
 {# $page->pages($query, $block) #}
-{# $newQuery = 'SELECT COUNT(*) FROM page WHERE Title LIKE \''.title(2).'\'' #}
-{# $rows = $page->rows($newQuery) #}
-
+{# $rows = $page->rows($query) #}
 
 {-- if ($rows == 0) --}
 
 <!--Open Cont area-->
 
-{# header('Location: 404') #}
+       {# header('Location: 404') #}
 
 <!--Close Cont area-->
 

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 a.eelgn{border:0;}
 *{margin:0;padding:0;}
-#eepanel{font-size:12pt;margin:0;padding:10px;display:block;position:fixed;z-index:9999;top:-40px;border-bottom:1px solid #E4F0F4;background:grey;width:100%;line-height:15px;font-family: 'open-sans', Arial, Helvetica, sans-serif;color:white;text-align:left;}
+#eepanel{font-size:12pt;margin:0;padding:10px 10px 20px 10px;display:block;position:fixed;z-index:9999;top:-40px;border-bottom:1px solid #E4F0F4;background:#424242;width:100%;line-height:15px;font-family: 'open-sans', Arial, Helvetica, sans-serif;color:white;text-align:left;}
 #eepanelWrap{display:none;padding:7px 10px 0 10px;}
 #eepanel .ec{display:block;}
 #eepanel .eeimg{margin:2px 4px 0 4px;float:left;display:block;}
@@ -19,8 +19,8 @@ a.eelgn{border:0;}
 #eepanel p{line-height:15px;color:#000;padding:5px 0;}
 #eelogout, #eelogin{display:none;font-size:1.1em;position:relative;}
 
-#eeInit{ opacity:.2;cursor:pointer;transition: background-color, opacity .3s;color:white;background-color:rgba(0,0,0,0);position:fixed;right:20px;bottom:20px;z-index:99999;padding:25px 30px;border-radius:50%; }
-#eeInit:hover{ opacity:1;background-color:grey; }
+#eeInit{ opacity:.2;cursor:pointer;transition: background-color, opacity .3s;color:#1EACBA;background-color:rgba(0,0,0,0);position:fixed;right:20px;bottom:20px;z-index:99999;padding:25px 30px;border-radius:50%; }
+#eeInit:hover{ opacity:1;background-color:#424242; }
 ul.ee_sideNav{ overflow:auto;padding-top:50px;left:-315px;top:0;background:white;position:fixed;width:315px;height:100%;z-index: 99999;list-style:none; }
 ul.ee_sideNav li{ display:block;width: 100%; }
 ul.ee_sideNav li a:hover{ background-color:rgba(0,0,0,.09); }

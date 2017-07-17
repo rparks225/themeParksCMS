@@ -32,7 +32,7 @@ global $userName;
 </ul>
 
 <div class="overlay" style="position: fixed;
-                            background: rgba(0,0,0,.3);
+                            background: rgba(50,50,50,.5);
                             width: 100%;
                             height: 100%;
                             z-index: 99998;

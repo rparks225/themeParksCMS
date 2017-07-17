@@ -2,8 +2,11 @@
 
 {-- if ( "{{ script }}" == "false" ) --}
 
-{# header('HTTP/1.0 404 Not Found') #}
-<title>{% echo $sName %} - 404 error page</title>
+    {-- if (title(2) == '404') --}
+        {# header('HTTP/1.0 404 Not Found') #}
+    {-- endif --}
+
+<title>{% echo $sName %} - {{ title }}</title>
 <link rel="canonical" href="{% echo ROOT %}404">    
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 

@@ -6,20 +6,30 @@
     
 <?php
 
-        if(title(2) == ''){
-            
-            $query = 'SELECT * FROM `page` WHERE `Title` LIKE "Home"';
-            $block = 'metaScript2';
-            
-        }else{
+if(title(2) == ''){
 
-            $query = 'SELECT * FROM `page` WHERE `Title` LIKE "'.title(2).'"';
-            $block = 'metaScript2';
+    $query = 'SELECT * FROM `page` WHERE `Title` LIKE "Home"';
+    $block = 'metaScript2';
 
-        }    
+}else if(links() == ROOT.'News-Post-'.title(2)){
     
-        $metaScript = new model();
-        $metaScript->query($query, $block);
+    $query = 'SELECT * FROM `post` WHERE `Id` LIKE "'.title(2).'"';
+    $block = 'metaScript';
+    
+}elseif(links() == ROOT.'Gallery-'.title(2)){
+    
+    $query = 'SELECT * FROM `gallery` WHERE `Gallery` LIKE "'.title(2).'"';
+    $block = 'metaScript';
+    
+}else{
+
+    $query = 'SELECT * FROM `page` WHERE `Title` LIKE "'.title(2).'"';
+    $block = 'metaScript2';
+
+}    
+
+$metaScript = new model();
+$metaScript->query($query, $block);
 
 ?>
     
@@ -35,15 +45,13 @@
         global $inline;
         $inline = ' class="tp edit" contenteditable="true"';
     };
-
 ?>        
     
 <?php 
-
-    if(title() == 'dashboard' || title() == 'pages'){
+if(title() == 'dashboard' || title() == 'pages'){
     echo '<meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="-1">';
-    }    
+}    
 ?>    
 <!--Close Meta Tags-->  
 
