@@ -34,6 +34,9 @@ $metaScript->query($query, $block);
 ?>
     
 <meta name=viewport content="width=device-width, initial-scale=1">
+<link rel="dns-prefetch" href="<?php echo ROOT; ?>"> 
+<link rel="preload" as="style" href="<?php echo ROOT; ?>libraries/css/themeParks-styles.css" onload="this.rel='stylesheet'">
+<link rel="preload" as="script" href="<?php echo ROOT; ?>libraries/js/compile.php">
 <?php 
 
     //Auto logout script time out 1hr 30min
@@ -58,7 +61,7 @@ if(title() == 'dashboard' || title() == 'pages'){
 
 <!--Open Styles code-->
     
-    <style type="text/css">html{ opacity: 0; -webkit-transition: opacity ease-in-out .5s; -moz-transition: opacity ease-in-out .5s; -o-transition: opacity ease-in-out .5s; transition: opacity ease-in-out .5s;} html.iactive{ opacity: 1; } #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { border: 1px dotted grey; }.edit[contenteditable=true]:focus { border: none!important;padding-top:20px; }.cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}
+    <style type="text/css">html{-webkit-animation:fadein .5s;-moz-animation:fadein .5s;-ms-animation:fadein .5s;-o-animation:fadein .5s;animation:fadein .5s}@keyframes fadein{from{opacity:0}to{opacity:1}}@-moz-keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@-ms-keyframes fadein{from{opacity:0}to{opacity:1}}@-o-keyframes fadein{from{opacity:0}to{opacity:1}} #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { border: 1px dotted grey; }.edit[contenteditable=true]:focus { border: none!important; }.cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}
 <?php 
     global $style;
     if(isset($style)){ echo $style; }else{ $style == false; }; 
@@ -87,7 +90,6 @@ if(title() == 'dashboard' || title() == 'pages'){
     <![endif]-->
 
 <!--Close IE Fix-->
-    <?php tpCompile('styles'); ?>
     
 </head>
 

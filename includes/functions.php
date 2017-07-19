@@ -208,7 +208,7 @@ function tpCompile($e){
             };        
     }else if($e == 'js'){        
         if(file_exists('libraries/js/themeParks-Scripts.js')){        
-        echo '<script defer src="'.ROOT.'libraries/js/themeParks-Scripts.js" type="text/javascript"></script>
+        echo '<script src="'.ROOT.'libraries/js/themeParks-Scripts.js" type="text/javascript"></script>
         ';
             }else{
             echo '<script src="'.ROOT.'libraries/js/compile.php" type="text/javascript"></script>
