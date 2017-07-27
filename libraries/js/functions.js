@@ -144,18 +144,6 @@ adjusting font size
     	}
     });
 	
-/*================
-Date Picker
-=================*/
-	$(function() {
-    $( "#datepicker" ).datepicker({
-      showOn: "button",
-      buttonImage: "images/calendar.gif",
-      buttonImageOnly: true,
-      buttonText: "Select date"
-    });
-  });
-  
  
  /*===================
 Form Validate

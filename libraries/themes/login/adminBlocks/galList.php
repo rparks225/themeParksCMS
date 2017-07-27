@@ -4,7 +4,7 @@
     <td><?php echo $album; ?></td>
     <td>
         <?php
-            if($cover != 'false'){
+            if(isset($cover) && $cover != ''){
 
                 echo '<img style="width:100px;" src="'.ROOT.'apps/dropzone/upload/'.$album.'/'.$cover.'" />';
 
@@ -16,7 +16,19 @@
         ?>
     </td>
     <td><?php echo $title; ?></td>
-    <td><?php echo $order; ?></td>
+    <td>
+        <?php
+            if(isset($order) && $order != ''){
+
+                echo $order;
+
+            }else{
+
+                echo 'order not set';
+
+            }
+        ?>
+    </td>
     <td>
         <div style="position:relative;top:0;right:0;" class="fixed-action-btn horizontal">
             <a class="btn-floating btn-large blue">
@@ -46,17 +58,23 @@
         <div class="modal fade" id="myModal-<?php echo $id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header" style="text-align:center;">
 
                         <h4 class="modal-title" id="myModalLabel">
-                            Are you sure you want to delete - Id# <?php echo $id; ?>
+                            Are you sure you want to delete - "<?php echo $album; ?>" image gallery folder?
                         </h4>
+                        <div class="clearfix">&nbsp;</div>
+                        <p>This will delete all images in this folder as well</p>
                     </div>
                     <div class="modal-body">
 
+                       <div class="clearfix">&nbsp;</div>
+                       <div class="clearfix">&nbsp;</div>
                         <form method="post" style="text-align:center;">
 
                             <input type="hidden" name="id" value="<?php echo $id; ?>">
+                            <input type="hidden" name="delAlb" value="<?php echo $album; ?>">
+                            <a href="#!" class="btn btn-default modal-close">Cancel</a>
                             <input type="submit" name="delete" class="btn btn-default" value="Delete" />
 
                         </form>

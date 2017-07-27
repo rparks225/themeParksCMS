@@ -1,82 +1,72 @@
 <?php
-global $cmsPath;
+$vars = array('id', 'sUrl',
+              'dbName', 'sCaptcha', 'cmsPath',
+              'eePath', 'emailHost', 'emailAuth',
+              'emailUser', 'emailPass', 'emailEnc',
+              'emailPort', 'emailFrom', 'emailName',
+              'emailAdd', 'emailReply', 'eReplyTitle');
+
+foreach($vars as $var){
+    global $$var;
+}
+
+// Important Vars
+$site = "{$dbName}"; 
+$method = 'inserted';
+$location = 'gallery';
+$other = false;
+$query = false;	
+
+
+//Add New Gallery
+if(isset($_POST[''.$method.''])){
+    if(isset($_POST['id'])){
+        $gal = addslashes($_POST['gallery']);
+        $title = addslashes($_POST['title']);
+        $storeFolder = 'apps/dropzone/upload/'.$gal.'';        
+        if (!file_exists($storeFolder) && isset($gal)) {
+            $old = umask(0);
+            mkdir($storeFolder, 0777, true);
+            umask($old);
+        }
+        $query = 'INSERT INTO `'.$site.'`.`'.$location.'` 
+                  (`Id`, `Gallery`, `Title`) 
+                  VALUES (NULL, \''.$gal.'\', \''.$title.'\')';
+    }
+    $addgal = new update();
+    $addgal->uped($location,$query,$method);
+};
+
+
+//Delete Gallery Folder
+if(isset($_POST['delAlb'])){
+    
+    $storeFolder = 'apps/dropzone/upload/'.$_POST['delAlb'].'';
+    
+    foreach (new DirectoryIterator($storeFolder) as $fileInfo) {
+        if(!$fileInfo->isDot()) {
+            unlink($fileInfo->getPathname());
+        }
+    }
+    
+    if(count(scandir($storeFolder)) <= 2){
+        $deleted = new delete();
+        $deleted->del($location,$other);
+        rmdir($storeFolder);
+    }
+    
+    if(isset($_POST['id'])){
+        $gals = $_POST['delAlb'];
+        $location = 'images';
+        $other = array('Album',''.$gals.'');
+        $eraseImg = new delete();
+        $eraseImg->del($location,$other);   
+    }
+    
+}
+
+tpAdmin('imgMain');
+
 ?>
-<div class="row">
-   
-    <div class="col s12">
-        <ul class="tabs">
-            <li class="tab col s3"><a class="active" href="#test1">Add New Gallery</a></li>
-            <li class="tab col s3"><a href="#test2">Edit Images</a></li>
-            <li class="tab col s3"><a href="#test3">Upload</a></li>
-        </ul>
-    </div>
-    
-    <div id="test1" class="col s12">
-      
-        <div class="table-responsive">
-       
-                <table class="responsive-table highlight">
 
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Gallery Name</th>
-                            <th>Cover Image</th>
-                            <th>Page Title</th>
-                            <th>Sort Order</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
 
-                    <?php
-
-                        $query = 'SELECT * FROM gallery';
-                        $block = 'galList';
-                        $tab = new admin_model();
-                        $tab->query($query,$block);
-
-                    ?>
-
-                </table>
-        
-        </div>
-        
-    </div>
-    
-    <div id="test2" class="col s12">
-      
-      <div class="clearfix">&nbsp;</div>
-       
-        <div class="form-group">
-            <select class="form-control" name="imgChoice" id="imgChoice">
-                <option class="active" value="">Select Album to Edit Images</option>
-                <?php 
-
-                $query = 'SELECT * FROM gallery';
-                $block = 'options';
-                $tab = new admin_model();
-                $tab->query($query,$block);
-
-                ?>
-            </select>
-        </div>
-
-        <?php
-
-            $query = 'SELECT * FROM gallery';
-            $block = 'imgList';
-            $tab = new admin_model();
-            $tab->query($query,$block);
-        
-        ?>
-        
-    </div>
-    
-    <div id="test3" class="col s12">
-       
-        <iframe style="height:600px;width:100%;border:none;padding:0 15px;" 
-                src="<?php echo ROOT; ?>apps/dropzone/"></iframe>
-                
-    </div>
-    
-</div>

@@ -23,6 +23,28 @@ class admin{
 			}
 		
 		}
+    
+    public function incorrect(){
+ 
+    global $sName;
+ 
+    $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
+  
+    if(!isset($_SESSION[''.$sessKey.''])){
+ 
+        tpReq('head');
+ 
+        require_once 'libraries/themes/login/incorrect_view.php';
+ 
+        tpReq('foot');		
+ 
+    }else{
+ 
+        header('Location: '.ROOT.'tp-Dashboard');
+ 
+    }
+ 
+    }		    
 		
 	
 public function dashboard(){
@@ -136,6 +158,29 @@ global $sName;
 	
 	}	    
     
+public function album(){
+
+        global $sName;
+
+        $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
+
+        if(!isset($_SESSION[''.$sessKey.''])){
+
+            header('Location: '.ROOT.'tp-incorrect');
+
+        }else{
+
+            require_once 'libraries/themes/login/header.php';
+
+                require_once 'libraries/themes/login/dash_albumUpdate.php';
+
+            require_once 'libraries/themes/login/footer.php';		
+
+        }
+
+
+}	        
+    
 public function settings(){
 
 global $sName;
@@ -181,27 +226,5 @@ global $sName;
 	
 	
 	}	            
-	
-public function incorrect(){
-
-global $sName;
-
-	$sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
-		
-		if(!isset($_SESSION[''.$sessKey.''])){
-			
-		tpReq('head');
-     
-			require_once 'libraries/themes/login/incorrect_view.php';
-			
-		tpReq('foot');		
-		
-		}else{
-		
-		header('Location: '.ROOT.'tp-Dashboard');
-			
-			}
-		
-		}		
 		
 }

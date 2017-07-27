@@ -137,6 +137,7 @@ function direct($directory, $blocks, $other){
    Loops through files in directory for Admin Panel
 ====================================================*/
 function tpDirect($directory, $blocks, $other){
+    if(isset($other[''])){ echo $other; }
     if (! is_dir($directory)) {
         exit('Invalid diretory path');
     }

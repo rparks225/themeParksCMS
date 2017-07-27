@@ -18,7 +18,7 @@ class update{
 		 
 		 }else{
 			 
-      echo '<script>alert("Record has successfully been '.$method.'.");</script>';
+     echo '<script>alert("'.$location.' Record has successfully been '.$method.'.");</script>';
 	   clearstatcache();
 	  echo '<script>location.href = "'.links().'"</script>';
 			 }

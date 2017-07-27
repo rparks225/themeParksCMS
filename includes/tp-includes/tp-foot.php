@@ -42,7 +42,7 @@ $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
              };      
              
 ?>
-<nonscript><?php tpCompile('styles'); ?></nonscript>
+
 </body>
 
 </html>

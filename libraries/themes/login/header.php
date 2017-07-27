@@ -68,7 +68,7 @@
             display:none!important;
         }
         .input-field label {
-            top: -0.2rem!important;
+            //top: -0.2rem!important;
         }
         #eeInit{
             display:none;

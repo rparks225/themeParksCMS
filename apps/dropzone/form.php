@@ -39,142 +39,23 @@ if($mysqli->connect_errno){
     <body>
 
         <div style="width:100%;margin:10px auto 0;padding:0px;" role="tabpanel">
+           
+            <div class="form-group">
+                <strong>Select Album</strong>
+                <i>*Please refresh the page after upload is complete</i>
+                <select class="form-control" id="albumChoice">
+                    <option class="active" value="">select</option>
+                    <?php 
 
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#add" aria-controls="add" role="tab" data-toggle="tab">Add Photos</a></li>
-                <li role="presentation"><a href="#edit" aria-controls="edit" role="tab" data-toggle="tab">Add New Gallery</a></li>
-                <li role="presentation"><a href="#images" aria-controls="images" role="tab" data-toggle="tab">Edit Images</a></li>
-            </ul>
+                    direct('upload/');
 
-            <!-- Tab panes -->
-            <div class="tab-content">
+                    ?>
+                </select>
                 <br>
-                <div role="tabpanel" class="tab-pane active" id="add">
-                    <div class="form-group">
-                        <strong>Select Album</strong>
-                        <i>*Please refresh the page after upload is complete</i>
-                        <select class="form-control" id="albumChoice">
-                            <option class="active" value="">select</option>
-                            <?php 
-
-                        direct('upload/');
-
-                        ?>
-                        </select>
-                        <br>
-                        <br>
-                        <form style="display:none;" action="index.php" class="dropzone">
-                            <input type="hidden" name="album" id="album">
-                        </form>
-                    </div>
-                </div>
-
-                <div role="tabpanel" class="tab-pane" id="edit">
-
-                    <div class="form-inline">
-                        <label>Add New Gallery</label>
-                        <br>
-                        <button class="form-control btn btn-primary" data-toggle="modal" data-target="#addGals">
-                            <span class="glyphicon glyphicon-plus"></span>
-                        </button>
-                    </div>
-                    <div class="clearfix">&nbsp;</div>
-
-                    <div class="table-responsive">
-
-                        <table class="table table-hover">
-
-                            <tbody>
-
-                                <tr class="active" style="color:black;">
-                                    <td>Id</td>
-                                    <td>Gallery Name</td>
-                                    <td>Cover Image</td>
-                                    <td>Page Title</td>
-                                    <td>Sort Order</td>
-                                    <td>Edit</td>
-                                    <td>Delete</td>
-                                </tr>
-
-                                <?php
-
-                                $query = 'SELECT * FROM gallery';
-                                $block = 'galList';
-                                $tab = new admin_model();
-                                $tab->query($query,$block);
-
-                                ?>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-                <!-- Modal -->
-                <div class="modal fade" id="addGals" tabindex="-1" role="dialog" aria-labelledby="addGalsLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Add new gallery.</h4>
-                            </div>
-
-                            <div class="modal-body">
-
-                                <form action="index.php" method="post">
-
-                                    <div class="form-group">
-                                        <label for="album">Gallery Name</label>
-                                        <input class="form-control" type="text" name="album" id="album" />
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="title">Gallery Title</label>
-                                        <input class="form-control" type="text" name="title" id="title" />
-                                    </div>
-
-                                    <input class="form-control" type="hidden" name="addGal" id="addGal" />
-
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <input type="submit" class="btn btn-primary" value="Save changes" />
-
-                                </form>
-
-                            </div>
-                            <div class="modal-footer">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Close Modal-->
-
-                <div role="tabpanel" class="tab-pane" id="images">
-                    <div class="form-group">
-                        <strong>Select Album to Edit Images</strong>
-                        <select class="form-control" name="imgChoice" id="imgChoice">
-                            <option class="active" value="">select</option>
-                            <?php 
-
-                          direct('upload/');
-
-                          ?>
-                        </select>
-                    </div>
-
-                    <?php
-                  
-                  
-                      directory('upload/');
-                  
-                  ?>
-
-                </div>
-
+                <br>
+                <form style="display:none;" action="index.php" class="dropzone">
+                    <input type="hidden" name="album" id="album">
+                </form>
             </div>
 
         </div>
@@ -200,15 +81,6 @@ if($mysqli->connect_errno){
                     } else {
                         $('form.dropzone').fadeOut();
                     }
-                });
-
-                $('#imgChoice').change(function () {
-
-                    var imp = $(this).val();
-
-                    $('.hid').hide();
-                    $('#' + imp).show();
-
                 });
 
             });

@@ -35,7 +35,7 @@ $metaScript->query($query, $block);
     
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link rel="dns-prefetch" href="<?php echo ROOT; ?>"> 
-<link rel="preload" as="style" href="<?php echo ROOT; ?>libraries/css/themeParks-styles.css" onload="this.rel='stylesheet'">
+<link rel="preload" as="style" href="<?php echo ROOT; ?>libraries/css/themeParks-styles.css">
 <link rel="preload" as="script" href="<?php echo ROOT; ?>libraries/js/compile.php">
 <?php 
 
@@ -90,7 +90,7 @@ if(title() == 'dashboard' || title() == 'pages'){
     <![endif]-->
 
 <!--Close IE Fix-->
-    
+    <?php tpCompile('styles'); ?>
 </head>
 
     <?php tpInc('header'); ?>

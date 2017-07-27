@@ -18,7 +18,7 @@
 
 // you shouldn't need to edit below this line //
 // +----------------------------------------------------------------------+
-var cmsPath = '/themeParkscms/';
+var cmsPath = '/themeParksCMS/';
 
 jQuery.fn.editease = function (linkName, epath) {
 

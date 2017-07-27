@@ -35,7 +35,7 @@ $mail->isHTML(true);                                  // Set email format to HTM
 //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
-if ($_POST["op"] == 'send'){
+if (isset($_POST["op"]) && $_POST["op"] == 'send'){
 
 if(isset($response) && $response != '' && ($_POST["op"]=="send")){ 
 if (preg_match("/http/i", "$name")) {echo "$SpamErrorMessage"; exit();} 
@@ -95,7 +95,7 @@ if(!$mail->send()) {
 		
 		}
 }else{
-		
+        $msg1 = '';
 		$captcha = '<div class="cap" style="display:none;">
 			<div class="g-recaptcha" data-theme="dark" data-sitekey="'.$sCaptcha.'"></div>
 		</div>';
