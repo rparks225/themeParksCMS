@@ -48,7 +48,7 @@ $site = "{$dbName}";
 
                       //deletes records
                       $delete = new delete();
-                      $delete->del($location);
+                      $delete->del($location,false);
 
                       ?>
 

@@ -35,6 +35,7 @@
 
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <input type="hidden" name="imgDelete" value="<?php echo $img; ?>" />
+                    <a href="#!" class="btn modal-close">Cancel</a>
                     <input type="submit" name="delete" class="btn btn-default" value="Delete" />
 
                 </form>

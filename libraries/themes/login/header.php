@@ -1,4 +1,7 @@
-<?php global $userName; ?>
+<?php global $userName; 
+    $tits = explode('/',$_SERVER['REQUEST_URI']); 
+    $tits =str_replace('-', ' ',ucwords($tits[2])); 
+?>
 <!DOCTYPE html>
 <html lang="">
     
@@ -7,7 +10,7 @@
     <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
     <?php
 
-    if(links() == ROOT.'tp-Pages-'.title(2).'' || links() == ROOT.'tp-Jobs-'.title(2).''){
+    if(links() == ROOT.'tp-Pages-'.title(2).'' || links() == ROOT.'tp-Jobs-'.title(2).'' || links() == ROOT.'tp-Album-'.title(2).''){
 
         echo '<title>ThemeParks CMS - Add/Edit: '.title(2).'</title>';
 
@@ -124,13 +127,7 @@
     <!--Open Parallax Image-->
     <div class="parallax-container">
         <div style="padding-left:40px;" class="valign-wrapper">
-            <?php 
-            //Heading
-            $query = 'SELECT * FROM `page` WHERE `Title` LIKE "'.title().'"';
-            $block = 'heading';
-            $heading = new admin_model();
-            $heading->query($query,$block);		  
-            ?>
+            <h1 class="valign light white-text"><br><?php echo $tits; ?></h1>
         </div>
         <div class="parallax"><img class="responsive-img" src="<?php echo ROOT; ?>libraries/themes/login/assets/images/header.jpg"></div>
     </div>

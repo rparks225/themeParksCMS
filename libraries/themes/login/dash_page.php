@@ -27,6 +27,7 @@ $site = "{$dbName}";
                     <?php 
 						$method = 'inserted';
 						$location = 'page';
+                        $other = false;
 						$query = false;	
 								
 						if(isset($_POST[''.$method.''])){
@@ -111,7 +112,7 @@ $site = "{$dbName}";
 
                           //deletes records
                           $delete = new delete();
-                          $delete->del($location);
+                          $delete->del($location,$other);
 
 					  ?>
                         
