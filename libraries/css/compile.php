@@ -24,7 +24,7 @@ function compress($buffer) {
 
 foreach($files as $v){
 	
-	if(substr($v,-3) != 'css'){
+    if(substr($v,-3) != 'css'){
 	
 	echo '';
 	

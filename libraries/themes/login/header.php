@@ -59,6 +59,7 @@
         .cke_dialog{
             border: 1px solid grey;
             box-shadow: 2px 2px 10px;
+            z-index:999999999;
         }
         select.cke_dialog_ui_input_select{
             display:block!important;
