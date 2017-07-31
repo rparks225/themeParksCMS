@@ -9,7 +9,8 @@
 
         if(isset($_POST['imgDelete'])){
             $del = new delete();
-            $del->del($location);
+            $other = false;
+            $del->del($location,$other);
             
             $path = 'apps/dropzone/upload/'.$album.'/'.$_POST['imgDelete'].'';
             unlink($path);
