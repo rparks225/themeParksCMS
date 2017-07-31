@@ -67,21 +67,13 @@ if(title() == 'dashboard' || title() == 'pages'){
 <link rel="preload" href="<?php echo ROOT; ?>libraries/js/themeParks-Scripts.js" as="script">
 
 <!--Close favicon-->   
-   
-<?php tpCompile('styles'); ?>
 
 <!--Open Styles code-->
-<<<<<<< Updated upstream
     
     <style type="text/css">html{-webkit-animation:fadein .5s;-moz-animation:fadein .5s;-ms-animation:fadein .5s;-o-animation:fadein .5s;animation:fadein .5s}@keyframes fadein{from{opacity:0}to{opacity:1}}@-moz-keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@-ms-keyframes fadein{from{opacity:0}to{opacity:1}}@-o-keyframes fadein{from{opacity:0}to{opacity:1}} #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { border: 1px dotted grey; }.edit[contenteditable=true]:focus { border: none!important; }.cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}
-<?php 
-=======
-
-<style type="text/css">html{ opacity: 0; -webkit-transition: opacity ease-in-out .5s; -moz-transition: opacity ease-in-out .5s; -o-transition: opacity ease-in-out .5s; transition: opacity ease-in-out .5s;} html.iactive{ opacity: 1; } #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { border: 1px dotted grey; }.edit[contenteditable=true]:focus { border: none!important; }.cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;z-index:999999999;}
     <?php 
->>>>>>> Stashed changes
-    global $style;
-    if(isset($style)){ echo $style; }else{ $style == false; }; 
+        global $style;
+        if(isset($style)){ echo $style; }else{ $style == false; }; 
     ?>   
 </style>
 
@@ -98,13 +90,11 @@ if(title() == 'dashboard' || title() == 'pages'){
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<<<<<<< Updated upstream
+
 <!--Close IE Fix-->
+   
     <?php tpCompile('styles'); ?>
-=======
-<!--Close IE Fix-->   
     
->>>>>>> Stashed changes
 </head>
 
     <?php tpInc('header'); ?>
