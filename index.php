@@ -7,7 +7,7 @@ header("Expires: " . gmdate("D, d M Y H:i:s", time() + 300) . " GMT");
 
 include 'includes/functions.php';
 //HMTL Compress
-compress('true');
+compress('off');
 
 //Calls app
 require_once 'apps/cms/cms_app.php';

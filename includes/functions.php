@@ -106,8 +106,7 @@ function newEE($title){
       fclose($fileNew);				  
       }else{
             
-            $path = 'apps/_ee/inc/_'.$title.'.php';
-            tmpltRender($path);
+            include 'apps/_ee/inc/_'.$title.'.php';
           
           }	
 	};
@@ -126,6 +125,7 @@ function direct($directory, $blocks, $other){
       foreach (scandir($directory) as $file) {
           if ('.' === $file) continue;
           if ('..' === $file) continue;
+          if ('.DS_Store' === $file) continue;
       $id = $i++;
           $files[] = $file;
            include 'libraries/themes/'.theme().'/html_blocks/'.$blocks.'.php';
@@ -146,6 +146,7 @@ function tpDirect($directory, $blocks, $other){
     foreach (scandir($directory) as $file) {
         if ('.' === $file) continue;
         if ('..' === $file) continue;
+        if ('.DS_Store' === $file) continue;
         $id = $i++;
         $files[] = $file;
         include 'libraries/themes/login/adminBlocks/'.$blocks.'.php';
