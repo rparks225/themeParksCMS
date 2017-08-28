@@ -82,7 +82,7 @@ Image Draggable
     $( "#sortable" ).sortable({
 		update: function (event, ui){
 		var data = $(this).sortable('serialize');
-		$.post('libraries/themes/login/adminBlocks/save_order.php', data, function(theResponse) {
+		$.post('includes/admin/adminBlocks/save_order.php', data, function(theResponse) {
 			
 			console.log(theResponse);
 			
@@ -100,7 +100,7 @@ Image Draggable
     $( "#sort" ).sortable({
 		update: function (event, ui){
 		var data = $(this).sortable('serialize');
-            $.post('libraries/themes/login/adminBlocks/gal_order.php', data, function(theResponse) {
+            $.post('includes/admin/adminBlocks/gal_order.php', data, function(theResponse) {
 			
 			console.log(theResponse);
 			

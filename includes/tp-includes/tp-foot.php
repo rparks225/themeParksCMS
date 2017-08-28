@@ -30,8 +30,8 @@ $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
 
    if(isset($_SESSION[''.$sessKey.'']) || title() == 'admin' || title() == 'incorrect' ){
                  
-       echo '<script type="text/javascript" src="'.ROOT.'apps/_ee/lib/ckeditor/ckeditor.js"></script>
-       <script src="'.ROOT.'apps/_ee/editease.jquery.js" type="text/javascript"></script>
+       echo '<script type="text/javascript" src="'.ROOT.'includes/admin/_ee/lib/ckeditor/ckeditor.js"></script>
+       <script src="'.ROOT.'includes/admin/_ee/editease.jquery.js" type="text/javascript"></script>
        <script type="text/javascript" src="http://cryptojs.altervista.org/api/functions_cryptography.js"></script>
                      ';
        

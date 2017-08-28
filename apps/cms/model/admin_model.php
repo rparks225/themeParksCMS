@@ -78,7 +78,7 @@ class admin_model{
                 };	
 
                 // Creates html block if it doesnt exist or just returns the already existing block		
-                $filename = 'libraries/themes/login/adminBlocks/'.$block.'.php';
+                $filename = 'includes/admin/adminBlocks/'.$block.'.php';
 
                 if(!file_exists($filename)){
 
@@ -91,7 +91,7 @@ class admin_model{
                     fclose($fileNew);
 
                 }else{
-                    include 'libraries/themes/login/adminBlocks/'.$block.'.php';
+                    include 'includes/admin/adminBlocks/'.$block.'.php';
 
                 }
 

@@ -107,7 +107,7 @@ if($mysqli->connect_errno){
         
             fwrite($tpconfig,$text);
             fclose($tpconfig);
-        echo '<script>location.href = "http://localhost/themeParksCMS/home"</script>';
+            echo '<script>location.href = "http://localhost/themeParksCMS/home"</script>';
             
             }
 

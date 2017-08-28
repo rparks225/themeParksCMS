@@ -97,7 +97,7 @@ function theme(){
     Adds new cms component to desired page
 =============================================*/
 function newEE($title){	
-	$filename = 'apps/_ee/inc/_'.$title.'.php';				  
+    $filename = 'includes/admin/_ee/inc/_'.$title.'.php';				  
       if(!file_exists($filename)){				  
        touch($filename);
        chmod($filename, 0777);				  
@@ -106,7 +106,7 @@ function newEE($title){
       fclose($fileNew);				  
       }else{
             
-            include 'apps/_ee/inc/_'.$title.'.php';
+            include 'includes/admin/_ee/inc/_'.$title.'.php';
           
           }	
 	};
@@ -149,7 +149,7 @@ function tpDirect($directory, $blocks, $other){
         if ('.DS_Store' === $file) continue;
         $id = $i++;
         $files[] = $file;
-        include 'libraries/themes/login/adminBlocks/'.$blocks.'.php';
+        include 'includes/admin/adminBlocks/'.$blocks.'.php';
     }
 };	
 
@@ -260,7 +260,15 @@ function tpBlock($blocks){
      Finds a defined Block for the admin panel
 ====================================================*/
 function tpAdmin($blocks){
-    require_once 'libraries/themes/login/adminBlocks/'.$blocks.'.php';
+    require_once 'includes/admin/adminBlocks/'.$blocks.'.php';
+};
+
+
+/*====================================================
+     Finds a defined Block for the admin panel
+====================================================*/
+function tpAdminInc($blocks){
+    require_once 'includes/admin/'.$blocks.'.php';
 };
 
 
@@ -348,7 +356,7 @@ function compress($switch){
 /*====================================================
            Login timout variable in seconds
 ====================================================*/
-$destroy = '<meta http-equiv="refresh" content="1800;url='.ROOT.'apps/_ee/sess-destroy.php" />';
+$destroy = '<meta http-equiv="refresh" content="1800;url='.ROOT.'includes/admin/_ee/sess-destroy.php" />';
 
 
 /*====================================================

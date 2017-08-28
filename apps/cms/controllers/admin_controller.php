@@ -10,7 +10,7 @@ class admin{
 
         tpReq('head');
 
-            require_once 'libraries/themes/login/login_view.php';
+                require_once 'includes/admin/login_view.php';
 
         tpReq('foot');	
 
@@ -30,7 +30,7 @@ class admin{
 
             tpReq('head');
 
-                require_once 'libraries/themes/login/incorrect_view.php';
+                require_once 'includes/admin/incorrect_view.php';
 
             tpReq('foot');		
 
@@ -52,11 +52,11 @@ class admin{
 
         }else{
 
-            require_once 'libraries/themes/login/header.php';
+            tpAdminInc('header');
 
-                require_once 'libraries/themes/login/dash_view.php';
+                tpAdminInc('dash_view');
 
-            require_once 'libraries/themes/login/footer.php';		
+            tpAdminInc('footer');		
 
         }
 	
@@ -73,22 +73,22 @@ class admin{
 
         }else{
 
-            require_once 'libraries/themes/login/header.php';
+            tpAdminInc('header');
 
                 if($nav == ''){
 
-                    require_once 'libraries/themes/login/dash_page.php';
+                    tpAdminInc('dash_page');
 
                 }else if(links() == ROOT.'tp-Pages-Update-'.title(2).''){
-
-                    require_once 'libraries/themes/login/dash_pgUpdate.php';
+                    
+                    tpAdminInc('dash_pgUpdate');                    
 
                 }else if ($nav != ''){
 
-                    require_once 'libraries/themes/login/dash_page.php';
+                    tpAdminInc('dash_page');
                 }
 
-            require_once 'libraries/themes/login/footer.php';		
+            tpAdminInc('footer');		
 
         }
 	
@@ -104,19 +104,19 @@ class admin{
 
         }else{
 
-            require_once 'libraries/themes/login/header.php';
+            tpAdminInc('header');
 
                 if($nav == ''){
-
-                    require_once 'libraries/themes/login/dash_post.php';
+                    
+                    tpAdminInc('dash_post');
 
                 }else{
-
-                    require_once 'libraries/themes/login/dash_pstUpdate.php';
+                    
+                    tpAdminInc('dash_pstUpdate');
 
                 }
 
-            require_once 'libraries/themes/login/footer.php';		
+            tpAdminInc('footer');		
 
         }
 	
@@ -132,11 +132,11 @@ class admin{
 
         }else{
 
-            require_once 'libraries/themes/login/header.php';
+            tpAdminInc('header');
 
-                require_once 'libraries/themes/login/dash_image.php';
+                tpAdminInc('dash_image');
 
-            require_once 'libraries/themes/login/footer.php';		
+            tpAdminInc('footer');		
 
         }
 	
@@ -152,11 +152,11 @@ class admin{
 
             }else{
 
-                require_once 'libraries/themes/login/header.php';
+                tpAdminInc('header');
 
-                    require_once 'libraries/themes/login/dash_albumUpdate.php';
+                    tpAdminInc('dash_albumUpdate');
 
-                require_once 'libraries/themes/login/footer.php';		
+                tpAdminInc('footer');		
 
             }
     }	 
@@ -171,11 +171,11 @@ class admin{
 
         }else{
 
-            require_once 'libraries/themes/login/header.php';
+            tpAdminInc('header');
+            
+                tpAdminInc('dash_settings');
 
-                require_once 'libraries/themes/login/dash_settings.php';
-
-            require_once 'libraries/themes/login/footer.php';		
+            tpAdminInc('footer');		
 
         }
 	}	  
@@ -190,11 +190,11 @@ class admin{
 
             }else{
 
-                require_once 'libraries/themes/login/header.php';
+                tpAdminInc('header');
+                
+                    tpAdminInc('dash_product');
 
-                    require_once 'libraries/themes/login/dash_product.php';
-
-                require_once 'libraries/themes/login/footer.php';		
+                tpAdminInc('footer');		
 
             }
         }	            
