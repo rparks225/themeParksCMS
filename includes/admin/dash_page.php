@@ -95,7 +95,7 @@ $site = "{$dbName}";
 
                                   $nav = --$nav;
                                   $limit = ",10";
-                                  $nav = $nav*10+(1);
+                                  $nav = $nav*10+(0);
                                   $nums = 'LIMIT '.$nav;
                               }
 
