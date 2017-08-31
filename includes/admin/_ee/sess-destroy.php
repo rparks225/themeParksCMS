@@ -22,7 +22,6 @@ $_SESSION = array();
 //}
 
 echo '<script>alert("You Have Been Logged Out. Thank You For Using themeParks CMS.");</script>';
-header('Location: '.ROOT.'Home');
 
 // Finally, destroy the session.
 session_destroy();
