@@ -1,4 +1,4 @@
-<h1>Main Title</h1>
+<h1>Edited</h1>
 
 <hr />
 <div id="lipsum">

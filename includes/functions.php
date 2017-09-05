@@ -232,6 +232,7 @@ function tmpltRender($path){
         '/\{\% echo (.*?) \%\}/',
         '/\{\# (.*?) \#\}/',
         '/\{\-\- if (.*?) \-\-\}/',
+        '/\{\-\- elseif (.*?) \-\-\}/',
         '/\{\-\- else \-\-\}/',
         '/\{\-\- endif \-\-\}/',
     );
@@ -239,6 +240,7 @@ function tmpltRender($path){
         '<?php echo ($1); ?>',
         '<?php ($1); ?>',
         '<?php if ($1) : ?>',
+        '<?php elseif ($1) : ?>',
         '<?php else : ?>',
         '<?php endif; ?>',
     );

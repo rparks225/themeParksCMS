@@ -152,6 +152,7 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
 
             <label for="settings_emailReplyTitle">Email Reply Email Title:</label>
             <input class="form-control" id="settings_emailReplyTitle" name="settings_emailReplyTitle" value="<?php echo $eReplyTitle; ?>" />
+            
         </div>
 
         <input type="submit" name="edited" class="btn btn-primary" value="Edit" />
@@ -161,7 +162,7 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
 
     </form>
 
-    <?php
+<?php
 
 $location = 'Settings';
 $method = 'edited';
