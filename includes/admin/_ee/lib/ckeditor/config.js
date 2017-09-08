@@ -13,7 +13,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.allowedContent = true; 
     config.filebrowserBrowseUrl = '//' + window.location.hostname + cmsPath +'includes/admin/_ee/lib/kcfinder/browse.php';
     
-    config.removeButtons = 'Form,NewPage,Templates,Glyphicons,About,Smiley,Table,wenzgmap,Checkbox,Radio,Textarea, Flash,Language,Blockquote,Textfield,Button,SpecialChar,PageBreak,Flash,Iframe,BidiLtr,BidiRtl,Subscript,Superscript,TextField,Select,ImageButton,HiddenField,Find,Replace,ShowBlocks';
+    config.removeButtons = 'Form,NewPage,Glyphicons,About,Smiley,Table,wenzgmap,Checkbox,Radio,Textarea, Flash,Language,Blockquote,Textfield,Button,SpecialChar,PageBreak,Flash,Iframe,BidiLtr,BidiRtl,Subscript,Superscript,TextField,Select,ImageButton,HiddenField,Find,Replace,ShowBlocks';
 
     config.inlinesave = {
         postUrl: '',
@@ -30,7 +30,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.toolbar_newBar = [
         { name: 'editing', items : [ 'Bold','Italic','Underline','Strike','RemoveFormat','-',] },
         { name: 'clipboard', items : [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','-','SelectAll','Scayt', ] },
-        { name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','CreateDiv','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock',] },
+        { name: 'paragraph', items : [ 'Templates','NumberedList','BulletedList','-','Outdent','Indent','-','CreateDiv','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock',] },
         '/',
         { name: 'styles', items : [ 'Styles','Format','Font','FontSize', ] },
         { name: 'links', items : [ 'Link','Unlink','Anchor' ] },
