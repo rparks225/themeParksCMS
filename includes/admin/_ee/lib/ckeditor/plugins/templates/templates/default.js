@@ -83,5 +83,23 @@ CKEDITOR.addTemplates( 'default', {
 				'Type the text here' +
 			'</p>' +
 			'</div>'
-	} ]
+	} ,
+   {
+            title: 'Flex Box Grid',
+            image: 'template3.gif',
+            description: 'A responsive grid system.',
+            html: '<h1>' + 'FlexBox' + '</h1>' +
+                   '<div class="flexbox" style="display:flex;justify-content:space-between;padding:15px;">' +
+                           '<div class="flexItem" style="width:100%;">' +
+                                   '<p>' + 'FlexBox Item' + '</p>' +
+                           '</div>'  +   
+                           '<div class="flexItem" style="width:100%;">' +
+                                   '<p>' + 'FlexBox Item' + '</p>' +
+                           '</div>'  +   
+                           '<div class="flexItem" style="width:100%;">' +
+                               '<p>' + 'FlexBox Item' + '</p>' +
+                           '</div>'  +   
+                      '</div>'    
+    },
+   ]
 } );
