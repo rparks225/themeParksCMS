@@ -6,18 +6,53 @@
 
     <div class="clearfix">&nbsp;</div>
 
-    <button class="btn btn-default">
+    <button  class="modal-trigger btn"
+                    data-toggle="modal" 
+                    href="#edited-<?php echo $gallery; ?>-<?php echo $id; ?>">
         <i class="material-icons">mode_edit</i>
     </button>
 
-    <button class="modal-trigger btn" 
-            data-toggle="modal" 
-            href="#deleteLabel-<?php echo $gallery; ?>-<?php echo $id; ?>">
+    <button  class="modal-trigger btn" 
+                    data-toggle="modal" 
+                    href="#deleteLabel-<?php echo $gallery; ?>-<?php echo $id; ?>">
         <i class="material-icons">delete</i>
     </button>
 
 </div>
 
+<!-- Edit box -->
+<div class="modal fade" id="edited-<?php echo $gallery; ?>-<?php echo $id; ?>" tabindex="-1" role="dialog" aria-labelledby="edited">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+           
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    Edit - <?php echo substr(ucwords($img), 0,-4); ?>
+                </h4>
+            </div>
+            
+            <div class="modal-body">
+                <form method="post" style="text-align:left;">                     
+                        <input type="hidden" name="id" value="<?php echo $id; ?>">   
+                        <input type="hidden" name="gal" value="<?php echo $gallery; ?>"> 
+                        <input type="hidden" name="updated" value="Updated">                                                       
+                     <div>        
+                         <label for="title">Image Title</label>
+                        <input type="text" id="title" name="title" value="<?php echo $title; ?>">
+                     </div>
+                     
+                    <input type="submit" name="editedMeta" class="btn btn-default" value="Confirm" />
+                    <a href="#!" class="btn modal-close">Cancel</a>
+                </form>
+                
+                <br>
+                <br>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Edit box -->
 
 <!-- Delete Modal -->
 <div class="modal fade" id="deleteLabel-<?php echo $gallery; ?>-<?php echo $id; ?>" tabindex="-1" role="dialog" aria-labelledby="deleteLabel">

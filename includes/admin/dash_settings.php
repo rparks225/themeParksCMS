@@ -3,13 +3,10 @@
 $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle','userName','sName');
 
     foreach($vars as $var){
-
         global $$var;
-
     }
 
 ?>
-
     <form class="form" method="post">
 
         <input type="hidden" name="id" value="<?php echo $id; ?>" />
@@ -161,6 +158,8 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
         <div class="clearfix">&nbsp;</div>
 
     </form>
+
+<a href="<?php echo ROOT; ?>tp-Security">Security Settings</a>
 
 <?php
 

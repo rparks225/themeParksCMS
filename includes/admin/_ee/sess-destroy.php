@@ -6,6 +6,7 @@ require_once '../../db.php';
 require_once '../../settings.php';
 
 global $sName;
+global $cmsPath;
 
 //For secure login
 $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
@@ -22,6 +23,7 @@ $_SESSION = array();
 //}
 
 echo '<script>alert("You Have Been Logged Out. Thank You For Using themeParks CMS.");</script>';
+header('Location: //'.$_SERVER["HTTP_HOST"].$cmsPath.'tp-Incorrect');
 
 // Finally, destroy the session.
 session_destroy();

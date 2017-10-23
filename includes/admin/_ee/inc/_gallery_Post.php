@@ -1,0 +1,1 @@
+<div class="btgrid"> <div class="row row-1"> <div class="col col-md-6"> <div class="content"> <p>Stuff</p> </div> </div>  <div class="col col-md-6"> <div class="content"> <p>and more stuff</p> </div> </div> </div> </div>  <p>&nbsp;</p> 

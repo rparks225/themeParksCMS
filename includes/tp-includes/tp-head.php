@@ -31,12 +31,10 @@ if(title(2) == ''){
 $metaScript = new model();
 $metaScript->query($query, $block);
 
-?>
-    
+?>    
 <meta name=viewport content="width=device-width, initial-scale=1">
-<link rel="dns-prefetch" href="<?php echo ROOT; ?>"> 
-<link rel="preload" as="style" href="<?php echo ROOT; ?>libraries/css/themeParks-styles.css">
-<link rel="preload" as="script" href="<?php echo ROOT; ?>libraries/js/compile.php">
+
+
 <?php 
 
     //Auto logout script time out 1hr 30min
@@ -59,12 +57,12 @@ if(title() == 'dashboard' || title() == 'pages'){
 <!--Close Meta Tags-->  
 
    
-<!--Open favicon-->
+<!--Open favicon
 
-<link rel="SHORTCUT ICON" href="<?php echo ROOT; ?>images/icon.ico">
-<link rel="dns-prefetch" href="<?php echo ROOT; ?>" >
-<link rel="preload" href="<?php echo ROOT; ?>libraries/css/themeParks-styles.css" as="stylesheet">
-<link rel="preload" href="<?php echo ROOT; ?>libraries/js/themeParks-Scripts.js" as="script">
+<link rel="SHORTCUT ICON" href="<?php //echo ROOT; ?>images/icon.ico">
+<link rel="dns-prefetch" href="<?php //echo ROOT; ?>" >
+<link rel="preload" href="<?php //echo ROOT; ?>libraries/css/themeParks-styles.css" as="stylesheet">
+<link rel="preload" href="<?php //echo ROOT; ?>libraries/js/themeParks-Scripts.js" as="script">-->
 
 <!--Close favicon-->   
 

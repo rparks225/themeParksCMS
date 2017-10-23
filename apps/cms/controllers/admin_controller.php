@@ -142,6 +142,24 @@ class admin{
 	
 	}	
     
+    // Routs the Image Edit Page(s)
+    public function security(){
+        global $sessKey;
+        if(!isset($_SESSION[''.$sessKey.''])){
+
+            header('Location: '.ROOT.'tp-incorrect');
+
+        }else{
+
+            tpAdminInc('header');
+
+            tpAdminInc('dash_security');
+
+            tpAdminInc('footer');		
+
+        }
+
+    }	
     
     // Routs the Album Edit Page(s)
     public function album(){

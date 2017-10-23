@@ -37,6 +37,7 @@
                     $tab = new admin_model();
                     $tab->query($query,$block);
 
+                    global $cmsPath;
                 ?>
 
             </table>
@@ -87,7 +88,7 @@
             <?php
 
                 //Calls Single image loop               
-                $gal = $_SERVER['DOCUMENT_ROOT'].'/themeParksCMS/images/uploads/';
+                $gal = $_SERVER['DOCUMENT_ROOT'].$cmsPath.'images/uploads/';
                 $block = 'imgList';
                 tpDirect($gal,$block,false);               
 

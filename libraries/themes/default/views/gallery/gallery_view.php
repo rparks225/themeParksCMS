@@ -30,10 +30,11 @@
         <div class="container">
             <div class="row">
 
-                <span
                       {-- if isset($_SESSION[''.$sessKey.'']) --}
-                           {% echo ' id="sort"' %}
-                      {-- endif --}>
+                          <span id="sort">
+                      {-- else --}
+                              <span>
+                      {-- endif --}
                       
                     {# $query = 'SELECT * FROM  `gallery` ORDER BY  `gallery`.`Order` ASC LIMIT 0 , 30' #}
                     {# $block = 'galName' #}

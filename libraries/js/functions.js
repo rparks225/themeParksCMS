@@ -183,10 +183,10 @@ $(".lazy").lazyload({
 /*=======================
 Preview Button init
 =======================*/   
- if( $('.edit').attr('contenteditable') ){     
-     jQuery.each(CKEDITOR.instances, function(){
-     eval("CKEDITOR.instances."+this.name+".destroy()"); });
-     $('.edit').removeAttr('contenteditable');
- }
+if( $('.edit').attr('contenteditable') ){     
+    jQuery.each(CKEDITOR.instances, function(){
+    eval("CKEDITOR.instances."+this.name+".destroy()"); });
+    $('.edit').removeAttr('contenteditable');
+}
      
-});      
+}); 

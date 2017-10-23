@@ -303,16 +303,29 @@ function tpReq($req){
 /*====================================================
                 For secure login
 ====================================================*/    
-$sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
 session_start();
+$sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
 session_name(''.$sessKey.'');
-
 
 /*====================================================
             Error Reporting On or Off
 ====================================================*/
-//error_reporting(E_ERROR | E_WARNING | E_PARSE);
-//ini_set('display_errors', 0);
+function showErrors($switch){
+    
+    if($switch == 'on'){
+       
+        return 'Error Reporting is On.';
+        
+    }elseif($switch == 'off'){
+        
+        error_reporting(E_ERROR | E_WARNING | E_PARSE);
+        ini_set('display_errors', 0);
+        
+    }else{
+        echo 'Incorrect input, please use on or off';
+    }
+    
+}
 
 
 /*====================================================
@@ -321,36 +334,40 @@ session_name(''.$sessKey.'');
 
 function compress($switch){
     
-    if($switch == 'true'){
-        function sanitize_output($buffer) {
+if($switch == 'true'){
+    function sanitize_output($buffer) {
 
-            $search = array(
-                '/\>[^\S ]+/s',  // strip whitespaces after tags, except space
-                '/[^\S ]+\</s',  // strip whitespaces before tags, except space
-                '/(\s)+/s',       // shorten multiple whitespace sequences
-                '/<!--(.|\s)*?-->/'    // strip comments
-            );
+$search = array(
+'/\>[^\S ]+/s',  // strip whitespaces after tags, except space
+'/[^\S ]+\</s',  // strip whitespaces before tags, except space
+'/(\s)+/s',       // shorten multiple whitespace sequences
+'/<!--/',    // strip comments
+'/-->/'    // strip comments
+);
 
-            $replace = array(
-                '>',
-                '<',
-                '\\1',
-                ''
-            );
+$replace = array(
+'>',
+'<',
+'\\1',
+'
+<!--',
+'-->
+'
+);
 
-            $buffer = preg_replace($search, $replace, $buffer);
+        $buffer = preg_replace($search, $replace, $buffer);
 
-            return $buffer;
-        }
-
-        ob_start("sanitize_output");
-        
-    }else{
-        
-        echo '<!-- Html Compression is OFF -->
-';
-        
+        return $buffer;
     }
+
+    ob_start("sanitize_output");
+
+}else{
+
+    echo '<!-- Html Compression is OFF -->
+';
+
+}
     
 }
 

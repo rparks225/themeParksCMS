@@ -1,7 +1,7 @@
 <?php global $inline; ?>
 
 {-- if (!empty('{{ cover }}')) --}   
-    {# $bg = 'apps/dropzone/upload/{{ album }}/{{ cover }}' #}    
+    {# $bg = 'images/uploads/{{ album }}/{{ cover }}' #}    
 {-- else --}     
     {# $bg = '' #}    
 {-- endif --}

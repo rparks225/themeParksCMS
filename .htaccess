@@ -1,5 +1,5 @@
 FileETag MTime Size
-IndexIgnore *
+Options -Indexes
 
 Options -MultiViews
 RewriteEngine On 
@@ -65,6 +65,7 @@ RewriteRule ^tp-Post index.php?url=admin/post [NC]
 RewriteRule ^tp-Album-([0-9a-z]+)?$ index.php?url=admin/album/$1 [NC,QSA]
 RewriteRule ^tp-Image index.php?url=admin/image [NC]
 RewriteRule ^tp-Settings index.php?url=admin/settings [NC]
+RewriteRule ^tp-Security index.php?url=admin/security [NC]
 RewriteRule ^tp-Products index.php?url=admin/products [NC]
 
 
@@ -73,12 +74,15 @@ RewriteRule ^News-all$           index.php?url=news/Posts [NC]
 RewriteRule ^News-Post-([0-9]+)$ index.php?url=news/Posts/$1 [NC,QSA]
 
 
-## Speed Upgrades ##
+## Speed Upgrades and Security ##
 
 RewriteRule ^(.*)\.[0-9]{10}\.(css|js)$ $1.$2 [L]
 
 <ifModule mod_headers.c>
 Header set Connection keep-alive
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "sameorigin"
+Header set X-XSS-Protection "1; mode=block"
 </ifModule>
 
 
