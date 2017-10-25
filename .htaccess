@@ -77,13 +77,18 @@ RewriteRule ^News-Post-([0-9]+)$ index.php?url=news/Posts/$1 [NC,QSA]
 ## Speed Upgrades and Security ##
 
 RewriteRule ^(.*)\.[0-9]{10}\.(css|js)$ $1.$2 [L]
+RewriteCond %{QUERY_STRING} _SID= [NC]
+RewriteRule ^/?$ /? [L,R=302]
 
 <ifModule mod_headers.c>
+Header unset Cookie
+Header unset Set-Cookie
 Header set Connection keep-alive
 Header set X-Content-Type-Options "nosniff"
 Header set X-Frame-Options "sameorigin"
 Header set X-XSS-Protection "1; mode=block"
 </ifModule>
+
 
 
 ## EXPIRES CACHING ##
