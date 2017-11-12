@@ -29,7 +29,7 @@
             <option value="">Select</option>
             <?php
 
-            $directory = 'apps/dropzone/upload/Posts';
+            $directory = 'images/files/';
             $blocks = 'img_select';
             $other = ''.$img.'';
             tpDirect($directory,$blocks,$other);
@@ -50,7 +50,8 @@
     <div class="form-group">
     <label>Date:</label>
     <br>
-    <input class="form-control col-md-12" id="datepicker" type="text" name="date" value="<?php echo(date(" m/d/Y ")); ?>">
+        <input type="hidden" name="update" value="<?php echo(date(" Y/m/d ")); ?>">
+        <input class="form-control col-md-12 datepicker"  type="date" name="date" value="<?php echo $date; ?>">
     <br>
     <br>
 </div>
@@ -63,7 +64,7 @@
     <strong>Attached Image</strong>
     <hr>
     <br>
-    <img style="width:100%;border:2px solid black;float:right;" src="<?php echo ROOT; ?>apps/dropzone/upload/Posts/<?php if(!empty($img)){echo $img;}else{ echo 'image.png'; } ?>" />
+    <img style="width:100%;border:2px solid black;float:right;" src="<?php echo ROOT; ?>images/files/<?php if(!empty($img)){echo $img;}else{ echo 'image.png'; } ?>" />
     <br>
     <br>
     <br>

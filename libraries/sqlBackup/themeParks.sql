@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2017 at 07:46 PM
+-- Generation Time: Nov 12, 2017 at 03:23 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -87,8 +87,8 @@ INSERT INTO `images` (`Id`, `Image`, `Title`, `Album`, `Order`) VALUES
 (67, 'screen1.png', 'My Second Ever Screenshot', 'NewGal', 0),
 (68, 'perscription.jpg', 'perscription.jpg', 'NewGal', 2),
 (69, 'screen2.png', 'screen2.png', 'NewGal', 1),
-(70, 'screen1.png', 'My Second Screenshot', 'Post', NULL),
-(71, 'screen2.png', 'Orange Back Ground', 'Post', NULL),
+(70, 'screen1.png', 'My Second Screenshot', 'Post', 0),
+(71, 'screen2.png', 'Orange Back Ground', 'Post', 1),
 (76, 'screen1.png', 'screen1.png', 'oneLastImageGallery', NULL),
 (77, 'screen2.png', 'screen2.png', 'oneLastImageGallery', NULL),
 (79, 'perscription.jpg', 'perscription.jpg', 'oneLastImageGallery', NULL);
@@ -155,8 +155,8 @@ CREATE TABLE IF NOT EXISTS `post` (
   `Title` varchar(250) NOT NULL,
   `Image` varchar(250) NOT NULL,
   `Description` text NOT NULL,
-  `Updated` varchar(10) NOT NULL,
-  `Date` varchar(100) NOT NULL,
+  `Updated` varchar(20) NOT NULL,
+  `Date` varchar(20) NOT NULL,
   `Caption` varchar(535) DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
@@ -165,8 +165,8 @@ CREATE TABLE IF NOT EXISTS `post` (
 --
 
 INSERT INTO `post` (`Id`, `Title`, `Image`, `Description`, `Updated`, `Date`, `Caption`) VALUES
-(9, 'Open House Highlights Extensive Renovations at John Scott House', 'thumb.thumb.DSC_6647.jpg', '<p>John Scott House Rehabilitation &amp; Nursing Center in Braintree recently held an open house showcasing the&nbsp;extensive renovation to Welch Healthcare &amp; Retirement Group&rsquo;s first skilled nursing center. Over 100 healthcare&nbsp;professionals, legislative leaders and Welch Group staff marked the occasion by touring the renovated nursing&nbsp;center and enjoying a tasty menu including a traditional New England clam chowder, slider-style mini burgers and&nbsp;an assortment of delicious flatbreads.&nbsp;</p>\r\n\r\n<p>The extensive renovation,&nbsp;emphasizing resident comfort, safety and convenience,&nbsp;includes&nbsp;an expanded parking&nbsp;area with a new covered drive-up main entrance for the convenience of residents, family and friends; a refurbishment of all resident rooms and common areas. For patients and residents who require rehabilitation,&nbsp;John Scott House has relocated the rehabilitation gym to the newly designed post-acute short-term rehabilitation&nbsp;unit, and added a new dedicated living room and dining room. &nbsp;The renovation also features a remodeled front&nbsp;entrance and creation of new outdoor resident patio areas.&nbsp;</p>\r\n\r\n<p>&ldquo;For generations John Scott House has been an integral part of the Braintree community,&rdquo; says Kristen Reilly&nbsp;McHugh, administrator of John Scott House Rehabilitation &amp; Nursing Center. &ldquo;Our newly refurbished rehabilitation&nbsp;gym and living spaces demonstrate a continued commitment to enhancing the quality of life for our residents and&nbsp;short-term patients,&rdquo; added McHugh.&nbsp;</p>\r\n\r\n<p>Today, John Scott House Rehabilitation &amp; Nursing Center offers residents and their families the best of both worlds&nbsp;&ndash; a center rich in tradition and quality short-term rehabilitative and skilled nursing care. John Scott House offers&nbsp;the Braintree community high-level rehabilitative, medical, and nursing care on a short- or long-term basis. The&nbsp;Welch Group nursing center consistently receives high marks from state agencies that are designed to oversee the&nbsp;quality of nursing homes throughout Massachusetts.&nbsp;</p>\r\n\r\n<p>In addition, John Scott was recently awarded The Joint Commission&rsquo;s Gold Seal of Approval&trade; for Nursing Care&nbsp;Center Accreditation as well as the organization&rsquo;s new Post-Acute Care Certification, which demonstrates the&nbsp;facility&rsquo;s commitment to the highest level of care for its patients and residents&mdash;going beyond state and federal&nbsp;requirements.</p>\r\n\r\n<p>In 1949 the founders, the late Rita M. and Thomas (Frank) Welch, with four young children, made the decision to&nbsp;open their two-story Victorian home to care for frail older adults. This event marked the founding of the John&nbsp;Scott House.</p>\r\n\r\n<p>Welch Healthcare &amp; Retirement Group is a trusted family-owned senior services company. For over 65 years, the&nbsp;Welch Group has been a leading provider of rehabilitation, skilled nursing, assisted living memory care, assisted&nbsp;living and independent living options, adult day health and home care services in Massachusetts.</p>\r\n', '05/29/2016', '05/12/2016', 'John Scott House Administrator Kristen Reilly McHugh greets Braintree Mayor Joseph Sullivan, during an open house event held at the skilled nursing center.'),
-(10, 'stuff', 'photo-5.jpg', '<p>Stuff goes here!!!</p>\r\n', ' 06/18/201', '12 June, 2', 'Add caption');
+(9, 'Open House Highlights Extensive Renovations at John Scott House', 'ScreenShot2.png', '<p>John Scott House Rehabilitation &amp; Nursing Center in Braintree recently held an open house showcasing the&nbsp;extensive renovation to Welch Healthcare &amp; Retirement Group&rsquo;s first skilled nursing center. Over 100 healthcare&nbsp;professionals, legislative leaders and Welch Group staff marked the occasion by touring the renovated nursing&nbsp;center and enjoying a tasty menu including a traditional New England clam chowder, slider-style mini burgers and&nbsp;an assortment of delicious flatbreads.&nbsp;</p>\r\n\r\n<p>The extensive renovation,&nbsp;emphasizing resident comfort, safety and convenience,&nbsp;includes&nbsp;an expanded parking&nbsp;area with a new covered drive-up main entrance for the convenience of residents, family and friends; a refurbishment of all resident rooms and common areas. For patients and residents who require rehabilitation,&nbsp;John Scott House has relocated the rehabilitation gym to the newly designed post-acute short-term rehabilitation&nbsp;unit, and added a new dedicated living room and dining room. &nbsp;The renovation also features a remodeled front&nbsp;entrance and creation of new outdoor resident patio areas.&nbsp;</p>\r\n\r\n<p>&ldquo;For generations John Scott House has been an integral part of the Braintree community,&rdquo; says Kristen Reilly&nbsp;McHugh, administrator of John Scott House Rehabilitation &amp; Nursing Center. &ldquo;Our newly refurbished rehabilitation&nbsp;gym and living spaces demonstrate a continued commitment to enhancing the quality of life for our residents and&nbsp;short-term patients,&rdquo; added McHugh.&nbsp;</p>\r\n\r\n<p>Today, John Scott House Rehabilitation &amp; Nursing Center offers residents and their families the best of both worlds&nbsp;&ndash; a center rich in tradition and quality short-term rehabilitative and skilled nursing care. John Scott House offers&nbsp;the Braintree community high-level rehabilitative, medical, and nursing care on a short- or long-term basis. The&nbsp;Welch Group nursing center consistently receives high marks from state agencies that are designed to oversee the&nbsp;quality of nursing homes throughout Massachusetts.&nbsp;</p>\r\n\r\n<p>In addition, John Scott was recently awarded The Joint Commission&rsquo;s Gold Seal of Approval&trade; for Nursing Care&nbsp;Center Accreditation as well as the organization&rsquo;s new Post-Acute Care Certification, which demonstrates the&nbsp;facility&rsquo;s commitment to the highest level of care for its patients and residents&mdash;going beyond state and federal&nbsp;requirements.</p>\r\n\r\n<p>In 1949 the founders, the late Rita M. and Thomas (Frank) Welch, with four young children, made the decision to&nbsp;open their two-story Victorian home to care for frail older adults. This event marked the founding of the John&nbsp;Scott House.</p>\r\n\r\n<p>Welch Healthcare &amp; Retirement Group is a trusted family-owned senior services company. For over 65 years, the&nbsp;Welch Group has been a leading provider of rehabilitation, skilled nursing, assisted living memory care, assisted&nbsp;living and independent living options, adult day health and home care services in Massachusetts.</p>\r\n', ' 2017/11/12 ', '2017/10/31', 'John Scott House Administrator Kristen Reilly McHugh greets Braintree Mayor Joseph Sullivan, during an open house event held at the skilled nursing center.'),
+(10, 'stuff', 'ScreenShot8.png', '<p>Stuff goes here!!!</p>\r\n', ' 2017/11/12 ', '2017/11/10', 'Add caption');
 
 -- --------------------------------------------------------
 
@@ -308,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `U_sers` (
 --
 
 INSERT INTO `U_sers` (`Id`, `User_name`, `Pass_word`, `Email`, `Signed_Up`) VALUES
-(1, 'rparks1', 'stuff', 'rparks@lachancecom.com', '2015-06-17 18:51:16');
+(1, 'Fuck', 'Off', 'Bitch', '2015-06-17 18:51:16');
 
 --
 -- Indexes for dumped tables

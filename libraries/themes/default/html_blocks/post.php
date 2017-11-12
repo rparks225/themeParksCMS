@@ -20,12 +20,12 @@
         
 <div class="col-md-4">
 
-     <a href="{% echo ROOT %}apps/dropzone/upload/Posts/{{ img }}" rel="prettyPhoto">
+     <a href="{% echo ROOT %}images/files/{{ img }}" rel="prettyPhoto">
         
          <img class="img-responsive pull-right" 
               alt="{{ img }}"
               width="100%" 
-              src="{% echo ROOT %}apps/dropzone/upload/Posts/{% echo $newImg %}" />
+              src="{% echo ROOT %}images/files/{% echo $newImg %}" />
               
      </a>
      

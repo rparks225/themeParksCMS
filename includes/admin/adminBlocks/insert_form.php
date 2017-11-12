@@ -17,7 +17,7 @@
                         </div>
 
                         <div class="input-field col s12">
-                            <textarea id="post" name="post" type="text" class="materialize-textarea form-control col-md-12 ckeditor" name="post"></textarea>
+                            <textarea id="post" name="post" type="text" class="materialize-textarea form-control col-md-12 ckeditor"></textarea>
                             <br>
                         </div>
 
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="input-field col s6">
-                            <input name="date" placeholder="Today's Date" type="date" class="datepicker">
+                            <input name="date" value="<?php echo date('Y/m/d'); ?>" type="date" class="datepicker">
                         </div>
 
                         <div class="input-field col s6">
@@ -35,7 +35,7 @@
                                 <option value="0" selected disabled>Image Select</option>
                                 <?php
 
-                                $directory = 'images/uploads/Post';
+                                $directory = 'images/files/';
                                 $blocks = 'img_select';
                                 $other = false;
                                 tpDirect($directory,$blocks,$other);

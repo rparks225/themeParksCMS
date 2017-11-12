@@ -96,7 +96,7 @@ if(!$mail->send()) {
 		}
 }else{
         $msg1 = '';
-		$captcha = '<div class="cap" style="display:none;">
+		$captcha = '<div class="cap">
 			<div class="g-recaptcha" data-theme="dark" data-sitekey="'.$sCaptcha.'"></div>
 		</div>';
 		

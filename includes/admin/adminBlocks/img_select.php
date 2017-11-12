@@ -6,6 +6,6 @@ if($file == '.DS_Store'){
 	}
 	
 ?>
-<option data-icon="images/uploads/Post/<?php echo $file; ?>" 
+<option data-icon="images/files/<?php echo $file; ?>" 
                class="left circle" <?php if($file == $other){ echo 'selected="selected"'; } ?> 
                value="<?php echo $file; ?>"><?php echo $file; ?></option>

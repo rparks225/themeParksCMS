@@ -15,22 +15,22 @@
         
         {-- if (!empty('{{ img }}')) --}
 
-            <a href="{% echo ROOT %}apps/dropzone/upload/Posts/{{ img }}" rel="prettyPhoto">
+            <a href="{% echo ROOT %}images/files/{{ img }}" rel="prettyPhoto">
 
                 <img width="100%" 
-                     class="lazy img-fluid pull-right" 
-                     data-original="{% echo ROOT %}apps/dropzone/upload/Posts/{{ img }}" 
-                     alt="{{ img }}" />
+                         class="lazy img-fluid pull-right" 
+                         data-original="{% echo ROOT %}images/files/{{ img }}" 
+                         alt="{{ img }}" />
             </a>
         
         {-- else --}
                
-            <a href="{% echo ROOT %}apps/dropzone/upload/Posts/image.png" rel="prettyPhoto">
+            <a href="{% echo ROOT %}images/files/image.png" rel="prettyPhoto">
 
                 <img width="100%" 
-                     class="lazy img-fluid pull-right" 
-                     data-original="{% echo ROOT %}apps/dropzone/upload/Posts/image.png" 
-                     alt="image.png" />
+                         class="lazy img-fluid pull-right" 
+                         data-original="{% echo ROOT %}images/files/image.png" 
+                         alt="image.png" />
             </a> 
                 
         {-- endif --}

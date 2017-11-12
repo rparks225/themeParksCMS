@@ -11,7 +11,7 @@
         <?php echo substr(strip_tags($script),0,155).'...'; ?>
     </td>
 
-    <td><a href="apps/dropzone/upload/Posts/<?php echo $img; ?>" rel="prettyPhoto"><img style="width:100px;" src="apps/dropzone/upload/Posts/<?php echo $img; ?>" alt="<?php echo $img; ?>" /></a></td>
+    <td><a href="<?php echo ROOT; ?>images/files/<?php echo $img; ?>" rel="prettyPhoto"><img style="width:100px;" src="<?php echo ROOT; ?>images/files/<?php echo $img; ?>" alt="<?php echo $img; ?>" /></a></td>
 
 
     <td>

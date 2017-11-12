@@ -10,7 +10,13 @@
     
         <span type="hidden" class="warning"></span>
         
-            <form action="" style="text-align:left;" id="loginform" method="post" role="form" class="col-md-offset-4 col-md-4">
+            <form action="" 
+                        style="text-align:left;" 
+                        id="loginform" 
+                        method="post" 
+                        role="form" 
+                        class="col-md-offset-4 col-md-4"
+                        autocomplete="off">
             
             <div class="form-group">
                 

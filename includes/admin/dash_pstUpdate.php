@@ -27,9 +27,10 @@ if(isset($_POST[''.$method.''])){
         $img = addslashes($_POST['img']);
         $script = addslashes($_POST['post']);
         $Date = addslashes($_POST['date']);
+        $upDate = addslashes($_POST['update']);
         $imgCap = addslashes($_POST['cap']);
 
-        $query = 'UPDATE `'.$site.'`.`'.$location.'` SET `Title` = \''.$title.'\', `Image` = \''.$img.'\', `Description` = \''.$script.'\', `Updated` = \''.$Date.'\', `Caption` = \''.$imgCap.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
+        $query = 'UPDATE `'.$site.'`.`'.$location.'` SET `Title` = \''.$title.'\', `Image` = \''.$img.'\', `Description` = \''.$script.'\', `Date` = \''.$Date.'\', `Updated` = \''.$upDate.'\', `Caption` = \''.$imgCap.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
 
     }
 

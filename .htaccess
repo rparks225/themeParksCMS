@@ -7,11 +7,6 @@ RewriteEngine On
 
 ## 301’s ##
 redirect 301 old/page/name.html http://new/page/name.html
-redirect 301 old/page/name.html http://new/page/name.html
-redirect 301 old/page/name.html http://new/page/name.html
-redirect 301 old/page/name.html http://new/page/name.html
-redirect 301 old/page/name.html http://new/page/name.html
-redirect 301 old/page/name.html http://new/page/name.html
 ## 301’s ##
 
 
@@ -107,8 +102,6 @@ ExpiresByType application/javascript "access plus 1 year"
 ExpiresDefault "access plus 1 month”
 </IfModule>
 ## EXPIRES CACHING ##
-
-
 <IfModule mod_deflate.c>
 AddOutputFilterByType DEFLATE text/html
 AddOutputFilterByType DEFLATE text/css
@@ -131,27 +124,19 @@ AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
 AddOutputFilterByType DEFLATE font/ttf
 AddOutputFilterByType DEFLATE font/otf
 AddOutputFilterByType DEFLATE font/opentype
-
 # For Olders Browsers Which Can't Handle Compression
 BrowserMatch ^Mozilla/4 gzip-only-text/html
 BrowserMatch ^Mozilla/4\.0[678] no-gzip
 BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
-
 SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
 SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
 SetEnvIfNoCase Request_URI \.(?:pdf|doc)$ no-gzip dont-vary
 SetEnvIfNoCase Request_URI \.(?:avi|mov|mp3|mp4|rm)$ no-gzip dont-vary
-
 #The following line is enough for .js and .css
 AddOutputFilter DEFLATE js css
-
 #The following line also enables compression by file content type, for the following list of Content-Type:s
 AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml/javascript/css text
-
-
 </IfModule>
-
-
 <IfModule mod_headers.c>
 <FilesMatch "\.(ttf|ttc|otf|eot|woff|font.css|css|js|gif|svg|svgz|ico|webp|b19e60db09.css|b19e60db09.js|)$”>
 Header set Access-Control-Allow-Origin "*"
