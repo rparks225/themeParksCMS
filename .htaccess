@@ -76,8 +76,6 @@ RewriteCond %{QUERY_STRING} _SID= [NC]
 RewriteRule ^/?$ /? [L,R=302]
 
 <ifModule mod_headers.c>
-Header unset Cookie
-Header unset Set-Cookie
 Header set Connection keep-alive
 Header set X-Content-Type-Options "nosniff"
 Header set X-Frame-Options "sameorigin"

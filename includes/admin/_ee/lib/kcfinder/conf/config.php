@@ -27,7 +27,7 @@ return array(
     'disabled' => false,
     'uploadURL' => "{$cmsPath}images/",
     'uploadDir' => "",
-    'theme' => "dark",
+    'theme' => "default",
 
     'types' => array(
 

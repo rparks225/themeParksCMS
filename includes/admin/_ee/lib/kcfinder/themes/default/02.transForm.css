@@ -1,6 +1,22 @@
 
 /* COMMON - BEGIN */
-
+*{
+    box-shadow: none!important;
+    border-radius:0!important;
+}
+body{
+    background:white!important;
+}
+#toolbar a {
+    color: #6b6b6b;
+    border: 1px solid #6b6b6b!important;
+    border-radius: 0px!important;
+    border-color: #6b6b6b!important;
+    background: white!important;
+}
+#toolbar a:hover, #toolbar a.hover {
+    background-color: grey!important;
+}
 /* FONT SETTINGS */
 .tf-select,
 .tf-input,
