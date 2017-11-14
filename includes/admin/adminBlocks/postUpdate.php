@@ -15,9 +15,7 @@
     <div style="margin-bottom:20px;" class="form-group">
 
         <label>Post:</label>
-        <textarea class="form-control col-md-12 ckeditor" rows="5" name="post" value="<?php echo $script; ?>">
-            <?php echo $script; ?>
-        </textarea>
+        <textarea class="form-control col-md-12 ckeditor" rows="5" name="post" value=""><?php echo $script; ?></textarea>
 
     </div>
 
