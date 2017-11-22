@@ -44,7 +44,7 @@ $metaScript->query($query, $block);
     if(isset($_SESSION[''.$sessKey.''])){
         echo $destroy;
         global $inline;
-        $inline = ' class="tp edit" contenteditable="true"';
+        $inline = ' class="tp edit"';
     };
 ?>        
     

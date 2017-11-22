@@ -19,7 +19,7 @@ CKEDITOR.editorConfig = function( config ) {
         postUrl: '',
         postData: {},
         onSave: function(editor) { console.log('clicked save', editor); return true; },
-        onSuccess: function(editor, data) { console.log('save successful', editor, data); closeEditing2(editor['name'],editor['_']['data']); alert('Saved!'); location.reload(); },
+        onSuccess: function(editor, data) { console.log('save successful', editor, data); closeEditing2(editor['name'],editor['_']['data']); alert('Saved!'); setTimeout(function() { location.reload(); }, 2000 ); },
         onFailure: function(editor, status, request) { console.log('save failed', editor, status, request); },
         useJSON: false,
         useColorIcon: false
