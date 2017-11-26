@@ -5,14 +5,14 @@ $site = "{$dbName}";
 
 
 //Calls the template file
-$query = 'SELECT * FROM Gallery WHERE Id LIKE '.title(2).'';
+$query = 'SELECT * FROM gallery WHERE Id LIKE '.title(2).'';
 $block = 'singleAlbum';
 $tpAlbum = new admin_model();
 $tpAlbum->query($query,$block);
 
 
 //Sets whats going to be update in DB
-$location = 'Gallery';
+$location = 'gallery';
 $method = 'updated';
 
 
@@ -25,7 +25,7 @@ if(isset($_POST[''.$method.'']) && $_POST[''.$method.''] == 'Update'){
     $galCover = addslashes($_POST['galCover']);
     $galOrder = addslashes($_POST['galOrder']);
 
-    $query = 'UPDATE `'.$location.'` SET `Gallery` = "'.$galName.'", `Cover` = "'.$galCover.'", `Title` = "'.$galTitle.'", `Order` = "'.$galOrder.'" WHERE `Gallery`.`Id` = "'.$id.'"';
+    $query = 'UPDATE `'.$location.'` SET `Gallery` = "'.$galName.'", `Cover` = "'.$galCover.'", `Title` = "'.$galTitle.'", `Order` = "'.$galOrder.'" WHERE `gallery`.`Id` = "'.$id.'"';
     
 }
 
