@@ -7,7 +7,7 @@ require_once 'includes/settings.php';
 /*==================================
   Globalize all app admin setting
 ===================================*/
-$vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle','userName');
+$vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle','userName','sName');
     foreach($vars as $var){
         global $$var;
     }

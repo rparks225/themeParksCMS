@@ -96,8 +96,8 @@ $insert->uped($location,$query,$method);
                     if(isset($_POST['theme'])){
 
                         $theme = addslashes($_POST['theme']);
-
                         $query = 'UPDATE `'.$site.'`.`'.$location.'` SET `Theme` = \''.$theme.'\'';
+                        unlink('libraries/css/themeParks-styles.css');
 
                     }
 
@@ -110,12 +110,12 @@ $insert->uped($location,$query,$method);
                 //updates the record
                 if(isset($_POST[''.$method.''])){
                     
-                    $location = 'settings';
+                    $location = 'Settings';
                     if(isset($_POST['theme'])){
 
                         $theme = addslashes($_POST['theme']);
-
                         $query = 'UPDATE `'.$site.'`.`'.$location.'` SET `theme` = \''.$theme.'\'';
+                        unlink('libraries/js/themeParks-Scripts.js');
 
                     }
 

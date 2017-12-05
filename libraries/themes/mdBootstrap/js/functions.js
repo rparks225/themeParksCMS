@@ -188,5 +188,5 @@ if( $('.edit').attr('contenteditable') ){
     eval("CKEDITOR.instances."+this.name+".destroy()"); });
     $('.edit').removeAttr('contenteditable');
 }
-     
+     new WOW().init();
 }); 

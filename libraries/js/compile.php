@@ -38,7 +38,7 @@ ob_end_clean();
 if(file_exists('themeParks-Scripts.js')){
     
     echo '<h1>Complete! jQuery Libraries has been Compiled<h1>';
-    echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="http://'.$_SERVER['HTTP_HOST'].'/Home">Home</a>';
+    echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="Home">Home</a>';
     
 }else{
     
