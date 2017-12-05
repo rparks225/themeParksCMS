@@ -1,6 +1,6 @@
 <div class="btgrid">
-<div class="row row-1">
-<div class="col col-md-3 col-sm-6">
+<div class="row">
+<div class="col-md-3 col-sm-6">
 <div class="content">
 <h3><u>About Us</u></h3>
 
@@ -8,7 +8,7 @@
 </div>
 </div>
 
-<div class="col col-md-3 col-sm-6">
+<div class="col-md-3 col-sm-6">
 <div class="content">
 <h3><u>Recent Posts</u></h3>
 
@@ -18,13 +18,13 @@
 </div>
 </div>
 
-<div class="col col-md-4 col-sm-6">
+<div class="col-md-4 col-sm-6">
 <div class="content">
 <h3><u>Site Links</u></h3>
 
 <div class="btgrid">
 <div class="row row-1">
-<div class="col col-md-6">
+<div class="col-md-6">
 <div class="content">
 <p><a href="Home">Home</a><br />
 <a href="About">About</a><br />
@@ -32,7 +32,7 @@
 </div>
 </div>
 
-<div class="col col-md-6">
+<div class="col-md-6">
 <div class="content">
 <p><a href="Gallery">Gallery</a><br />
 <a href="Contact">Contact</a></p>
@@ -56,27 +56,9 @@
 </div>
 
 <hr />
-<div class="btgrid">
-<div class="row row-1">
-<div class="col col-md-2">
-<div class="content">
 <p>&nbsp;</p>
-</div>
-</div>
 
-<div class="col col-md-8 copywrite">
-<div class="content">
-<p>&copy;Copyright 2016 ThemeParks Cms Inc. All rights reserved.<br />
+<p style="text-align: center;">&copy;Copyright 2016 ThemeParks Cms Inc. All rights reserved.<br />
 Veniam ut et aliquam. Ratione tempora, excepturi eveniet cupiditaes.</p>
 
-<p><a href="tp-login">Admin Login</a></p>
-</div>
-</div>
-
-<div class="col col-md-2">
-<div class="content">
-<p>&nbsp;</p>
-</div>
-</div>
-</div>
-</div>
+<p style="text-align: center;"><a href="tp-login">Admin Login</a></p>

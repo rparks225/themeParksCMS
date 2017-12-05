@@ -26,7 +26,7 @@ global $userName;
     <li> <a href="tp-Dashboard">Back to Dashboard</a> </li>
     <li> <a href="tp-Pages">Edit Page</a> </li>
     <li> <a href="tp-Post">Edit Post</a> </li>
-    <li> <a style="text-align:left;border-radius:0;" href="#" onclick="event.preventDefault()" class="btn tpPreview"><span class="changed">Edit</span> Content</a> </li>
+    <li> <a style="text-align:left;border-radius:0;" href="#" onclick="event.preventDefault()" class="tpPreview"><span class="changed">Edit</span> Content</a> </li>
     <li> <a href="#" class="openSide" onclick="event.preventDefault()">Close Side bar</a> </li>
     <a href="tp-Login" onClick="eelogout();"><li style="position:absolute;bottom:0;"><i class="fa fa-power-off pull-left fa-2x" aria-hidden="true" style="position:relative;top:-6px;"></i> Logout</a> </li>
 </ul>
@@ -43,7 +43,13 @@ global $userName;
     <div id="eepanelWrap">
         <div class="ec">
             <div class="eeimgs">
-                <div href="#" class="btn openSide" style="color:white;font-size:16pt;margin-top:-15px;"> <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </div>
+                <div href="#" class="openSide" style="color: white;
+                                                      font-size: 16pt;
+                                                      margin: -16px 0 0px 0;
+                                                      box-shadow: unset;
+                                                      height: 45px;
+                                                      padding: 15px;
+                                                      cursor: pointer;"> <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </div>
             </div> <strong>
             <a href="<?php echo newPath; ?>tp-Dashboard" style="color:white;">You Are logged in as: <span style="color:#1EACBA;"><?php echo $_SESSION['user']; ?></span></a> 
             </strong> 

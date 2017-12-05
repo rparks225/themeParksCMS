@@ -33,6 +33,10 @@ div#eepanel .eeimg, .ec strong{
     display:none;
 }
 
+.btn.btn-default{
+    background-color: #26a69a!important;
+}
+
 /*====================
 Media Queries
 ====================*/

@@ -6,24 +6,27 @@
 
 $frameWork = array(
     'css'=>array(
-        'bootstraps.css',
-        'jquery-ui.min.css',
+        'bootstrap.min.css',
         'dropzone1.css',
+        'jquery-ui.min.css',
         'prettyPhoto.css',
         'fontAwsome.css',
+        'mdb.min.css',
         'customStyles.css',
     ),
     'js'=>array(
         '01jquery3.11.1.min.js',
         '02jQueryMigrate.min.js',
-        '03jQueryBootstrap.js',
         '04dropZone.min.js',
         '05lazyload.min.js',
         '06prettyPhoto.min.js',
         '07jQueryUI.min.js',
         '08jQueryValidate.min.js',
+        'popper.min.js',
+        'bootstrap.min.js',
+        'mdb.min.js',
         'functions.js',
-    )
+        )
 );
 
 /*=============================================
@@ -33,30 +36,45 @@ $frameWork = array(
 function navi($page){    
     foreach($page as $link => $title){
         if(links() == ROOT.$link){
-            $a = 'active2';
+            $a = ' active';
         }else{
-            $a = 'inactive';
+            $a = ' inactive';
         };
 
         if($link == '#'.substr($link,1)){
 
             echo '
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.substr($link,1).' <span class="caret"></span></a>
-                  <ul class="dropdown-menu">';
+            
+            <li class="nav-item btn-group">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.substr($link,1).'  
+                        </a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        
+                        ';
 
             foreach($title as $link2 => $title2){
+                if(links() == ROOT.$link2){
+                    $a = ' active';
+                }else{
+                    $a = ' inactive';
+                };
 
-                echo '<li class="'.$a.'"><a href="'.ROOT.$link2.'">'.$title2.'</a></li>';
+                echo '
+                <a class="white-text dropdown-item'.$a.'" href="'.ROOT.$link2.'">'.$title2.'</a>
+                ';
 
             }
 
-            echo '</ul>
+            echo '</div>
             </li>';
 
         }else{
 
-            echo '<li class="'.$a.'"><a href="'.ROOT.$link.'">'.$title.'</a></li>';
+            echo '
+            <li class="nav-item '.$a.'">
+                <a class="nav-link" href="'.ROOT.$link.'">'.$title.'</a>
+            </li>
+            ';
 
         }
 

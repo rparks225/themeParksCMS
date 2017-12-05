@@ -9,6 +9,7 @@
                                     
     <script> 
         $(document).ready(function(e) {
+            new WOW().init();
             $('#schedule').validate({
                 rules:{
                     zip:{

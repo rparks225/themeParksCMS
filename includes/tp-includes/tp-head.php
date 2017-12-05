@@ -32,8 +32,8 @@ $metaScript = new model();
 $metaScript->query($query, $block);
 
 ?>    
+<meta charset="UTF-8">
 <meta name=viewport content="width=device-width, initial-scale=1">
-
 
 <?php 
 
@@ -79,15 +79,15 @@ if(title() == 'dashboard' || title() == 'pages'){
    
 <!--Open IE Fix-->
 
-<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<!--[if lte IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
+<!--[if lte IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<script>alert("You are using an oudated  version of Internet Explorer. Please update to IE 10 or use Firefox/ Google Chrome.");</script>
 <![endif]-->
-
 
 <!--Close IE Fix-->
    

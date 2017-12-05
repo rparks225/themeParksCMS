@@ -3,6 +3,8 @@
 ob_start();
 require_once '../../includes/db.php';
 require_once '../../includes/settings.php';
+require_once '../themes/'.$theme.'/themeFunctions.php';
+
 global $cmsPath;
 global $sUrl;
 
@@ -12,38 +14,22 @@ $path = ''.$cmsPath.'libraries/js/';
 
 $files = scandir($root . $path);
 
-foreach($files as $v){
-	
-    if(substr($v,-2) != 'js' || $v == 'functions.js'){
-	
-	echo '';
-	
-	}else{
-	
-echo '
-/*=================================
-        '.$v.'
-==================================*/
 
-    ';
-include ''.$v. 
-	
-	'';
-	
-	}
-	
-	};
-	
-echo '
+foreach($frameWork['js'] as  $frameWorks['js']){
     
-/*========================
-    Functions . Js
-========================*/
-var cmsPath = "'.$cmsPath.'";
+echo '/*================================
+';    
+    echo $frameWorks['js'];
+echo '
+================================*/';
+    
+    include '../themes/'.$theme.'/js/'.$frameWorks['js'];
+    echo '
+    
+    ';
+}
 
-    ';	
-
-include 'functions.js';
+echo 'var cmsPath = '.$cmsPath.'';
 
 $comp = ob_get_clean();
 

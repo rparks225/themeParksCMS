@@ -3,6 +3,8 @@ ob_start();
 
 require_once '../../includes/db.php';
 require_once '../../includes/settings.php';
+require_once '../themes/'.$theme.'/themeFunctions.php';
+
 global $cmsPath;
 global $sUrl;
 global $theme;
@@ -22,37 +24,18 @@ function compress($buffer) {
     return $buffer;
 }
 
-foreach($files as $v){
-	
-    if(substr($v,-3) != 'css'){
-	
-	echo '';
-	
-	}else{
-	
-    echo '
-    
-/*========================
-      '.$v.'
-========================*/
+foreach($frameWork['css'] as $frameWorks['css']){
 
-    ';
-include ''.$v. 
-	
-	'';
-	
-	}
-	
-	};
-	
 echo '
-    
 /*========================
-     Custom Styles
+';
+        echo $frameWorks['css'];
+    
+echo '
 ========================*/
-
-    ';	
-include '../themes/'.$theme.'/customStyles.css';
+    ';
+       include '../themes/'.$theme.'/css/'.$frameWorks['css'];
+   }
 
 $comp = ob_get_clean();
 
