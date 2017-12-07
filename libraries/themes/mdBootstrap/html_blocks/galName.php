@@ -1,49 +1,46 @@
-<?php global $inline; ?>
-
-{-- if (!empty('{{ cover }}')) --}   
-    {# $bg = 'images/uploads/{{ album }}/{{ cover }}' #}    
+{-- if (!empty("{{ cover }}")) --}   
+{# $bg = "images/uploads/{{ album }}/{{ cover }}" #}    
 {-- else --}     
-    {# $bg = '' #}    
+{# $bg = '' #}    
 {-- endif --}
 
+<div class="row my-5">
+    <div class="col-md-12 wow fadeIn" data-wow-delay="0.02s">
+            <div class="col-md-4 pull-left" style="border:1px solid grey;box-shadow:3px 3px 2px grey;height:250px;overflow:hidden;background:url('{% echo $bg %}') no-repeat;background-size:cover;">
 
-   <div id="list-{{ id }}" class="sOrd">
-    
-        <div class="col-md-4" 
-             style="height:250px;background:url('{% echo $bg %}') no-repeat;background-size:cover;">
-             
-        </div>
-        
-        <div class="col-md-8">
-        
+            </div>
+
+            <div class="col-md-8 pull-left">
+
                 <h3>
-                        <a href="{% echo ROOT %}Gallery-{{ album }}">
-                            {-- if (empty('{{ title }}')) --}
-                                {{ album }}
-                            {-- else --}
-                                {{ title }}
-                            {-- endif --}
-                        </a>
+                    <a href="{% echo ROOT %}Gallery-{{ album }}">
+                        {-- if (empty("{{ title }}")) --}
+                            {{ album }}
+                        {-- else --}
+                            {{ title }}
+                        {-- endif --}
+                    </a>
                 </h3>
 
                 <div id="_gallery_{{ album }}" class="e-ease ee:wwig">
 
-                        {# newEE('gallery_{{ album }}') #}
+                    {# newEE("gallery_{{ album }}") #}
 
                 </div>
-                
+
+                <br>
+
+                <a href="{% echo ROOT %}Gallery-{{ album }}" class="btn btn-warning">
+                    View Gallery
+                </a>
+
+                <br>
+
+            </div>  
+
+
             <div class="clearfix">&nbsp;</div>
-
-                    <a href="{% echo ROOT %}Gallery-{{ album }}" class="btn btn-warning">
-                            View Gallery
-                    </a>
-
-            <div class="clearfix"></div>
-             
-        </div>
-        
-    <div class="clearfix"></div>    
-    <div class="clearfix"></div>
-    <hr>         
-        
+            <div class="clearfix">&nbsp;</div>
+            <hr>
+    </div>
 </div>
