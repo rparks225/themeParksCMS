@@ -28,7 +28,7 @@ label.active{
     
 }
 label.error{
-    background:white!important;
+    color:red!important;
     position: relative;
     z-index:10;
 }
