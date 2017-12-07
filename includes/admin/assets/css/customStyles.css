@@ -33,7 +33,7 @@ div#eepanel .eeimg, .ec strong{
     display:none;
 }
 
-.btn.btn-default{
+.btn-default, .btn-primary{
     background-color: #26a69a!important;
 }
 
