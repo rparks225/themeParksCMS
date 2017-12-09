@@ -137,7 +137,7 @@ $insert->uped($location,$query,$method);
                 <?php if (file_exists(''.$main.'libraries/css/themeParks-styles.css')): ?>
                     <p>Style sheet have successfully been compiled</p>
                 <?php else: ?>
-                    <p>You're styles sheets aren't compiled. Click the link below to begin. 
+                    <p>You're Style sheets aren't compiled. Click the link below to begin. 
                 <?php endif; ?>    
             </div>
             <div class="card-action">
@@ -157,7 +157,7 @@ $insert->uped($location,$query,$method);
                 <?php if (file_exists(''.$main.'libraries/js/themeParks-Scripts.js')): ?>
                     <p>JS sheet have successfully been compiled</p>
                 <?php else: ?>
-                    <p>You're Js sheets aren't compiled. Click the link below to begin. 
+                    <p>You're JS sheets aren't compiled. Click the link below to begin. 
                     <?php endif; ?>    
             </div>
             <div class="card-action">

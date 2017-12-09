@@ -1,9 +1,15 @@
 
 <?php 
 
-if($file == '.DS_Store' || $file == 'login' || $file == 'index.php'){
+if($file == '.DS_Store' || $file == 'index.php'){
 	return false;
 	}
+
+if(theme() == $file){
+    $a = 'selected ';
+}else{
+    $a = '';
+}
 	
 ?>
-<option name="theme" value="<?php echo $file; ?>"><?php echo $file; ?></option>
+<option <?php echo $a; ?>name="theme" value="<?php echo $file; ?>"><?php echo $file; ?></option>
