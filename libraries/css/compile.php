@@ -44,7 +44,7 @@ ob_end_clean();
 if(file_exists('themeParks-styles.css')){
     	
     echo '<h1>Complete! CSS has been Compiled<h1>';
-    echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="Home">Home</a>';
+    echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="tp-Dashboard">Close</a>';
     
 }else{
     
