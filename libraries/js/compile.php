@@ -7,6 +7,7 @@ require_once '../themes/'.$theme.'/themeFunctions.php';
 
 global $cmsPath;
 global $sUrl;
+global $salted;
 
 
 $root = $_SERVER['DOCUMENT_ROOT'];
@@ -18,10 +19,9 @@ $files = scandir($root . $path);
 foreach($frameWork['js'] as  $frameWorks['js']){
     
 echo '/*================================
-';    
-    echo $frameWorks['js'];
-echo '
-================================*/';
+    '. $frameWorks['js'].'
+================================*/
+';
     
     include '../themes/'.$theme.'/js/'.$frameWorks['js'];
     echo '
@@ -42,7 +42,7 @@ if(file_exists('themeParks-Scripts.js')){
     
 }else{
     
-    if(isset($_GET['compile']) && !empty($_GET['compile']) && !file_exists('themeParks-Scripts.js')){ 
+    if(isset($_GET['compile']) && $_GET['compile'] == $salted && !file_exists('themeParks-Scripts.js')){ 
         
     echo '<h1>File does not exist</h1>';
     echo '<p>Do you want to compile Js?</p>';

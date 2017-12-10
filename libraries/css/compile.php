@@ -8,6 +8,7 @@ require_once '../themes/'.$theme.'/themeFunctions.php';
 global $cmsPath;
 global $sUrl;
 global $theme;
+global $salted;
 
 $root = $_SERVER['DOCUMENT_ROOT'];
 $path = $cmsPath.'libraries/css/';
@@ -28,10 +29,7 @@ foreach($frameWork['css'] as $frameWorks['css']){
 
 echo '
 /*========================
-';
-        echo $frameWorks['css'];
-    
-echo '
+    '. $frameWorks['css'].'
 ========================*/
     ';
        include '../themes/'.$theme.'/css/'.$frameWorks['css'];
@@ -48,7 +46,7 @@ if(file_exists('themeParks-styles.css')){
     
 }else{
     
-    if(isset($_GET['compile']) && !empty($_GET['compile']) && !file_exists('themeParks-styles.css')){ 
+    if(isset($_GET['compile']) && $_GET['compile'] == $salted && !file_exists('themeParks-styles.css')){ 
         
     echo '<h1>File does not exist</h1>';
     echo '<p>Do you want to compile Css?</p>';

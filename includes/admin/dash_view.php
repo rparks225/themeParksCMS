@@ -1,6 +1,7 @@
 <?php 
 
 $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle');
+global $salted;
 
     foreach($vars as $var){
 
@@ -142,7 +143,7 @@ $insert->uped($location,$query,$method);
             </div>
             <div class="card-action">
                 <?php if (!file_exists(''.$main.'libraries/css/themeParks-styles.css')): ?>
-                    <a href="<?php echo ROOT; ?>tp-styles?compile=<?php echo uniqid(); ?>">Compile CSS</a>
+                    <a href="<?php echo ROOT; ?>tp-styles?compile=<?php echo $salted; ?>">Compile CSS</a>
                 <?php else: ?>
                     <a target="_blank" href="libraries/css/themeParks-styles.css">View CSS</a>    
                 <?php endif; ?>
@@ -162,7 +163,7 @@ $insert->uped($location,$query,$method);
             </div>
             <div class="card-action">
                 <?php if (!file_exists(''.$main.'libraries/js/themeParks-Scripts.js')): ?>
-                    <a href="<?php echo ROOT; ?>tp-js?compile=<?php echo uniqid(); ?>">Compile JS</a>
+                    <a href="<?php echo ROOT; ?>tp-js?compile=<?php echo $salted; ?>">Compile JS</a>
                 <?php else: ?>
                     <a target="_blank" href="libraries/js/themeParks-Scripts.js">View Js</a>       
                 <?php endif; ?>
