@@ -48,7 +48,7 @@ if(file_exists('themeParks-styles.css')){
     
 }else{
     
-    if(isset($_GET['compile']) && !file_exists('themeParks-styles.css')){ 
+    if(isset($_GET['compile']) && !empty($_GET['compile']) && !file_exists('themeParks-styles.css')){ 
         
     echo '<h1>File does not exist</h1>';
     echo '<p>Do you want to compile Css?</p>';

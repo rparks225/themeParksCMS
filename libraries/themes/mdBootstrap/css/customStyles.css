@@ -41,7 +41,7 @@ label.error{
 /* Carousel*/
 
 .carousel {
-    height: 70vh;
+    height: 75vh;
 }
 
 @media (max-width: 776px) {

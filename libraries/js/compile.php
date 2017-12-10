@@ -42,7 +42,7 @@ if(file_exists('themeParks-Scripts.js')){
     
 }else{
     
-    if(isset($_GET['compile']) && !file_exists('themeParks-Scripts.js')){ 
+    if(isset($_GET['compile']) && !empty($_GET['compile']) && !file_exists('themeParks-Scripts.js')){ 
         
     echo '<h1>File does not exist</h1>';
     echo '<p>Do you want to compile Js?</p>';

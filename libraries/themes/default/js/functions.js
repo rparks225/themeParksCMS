@@ -150,7 +150,7 @@ Form Validate
 =====================*/ 
 $(document).ready(function() {
 	
-	$('#schedule input#zip').blur(function() {
+	$('#schedule input#zip').keyup(function() {
 		
 	  if($(this).val().length >= 5){
 		  $('div.cap').fadeIn('slow');
@@ -160,7 +160,7 @@ $(document).ready(function() {
 		
 		});
 		
-		$('#schedule1 input#name').blur(function() {
+		$('#schedule1 input#name').keyup(function() {
 		
 	  if($(this).val().length >= 1){
 		  $('div.cap').fadeIn('slow');
