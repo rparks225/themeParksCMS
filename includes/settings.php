@@ -28,9 +28,7 @@ if($result = $mysqli->query($query)){
         $dbName = $row['settings_dbName'];
         $id = $row['Id'];
 
-
     }      
-
 
 };       
 
