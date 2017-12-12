@@ -170,14 +170,22 @@ if (!file_exists($storeFolder)) {
 
 
 /*====================================================
-              Adds images to folders 
+             Adds images to folders 
 ====================================================*/
-if (!empty($_FILES)) {     
-    $tempFile = $_FILES['file']['tmp_name'];          //3         
-    $targetPath = dirname( __FILE__ ) . $ds. $storeFolder . $ds;  //4     
-    $targetFile =  $targetPath. $_FILES['file']['name'];  //5 
-    move_uploaded_file($tempFile,$targetFile); //6     
-}	
+if (!empty($_FILES)) {
+    $tempFile = $_FILES['file']['tmp_name'];          //3   
+    $targetPath = substr(dirname( __FILE__ ),0,-9).$ds.$storeFolder.$ds;  //4
+    $targetFile =  $targetPath.basename($_FILES['file']['name'],' ');  //5
+    $files = $_FILES['file']['name'];
+    if(!empty($files)){
+        $type = array('doc', 'pdf', 'xls', 'jpg');
+        if(in_array(substr($files,-3),$type)) {
+            move_uploaded_file($tempFile,$targetFile); //6
+        }else{
+            echo '<script>alert("Sorry that is not the correct file type. Please reload and try again.")</script>';
+        }
+    }
+}
 
 
 /*====================================================
