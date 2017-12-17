@@ -14,10 +14,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 ##Styles Compile
-RewriteRule ^tp-style /themeParksCMS/libraries/css/compile.php [NC]
+RewriteRule ^tp-style libraries/css/compile.php [NC]
 
 ##Style
-RewriteRule ^tp-js /themeParksCMS/libraries/js/compile.php [NC]
+RewriteRule ^tp-js libraries/js/compile.php [NC]
 
 ##Home
 RewriteRule ^Home index.php?url=home [NC]
