@@ -32,8 +32,8 @@ $pages = array(
                 <ul class="navbar-nav mr-auto">
                     {# navi($pages) #}
                 </ul>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <form class="form-inline" method="post">
+                    <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
                 </form>
             </div>
         </div>

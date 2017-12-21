@@ -19,6 +19,9 @@ RewriteRule ^tp-style libraries/css/compile.php [NC]
 ##Style
 RewriteRule ^tp-js libraries/js/compile.php [NC]
 
+##Search
+RewriteRule ^Search index.php?url=search [NC]
+
 ##Home
 RewriteRule ^Home index.php?url=home [NC]
 

@@ -8,12 +8,9 @@
     
     <div class="row my-5">
         <div class="col-md-12">
-            {# $query = 'SELECT * FROM page WHERE Title LIKE \'%'.title(2).'%\' ' #}
-            {# $block = 'results' #}
+            {# $query = 'SELECT * FROM page WHERE Title LIKE \''.addslashes(strip_tags($_POST["search"])).'\' ' #}
             {# $page = new model() #}
-            {# $page->pages($query, $block) #}
             {# $rows = $page->rows($query) #}
-
             {-- if ($rows == 0) --}
 
             <!--Open Cont area-->
@@ -21,6 +18,11 @@
             <strong>No results found</strong>
 
             <!--Close Cont area-->
+            
+            {-- else --}
+            
+                {# $block = 'results' #}
+                {# $page->pages($query, $block) #}
 
             {-- endif --}
         </div>
@@ -34,10 +36,8 @@
     </div>
     <div class="row my-5">
         <div class="col-md-12">
-            {# $query = 'SELECT * FROM post WHERE Title LIKE \'%'.title(2).'%\' ' #}
-            {# $block = 'results' #}
-            {# $page = new model() #}
-            {# $page->pages($query, $block) #}
+            {# $query = 'SELECT * FROM post WHERE Title LIKE \''.addslashes(strip_tags($_POST["search"])).'\' ' #}            
+            {# $page = new model() #}            
             {# $rows = $page->rows($query) #}
 
             {-- if ($rows == 0) --}
@@ -47,7 +47,11 @@
             <strong>No results found</strong>
 
             <!--Close Cont area-->
-
+            {-- else --}
+            
+                {# $block = 'results' #}
+                {# $page->pages($query, $block) #}
+            
             {-- endif --}
         </div>
     </div>
@@ -60,10 +64,8 @@
     </div>
     <div class="row my-5">
         <div class="col-md-12">
-            {# $query = 'SELECT * FROM careers WHERE Job LIKE \'%'.title(2).'%\' ' #}
-            {# $block = 'results' #}
-            {# $page = new model() #}
-            {# $page->pages($query, $block) #}
+            {# $query = 'SELECT * FROM careers WHERE Job LIKE \''.addslashes(strip_tags($_POST["search"])).'\' ' #}            
+            {# $page = new model() #}            
             {# $rows = $page->rows($query) #}
 
             {-- if ($rows == 0) --}
@@ -73,6 +75,11 @@
             <strong>No results found</strong>
 
             <!--Close Cont area-->
+            
+            {-- else --}
+            
+                {# $block = 'results' #}
+                {# $page->pages($query, $block) #}
 
             {-- endif --}
         </div>

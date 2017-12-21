@@ -15,7 +15,7 @@ include 'includes/functions.php';
 
 //HMTL Compress - Show Errors and always delete cookies
 compress('true');
-showErrors('off');
+showErrors('on');
 delCook();
 
 //Calls app
