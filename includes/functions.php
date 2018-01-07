@@ -178,11 +178,12 @@ if (!empty($_FILES)) {
     $targetFile =  $targetPath.basename($_FILES['file']['name'],' ');  //5
     $files = $_FILES['file']['name'];
     if(!empty($files)){
-        $type = array('doc', 'pdf', 'xls', 'jpg');
-        if(in_array(substr($files,-3),$type)) {
+        $type = array('.doc', '.pdf', '.xls', '.jpg','docx');
+        if(in_array(substr($files,-4),$type)) {
             move_uploaded_file($tempFile,$targetFile); //6
         }else{
             echo '<script>alert("Sorry that is not the correct file type. Please reload and try again.")</script>';
+            exit('<h1>Incorrect Format</h1><a href="javascript:history.go(-1)">Previous Page...</a>');
         }
     }
 }

@@ -5,7 +5,7 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
     foreach($vars as $var){
         global $$var;
     }
-
+$query = '';
 ?>
     <form class="form" method="post">
 

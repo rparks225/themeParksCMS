@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Start HTML -->
 <html lang="en">
 <head>
     
@@ -61,14 +62,14 @@ if(title() == 'dashboard' || title() == 'pages'){
 
 <link rel="SHORTCUT ICON" href="<?php //echo ROOT; ?>images/icon.ico">
 <link rel="dns-prefetch" href="<?php //echo ROOT; ?>" >
-<link rel="preload" href="<?php //echo ROOT; ?>libraries/css/themeParks-styles.css" as="stylesheet">
+<link rel="preload" href="<?php //echo ROOT; ?>libraries/css/themeParks-styles.css" as="style">
 <link rel="preload" href="<?php //echo ROOT; ?>libraries/js/themeParks-Scripts.js" as="script">-->
 
 <!--Close favicon-->   
 
 <!--Open Styles code-->
     
-    <style type="text/css">html{-webkit-animation:fadein .5s;-moz-animation:fadein .5s;-ms-animation:fadein .5s;-o-animation:fadein .5s;animation:fadein .5s}@keyframes fadein{from{opacity:0}to{opacity:1}}@-moz-keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@-ms-keyframes fadein{from{opacity:0}to{opacity:1}}@-o-keyframes fadein{from{opacity:0}to{opacity:1}} #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { border: 1px dotted grey; }.edit[contenteditable=true]:focus { border: none!important; }.cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}
+    <style type="text/css">html{-webkit-animation:fadein .5s;-moz-animation:fadein .5s;-ms-animation:fadein .5s;-o-animation:fadein .5s;animation:fadein .5s}@keyframes fadein{from{opacity:0}to{opacity:1}}@-moz-keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@-ms-keyframes fadein{from{opacity:0}to{opacity:1}}@-o-keyframes fadein{from{opacity:0}to{opacity:1}} #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { border: 1px dotted grey; }.edit[contenteditable=true]:focus { border: none!important; }.cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}.cke_button_label.cke_button__inlinesave_label {display: inline;}.cke_button__btgrid_icon {background-position: 0 !important;}
     <?php 
         global $style;
         if(isset($style)){ echo $style; }else{ $style == false; }; 

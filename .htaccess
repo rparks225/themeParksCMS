@@ -51,6 +51,10 @@ RewriteRule ^Gallery-([0-9a-z]+)?$ index.php?url=gallery/images/$1 [NC,QSA]
 ##Page redirects
 RewriteRule ^([0-9a-z]+)/?$ index.php?url=page/$1 [NC,QSA,L]
 
+##News redirects
+RewriteRule ^News-all$           index.php?url=news/Posts [NC]
+RewriteRule ^News-Post-([0-9]+)$ index.php?url=news/Posts/$1 [NC,QSA]
+
 ##Login redirects
 RewriteRule ^tp-Login index.php?url=admin [NC]
 RewriteRule ^tp-Incorrect index.php?url=admin/incorrect [NC]
@@ -65,12 +69,6 @@ RewriteRule ^tp-Image index.php?url=admin/image [NC]
 RewriteRule ^tp-Settings index.php?url=admin/settings [NC]
 RewriteRule ^tp-Security index.php?url=admin/security [NC]
 RewriteRule ^tp-Products index.php?url=admin/products [NC]
-
-
-##News redirects
-RewriteRule ^News-all$           index.php?url=news/Posts [NC]
-RewriteRule ^News-Post-([0-9]+)$ index.php?url=news/Posts/$1 [NC,QSA]
-
 
 ## Speed Upgrades and Security ##
 

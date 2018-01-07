@@ -40,7 +40,15 @@
                 
                 {-- if ($rows == 0) --}
                 
-                    {# header('Location: 404') #}
+                    <div class="row">
+                        <h1>Post not found</h1>
+                        <hr>    
+                    </div>
+
+                    <div class="row">
+                        <p>Sorry that post doesn't exist, please try again.</p>
+                        <p><a href="News-All">Back to all posts</a></p>
+                    </div>
                 
                 {-- endif --}
 

@@ -128,40 +128,6 @@ class model{
 	
 	//Queries the DB for page data
 
-	public function home($query, $block){
-		
-		$this->query($query, $block);
-		
-		}
-		
-	public function pages($query, $block){
-		
-		
-		$this->query($query, $block);
-		
-		
-		}		
-		
-	protected function admin($query, $block){
-
-		$this->query($query, $block);
-		
-		}	
-		
-	public function news($query, $block){
-		
-		
-		$this->query($query, $block);
-		
-		
-		}		
-		
-	protected function gallery($query, $block){
-
-		$this->query($query, $block);
-		
-		}		
-	
 	public function extra($query, $block, $other){
 
 		$this->query($query, $block, $other);

@@ -32,7 +32,7 @@ if($result = $mysqli->query($query)){
 
 };       
 
-$salted = md5(date('Y/m/d:h').'Yell0wcard');
+$salted = md5(date('Y/m/d:h').'fe2621d3694e369e1adc0611688fee93');
 $salt = hash('sha256', $salted);
 
 $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle','userName','salt');

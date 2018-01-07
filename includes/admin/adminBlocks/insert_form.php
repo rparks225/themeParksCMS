@@ -27,7 +27,8 @@
                         </div>
 
                         <div class="input-field col s6">
-                            <input name="date" value="<?php echo date('Y/m/d'); ?>" type="date" class="datepicker">
+                            <input name="date" id="date" placeholder="<?php echo date('Y/m/d'); ?>" type="date" class="datepicker">
+                            <label for="date">Blog Post Date</label>
                         </div>
 
                         <div class="input-field col s6">

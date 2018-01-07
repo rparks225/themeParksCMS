@@ -20,12 +20,12 @@
                             <strong>Text Size: <span id="smaller"> A</span> <span id="bigger">A</span></strong>
                         </div>  
                                               
-                    {# $query = 'SELECT * FROM careers WHERE Job LIKE "'.title().'"' #}
-                    {# $block = 'singleJob' #}
-                    {# $other = title(2) #}
-                    {# $job = new model() #}
-                    {# $job->extra($query,$block,$other) #}
-                    
+                        {# $query = 'SELECT * FROM careers WHERE Job LIKE "'.title().'"' #}
+                        {# $block = 'singleJob' #}
+                        {# $other = title(2) #}
+                        {# $job = new model() #}
+                        {# $job->extra($query,$block,$other) #}
+
                 </div>
                 
             </div>
