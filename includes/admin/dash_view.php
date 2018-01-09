@@ -146,7 +146,7 @@ $insert->uped($location,$query,$method);
                 <?php if (!file_exists(''.$main.'libraries/css/themeParks-styles.css')): ?>
                     <a href="<?php echo ROOT; ?>tp-styles?compile=<?php echo uniqid(); ?>">Compile CSS</a>
                 <?php else: ?>
-                    <a href="libraries/css/themeParks-styles.css">View CSS</a> 
+                    <a href="libraries/css/themeParks-styles.css">View CSS</a><span style="margin-right:16px;">|</span> 
                     <a href="tp-styles?compile=<?php echo uniqid(); ?>&Delete=<?php echo uniqid(); ?>">Delete CSS</a>    
                 <?php endif; ?>
             </div>
@@ -167,7 +167,7 @@ $insert->uped($location,$query,$method);
                 <?php if (!file_exists(''.$main.'libraries/js/themeParks-Scripts.js')): ?>
                     <a href="<?php echo ROOT; ?>tp-js?compile=<?php echo uniqid(); ?>">Compile JS</a>
                 <?php else: ?>
-                    <a target="_blank" href="libraries/js/themeParks-Scripts.js">View Js</a>
+                    <a target="_blank" href="libraries/js/themeParks-Scripts.js">View Js</a><span style="margin-right:15px;">|</span>
                     <a href="tp-js?compile=<?php echo uniqid(); ?>&Delete=<?php echo uniqid(); ?>">Delete JS</a> 
                 <?php endif; ?>
             </div>

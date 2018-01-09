@@ -117,7 +117,7 @@ function breadcrumbs($trails){
 
     echo '<ul class="breadcrumb">';
     foreach($trails as $trail){
-        echo '<li><span><img width="27" height="16" src="images/baneLeaf.png"></span> '.$trail.'</li>';
+        echo '<li><span><img width="27" height="16" src=""></span> '.$trail.'</li>';
     }
     echo '</ul>';
 }

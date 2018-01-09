@@ -1,4 +1,9 @@
-<?php  global $salt; tpInc('footer'); ?>
+<?php  
+global $salt; 
+global $sName;
+$sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.''); ?>
+
+<?php tpInc('footer'); ?>
 
 <!--Scripts go below this line-->
 <?php tpCompile('js'); ?>
@@ -25,25 +30,19 @@
             
         });
     </script>
-<?php 
-global $sName;
-$sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
-
-   if(isset($_SESSION[''.$sessKey.'']) || title() == 'admin' || title() == 'incorrect' ){
-                 
-       echo '
-       <script type="text/javascript" src="'.ROOT.'includes/admin/_ee/lib/ckeditor/ckeditor.js"></script>
-       <script src="'.ROOT.'includes/admin/_ee/editease.jquery.js" type="text/javascript"></script>
-       <script type="text/javascript" src="includes/admin/crypto.js"></script>
-                     ';
+    
+<?php if(isset($_SESSION[''.$sessKey.'']) || title() == 'admin' || title() == 'incorrect' ): ?>
+      
+       <!--  Scripts that init if you are varified through the firewall -->
+       <script type="text/javascript" src="includes/admin/_ee/lib/ckeditor/ckeditor.js"></script>
+       <script src="includes/admin/_ee/editease.jquery.js" type="text/javascript"></script>
+       <script type="text/javascript" src="includes/admin/crypto.js"></script>               
        
-         echo  '<script>var Crypt=new Crypt;$("#loginform").editease(),$("#loginform").submit(function(){return doLogin(loginform)}),$("#loginform button").click(function(){var o=Crypt.HASH.md5($("#loginform input#password").val());$("#loginform input#password").val("'.$salt.'"+o)});
-                </script>     
-                   ';
-                 
-             };      
-             
-?>
+         <script>var Crypt=new Crypt;$("#loginform").editease(),$("#loginform").submit(function(){return doLogin(loginform)}),$("#loginform button").click(function(){var o=Crypt.HASH.md5($("#loginform input#password").val());$("#loginform input#password").val("<?php echo $salt; ?>"+o)});
+         </script>     
+         <!--  ./Scripts that init if you are varified through the firewall -->
+         
+<?php endif; ?>           
 
 </body>
 
