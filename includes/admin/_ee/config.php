@@ -27,7 +27,7 @@ if( !isset($_SESSION) ){
 	session_start(); // required for file system
 }
 /* Valid Login Data - username / password for each array item */
-$userNames =  array('demo'=>''.$salt.'fe01ce2a7fbac8fafaed7c982a04e229','Rob'=>''.$salt.'fe01ce2a7fbac8fafaed7c982a04e229');
+$userNames =  array('demo'=>''.$salt.'fe01ce2a7fbac8fafaed7c982a04e229');
 
 /* Pages that have edit areas on them - page name then a pipe | then page url*/
 $pages =  array();

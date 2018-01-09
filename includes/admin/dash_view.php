@@ -12,6 +12,8 @@ foreach($vars as $var){
 $query = '';
 $site = "{$dbName}"; 
 $main = $_SERVER["DOCUMENT_ROOT"].$cmsPath;
+
+$secHash = md5(date('Y/m/d:h:i').uniqid().rand(0,9999999));
 ?>
     
 <!--Open Quick Blog-->
@@ -144,10 +146,10 @@ $insert->uped($location,$query,$method);
             </div>
             <div class="card-action">
                 <?php if (!file_exists(''.$main.'libraries/css/themeParks-styles.css')): ?>
-                    <a href="<?php echo ROOT; ?>tp-styles?compile=<?php echo uniqid(); ?>">Compile CSS</a>
+                    <a href="<?php echo ROOT; ?>tp-styles?compile=<?php echo $secHash; ?>">Compile CSS</a>
                 <?php else: ?>
                     <a href="libraries/css/themeParks-styles.css">View CSS</a><span style="margin-right:16px;">|</span> 
-                    <a href="tp-styles?compile=<?php echo uniqid(); ?>&Delete=<?php echo uniqid(); ?>">Delete CSS</a>    
+                    <a href="tp-styles?compile=<?php echo $secHash; ?>&Delete=<?php echo $secHash; ?>">Delete CSS</a>    
                 <?php endif; ?>
             </div>
         </div>
@@ -165,10 +167,10 @@ $insert->uped($location,$query,$method);
             </div>
             <div class="card-action">
                 <?php if (!file_exists(''.$main.'libraries/js/themeParks-Scripts.js')): ?>
-                    <a href="<?php echo ROOT; ?>tp-js?compile=<?php echo uniqid(); ?>">Compile JS</a>
+                    <a href="<?php echo ROOT; ?>tp-js?compile=<?php echo $secHash; ?>">Compile JS</a>
                 <?php else: ?>
                     <a target="_blank" href="libraries/js/themeParks-Scripts.js">View Js</a><span style="margin-right:15px;">|</span>
-                    <a href="tp-js?compile=<?php echo uniqid(); ?>&Delete=<?php echo uniqid(); ?>">Delete JS</a> 
+                    <a href="tp-js?compile=<?php echo $secHash; ?>&Delete=<?php echo $secHash; ?>">Delete JS</a> 
                 <?php endif; ?>
             </div>
         </div>

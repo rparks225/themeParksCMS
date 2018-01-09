@@ -64,28 +64,28 @@ $metaScript->query($query, $block);
     <!-- ./Close favicon -->   
 <?php endif; ?>
    
+   
+<!-- Prefetched assets -->
         <link rel="dns-prefetch" href="<?php echo ROOT; ?>" >
 
 <?php if( file_exists('libraries/css/themeParks-styles.css') ): ?>
-   <!-- Prefetched assets -->
         <link rel="preload" href="libraries/css/themeParks-styles.css" as="style">
 <?php endif; ?>
 
 <?php if( file_exists('libraries/js/themeParks-Scripts.js') ): ?>
         <link rel="preload" href="libraries/js/themeParks-Scripts.js" as="script">
-    <!-- ./Prefetched assets -->
-<?php endif; ?>    
+<?php endif; ?>
+<!-- ./Prefetched assets -->
+
 
 <!--Open Styles code-->
     
     <style type="text/css">html{-webkit-animation:fadein .5s;-moz-animation:fadein .5s;-ms-animation:fadein .5s;-o-animation:fadein .5s;animation:fadein .5s}@keyframes fadein{from{opacity:0}to{opacity:1}}@-moz-keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@-ms-keyframes fadein{from{opacity:0}to{opacity:1}}@-o-keyframes fadein{from{opacity:0}to{opacity:1}} #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { border: 1px dotted grey; }.edit[contenteditable=true]:focus { border: none!important; }.cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}.cke_button_label.cke_button__inlinesave_label {display: inline;}.cke_button__btgrid_icon {background-position: 0 !important;}
-        <?php 
-            global $style;
-            if(isset($style)){ echo $style; }else{ $style == false; }; 
-        ?>   
+        <?php  global $style; if(isset($style)){ echo $style; }else{ $style == false; }; ?>   
     </style>
 
 <!-- ./Close Styles -->
+   
    
 <!-- Open IE Fix -->
 
