@@ -6,9 +6,7 @@
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
     config.skin = 'moono-lisa';
-    config.extraPlugins = 'uploadimage';
-    config.extraPlugins = 'uploadwidget';
-    config.extraPlugins = 'filebrowser,sourcedialog,fontawesome,inlinesave,lineutils,widget';
+    config.extraPlugins = 'filebrowser,sourcedialog,fontawesome,inlinesave,lineutils,widget,uploadwidget,autosave';
     config.contentsCss = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css';
     config.allowedContent = true; 
     config.filebrowserBrowseUrl = '//' + window.location.hostname + cmsPath +'includes/admin/_ee/lib/kcfinder/browse.php';
@@ -23,6 +21,16 @@ CKEDITOR.editorConfig = function( config ) {
         onFailure: function(editor, status, request) { console.log('save failed', editor, status, request); },
         useJSON: false,
         useColorIcon: false
+    };
+    
+    config.autosave = { 
+        NotOlderThen : 1440,  
+        saveOnDestroy : false, 
+        saveDetectionSelectors : "a[href^='javascript:__doPostBack'][id*='Save'],a[id*='Cancel']",  
+        messageType : "notification",  
+        delay : 3,  
+        diffType : "inline",  
+        autoLoad: true,
     };
     
     config.toolbar = 'newBar';
