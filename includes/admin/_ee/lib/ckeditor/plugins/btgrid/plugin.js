@@ -27,7 +27,7 @@
              content: '',
            },
            template:
-                   '<div class="container">' +
+                   '<div class="btgrid">' +
                    '</div>',
            //button: lang.createBtGrid,
            dialog: 'btgrid',

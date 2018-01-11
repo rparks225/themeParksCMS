@@ -7,7 +7,6 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
     config.skin = 'moono-lisa';
     config.extraPlugins = 'filebrowser,sourcedialog,fontawesome,inlinesave,lineutils,widget,uploadwidget,autosave';
-    config.contentsCss = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css';
     config.allowedContent = true; 
     config.filebrowserBrowseUrl = '//' + window.location.hostname + cmsPath +'includes/admin/_ee/lib/kcfinder/browse.php';
     

@@ -1,6 +1,6 @@
 <div class="btgrid">
 <div class="row row-1">
-<div class="col col-md-3">
+<div class="col-md-3">
 <div class="content">
 <h3><u>About Us</u></h3>
 
@@ -8,7 +8,7 @@
 </div>
 </div>
 
-<div class="col col-md-3">
+<div class="col-md-3">
 <div class="content">
 <h3><u>Recent Posts</u></h3>
 
@@ -18,13 +18,13 @@
 </div>
 </div>
 
-<div class="col col-md-3">
+<div class="col-md-3">
 <div class="content">
 <h3><u>Site Links</u></h3>
 
 <div class="btgrid">
 <div class="row row-1">
-<div class="col col-md-6">
+<div class="col-md-6">
 <div class="content">
 <p><a href="Home">Home</a><br />
 <a href="About">About</a><br />
@@ -32,7 +32,7 @@
 </div>
 </div>
 
-<div class="col col-md-6">
+<div class="col-md-6">
 <div class="content">
 <p><a href="Gallery">Gallery</a><br />
 <a href="Contact">Contact</a></p>
@@ -45,7 +45,7 @@
 </div>
 </div>
 
-<div class="col col-md-3">
+<div class="col-md-3">
 <div class="content">
 <h3><u>Follow Us!</u></h3>
 
