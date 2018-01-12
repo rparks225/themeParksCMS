@@ -22,7 +22,7 @@
         <div class="card-body text-center">
             <!--Title-->
             <h4 class="card-title"><strong>{{ title }}</strong></h4>
-            <h5 class="indigo-text"><strong>Posted - <i>{{ date }}</i></strong></h5>
+            <h5 class="indigo-text"><strong>Posted - <i>{% echo date('M, d Y', strtotime("{{ date }}") ) %}</i></strong></h5>
 
             <div class="card-text">{{ script }}</div>
 

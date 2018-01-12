@@ -24,8 +24,8 @@ global $userName;
         <hr>
     </li>
     <li> <a href="tp-Dashboard">Back to Dashboard</a> </li>
-    <li> <a href="tp-Pages">Edit Page</a> </li>
-    <li> <a href="tp-Post">Edit Post</a> </li>
+    <li> <a href="tp-Pages">Add Page</a> </li>
+    <li> <a href="tp-Post">Add Post</a> </li>
     <li> <a style="text-align:left;border-radius:0;" href="#" onclick="event.preventDefault()" class="tpPreview"><span class="changed">Edit</span> Content</a> </li>
     <li> <a href="#" class="openSide" onclick="event.preventDefault()">Close Side bar</a> </li>
     <a href="tp-Login" onClick="eelogout();"><li style="position:absolute;bottom:0;"><i class="fa fa-power-off pull-left fa-2x" aria-hidden="true" style="position:relative;top:-6px;"></i> Logout</a> </li>

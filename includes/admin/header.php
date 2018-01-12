@@ -107,8 +107,8 @@
                         <a class="white-text  collapsible-header waves-effect waves-red"><i class="material-icons left">mode_edit</i>Edit Site</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a class="waves-effect waves-red" href="<?php echo ROOT; ?>tp-Pages-1"><i class="material-icons left">note_add</i>Edit Page</a></li>
-                                <li><a class="waves-effect waves-red" href="<?php echo ROOT; ?>tp-Post"><i class="material-icons left">assignment</i>Edit Posts</a></li>
+                                <li><a class="waves-effect waves-red" href="<?php echo ROOT; ?>tp-Pages-1"><i class="material-icons left">note_add</i>Manage Pages</a></li>
+                                <li><a class="waves-effect waves-red" href="<?php echo ROOT; ?>tp-Post"><i class="material-icons left">assignment</i>Manage Posts</a></li>
                             </ul>
                         </div>
                     </li>

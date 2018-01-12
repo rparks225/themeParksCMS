@@ -15,7 +15,7 @@
     <div style="margin-bottom:20px;" class="form-group">
 
         <label>Post:</label>
-        <textarea class="form-control col-md-12 ckeditor" rows="5" name="post" value=""><?php echo $script; ?></textarea>
+        <textarea class="materialize-textarea form-control col-md-12 ckeditor" id="post" rows="5" name="post" value=""><?php echo $script; ?></textarea>
 
     </div>
 
@@ -48,7 +48,7 @@
     <div class="form-group">
     <label>Date:</label>
     <br>
-        <input type="hidden" name="update" value="<?php echo(date(" Y/m/d ")); ?>">
+        <input type="hidden" name="update" value="<?php echo(date(" Y-m-d ")); ?>">
         <input class="form-control col-md-12 datepicker"  type="date" name="date" value="<?php echo $date; ?>">
     <br>
     <br>
