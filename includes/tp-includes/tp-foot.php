@@ -28,6 +28,17 @@ $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.''); ?>
                   }
             });
         });
+        
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {                    
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {                    
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+
     </script>
 <?php if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)): ?>
     <script>

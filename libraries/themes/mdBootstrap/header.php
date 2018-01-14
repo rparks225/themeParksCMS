@@ -1,7 +1,7 @@
 <?php 
 
 $pages = array(
-    'Home'=>'Home',
+    ''=>'Home',
     '#About'=>array(
         'About'=>'About Us',
         'theTeam'=>'Meet The Team',
