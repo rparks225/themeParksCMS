@@ -16,14 +16,20 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
 /*==================================
       Defines Site ROOT Path
 ===================================*/
-define("ROOT", "{$sUrl}");
+if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off'){
+    $proto = 'https://';
+}else{
+    $proto = 'http://';
+}
+define("ROOT", "$proto{$sUrl}");
 
 
 /*==================================
     Defines Current URL location
 ===================================*/
 function links(){
-	$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    global $proto;
+    $actual_link = "$proto$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	return $actual_link;
 	}
 
