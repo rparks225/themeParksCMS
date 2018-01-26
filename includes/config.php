@@ -1,5 +1,8 @@
 <?php
+/*Permission*/
+umask(0002);
 
+/*Init App if connect to db*/
 require_once 'db.php';
 
 if($mysqli->connect_errno){

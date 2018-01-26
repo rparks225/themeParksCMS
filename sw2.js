@@ -46,7 +46,7 @@ var fetchAndCache = function(request, cache) {
     });
 };
 
-var baseUrl = (new URL("./", this.location.href) + "themeparkscms/");
+var baseUrl = (new URL("./", this.location.href) + "");
 // TODO: This is necessary to handle different implementations in the wild
 // The spec defines self.registration, but it was not implemented in Chrome 40.
 var scope;
