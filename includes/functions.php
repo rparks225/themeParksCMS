@@ -250,6 +250,8 @@ function tmpltRender($path){
         '/\{\-\- elseif (.*?) \-\-\}/',
         '/\{\-\- else \-\-\}/',
         '/\{\-\- endif \-\-\}/',
+        '/\{\-\- foreach (.*?) \-\-\}/',
+        '/\{\-\- endforeach \-\-\}/',
     );
     $replace = array(
         '<?php echo ($1); ?>',
@@ -258,6 +260,8 @@ function tmpltRender($path){
         '<?php elseif ($1) : ?>',
         '<?php else : ?>',
         '<?php endif; ?>',
+        '<?php foreach ($1 as $loop) : ?>',
+        '<?php endforeach; ?>',
     );
     $fileConts = preg_replace($search,$replace,$fileConts);
     eval(' ?>'.$fileConts.'<?php ');
@@ -270,22 +274,6 @@ function tmpltRender($path){
 function tpBlock($blocks){        
     $path = 'libraries/themes/'.theme().'/html_blocks/'.$blocks.'.php';
     tmpltRender($path);
-};
-
-
-/*====================================================
-     Finds a defined Block for the admin panel
-====================================================*/
-function tpAdmin($blocks){
-    require_once 'includes/admin/adminBlocks/'.$blocks.'.php';
-};
-
-
-/*====================================================
-     Finds a defined Block for the admin panel
-====================================================*/
-function tpAdminInc($blocks){
-    require_once 'includes/admin/'.$blocks.'.php';
 };
 
 
@@ -304,6 +292,22 @@ function tpInc($inc){
 function tpView($folder,$view){      
     $path = 'libraries/themes/'.theme().'/views/'.$folder.'/'.$view.'_view.php';
     tmpltRender($path);
+};
+
+
+/*====================================================
+     Finds a defined Block for the admin panel
+====================================================*/
+function tpAdmin($blocks){
+    require_once 'includes/admin/adminBlocks/'.$blocks.'.php';
+};
+
+
+/*====================================================
+     Finds a defined Block for the admin panel
+====================================================*/
+function tpAdminInc($blocks){
+    require_once 'includes/admin/'.$blocks.'.php';
 };
 
 
