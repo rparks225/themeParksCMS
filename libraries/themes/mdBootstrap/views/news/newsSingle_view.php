@@ -1,7 +1,5 @@
 <!--Open Cont area-->
-<?php
-$stuff = array('one','two','three');
-?>
+
 <div class="container">
 
         {# $query = 'SELECT * FROM post WHERE ID LIKE '.title(2).'' #}

@@ -14,13 +14,15 @@
 <div class="container">    
    
     <div class="row my-5 wow fadeIn" data-wow-delay="0.4s">
-        {-- if ({{ edit }} == false) --}
+        {-- if ("{{ edit }}" == false) --}
 
             {{ html }}
 
         {-- else --}
 
-            {# tpBlock('ee') #}
+           <div class="col-md-12">
+               {# tpBlock('ee') #}
+           </div>
 
         {-- endif --}
     </div>

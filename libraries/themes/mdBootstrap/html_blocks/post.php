@@ -42,5 +42,5 @@
 </div>
         
 <div class="row my-5">
-    <a class="btn btn-warning pull-right" href="{% echo ROOT %}News-All" role="button">&laquo; Previous Posts</a>
+    <a class="btn btn-warning pull-right" href="{% echo ROOT %}Blog/" role="button">&laquo; Back to All Posts</a>
 </div>                                

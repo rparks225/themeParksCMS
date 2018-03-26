@@ -1,10 +1,8 @@
-<?php
-    if( !empty($_POST["search"]) ){
-        $search = addslashes(strip_tags($_POST["search"]));
-    }else{
-        $search = 'null';
-    }
-?>
+{-- if ( !empty($_POST["search"]) ) --}
+    {# $search = addslashes(strip_tags($_POST["search"])) #}
+{-- else --}
+        {# $search = 'null' #}
+{-- endif --}
    
     <div class="container">
     <div class="row my-5">

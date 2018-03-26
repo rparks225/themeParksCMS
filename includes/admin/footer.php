@@ -6,7 +6,7 @@
 </div>
 <!--Close Main Area-->
     <?php tpCompile('js'); ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
     <script type="text/javascript" src="<?php echo ROOT;?>includes/admin/_ee/lib/ckeditor/ckeditor.js"></script>
     <script src="<?php echo ROOT; ?>includes/admin/_ee/editease.jquery.js" type="text/javascript"></script>
     <script>

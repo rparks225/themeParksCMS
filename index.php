@@ -11,7 +11,7 @@ ini_set('session.cookie_secure', 1);
 include 'includes/functions.php';
 
 //HMTL Compress - Show Errors and always delete cookies
-compress('true');
+compress('off');
 showErrors('on');
 delCook();
 

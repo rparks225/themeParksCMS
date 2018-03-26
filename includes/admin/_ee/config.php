@@ -17,17 +17,25 @@
 
 require_once '../../db.php';
 require_once '../../settings.php';
-
 global $cmsPath;
 global $salt;
+
+$query = "SELECT * FROM U_sers";
+if($result = $mysqli->query($query)){
+    while($row = $result->fetch_assoc()){
+        $user[] = $row['User_name'];
+        $pass[] = $salt.$row['Pass_word'];
+    }      
+};  
 
 define('newPath',''.$cmsPath.'');
 
 if( !isset($_SESSION) ){ 
 	session_start(); // required for file system
 }
+
 /* Valid Login Data - username / password for each array item */
-$userNames =  array('demo'=>''.$salt.'fe01ce2a7fbac8fafaed7c982a04e229');
+$userNames = array_combine($user,$pass);
 
 /* Pages that have edit areas on them - page name then a pipe | then page url*/
 $pages =  array();

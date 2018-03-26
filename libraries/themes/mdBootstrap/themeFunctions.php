@@ -42,14 +42,17 @@ function navi($page){
         };
 
         if($link == '#'.substr($link,1)){
-
+            /* Nav Drop Down Link HTML */
             echo '
             
             <li class="nav-item btn-group">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.substr($link,1).'  
-                        </a>
+                        <a class="nav-link dropdown-toggle" 
+                              id="navbarDropdownMenuLink" 
+                              data-toggle="dropdown" 
+                              aria-haspopup="true" 
+                              aria-expanded="false"> '.substr($link,1).' </a>
+                              
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                        
                         ';
 
             foreach($title as $link2 => $title2){
@@ -58,7 +61,7 @@ function navi($page){
                 }else{
                     $a = ' inactive';
                 };
-
+                /* Drop  */
                 echo '
                 <a class="white-text dropdown-item'.$a.'" href="'.ROOT.$link2.'">'.$title2.'</a>
                 ';
@@ -69,7 +72,7 @@ function navi($page){
             </li>';
 
         }else{
-
+            /* Single Nav Link HTML */
             echo '
             <li class="nav-item '.$a.'">
                 <a class="nav-link" href="'.ROOT.$link.'">'.$title.'</a>
@@ -117,7 +120,7 @@ function breadcrumbs($trails){
 
     echo '<ul class="breadcrumb">';
     foreach($trails as $trail){
-        echo '<li><span><img width="27" height="16" src=""></span> '.$trail.'</li>';
+        echo '<li><span></span> '.$trail.'</li>';
     }
     echo '</ul>';
 }

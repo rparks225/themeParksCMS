@@ -28,8 +28,8 @@
     ],
     "support": {
         "email": "sunhater@sunhater.com",
-        "issues": "https://github.com/sunhater/kcfinder/issues",
-        "source": "https://github.com/sunhater/kcfinder"
+        "issues": "//github.com/sunhater/kcfinder/issues",
+        "source": "//github.com/sunhater/kcfinder"
     },
     "require": {
         "php": ">=5.3.0",

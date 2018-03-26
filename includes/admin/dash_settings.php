@@ -159,7 +159,7 @@ $query = '';
 
     </form>
 
-<a href="<?php echo ROOT; ?>tp-Security">Security Settings</a>
+<a href="<?php echo ROOT; ?>tp-Security">Security Settings</a> / <a href="<?php echo ROOT; ?>tp-Users">Add New Users</a>
 
 <?php
 

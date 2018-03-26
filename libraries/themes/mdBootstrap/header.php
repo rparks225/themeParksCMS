@@ -1,23 +1,3 @@
-<?php 
-
-$pages = array(
-    ''=>'Home',
-    '#About'=>array(
-        'About'=>'About Us',
-        'theTeam'=>'Meet The Team',
-        'Services'=>'Services',
-        'Board'=>'Members of the Board',
-    ),
-    'News-all'=>'News',
-    '#Gallery'=>array(
-        'Gallery'=>'Image Gallery',
-        'Tours'=>'Virtual Tours'    
-    ),
-    'Contact'=>'Contact'
-);
-
-?>
-
 <body>
     
     <!--Navbar-->
@@ -30,7 +10,7 @@ $pages = array(
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    {# navi($pages) #}
+                    {# navi( navLinks( 'mainMenu' ) ) #}
                 </ul>
                 <form class="form-inline" method="post" action="Search">
                     <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">

@@ -1,5 +1,5 @@
 /*
-	Author	: Michael Janea (https://facebook.com/mbjanea)
+	Author	: Michael Janea (//facebook.com/mbjanea)
 	Version	: 1.2
 */
 

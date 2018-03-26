@@ -1,11 +1,8 @@
-<?php 
-
+<?php
 global $sName; 
 $script = substr(strip_tags('{{ script }}'),0,155);
 $title = str_replace(' ', ', ', '{{ title }}');
-    
 ?>
-
 {-- if ( links() == ROOT.'Gallery-'.title(2) ) --}
 
     <title>{% echo $sName %} - {{ title }}</title>

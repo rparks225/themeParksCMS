@@ -1,17 +1,10 @@
 <?php
 
 class contact{
-
-	public function index( $nav = '' ){
-        
-               tpReq('head');				
-                        if($nav == ''){                                
-                                tpView('contact','contact');
-                            }else{
-                                header('Location: '.ROOT.'404');
-                            }        
-                tpReq('foot');
-
+	public function index( $nav = '' ){     
+        //Routs the Contact Main Page
+           tpReq('head');			
+                tpView('contact','contact');
+            tpReq('foot');
         }
-
 }

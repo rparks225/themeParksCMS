@@ -1,7 +1,7 @@
 /*!
  * Materialize v0.97.6 (http://materializecss.com)
  * Copyright 2014-2015 Materialize
- * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
+ * MIT License (//raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 // Check for jQuery.
 if (typeof(jQuery) === 'undefined') {
@@ -1544,7 +1544,7 @@ $(document).ready(function(){
  *
  * Copyright 2014 Alfiana E. Sibuea and other contributors
  * Released under the MIT license
- * https://github.com/fians/Waves/blob/master/LICENSE
+ * //github.com/fians/Waves/blob/master/LICENSE
  */
 
 ;(function(window) {
@@ -2361,11 +2361,11 @@ $(document).ready(function(){
  * This watches the window scroll and fires events when elements are scrolled into viewport.
  *
  * throttle() and getTime() taken from Underscore.js
- * https://github.com/jashkenas/underscore
+ * //github.com/jashkenas/underscore
  *
  * @author Copyright 2013 John Smart
- * @license https://raw.github.com/thesmart/jquery-scrollspy/master/LICENSE
- * @see https://github.com/thesmart
+ * @license //raw.github.com/thesmart/jquery-scrollspy/master/LICENSE
+ * @see //github.com/thesmart
  * @version 0.1.2
  */
 (function($) {
@@ -2466,7 +2466,7 @@ $(document).ready(function(){
 
 	/**
 	 * Get time in ms
-   * @license https://raw.github.com/jashkenas/underscore/master/LICENSE
+   * @license //raw.github.com/jashkenas/underscore/master/LICENSE
 	 * @type {function}
 	 * @return {number}
 	 */
@@ -2480,7 +2480,7 @@ $(document).ready(function(){
 	 * as much as it can, without ever going more than once per `wait` duration;
 	 * but if you'd like to disable the execution on the leading edge, pass
 	 * `{leading: false}`. To disable execution on the trailing edge, ditto.
-	 * @license https://raw.github.com/jashkenas/underscore/master/LICENSE
+	 * @license //raw.github.com/jashkenas/underscore/master/LICENSE
 	 * @param {function} func
 	 * @param {number} wait
 	 * @param {Object=} options
@@ -4166,7 +4166,7 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
 
                 // * A Firefox bug, when `html` has `overflow:hidden`, results in
                 //   killing transitions :(. So add the “opened” state on the next tick.
-                //   Bug: https://bugzilla.mozilla.org/show_bug.cgi?id=625289
+                //   Bug: //bugzilla.mozilla.org/show_bug.cgi?id=625289
                 setTimeout( function() {
 
                     // Add the “opened” class to the picker root.
@@ -4284,7 +4284,7 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
 
                 // * A Firefox bug, when `html` has `overflow:hidden`, results in
                 //   killing transitions :(. So remove the “opened” state on the next tick.
-                //   Bug: https://bugzilla.mozilla.org/show_bug.cgi?id=625289
+                //   Bug: //bugzilla.mozilla.org/show_bug.cgi?id=625289
                 setTimeout( function() {
 
                     // Remove the “opened” and “focused” class from the picker root.
@@ -4830,7 +4830,7 @@ function isUsingDefaultTheme( element ) {
 
 /**
  * Get the width of the browser’s scrollbar.
- * Taken from: https://github.com/VodkaBears/Remodal/blob/master/src/jquery.remodal.js
+ * Taken from: //github.com/VodkaBears/Remodal/blob/master/src/jquery.remodal.js
  */
 function getScrollbarWidth() {
 

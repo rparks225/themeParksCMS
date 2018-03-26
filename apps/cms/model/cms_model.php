@@ -58,11 +58,8 @@ class model{
                     'Company'=>'company',
                     'Grade'=>'grade',
                     'Caption'=>'imgCap',
-                    'Nav'=>'navs',
-                    'Navorder'=>'navOrder',
-                    'Location'=>'location',
-                    'Locationtext'=>'locText',
-                    'navId'=>'navId',
+                    'Menu_Name'=>'menNam',
+                    'Nav_Text'=>'navTxt',
                     'COUNT(*)'=>'count'
                 );	
  

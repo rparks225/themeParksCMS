@@ -358,7 +358,7 @@
     }
     // Querystring mitigator - Quick and dirty paste.
     // I don't know who original author is for creds.
-    // https://stackoverflow.com/a/11654436/2418655
+    // //stackoverflow.com/a/11654436/2418655
     function autosaveRemoveUrlParam(key, value, url) {
         if (!url) url = window.location.href;
         var re = new RegExp("([?&])" + key + "=.*?(&|#|$)(.*)", "gi"),

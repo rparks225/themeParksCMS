@@ -14,7 +14,7 @@
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati corrupti molestiae deserunt porro harum.</p>
 
-<p><u><a href="News-all">Read More...</a></u></p>
+<p><u><a href="http:/localhost/themeparkscms/Blog">Read More...</a></u></p>
 </div>
 </div>
 
@@ -26,16 +26,16 @@
 <div class="row row-1">
 <div class="col-md-6">
 <div class="content">
-<p><a href="Home">Home</a><br />
-<a href="About">About</a><br />
-<a href="News-all">News</a></p>
+<p><a href="http://localhost/themeparkscms/Home">Home</a><br />
+<a href="http:/localhost/themeparkscms/Page/About">About</a><br />
+<a href="http:/localhost/themeparkscms/Blog">News</a></p>
 </div>
 </div>
 
 <div class="col-md-6">
 <div class="content">
-<p><a href="Gallery">Gallery</a><br />
-<a href="Contact">Contact</a></p>
+<p><a href="http:/localhost/themeparkscms/Gallery">Gallery</a><br />
+<a href="http:/localhost/themeparkscms/Contact">Contact</a></p>
 </div>
 </div>
 </div>
@@ -49,7 +49,7 @@
 <div class="content">
 <h3><u>Follow Us!</u></h3>
 
-<p><a href="https://www.facebook.com/"><span class="fa fa-facebook-square" style="color:rgb(51, 102, 204);font-size:24px;"></span></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://twitter.com/"><span class="fa fa-twitter" style="color:rgb(0, 153, 255);font-size:24px;"></span></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.instagram.com/?hl=en"><span class="fa fa-instagram" style="color:rgb(204, 102, 153);font-size:24px;"></span></a></p>
+<p><a href="//www.facebook.com/"><span class="fa fa-facebook-square" style="color:rgb(51, 102, 204);font-size:24px;"></span></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="//twitter.com/"><span class="fa fa-twitter" style="color:rgb(0, 153, 255);font-size:24px;"></span></a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="//www.instagram.com/?hl=en"><span class="fa fa-instagram" style="color:rgb(204, 102, 153);font-size:24px;"></span></a></p>
 </div>
 </div>
 </div>
@@ -63,4 +63,4 @@
 <p style="text-align: center;">&copy;Copyright 2016 ThemeParks Cms Inc. All rights reserved.<br />
 Veniam ut et aliquam. Ratione tempora, excepturi eveniet cupiditaes.</p>
 
-<p style="text-align: center;"><a href="tp-login">Admin Login</a></p>
+<p style="text-align: center;"><a href="http://localhost/themeParksCMS/tp-login">Admin Login</a></p>

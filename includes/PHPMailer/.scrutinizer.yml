@@ -106,7 +106,7 @@ tools:
             - vendor
 
     # Runs Scrutinizer's PHP Analyzer Tool
-    # https://scrutinizer-ci.com/docs/tools/php/php-analyzer/config_reference
+    # //scrutinizer-ci.com/docs/tools/php/php-analyzer/config_reference
     php_analyzer:
         enabled:              true
         config:

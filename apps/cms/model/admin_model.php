@@ -62,8 +62,13 @@ class admin_model{
                     'Company'=>'company',
                     'Grade'=>'grade',
                     'Caption'=>'imgCap',
-                    'Order'=>'order',
-                    'navId'=>'navId',
+                    'User_name'=>'users',
+                    'Display_name'=>'displName',
+                    'Pass_word'=>'pass',
+                    'Signed_Up'=>'signedUp',
+                    'Privileges'=>'privi',
+                    'Menu_Name'=>'menNam',
+                    'Nav_Text'=>'navTxt',
                     'COUNT(Id)'=>'count'
                 );
 
@@ -80,8 +85,8 @@ class admin_model{
                 };	
 
                 // Creates html block if it doesnt exist or just returns the already existing block		
-                $filename = 'includes/admin/adminBlocks/'.$block.'.php';
-
+                $filename = realpath(__DIR__.'/../../..').'/includes/admin/adminBlocks/'.$block.'.php';
+                
                 if(!file_exists($filename)){
 
                     touch($filename);
@@ -93,7 +98,7 @@ class admin_model{
                     fclose($fileNew);
 
                 }else{
-                    include 'includes/admin/adminBlocks/'.$block.'.php';
+                    include realpath(__DIR__.'/../../..').'/includes/admin/adminBlocks/'.$block.'.php';
 
                 }
 

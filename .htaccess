@@ -1,62 +1,20 @@
 FileETag MTime Size
 Options -Indexes
-
 Options -MultiViews
-RewriteEngine On 
 
+RewriteEngine On
 
-## 301’s ##
-redirect 301 old/page/name.html http://new/page/name.html
-## 301’s ##
+## Admin Rewrites ##
 
-
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-
-##Styles Compile
+## CSS & JS Compilers##
 RewriteRule ^tp-style libraries/css/compile.php [NC]
-
-##Style
 RewriteRule ^tp-js libraries/js/compile.php [NC]
-
-##Search
-RewriteRule ^Search index.php?url=search [NC]
-
-##Home
-RewriteRule ^Home index.php?url=home [NC]
-
-##Product redirects
-RewriteRule ^Products$ index.php?url=products [NC]
-RewriteRule ^Products-([0-9a-z]+)/?$ index.php?url=products/$1 [NC,QSA,L]
-
-##Employment redirects
-RewriteRule ^Employment$             index.php?url=employment [NC]
-RewriteRule ^Employment-([0-9a-z]+)?$ index.php?url=employment/$1 [NC,QSA]
-
-##Services redirects
-RewriteRule ^Services$             index.php?url=service [NC]
-RewriteRule ^Services-([0-9a-z]+)?$ index.php?url=service/$1 [NC,QSA]
-
-##Enrollment redirects
-RewriteRule ^Enrollment-([0-9a-z]+)?$ index.php?url=enrollment/$1 [NC,QSA]
-
-##Contact redirects
-RewriteRule ^Contact$ index.php?url=contact [NC]
-RewriteRule ^Contact-([0-9a-z]+)?$ index.php?url=contact/$1 [NC,QSA]
-
-##Gallery redirects
-RewriteRule ^Gallery$             index.php?url=gallery [NC]
-RewriteRule ^Gallery-([0-9a-z]+)?$ index.php?url=gallery/images/$1 [NC,QSA]
-
-##Page redirects
-RewriteRule ^([0-9a-z]+)/?$ index.php?url=page/$1 [NC,QSA,L]
-
-##News redirects
-RewriteRule ^News-all$           index.php?url=news/Posts [NC]
-RewriteRule ^News-Post-([0-9]+)$ index.php?url=news/Posts/$1 [NC,QSA]
 
 ##Login redirects
 RewriteRule ^tp-Login index.php?url=admin [NC]
+RewriteRule ^tp-Menu-([0-9a-z]+)?$ index.php?url=admin/menu/$1 [NC]
+RewriteRule ^tp-Menu index.php?url=admin/menu [NC]
+RewriteRule ^tp-Users index.php?url=admin/users [NC]
 RewriteRule ^tp-Incorrect index.php?url=admin/incorrect [NC]
 RewriteRule ^tp-Dashboard index.php?url=admin/dashboard [NC]
 RewriteRule ^tp-Pages-Update-([0-9a-z]+)?$ index.php?url=admin/pages/$1 [NC,QSA]
@@ -69,6 +27,18 @@ RewriteRule ^tp-Image index.php?url=admin/image [NC]
 RewriteRule ^tp-Settings index.php?url=admin/settings [NC]
 RewriteRule ^tp-Security index.php?url=admin/security [NC]
 RewriteRule ^tp-Products index.php?url=admin/products [NC]
+
+## ./Admin Rewrites ##
+
+
+## ThemeParksCMS Init ##
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+## /.ThemeParksCMS Init ##
+
 
 ## Speed Upgrades and Security ##
 

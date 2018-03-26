@@ -47,8 +47,8 @@
 
     <link rel="shortcut icon" href="icon.ico">
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" />
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="<?php echo ROOT; ?>includes/admin/assets/css/customStyles.css" type="text/css" rel="stylesheet" />
 
     <style>
@@ -79,8 +79,8 @@
     </style>
 
             <!--[if IE]>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
 
@@ -109,6 +109,7 @@
                             <ul>
                                 <li><a class="waves-effect waves-red" href="<?php echo ROOT; ?>tp-Pages-1"><i class="material-icons left">note_add</i>Manage Pages</a></li>
                                 <li><a class="waves-effect waves-red" href="<?php echo ROOT; ?>tp-Post"><i class="material-icons left">assignment</i>Manage Posts</a></li>
+                                <li><a class="waves-effect waves-red" href="<?php echo ROOT; ?>tp-Menu"><i class="material-icons left">menu</i>Manage Menu Bar</a></li>
                             </ul>
                         </div>
                     </li>

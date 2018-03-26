@@ -17,7 +17,7 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
       Defines Site ROOT Path
 ===================================*/
 if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off'){
-    $proto = 'https://';
+    $proto = '//';
 }else{
     $proto = 'http://';
 }
@@ -96,9 +96,28 @@ function theme(){
 	if(!isset($theme)){		
 		return 'default';		
 		}	  	
-	}	
+	}
 
-	
+
+/*=============================================
+             Grabs Navigation Links From The DB
+=============================================*/
+function navLinks($a){	
+    global $mysqli;		
+    $query = 'SELECT * FROM Nav WHERE Menu_Name LIKE "'.$a.'"';
+    
+    if($result = $mysqli->query($query)){			
+        while($row = $result->fetch_assoc()){	
+            if(isset($row['Nav_Text'])){					
+                $menu = $row['Nav_Text'];					
+                return json_decode($menu,true);		
+            }else{						
+            }						
+        }				
+    }
+}	
+
+
 /*=============================================
     Adds new cms component to desired page
 =============================================*/
@@ -112,8 +131,8 @@ function newEE($title){
       fclose($fileNew);				  
       }else{
             
-            include 'includes/admin/_ee/inc/_'.$title.'.php';
-          
+            $path = 'includes/admin/_ee/inc/_'.$title.'.php';
+            tmpltRender($path);
           }	
 	};
 
@@ -236,7 +255,6 @@ function tpCompile($e){
     };       
 };
 
-
 /*===============================================================
      Renders Views, Blocks and Loops for easier to read sytax.
 ===============================================================*/
@@ -250,6 +268,8 @@ function tmpltRender($path){
         '/\{\-\- elseif (.*?) \-\-\}/',
         '/\{\-\- else \-\-\}/',
         '/\{\-\- endif \-\-\}/',
+        '/\{\-\- foreach (.*?) \-\-\}/',
+        '/\{\-\- endforeach \-\-\}/',
     );
     $replace = array(
         '<?php echo ($1); ?>',
@@ -258,6 +278,8 @@ function tmpltRender($path){
         '<?php elseif ($1) : ?>',
         '<?php else : ?>',
         '<?php endif; ?>',
+        '<?php foreach ($1 as $loop) : ?>',
+        '<?php endforeach; ?>',
     );
     $fileConts = preg_replace($search,$replace,$fileConts);
     eval(' ?>'.$fileConts.'<?php ');

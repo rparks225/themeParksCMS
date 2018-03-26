@@ -8,7 +8,7 @@
  * * Set up an app in your Google developer console
  * * Set the script address as the app's redirect URL
  * If no refresh token is obtained when running this file, revoke access to your app
- * using link: https://accounts.google.com/b/0/IssuedAuthSubTokens and run the script again.
+ * using link: //accounts.google.com/b/0/IssuedAuthSubTokens and run the script again.
  * This script requires PHP 5.4 or later
  * PHP Version 5.4
  */
@@ -25,7 +25,7 @@ use Psr\Http\Message\ResponseInterface;
 session_start();
 
 //If this automatic URL doesn't work, set it yourself manually
-$redirectUri = isset($_SERVER['HTTPS']) ? 'https://' : 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+$redirectUri = isset($_SERVER['HTTPS']) ? '//' : 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
 //$redirectUri = 'http://localhost/phpmailer/get_oauth_token.php';
 
 //These details obtained are by setting up app in Google developer console.
@@ -40,30 +40,30 @@ class Google extends AbstractProvider
 
     /**
      * @var string If set, this will be sent to google as the "access_type" parameter.
-     * @link https://developers.google.com/accounts/docs/OAuth2WebServer#offline
+     * @link //developers.google.com/accounts/docs/OAuth2WebServer#offline
      */
     protected $accessType;
 
     /**
      * @var string If set, this will be sent to google as the "hd" parameter.
-     * @link https://developers.google.com/accounts/docs/OAuth2Login#hd-param
+     * @link //developers.google.com/accounts/docs/OAuth2Login#hd-param
      */
     protected $hostedDomain;
 
     /**
      * @var string If set, this will be sent to google as the "scope" parameter.
-     * @link https://developers.google.com/gmail/api/auth/scopes
+     * @link //developers.google.com/gmail/api/auth/scopes
      */
     protected $scope;
 
     public function getBaseAuthorizationUrl()
     {
-        return 'https://accounts.google.com/o/oauth2/auth';
+        return '//accounts.google.com/o/oauth2/auth';
     }
 
     public function getBaseAccessTokenUrl(array $params)
     {
-        return 'https://accounts.google.com/o/oauth2/token';
+        return '//accounts.google.com/o/oauth2/token';
     }
 
     public function getResourceOwnerDetailsUrl(AccessToken $token)
@@ -133,7 +133,7 @@ $provider = new Google(
         'clientId' => $clientId,
         'clientSecret' => $clientSecret,
         'redirectUri' => $redirectUri,
-        'scope' => array('https://mail.google.com/'),
+        'scope' => array('//mail.google.com/'),
 	'accessType' => 'offline'
     )
 );
