@@ -342,7 +342,7 @@ function tpReq($req){
 ====================================================*/    
 session_start();
 $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
-session_name(''.$sessKey.'');
+session_id(''.$sessKey.'');
 
 
 /*====================================================
