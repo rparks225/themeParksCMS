@@ -11,7 +11,7 @@ global $sessKey;
 
 session_start();
 $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
-session_name(''.$sessKey.'');
+session_id(''.$sessKey.'');
 
 $root = $_SERVER['DOCUMENT_ROOT'];
 $path = ''.$cmsPath.'libraries/js/';
@@ -32,7 +32,7 @@ echo '/*================================
     ';
 }
 
-echo 'var cmsPath = '.$cmsPath.'';
+echo 'var cmsPath = "'.$cmsPath.'"';
 
 $comp = ob_get_clean();
 

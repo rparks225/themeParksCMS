@@ -62,8 +62,8 @@ this.addEventListener("install", function(e) {
     e.waitUntil(caches.delete("core-waiting").then(function() {
         return caches.open("core-waiting").then(function(core) {
             var resourceUrls = [
-                "libraries/css/themeParks-styles.css", 
-                "libraries/js/themeParks-Scripts.js",
+                "css/themeParks-styles.css", 
+                "js/themeParks-Scripts.js",
             ];
 
             return Promise.all(resourceUrls.map(function(relativeUrl) {
