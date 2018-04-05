@@ -12,7 +12,7 @@ global $sessKey;
 
 session_start();
 $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
-session_id(''.$sessKey.'');
+session_name(''.$sessKey.'');
 
 $root = $_SERVER['DOCUMENT_ROOT'];
 $path = $cmsPath.'libraries/css/';

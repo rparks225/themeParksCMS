@@ -341,7 +341,7 @@ function tpReq($req){
 ====================================================*/    
 session_start();
 $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
-session_id(''.$sessKey.'');
+session_name(''.$sessKey.'');
 
 
 /*====================================================
@@ -350,6 +350,7 @@ session_id(''.$sessKey.'');
 function delCook(){
     global $sessKey;
     if(!isset($_SESSION[''.$sessKey.''])){
+		session_regenerate_id(true);
         // unset cookies
         if (isset($_SERVER['HTTP_COOKIE'])) {
             $cookies = explode(';', $_SERVER['HTTP_COOKIE']);

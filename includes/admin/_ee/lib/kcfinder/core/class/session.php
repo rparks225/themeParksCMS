@@ -23,7 +23,7 @@ class session {
     public function __construct($configFile) {
 
         // Start session if it is not already started
-        if (!session_id())
+        if (!session_name())
             session_start();
 
         $config = require($configFile);
