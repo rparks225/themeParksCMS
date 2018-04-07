@@ -1,21 +1,9 @@
 <?php
 
-class employment{	
-        public function index(){
-            //Routs the Employment Main Page
-           tpReq('head');   
-                tpView('employment','employment');
-           tpReq('foot'); 
-         }
+class employment extends router{	
     
-        public function job( $nav = '' ){
-            //Routs the Employment Single Job Post
-            tpReq('head'); 
-                if(!empty($nav)){
-                    tpView('employment','job');
-                }else{
-                    header('Location: '.ROOT.'page/404');
-                }
-            tpReq('foot'); 
-        }
+        //Routes the Employment Page
+        public function index(){ $this->route('employment','employment'); }
+        public function job( $nav = '' ){ $this->route('employment','job'); }
+    
 }

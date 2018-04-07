@@ -1,10 +1,8 @@
 <?php
 
-class contact{
-	public function index( $nav = '' ){     
-        //Routs the Contact Main Page
-           tpReq('head');			
-                tpView('contact','contact');
-            tpReq('foot');
-        }
+class contact extends router{
+    
+    //Routes the Contact Page
+    public function index(){ $this->route('contact','contact'); }
+    
 }

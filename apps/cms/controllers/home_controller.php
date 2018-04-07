@@ -1,10 +1,7 @@
 <?php
 
-class home{
-    public function index( ){
-        //Routs the Home Page
-        tpReq('head');
-            tpView('home','home');
-        tpReq('foot');
-    }
+class home extends router{
+    //Routes the tHe Home Page
+    public function index( ){ $this->route('home','home'); }
+    
 }

@@ -1,10 +1,8 @@
 <?php	
 		
-class page{	
-    public function index(){
-        //Routs All the Single Page
-         tpReq('head');
-            tpView('pages','single');
-          tpReq('foot');
-    }
+class page extends router{	
+    
+    //Routes the CMS Pages
+    public function index(){ $this->route('pages','single'); }
+    
 }

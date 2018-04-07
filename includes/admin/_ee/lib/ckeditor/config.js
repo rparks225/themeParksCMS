@@ -9,6 +9,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.extraPlugins = 'filebrowser,sourcedialog,fontawesome,inlinesave,lineutils,widget,uploadwidget,autosave';
     config.allowedContent = true; 
     config.filebrowserBrowseUrl = '//' + window.location.hostname + cmsPath +'includes/admin/_ee/lib/kcfinder/browse.php';
+    config.toolbarCanCollapse = true;
     
     config.removeButtons = 'Form,NewPage,Glyphicons,About,Smiley,Table,wenzgmap,Checkbox,Radio,Textarea, Flash,Language,Blockquote,Textfield,Button,SpecialChar,PageBreak,Flash,Iframe,BidiLtr,BidiRtl,Subscript,Superscript,TextField,Select,ImageButton,HiddenField,Find,Replace,ShowBlocks';
 

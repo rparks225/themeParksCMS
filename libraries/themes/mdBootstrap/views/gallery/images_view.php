@@ -1,9 +1,9 @@
 <?php global $sName; ?>
-{# $sort = false #}
+{# $sorted = false #}
 {# $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'') #}
 
 {-- if isset($_SESSION[$sessKey]) --}
-    {# $sort = "sortable" #}
+    {# $sorted = "sortable" #}
 {-- endif --}
 
 <!--Open Cont area-->
@@ -24,15 +24,15 @@
 
 
     {-- if (isset($_SESSION[''.$sessKey.''])) --}
-    <div class="wow fadeIn" data-wow-delay="0.02s" id="{% echo $sort %}">
+        <ul class="wow fadeIn" data-wow-delay="0.02s" id="{% echo $sorted %}">
     {-- else --}
-    <div class="wow fadeIn" data-wow-delay="0.02s">
+        <ul class="wow fadeIn" data-wow-delay="0.02s">
     {-- endif --}
-        {# $query = 'SELECT * FROM `images` WHERE `Album` LIKE \''.title(2).'\' ORDER BY `images`.`Order` ASC ' #}
-        {# $block = 'galleryImage' #}
-        {# $images = new model() #}
-        {# $images->query($query,$block) #}
-    </div>
+            {# $query = 'SELECT * FROM `images` WHERE `Album` LIKE \''.title(2).'\' ORDER BY `images`.`Order` ASC ' #}
+            {# $block = 'galleryImage' #}
+            {# $images = new model() #}
+            {# $images->query($query,$block) #}
+        </ul>
         
 </div>
 <div class="clearfix"></div>

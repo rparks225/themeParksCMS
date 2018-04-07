@@ -1,10 +1,8 @@
 <?php	
 
-class search{
-    public function index( $nav = ''){
-        //Routs the Search Bar Page
-        tpReq('head');
-            tpView('search','search');
-        tpReq('foot');
-    }
+class search extends router{
+    
+    //Routes the Search Pages
+    public function index( $nav = ''){ $this->route('search','search'); }
+    
 }

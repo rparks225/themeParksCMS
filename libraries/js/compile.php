@@ -32,7 +32,7 @@ echo '/*================================
     ';
 }
 
-echo 'var cmsPath = '.$cmsPath.'';
+echo 'var cmsPath = "'.$cmsPath.'"';
 
 $comp = ob_get_clean();
 
