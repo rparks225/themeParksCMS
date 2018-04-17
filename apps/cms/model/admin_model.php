@@ -69,6 +69,7 @@ class admin_model{
                     'Privileges'=>'privi',
                     'Menu_Name'=>'menNam',
                     'Nav_Text'=>'navTxt',
+                    'Order'=>'order',
                     'COUNT(Id)'=>'count'
                 );
 

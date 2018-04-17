@@ -54,3 +54,41 @@
     </div>
 </div>
 <!--Close Modal-->
+
+
+<?php 
+
+$vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle');
+
+foreach($vars as $var){
+
+    global $$var;
+
+}
+
+$site = "{$dbName}"; 
+
+$method = 'Added';
+$location = 'U_sers';
+$query = false;	
+
+if(isset($_POST[''.$method.''])){
+
+    if(isset($_POST['use'])){
+
+        $user = addslashes($_POST['use']);
+        $displayName = addslashes($_POST['displName']);
+        $pass = addslashes($_POST['pas']);
+        $email = addslashes($_POST['email']);
+        $privs = addslashes($_POST['privi']);
+
+        $query = 'INSERT INTO `'.$site.'`.`'.$location.'` (`Id`, `User_name`, `Display_name`, `Pass_word`, `Email`, `Signed_Up`, `Privileges`) VALUES (NULL, \''.$user.'\', \''.$displayName.'\', \''.hash('sha512',$pass).'\', \''.$email.'\', CURRENT_TIMESTAMP, \''.$privs.'\')';
+
+    }
+
+};
+
+$addPage = new update();
+$addPage->uped($location,$query,$method);
+
+?>

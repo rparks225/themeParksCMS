@@ -1,4 +1,6 @@
-<div class="row">
+<button class="waves-effect waves-red btn modal-trigger" data-target="addGal">Add new image gallery</button>
+<br><br>
+<div class="row card-panel">
 
     <div class="col s12">
         <ul class="tabs">
@@ -12,7 +14,7 @@
 
         <div class="clearfix">&nbsp;</div>
 
-        <button class="waves-effect waves-red btn modal-trigger" data-target="addGal">Add new image gallery</button>
+        
 
         <div class="table-responsive">
 
@@ -42,27 +44,6 @@
 
             </table>
 
-        </div>
-
-        <!-- Modal Structure -->
-        <div id="addGal" class="modal">
-            <div class="modal-content">
-                <h4>Add New Photo Gallery</h4>
-                <form class="form" method="post" style="">
-                    <input type="hidden" name="id" value="">
-                    <div>
-                        <label for="gallery">Gallery Name:</label>
-                        <br>
-                        <input type="text" name="gallery" id="gallery" value="">
-                    </div>
-                    <div>
-                        <label for="title">Gallery Title:</label>
-                        <br>
-                        <input type="text" name="title" id="title" value="">
-                    </div>
-                    <input type="submit" class="btn" name="inserted" value="Add">
-                </form>
-            </div>
         </div>
 
     </div>
@@ -98,9 +79,31 @@
 
     <div id="test3" class="col s12">
 
-        <iframe style="height:600px;width:100%;border:none;padding:0 15px;" 
+        <iframe style="height:600px;width:100%;border:none;padding:0" 
                 src="<?php echo ROOT; ?>includes/admin/dropzone/"></iframe>
 
     </div>
 
+</div>
+
+
+<!-- Modal Structure -->
+<div id="addGal" class="modal">
+    <div class="modal-content">
+        <h4>Add New Photo Gallery</h4>
+        <form class="form" method="post" style="">
+            <input type="hidden" name="id" value="">
+            <div>
+                <label for="gallery">Gallery Name:</label>
+                <br>
+                <input type="text" name="gallery" id="gallery" value="">
+            </div>
+            <div>
+                <label for="title">Gallery Title:</label>
+                <br>
+                <input type="text" name="title" id="title" value="">
+            </div>
+            <input type="submit" class="btn btn-primary" name="inserted" value="Add">
+        </form>
+    </div>
 </div>

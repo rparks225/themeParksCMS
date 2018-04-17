@@ -6,12 +6,11 @@
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
     config.skin = 'moono-lisa';
-    config.extraPlugins = 'filebrowser,sourcedialog,fontawesome,inlinesave,lineutils,widget,uploadwidget,autosave';
+    config.extraPlugins = 'filebrowser,sourcedialog,fontawesome,inlinesave,lineutils,widget,uploadwidget,autosave,toggle,';
     config.allowedContent = true; 
     config.filebrowserBrowseUrl = '//' + window.location.hostname + cmsPath +'includes/admin/_ee/lib/kcfinder/browse.php';
-    config.toolbarCanCollapse = true;
     
-    config.removeButtons = 'Form,NewPage,Glyphicons,About,Smiley,Table,wenzgmap,Checkbox,Radio,Textarea, Flash,Language,Blockquote,Textfield,Button,SpecialChar,PageBreak,Flash,Iframe,BidiLtr,BidiRtl,Subscript,Superscript,TextField,Select,ImageButton,HiddenField,Find,Replace,ShowBlocks';
+    config.removeButtons = 'Form,NewPage,Glyphicons,About,Smiley,Table,wenzgmap,Checkbox,Radio,Textarea, Flash,Language,Blockquote,Textfield,Button,SpecialChar,PageBreak,Flash,BidiLtr,BidiRtl,Subscript,Superscript,TextField,Select,ImageButton,HiddenField,Find,Replace,ShowBlocks';
 
     config.inlinesave = {
         postUrl: '',
@@ -36,18 +35,22 @@ CKEDITOR.editorConfig = function( config ) {
     config.toolbar = 'newBar';
 
     config.toolbar_newBar = [
-        { name: 'editing', items : [ 'Bold','Italic','Underline','Strike','RemoveFormat','-',] },
-        { name: 'clipboard', items : [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','-','SelectAll','Scayt', ] },
-        { name: 'paragraph', items : [ 'Templates','NumberedList','BulletedList','-','Outdent','Indent','-','CreateDiv','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock',] },
+        { name: 'basic', items : [ 'Font','FontSize','Format','-','Bold','Italic','Underline','RemoveFormat','-',
+                                                   'JustifyLeft','JustifyCenter','JustifyRight','-',
+                                                   'TextColor','-','Link','Unlink','Anchor','-',
+                                                   'Sourcedialog','Inlinesave','-','toggle' ] },
         '/',
-        { name: 'styles', items : [ 'Styles','Format','Font','FontSize', ] },
-        { name: 'links', items : [ 'Link','Unlink','Anchor' ] },
-        { name: 'colors', items : [ 'TextColor','BGColor' ] },
-        { name: 'new', items: ['Image','FontAwesome','btgrid','HorizontalRule'] },
-        { name: 'tools', items: ['Maximize'] },
-        { name: 'save', items : ['Sourcedialog','Inlinesave'] },
+        { name: 'advanced', items : [ 'Undo', 'Redo','-',
+                                                           'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord','-',
+                                                           'SelectAll','Scayt','-','Templates','NumberedList','BulletedList','-',
+                                                           'Outdent','Indent','-','CreateDiv','-',
+                                                           'Image','FontAwesome','btgrid','HorizontalRule','-',
+                                                           'Maximize','Iframe',
+                                    ] },
     ];
     
     CKEDITOR.dtd.$removeEmpty["span"] = false;
-    
+    CKEDITOR.on("instanceReady", function(ev) {
+        $("span.cke_toolbar_break").next("span.cke_toolbar").hide()
+    });
 };

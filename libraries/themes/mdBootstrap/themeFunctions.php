@@ -95,20 +95,22 @@ function paginate($table,$limit,$currentPage){
     $newNum = $count/$limit;
     $newNum = ceil($newNum);
     $nums = 0;    
-    echo '<ul class="pagination">';        
-    if(!ctype_digit(title(2))){
-        echo '<li class="active disabled" style="color:white;">All Pages</li>';
-    }else{
-        echo '<li><a href="'.$currentPage.'">All Pages</a></li>';
-    }   
+    echo '
+    <div class="clearfix">&nbsp;</div>
+    <ul class="pagination">';        
     while($nums < $newNum){
         $nums++;
         if($nums == title(2) || title(2) == $nums){    
-            echo '<li class="active disabled" style="color:white;">'.$nums.'</li>';    
+            echo '<li class="active disabled" style="color:white;padding: 4px 10px;">'.$nums.'</li>';    
         }else{    
             echo '<li><a href="'.$currentPage.'-'.$nums.'">'.$nums.'</a></li>';    
         }            
     }        
+    if(!ctype_digit(title(2))){
+        echo '<li class="active disabled" style="color:white;padding: 4px 10px;">All Pages</li>';
+    }else{
+        echo '<li><a href="'.$currentPage.'">All Pages</a></li>';
+    }   
     echo '</ul>';   
 }
 

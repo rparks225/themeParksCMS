@@ -12,52 +12,33 @@
 
                     <input type="hidden" name="id" value="">
 
-                    <div class="form-group col s6">
-                        <label>Page Name:</label>
-                        <br>
-                        <input class="form-control" required type="text" name="name" value="">
-                        <br>
-                        <br>
+                    <div class="form-group input-field">
+                        <label for="name">Page Name:</label>
+                        <input class="form-control" required type="text" id="name" name="name" value="">
                     </div>
 
-                    <div class="form-group col s6">
-                        <label>Page Editable <span class="text-muted">(Yes or No)</span>?</label>
-                        <br>
-                        <select required class="form-control" id="change" type="text" name="editable">
+                    <div class="form-group input-field">
+                        <select required class="form-control" id="change" type="text" id="editable" name="editable">
                             <option value="Please choose a selection." active>Select</option>
                             <option value="false">No</option>
                             <option value="true">Yes</option>
                         </select>
-                        <br>
-                        <br>
+                        <label for="editable">Page Editable <span class="text-muted">(Yes or No)</span>?</label>
                     </div>
 
-                    <div style="margin-bottom:10px;" class="form-group" id="html">
-
+                    <div class="form-group input-field">
+                        <label for="title">Page Title:</label>
+                        <input class="form-control col-md-12" requires type="text" id="title" name="title" value="">
                     </div>
 
-                    <div class="form-group">
-                        <label>Page Title:</label>
-                        <br>
-                        <input class="form-control col-md-12" requires type="text" name="title" value="">
-                        <br>
-                        <br>
+                    <div class="form-group input-field">
+                        <label for="key">Page Key Words:</label>
+                        <input class="form-control col-md-12" requires type="text" id="key" name="key" value="">
                     </div>
 
-                    <div class="form-group">
-                        <label>Page Key Words:</label>
-                        <br>
-                        <input class="form-control col-md-12" requires type="text" name="key" value="">
-                        <br>
-                        <br>
-                    </div>
-
-                    <div style="margin-bottom:10px;" class="form-group col s12">
-                        <label>Page Description:</label>
-                        <br>
-                        <textarea class="materialize-textarea form-control" length="120" rows="5" name="script" value=""></textarea>
-                        <br>
-                        <br>
+                    <div style="margin-bottom:10px;" class="form-group input-field">
+                        <label for="script">Page Description:</label>
+                        <textarea class="materialize-textarea form-control" length="120" rows="5" id="script" name="script" value=""></textarea>
                     </div>
 
                     <span><br></span>

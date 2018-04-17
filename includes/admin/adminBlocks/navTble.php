@@ -4,20 +4,20 @@
     <td style="text-align:right;"><?php echo $menNam; ?></td>
     
     <td style="text-align:right;">
-        <div style="position:relative;top:0;right:0;" class="fixed-action-btn horizontal">
+        <div style="position:relative;top:0;right:0;" class="fixed-action-btn horizontal direction-left">
             <a class="btn-floating btn-large blue">
                 <i class="large material-icons">add</i>
             </a>
             
             <ul>
                 <li>
-                    <a href="<?php echo ROOT.'tp-Menu-'.$id; ?>" type="button" class="orange waves-effect waves-red btn-floating btn-large">
+                    <a href="<?php echo ROOT.'tp-Menu-'.$id; ?>" type="button" class="orange waves-effect waves-red btn-floating">
                         <i class="material-icons left">mode_edit</i>
                     </a>
                 </li>
 
                 <li>
-                    <a class="modal-trigger waves-effect waves-light btn-floating btn-large red" data-toggle="modal" href="#myModal-<?php echo $id; ?>">
+                    <a class="modal-trigger waves-effect waves-light btn-floating red" data-toggle="modal" href="#myModal-<?php echo $id; ?>">
                         <i class="material-icons left">delete</i>
                     </a>
                 </li>

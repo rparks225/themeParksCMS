@@ -4,7 +4,7 @@
    <br>
     <div class="container">
         <div class="row">
-            <div class="col-md-12 wow slideInUp" date-wow-delay="0.2s">
+            <div class="col-md-12 wow slideInUp" data-wow-delay="0.2s">
                 <div  id="_footer"{% echo $inline %}>
                     {# newEE('footer') #}
                 </div>

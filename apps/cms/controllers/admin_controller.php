@@ -37,13 +37,13 @@ public function menu($nav = ''){
 // Routs the Page Edit Page(s)
 public function pages( $nav = '' ){
             if($nav == '') {  $this->adminRoute('dash_page'); }
-            else if(links() == ROOT.'tp-Pages-Update-'.title(2).'') {    $this->adminRoute('dash_pgUpdate');   }
-            else if ($nav != '') {   $this->adminRoute('dash_page'); } }	
+            else if( links() == ROOT.'tp-Pages-Update-'.title(2).'' ) {    $this->adminRoute('dash_pgUpdate');   }
+            else if ( $nav != '' ) {   $this->adminRoute('dash_page'); } }	
     
     
 // Routs the Post Edit Page(s)
 public function post( $nav = '' ){
-            if($nav == ''){ $this->adminRoute('dash_post'); }
+            if( $nav == '' ){ $this->adminRoute('dash_post'); }
             else{ $this->adminRoute('dash_pstUpdate'); } }	
     
 }

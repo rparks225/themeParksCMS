@@ -13,49 +13,50 @@ $site = "{$dbName}";
 ?>
     <div class="admin">
 
-        <button href="#" class="btn btn-primary downish blue"><span>Close</span></button>
-        <div class="clearfix">&nbsp;</div>
+        <?php tpAdmin('postBtn'); ?>
 
-        <div class="table-responsive">
+        <div class="card-panel">
+            <div class="table-responsive">
 
-            <table class="responsive-table highlight">
-                
-                <thead>
-                
-                    <tr class="active" style="color:black;">
-                        <th>Post Title</th>
-                        <th>Body Copy</th>
-                        <th>Image</th>
-                        <th>Image Caption</th>
-                        <th>Date</th>
-                        <th>Updated</th>
-                        <th>Action</th>
-                    </tr>
-                
-                </thead>
+                <table class="responsive-table highlight">
 
-                <tbody>
+                    <thead>
 
-                    <?php 
+                        <tr class="active" style="color:black;">
+                            <th>Post Title</th>
+                            <th>Body Copy</th>
+                            <th>Image</th>
+                            <th>Image Caption</th>
+                            <th>Date</th>
+                            <th>Updated</th>
+                            <th>Action</th>
+                        </tr>
 
-                      $block = "tableRow";
-                      $query = "SELECT * FROM post";
-                      $location = 'post';
+                    </thead>
 
-                      //query's the db 
-                      $table = new admin_model();
-                      $table->query($query,$block);
+                    <tbody>
 
-                      //deletes records
-                      $delete = new delete();
-                      $delete->del($location,false);
+                        <?php 
 
-                      ?>
+                        $block = "tableRow";
+                        $query = "SELECT * FROM post";
+                        $location = 'post';
 
-                </tbody>
+                        //query's the db 
+                        $table = new admin_model();
+                        $table->query($query,$block);
 
-            </table>
+                        //deletes records
+                        $delete = new delete();
+                        $delete->del($location,false);
 
+                        ?>
+
+                    </tbody>
+
+                </table>
+
+            </div>
         </div>
 
     </div>

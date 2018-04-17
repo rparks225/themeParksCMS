@@ -429,6 +429,25 @@ $replace = array(
 }
 
 
+/*=============================================
+   Checks the current theme for Admin Panel
+=============================================*/
+function userInfo($q){	
+    global $mysqli;		
+    $query = 'SELECT * FROM `U_sers` WHERE User_name LIKE "'.$_SESSION['user'].'"';
+    if($result = $mysqli->query($query)){			
+        while($row = $result->fetch_assoc()){	
+            if(isset($row['Display_name'])){					
+                $userName = $row['Display_name'];			
+            }
+            if(isset($row['Privileges'])){
+                $privileges = $row['Privileges'];
+            }						
+        }				
+    }	
+    echo $$q;
+}
+
 /*====================================================
            Login timout variable in seconds
 ====================================================*/

@@ -1,7 +1,50 @@
-<div class="col s12 m12 l12">
+<?php 
+
+$vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle');
+global $salty;
+
+foreach($vars as $var){
+
+    global $$var;
+
+}
+
+$query = '';
+$site = "{$dbName}"; 
+$main = $_SERVER["DOCUMENT_ROOT"].$cmsPath;
+?>
+
+<!--Open Quick Blog-->
+<?php
+
+$method = 'inserted';
+$location = 'post';
+
+if(isset($_POST[''.$method.''])){
+
+    if(isset($_POST['id'])){
+
+        $id = mysqli_real_escape_string($_POST['id']);
+        $title = addslashes($_POST['title']);
+        $img = addslashes($_POST['img']);
+        $script = addslashes($_POST['post']);
+        $Date = addslashes($_POST['date']);
+        $imgCap = addslashes($_POST['cap']);
+
+        $query = 'INSERT INTO `'.$site.'`.`'.$location.'` (`Id`, `Title`, `Image`, `Description`, `Date`, `Caption`) VALUES (NULL, \''.$title.'\', \''.$img.'\', \''.$script.'\', \''.$Date.'\', \''.$imgCap.'\')';
+
+    }
+
+};
+
+$insert = new update();
+$insert->uped($location,$query,$method);
+
+?>
+   <div class="col s12">
     <div class="row">
         
-            <h3>Quick Blog Post</h3>
+            <h4 style="color:#00838F;">Quick Blog Post</h4>
 
             <div class="row">
 
@@ -27,7 +70,7 @@
                         </div>
 
                         <div class="input-field col s6">
-                            <input name="date" id="date" value="<?php echo date('Y-m-d'); ?>" type="date" class="datepicker">
+                            <input name="date" id="date" value="<?php echo date('Y-m-d'); ?>" type="text" class="datepicker">
                             <label for="date">Blog Post Date</label>
                         </div>
 
@@ -46,9 +89,11 @@
                             </select>
                         </div>
 
-                        <button class="btn waves-effect waves-red" type="submit" name="inserted" value="Submit">Submit
-                            <i class="material-icons right">send</i>
-                        </button>
+                       <div class="col s12">
+                           <button class="btn waves-effect waves-red" type="submit" name="inserted" value="Submit">Submit
+                               <i class="material-icons right">send</i>
+                           </button>
+                       </div>
 
                     </div>
 
@@ -56,5 +101,4 @@
 
             </div>
         </div>
-    
 </div>

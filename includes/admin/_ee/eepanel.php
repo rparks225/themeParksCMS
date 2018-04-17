@@ -15,20 +15,67 @@
 // | jQuery (1.2.6+)    *required                                         /
 // +----------------------------------------------------------------------+
 include("config.php");
-global $userName;
+
+/*=============================================
+   Checks the current theme for Admin Panel
+=============================================*/
+function userInfo($q){	
+    global $mysqli;		
+    $query = 'SELECT * FROM `U_sers` WHERE User_name LIKE "'.$_SESSION['user'].'"';
+    if($result = $mysqli->query($query)){			
+        while($row = $result->fetch_assoc()){	
+            if(isset($row['Display_name'])){					
+                $userName = $row['Display_name'];			
+            }
+            if(isset($row['Privileges'])){
+                $privileges = $row['Privileges'];
+            }						
+        }				
+    }	
+    echo $$q;
+}
 ?>
 
 <ul class="ee_sideNav">
-    <li style="text-align:center;"> <img style="width:200px;top:-20px;position:relative;" src="<?php echo $eeJs;?>/img/logo.png" alt="editEase control panel" class="eeimg" /> </li>
-    <li>
-        <hr>
+    <li><div class="user-view">
+            <div class="overlays"></div>
+            <div class="background">
+                <img src="http://localhost/themeParksCMS/includes/admin/assets/images/newBg.jpg" width="100%">
+            </div>
+            <a href="#!"><img src="http://localhost/themeParksCMS/includes/admin/assets/images/logo.png" width="35%"></a>
+            <a href="#!"><span class="white-text name">You are logged in as:</span></a>
+            <a href="#!"><span class="white-text email"><?php userInfo('userName'); ?></span></a>
+            </div>
     </li>
-    <li> <a href="tp-Dashboard">Back to Dashboard</a> </li>
-    <li> <a href="tp-Pages">Add Page</a> </li>
-    <li> <a href="tp-Post">Add Post</a> </li>
-    <li> <a style="text-align:left;border-radius:0;" href="#" onclick="event.preventDefault()" class="tpPreview"><span class="changed">Edit</span> Content</a> </li>
-    <li> <a href="#" class="openSide" onclick="event.preventDefault()">Close Side bar</a> </li>
-    <a href="tp-Login" onClick="eelogout();"><li style="position:absolute;bottom:0;"><i class="fa fa-power-off pull-left fa-2x" aria-hidden="true" style="position:relative;top:-6px;"></i> Logout</a> </li>
+    <div class="main">
+    
+    <li> 
+        <a href="tp-Dashboard">
+            <i class="tp-icon fa fa-arrow-left pull-left fa-2x" aria-hidden="true"></i>Back to Dashboard</a> 
+    </li>
+    <li> 
+        <a href="tp-Pages">
+            <i class="tp-icon fa fa-pencil pull-left fa-2x" aria-hidden="true"></i>Add Page</a> 
+    </li>
+    <li> 
+        <a href="tp-Post">
+            <i class="tp-icon fa fa-clipboard pull-left fa-2x" aria-hidden="true"></i>Add Post</a> 
+    </li>
+    <li> 
+        <a style="text-align:left;border-radius:0;" href="#" onclick="event.preventDefault()" class="tpPreview">
+            <i class="tp-icon fa fa-code pull-left fa-2x" aria-hidden="true"></i><span class="changed">Edit</span> Content
+        </a> 
+    </li>
+    <li> 
+        <a href="#" class="openSide" onclick="event.preventDefault()">
+            <i class="tp-icon fa fa-bars pull-left fa-2x" aria-hidden="true"></i>Close Side bar</a> 
+    </li>
+    <li>
+       <a href="tp-Login" onClick="eelogout();"> 
+           <i class="tp-icon fa fa-power-off pull-left fa-2x" aria-hidden="true"></i> Logout
+       </a> 
+    </li>
+    </div>
 </ul>
 
 <div class="overlay" style="position: fixed;
@@ -49,10 +96,17 @@ global $userName;
                                                       box-shadow: unset;
                                                       height: 45px;
                                                       padding: 15px;
-                                                      cursor: pointer;"> <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </div>
-            </div> <strong>
-            <a href="<?php echo newPath; ?>tp-Dashboard" style="color:white;">You Are logged in as: <span style="color:#1EACBA;"><?php echo $_SESSION['user']; ?></span></a> 
+                                                      cursor: pointer;"> <i class="fa fa-bars" aria-hidden="true"></i> </div>
+            </div> 
+            
+            <strong>
+            <a href="<?php echo newPath; ?>tp-Dashboard" style="text-decoration:none;">
+                <b style="color:white;padding:0;margin-top:1.1rem;">
+                    <span style="color:#77273F;font-size:1.5em;font-weight: 100;">{ </span><span class="circle" style="background:#00838f;padding:9px;border-radius:50%;font-size:15px;font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;font-weight: 500;">TP</span><span style="color:#77273F;font-size:1.5em;font-weight: 100;"> }</span>
+                </b>
+            </a> 
             </strong> 
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>

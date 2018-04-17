@@ -1,142 +1,128 @@
-<?php 
-
-$vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle');
-
-foreach($vars as $var){
-
-    global $$var;
-
-}
-
-$site = "{$dbName}"; 
-
-?>
-
 <!-- Open Content -->
 
 <div class="col s3">
     <button class="waves-effect waves-red btn modal-trigger" data-target="addPage" class="btn modal-trigger">Add new user</button>
 </div>
 
-<div class="col s9"></div>    
+<div class="clearfix"></div>
 <br/>
 <br/>
 
-<?php 
-$method = 'Added';
-$location = 'U_sers';
-$query = false;	
-
-if(isset($_POST[''.$method.''])){
-
-    if(isset($_POST['id'])){
-
-        $user = addslashes($_POST['use']);
-        $displayName = addslashes($_POST['displName']);
-        $pass = addslashes($_POST['pas']);
-        $email = addslashes($_POST['email']);
-        $privs = addslashes($_POST['privi']);
-
-        $query = 'INSERT INTO `'.$site.'`.`'.$location.'` (`Id`, `User_name`, `Display_name`, `Pass_word`, `Email`, `Signed_Up`, `Privileges`) VALUES (NULL, \''.$user.'\', \''.$displayName.'\', \''.hash('sha51',$pass).'\', \''.$email.'\', CURRENT_TIMESTAMP, \''.$privs.'\')';
-
-    }
-
-};
-
-$addPage = new update();
-$addPage->uped($location,$query,$method);
-
-?>
+<div class="col l3 m4 s12">
+    <div class="card-panel" style="padding:24px 0;">
+        <ul>
+            <li>
+                <a class="grey-text waves-effect waves-orange" 
+                   style="padding:15px;width:100%;" 
+                   href="<?php echo ROOT; ?>tp-Settings">Site Settings</a>
+            </li>
+            <li>
+                <a class="grey-text waves-effect waves-orange" 
+                   style="padding:15px;width:100%;" 
+                   href="<?php echo ROOT; ?>tp-Security">Security Settings</a>
+            </li>
+            <li>
+                <a class="grey-text waves-effect waves-orange" 
+                   style="padding:15px;width:100%;" 
+                   href="<?php echo ROOT; ?>tp-Users">User Settings</a>
+            </li>
+        </ul>
+    </div>
+</div>
 
 <?php tpAdmin('addUser'); ?>
 
-<div class="table-responsive">
+<div class="col l9 m8 s12">
+    <div class="card-panel">
+        <div class="table-responsive">
 
 
-    <table class="responsive-table highlight">
+            <table class="responsive-table highlight">
 
-        <thead>
+                <thead>
 
-            <tr class="active" style="color:black;">
-                <th>Id</th>
-                <th>User Name</th>
-                <th>Display Name</th>
-                <th>Password</th>
-                <th>Email</th>
-                <th>Signed Up</th>
-                <th>Privileges</th>
-                <th>Action</th>
-            </tr>    
+                    <tr class="active" style="color:black;">
+                        <th>Id</th>
+                        <th>User Name</th>
+                        <th>Display Name</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                        <th>Signed Up</th>
+                        <th>Privileges</th>
+                        <th>Action</th>
+                    </tr>    
 
-        </thead>
+                </thead>
 
-        <tbody>
+                <tbody>
 
-            <?php 
+                    <?php 
 
-            $nav = title(2);
+                    $nav = title(2);
 
-            if($nav == 'pages'){
+                    if($nav == 'pages'){
 
-                $nav = 0;
-                $nums = '';
-                $limit = '';
+                        $nav = 0;
+                        $nums = '';
+                        $limit = '';
 
-            }else if($nav == 1){ 
+                    }else if($nav == 1){ 
 
-                $nav = 0;
-                $limit = ",10";
-                $nums = 'LIMIT '.$nav;
+                        $nav = 0;
+                        $limit = ",10";
+                        $nums = 'LIMIT '.$nav;
 
-            }else{
+                    }else{
 
-                $nav = --$nav;
-                $limit = ",10";
-                $nav = $nav*10+(0);
-                $nums = 'LIMIT '.$nav;
-            }
+                        $nav = --$nav;
+                        $limit = ",10";
+                        $nav = $nav*10+(0);
+                        $nums = 'LIMIT '.$nav;
+                    }
 
 
-            $location = 'U_sers';		 
-            $block = "userTable";
-            $query = "SELECT * FROM `U_sers` ORDER BY `Id` ASC $nums $limit";
-            $method = 'Updated';
-            
-            //updates the record
-            if(isset($_POST[''.$method.''])){
+                    $location = 'U_sers';		 
+                    $block = "userTable";
+                    $query = "SELECT * FROM `U_sers` ORDER BY `Id` ASC $nums $limit";
+                    $method = 'Updated';
 
-                if(isset($_POST['id'])){
+                    //updates the record
+                    if(isset($_POST[''.$method.''])){
 
-                    $id = addslashes($_POST['id']);
-                    $user = addslashes($_POST['use']);
-                    $displayName = addslashes($_POST['displName']);
-                    $pass = addslashes($_POST['pas']);
-                    $email = addslashes($_POST['email']);
-                    $privs = addslashes($_POST['privi']);
+                        if(isset($_POST['id'])){
 
-                    $query = 'UPDATE `'.$site.'`.`'.$location.'` SET `User_name` = \''.$user.'\', `Display_name` = \''.$displayName.'\', `Pass_word` = \''.hash('sha512',$pass).'\', `Email` = \''.$email.'\', `Privileges` = \''.$privs.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
+                            $id = addslashes($_POST['id']);
+                            $user = addslashes($_POST['use']);
+                            $displayName = addslashes($_POST['displName']);
+                            $pass = addslashes($_POST['pas']);
+                            $email = addslashes($_POST['email']);
+                            $privs = addslashes($_POST['privi']);
 
-                }
+                            $query = 'UPDATE `'.$site.'`.`'.$location.'` SET `User_name` = \''.$user.'\', `Display_name` = \''.$displayName.'\', `Pass_word` = \''.hash('sha512',$pass).'\', `Email` = \''.$email.'\', `Privileges` = \''.$privs.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
 
-            };
+                        }
 
-            $update = new update();
-            $update->uped($location,$query,$method);
+                    };
 
-            //query's the db 
-            $table = new admin_model();
-            $table->query($query,$block);
+                    $update = new update();
+                    $update->uped($location,$query,$method);
 
-            //deletes records
-            $delete = new delete();
-            $delete->del($location,false);
+                    //query's the db 
+                    $table = new admin_model();
+                    $table->query($query,$block);
 
-            ?>
+                    //deletes records
+                    $delete = new delete();
+                    $delete->del($location,false);
 
-        </tbody>
+                    ?>
 
-    </table>
+                </tbody>
 
+            </table>
+
+        </div>
+    </div>
 </div>
 
 <div class="clearfix"></div>

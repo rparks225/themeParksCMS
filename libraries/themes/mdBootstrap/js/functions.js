@@ -2,7 +2,6 @@
 
 // Start Jquery
  $(document).ready(function() {
-            
 /*========================
 prettyphoto
 =========================*/

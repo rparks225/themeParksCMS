@@ -31,14 +31,14 @@ $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.''); ?>
         
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('libraries/sw2.js').then(function(registration) {                    
+                navigator.serviceWorker.register( cmsPath + 'libraries/sw2.js').then(function(registration) {                    
                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
                 }, function(err) {                    
                     console.log('ServiceWorker registration failed: ', err);
                 });
             });
         }
-
+        
     </script>
     
 <?php if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)): ?>
@@ -47,7 +47,7 @@ $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.''); ?>
     </script>
 <?php endif; ?>
     
-<?php if(isset($_SESSION[''.$sessKey.'']) || title() == 'admin' || title() == 'incorrect' ): ?>
+<?php if ( isset( $_SESSION[''.$sessKey.'']) ): ?>
       
        <!--  Scripts that init if you are varified through the firewall -->
        <script type="text/javascript" src="<?php echo ROOT; ?>includes/admin/_ee/lib/ckeditor/ckeditor.js"></script>
