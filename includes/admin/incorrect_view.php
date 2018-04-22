@@ -19,7 +19,7 @@
             <!--Body-->
             <div class="md-form">
                 <i class="fa fa-user prefix white-text"></i>
-                <input style="height:40px;color:white;" type="text"class="username"  id="username" class="form-control">
+                <input style="height:40px;color:white;" type="text" class="username"  id="username" class="form-control">
                 <label for="username">Your name</label>
             </div>
 

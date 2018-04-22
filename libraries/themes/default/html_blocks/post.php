@@ -6,7 +6,7 @@
 
 <div class="col-md-8">  
 
-        <p>Posted - <b><i>{{ date }}</i></b></p>
+    <p>Posted - <b><i>{% echo date ( 'M d, Y', strtotime('{{ date }}') ) %}</i></b></p>
         
     <div class="clearfix">&nbsp;</div>
 
@@ -34,7 +34,7 @@
             <div class="clearfix">&nbsp;</div>
             <div class="clearfix">&nbsp;</div>
     
-    <a class="btn btn-warning pull-right" href="{% echo ROOT %}News-All" role="button">&laquo; Previous Posts</a>
+    <a class="btn btn-warning pull-right" href="{% echo ROOT %}Blog" role="button">&laquo; Previous Posts</a>
 
 </div>
         

@@ -34,7 +34,7 @@ $pages = array(
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     
-                    {# navi($pages) #}
+                    {# navi( navLinks('mainMenu') ) #}
                     
                 </ul>
             </div>
