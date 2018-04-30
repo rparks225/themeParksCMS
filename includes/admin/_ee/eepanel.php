@@ -40,9 +40,9 @@ function userInfo($q){
     <li><div class="user-view">
             <div class="overlays"></div>
             <div class="background">
-                <img src="http://localhost/themeParksCMS/includes/admin/assets/images/newBg.jpg" width="100%">
+                <img src="<?php echo newPath; ?>includes/admin/assets/images/newBg.jpg" width="100%">
             </div>
-            <a href="#!"><img src="http://localhost/themeParksCMS/includes/admin/assets/images/logo.png" width="35%"></a>
+            <a href="#!"><img src="<?php echo newPath; ?>includes/admin/assets/images/logo.png" width="35%"></a>
             <a href="#!"><span class="white-text name">You are logged in as:</span></a>
             <a href="#!"><span class="white-text email"><?php userInfo('userName'); ?></span></a>
             </div>
@@ -50,15 +50,15 @@ function userInfo($q){
     <div class="main">
     
     <li> 
-        <a href="tp-Dashboard">
+        <a href="<?php echo newPath; ?>tp-Dashboard">
             <i class="tp-icon fa fa-arrow-left pull-left fa-2x" aria-hidden="true"></i>Back to Dashboard</a> 
     </li>
     <li> 
-        <a href="tp-Pages">
+        <a href="<?php echo newPath; ?>tp-Pages">
             <i class="tp-icon fa fa-pencil pull-left fa-2x" aria-hidden="true"></i>Add Page</a> 
     </li>
     <li> 
-        <a href="tp-Post">
+        <a href="<?php echo newPath; ?>tp-Post">
             <i class="tp-icon fa fa-clipboard pull-left fa-2x" aria-hidden="true"></i>Add Post</a> 
     </li>
     <li> 
@@ -71,7 +71,7 @@ function userInfo($q){
             <i class="tp-icon fa fa-bars pull-left fa-2x" aria-hidden="true"></i>Close Side bar</a> 
     </li>
     <li>
-       <a href="tp-Login" onClick="eelogout();"> 
+       <a href="<?php echo newPath; ?>tp-Login" onClick="eelogout();"> 
            <i class="tp-icon fa fa-power-off pull-left fa-2x" aria-hidden="true"></i> Logout
        </a> 
     </li>

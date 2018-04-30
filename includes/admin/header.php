@@ -141,6 +141,7 @@
                         <li><a href="<?php echo ROOT; ?>tp-Settings">Site Settings</a></li>
                         <li><a href="<?php echo ROOT; ?>tp-Security">Security Settings</a></li>
                         <li><a href="<?php echo ROOT; ?>tp-Users">User Settings</a></li>
+                        <li><a href="<?php echo ROOT; ?>tp-Update">Update Core</a></li>
                     </ul>
                 </ul>
             </div>

@@ -16,7 +16,19 @@ CKEDITOR.editorConfig = function( config ) {
         postUrl: '',
         postData: {},
         onSave: function(editor) { console.log('clicked save', editor); return true; },
-        onSuccess: function(editor, data) { console.log('save successful', editor, data); closeEditing2(editor['name'],editor['_']['data']); alert('Saved!'); setTimeout(function() { location.reload(); }, 2000 ); },
+        onSuccess: function(editor, data) { 
+            $('body').prepend(
+'<div id="tp-message" style="background: rgba(0,0,0,.5);position: fixed;z-index: 999999;width: 100%;height: 100%;">' + 
+                '<div style="box-shadow: 2px 2px 8px rgba(0,0,0,.6);background:white;margin: 0 auto;width: 200px;padding: 20px;color: grey;text-align: center;top: 45vh;position: relative;">' + 
+'<img style="width:45%;" src="' + '//' + window.location.hostname + cmsPath + 'includes/admin/assets/img/loading.gif"><br>' +
+'Saving Please Wait...' + 
+'</div>' + 
+'</div>');
+            var divi = $( '#' + editor['name'] );
+            closeEditing2(editor['name'],editor['_']['data']); 
+            divi.css({ "filter" : "blur(5px)" , "opacity" : ".2" }); 
+            setTimeout(function() { $('#tp-message').fadeOut().remove(); divi.css({ "filter" : "none" , "opacity" : "1" }); }, 2000 ); 
+        },
         onFailure: function(editor, status, request) { console.log('save failed', editor, status, request); },
         useJSON: false,
         useColorIcon: false
@@ -28,8 +40,8 @@ CKEDITOR.editorConfig = function( config ) {
         saveDetectionSelectors : "a[href^='javascript:__doPostBack'][id*='Save'],a[id*='Cancel']",  
         messageType : "notification",  
         delay : 3,  
-        diffType : "inline",  
-        autoLoad: true,
+        diffType : "sideBySide",  
+        autoLoad: false,
     };
     
     config.toolbar = 'newBar';
@@ -37,14 +49,14 @@ CKEDITOR.editorConfig = function( config ) {
     config.toolbar_newBar = [
         { name: 'basic', items : [ 'Font','FontSize','Format','-','Bold','Italic','Underline','RemoveFormat','-',
                                                    'JustifyLeft','JustifyCenter','JustifyRight','-',
-                                                   'TextColor','-','Link','Unlink','Anchor','-',
+                                                   'TextColor','BGColor','Image','-','Link','Unlink','Anchor','-',
                                                    'Sourcedialog','Inlinesave','-','toggle' ] },
         '/',
         { name: 'advanced', items : [ 'Undo', 'Redo','-',
                                                            'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord','-',
                                                            'SelectAll','Scayt','-','Templates','NumberedList','BulletedList','-',
                                                            'Outdent','Indent','-','CreateDiv','-',
-                                                           'Image','FontAwesome','btgrid','HorizontalRule','-',
+                                                           'FontAwesome','btgrid','HorizontalRule','-',
                                                            'Maximize','Iframe',
                                     ] },
     ];

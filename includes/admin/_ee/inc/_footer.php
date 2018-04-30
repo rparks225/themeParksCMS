@@ -26,16 +26,16 @@
 <div class="row row-1">
 <div class="col-md-6">
 <div class="content">
-<p><a href="http://localhost/themeparkscms/Home">Home</a><br />
-<a href="http:/localhost/themeparkscms/Page/About">About</a><br />
-<a href="http:/localhost/themeparkscms/Blog">News</a></p>
+<p><a href="/themeparkscms/Home">Home</a><br />
+<a href="/themeparkscms/Page/About">About</a><br />
+<a href="/themeparkscms/Blog">News</a></p>
 </div>
 </div>
 
 <div class="col-md-6">
 <div class="content">
-<p><a href="http:/localhost/themeparkscms/Gallery">Gallery</a><br />
-<a href="http:/localhost/themeparkscms/Contact">Contact</a></p>
+<p><a href="/themeparkscms/Gallery">Gallery</a><br />
+<a href="/themeparkscms/Contact">Contact</a></p>
 </div>
 </div>
 </div>
