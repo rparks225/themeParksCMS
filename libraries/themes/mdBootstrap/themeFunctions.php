@@ -34,14 +34,14 @@ $frameWork = array(
     via array of Links Location & Link Title
 =============================================*/
 function navi($page){    
-    foreach($page as $link => $title){
-        if(links() == ROOT.$link){
+    foreach($page as $title => $links){
+        if(!is_array($links) && links() == ROOT.$links){
             $a = ' active';
         }else{
             $a = ' inactive';
         };
 
-        if($link == '#'.substr($link,1)){
+        if($title == '#'.substr($title,1)){
             /* Nav Drop Down Link HTML */
             echo '
             
@@ -50,12 +50,12 @@ function navi($page){
                               id="navbarDropdownMenuLink" 
                               data-toggle="dropdown" 
                               aria-haspopup="true" 
-                              aria-expanded="false"> '.substr($link,1).' </a>
+                              aria-expanded="false"> '.substr($title,1).' </a>
                               
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         ';
 
-            foreach($title as $link2 => $title2){
+            foreach($links as $title2 => $link2){
                 if(links() == ROOT.$link2){
                     $a = ' active';
                 }else{
@@ -75,7 +75,7 @@ function navi($page){
             /* Single Nav Link HTML */
             echo '
             <li class="nav-item '.$a.'">
-                <a class="nav-link" href="'.ROOT.$link.'">'.$title.'</a>
+                <a class="nav-link" href="'.ROOT.$links.'">'.$title.'</a>
             </li>
             ';
 

@@ -13,7 +13,7 @@
             <div class="col-md-8 pull-left">
 
                 <h3>
-                    <a href="{% echo ROOT %}Gallery/Album/{{ album }}">
+                    <a href="{% echo ROOT %}Gallery/{{ album }}">
                         {-- if (empty("{{ title }}")) --}
                             {{ album }}
                         {-- else --}
@@ -30,7 +30,7 @@
 
                 <br>
 
-                <a href="{% echo ROOT %}Gallery/Album/{{ album }}" class="btn btn-warning">
+                <a href="{% echo ROOT %}Gallery/{{ album }}" class="btn btn-warning">
                     View Gallery
                 </a>
 

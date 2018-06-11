@@ -18,7 +18,7 @@
     <td><?php echo $title; ?></td>
     <td>
         <?php
-            if(isset($order) && $order != '' || $order != false){
+            if(isset($order) && $order != '' || isset($order) && $order != false){
 
                 echo $order;
 
@@ -37,7 +37,7 @@
             <ul style="right:90%;">
 
                 <li>
-                    <a href="<?php echo ROOT.'tp-Album-'.$id; ?>" type="button" class="orange waves-effect waves-red btn-floating">
+                    <a href="<?php echo ROOT.'tp-Album-'.$id; ?>" class="orange waves-effect waves-red btn-floating">
 
                         <i class="material-icons left">mode_edit</i>
 

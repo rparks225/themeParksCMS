@@ -38,6 +38,10 @@
                     $block = 'galList';
                     $tab = new admin_model();
                     $tab->query($query,$block);
+                
+                    if( $tab->rows($query) == 0 ){
+                        echo '<tr><td></td><td></td><td><h3 style="text-align:center;">Sorry Gallery Is Empty</h3></td></tr>';
+                    }
 
                     global $cmsPath;
                 ?>

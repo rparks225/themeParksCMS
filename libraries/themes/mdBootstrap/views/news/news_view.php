@@ -13,7 +13,7 @@
             {# $query = 'SELECT * FROM post' #}
             {# $block = 'feature' #}
             {# $heading = new model() #}
-            {# $heading->query($query,$block) #}       
+            {# $heading->query($query,$block) #} 
     </div>
     
 </div>

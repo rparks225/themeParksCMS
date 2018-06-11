@@ -1,12 +1,8 @@
 <!-- Open Content -->
-
-<div class="col s3">
-    <button class="waves-effect waves-red btn modal-trigger" data-target="addPage" class="btn modal-trigger">Add new user</button>
+<div class="col s12">
+    <?php tpAdmin('addUser'); ?>
+    <div class="clearfix">&nbsp;</div>
 </div>
-
-<div class="clearfix"></div>
-<br/>
-<br/>
 
 <div class="col l3 m4 s12">
     <div class="card-panel" style="padding:24px 0;">
@@ -29,8 +25,6 @@
         </ul>
     </div>
 </div>
-
-<?php tpAdmin('addUser'); ?>
 
 <div class="col l9 m8 s12">
     <div class="card-panel">
@@ -57,7 +51,7 @@
                 <tbody>
 
                     <?php 
-
+                    global $site;
                     $nav = title(2);
 
                     if($nav == 'pages'){
@@ -80,32 +74,8 @@
                         $nums = 'LIMIT '.$nav;
                     }
 
-
-                    $location = 'U_sers';		 
                     $block = "userTable";
                     $query = "SELECT * FROM `U_sers` ORDER BY `Id` ASC $nums $limit";
-                    $method = 'Updated';
-
-                    //updates the record
-                    if(isset($_POST[''.$method.''])){
-
-                        if(isset($_POST['id'])){
-
-                            $id = addslashes($_POST['id']);
-                            $user = addslashes($_POST['use']);
-                            $displayName = addslashes($_POST['displName']);
-                            $pass = addslashes($_POST['pas']);
-                            $email = addslashes($_POST['email']);
-                            $privs = addslashes($_POST['privi']);
-
-                            $query = 'UPDATE `'.$site.'`.`'.$location.'` SET `User_name` = \''.$user.'\', `Display_name` = \''.$displayName.'\', `Pass_word` = \''.hash('sha512',$pass).'\', `Email` = \''.$email.'\', `Privileges` = \''.$privs.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
-
-                        }
-
-                    };
-
-                    $update = new update();
-                    $update->uped($location,$query,$method);
 
                     //query's the db 
                     $table = new admin_model();
@@ -113,7 +83,7 @@
 
                     //deletes records
                     $delete = new delete();
-                    $delete->del($location,false);
+                    $delete->del('U_sers',false);
 
                     ?>
 
@@ -138,7 +108,6 @@
     paginate($table,$limit,$currentPage);
     ?>
     <!--Close Pageinate-->
-
 </div>
 
 <br>

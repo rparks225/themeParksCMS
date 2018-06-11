@@ -16,6 +16,10 @@
             <li><a style="padding:15px;width:100%;" 
                    class="grey-text waves-effect waves-white" 
                    href="tp-Dashboard">Back to Dashboard</a></li>
+                   
+            <li><a style="padding:15px;width:100%;" 
+                   class="grey-text waves-effect waves-white" 
+                   href="<?php echo ROOT.'blog/'.$id.'/'; ?>">View Post</a></li>
 
         </ul>
     </div>

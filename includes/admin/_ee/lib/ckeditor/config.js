@@ -6,9 +6,10 @@
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
     config.skin = 'moono-lisa';
-    config.extraPlugins = 'filebrowser,sourcedialog,fontawesome,inlinesave,lineutils,widget,uploadwidget,autosave,toggle,';
+    config.extraPlugins = 'filebrowser,sourcedialog,fontawesome,inlinesave,lineutils,widget,uploadwidget,autosave,toggle,btgrid';
     config.allowedContent = true; 
     config.filebrowserBrowseUrl = '//' + window.location.hostname + cmsPath +'includes/admin/_ee/lib/kcfinder/browse.php';
+    config.uploadUrl = '//' + window.location.hostname + cmsPath +'images/files/';
     
     config.removeButtons = 'Form,NewPage,Glyphicons,About,Smiley,Table,wenzgmap,Checkbox,Radio,Textarea, Flash,Language,Blockquote,Textfield,Button,SpecialChar,PageBreak,Flash,BidiLtr,BidiRtl,Subscript,Superscript,TextField,Select,ImageButton,HiddenField,Find,Replace,ShowBlocks';
 
@@ -27,7 +28,9 @@ CKEDITOR.editorConfig = function( config ) {
             var divi = $( '#' + editor['name'] );
             closeEditing2(editor['name'],editor['_']['data']); 
             divi.css({ "filter" : "blur(5px)" , "opacity" : ".2" }); 
-            setTimeout(function() { $('#tp-message').fadeOut().remove(); divi.css({ "filter" : "none" , "opacity" : "1" }); }, 2000 ); 
+            setTimeout(function() { 
+                $('#tp-message').fadeOut().remove(); 
+                divi.css({ "filter" : "none" , "opacity" : "1" }); }, 2000 ); 
         },
         onFailure: function(editor, status, request) { console.log('save failed', editor, status, request); },
         useJSON: false,

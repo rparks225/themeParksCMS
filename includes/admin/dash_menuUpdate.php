@@ -1,3 +1,1 @@
-<?php
-    tpAdmin('singleMenu');
-?>
+{# tpAdmin('singleMenu') #}

@@ -1,4 +1,4 @@
-<!--Table row for post # <? echo $id; ?> -->
+<!--Table row for post # <?php echo $id; ?> -->
 <tr>
 
     <td>
@@ -143,3 +143,32 @@
 
 </tr>
 <!--End table row for post # <? echo $id; ?> -->
+
+
+<?php
+
+$method = 'Updated';
+
+//updates the record
+if(isset($_POST[''.$method.''])){
+
+    if(isset($_POST['id'])){
+
+        $id = addslashes($_POST['id']);
+        $user = addslashes($_POST['use']);
+        $displayName = addslashes($_POST['displName']);
+        $pass = addslashes($_POST['pas']);
+        $email = addslashes($_POST['email']);
+        $privs = addslashes($_POST['privi']);
+
+        $query = 'UPDATE `'.$dbName.'`.`U_sers` SET `User_name` = \''.$user.'\', `Display_name` = \''.$displayName.'\', `Pass_word` = \''.hash('sha512',$pass).'\', `Email` = \''.$email.'\', `Privileges` = \''.$privs.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
+
+    }
+
+};
+
+$update = new update();
+$update->uped('U_sers',$query,$method);
+
+
+?>

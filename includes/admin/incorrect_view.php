@@ -11,10 +11,10 @@
               autocomplete="off">
             <!--Header-->
             <div class="form-header" style="text-align:center;">
-                <img src="<?php echo ROOT; ?>includes/admin/assets/images/logo.png" style="width:50%;margin:0 auto;">
+                <img src="{% echo ROOT %}includes/admin/assets/images/logo.png" style="width:50%;margin:0 auto;">
             </div>
             &nbsp;
-            <span><?php newEE('wrong'); ?></span>
+            <span>{# newEE('wrong') #}</span>
 
             <!--Body-->
             <div class="md-form">

@@ -1,6 +1,7 @@
 <tr>
    
     <td><?php echo $id; ?></td>
+    <td><?php echo count( json_decode($navTxt, true), COUNT_RECURSIVE ); ?></td>
     <td style="text-align:right;"><?php echo $menNam; ?></td>
     
     <td style="text-align:right;">
@@ -11,7 +12,7 @@
             
             <ul>
                 <li>
-                    <a href="<?php echo ROOT.'tp-Menu-'.$id; ?>" type="button" class="orange waves-effect waves-red btn-floating">
+                    <a href="<?php echo ROOT.'tp-Menu-'.$id; ?>" class="orange waves-effect waves-red btn-floating">
                         <i class="material-icons left">mode_edit</i>
                     </a>
                 </li>

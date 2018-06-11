@@ -23,7 +23,6 @@ if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off'){
 }
 define("ROOT", "$proto{$sUrl}");
 
-
 /*==================================
     Defines Current URL location
 ===================================*/
@@ -104,7 +103,7 @@ function theme(){
 =============================================*/
 function navLinks($a){	
     global $mysqli;		
-    $query = 'SELECT * FROM Nav WHERE Menu_Name LIKE "'.$a.'"';
+    $query = 'SELECT * FROM Nav WHERE Id = "'.$a.'"';
     
     if($result = $mysqli->query($query)){			
         while($row = $result->fetch_assoc()){	
@@ -299,7 +298,8 @@ function tpBlock($blocks){
      Finds a defined Block for the admin panel
 ====================================================*/
 function tpAdmin($blocks){
-    require_once 'includes/admin/adminBlocks/'.$blocks.'.php';
+    $path = 'includes/admin/adminBlocks/'.$blocks.'.php';
+    tmpltRender($path);
 };
 
 
@@ -307,7 +307,8 @@ function tpAdmin($blocks){
      Finds a defined Block for the admin panel
 ====================================================*/
 function tpAdminInc($blocks){
-    require_once 'includes/admin/'.$blocks.'.php';
+    $path = 'includes/admin/'.$blocks.'.php';
+    tmpltRender($path);
 };
 
 

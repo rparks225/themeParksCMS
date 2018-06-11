@@ -2,7 +2,7 @@
 <tr class="bPosts">
 
     <td>
-        <a href="News-Post-<?php echo $id; ?>">
+        <a href="Blog/<?php echo $id; ?>/">
             <?php echo $title; ?>
         </a>
     </td>
@@ -34,7 +34,7 @@
             </a>
             <ul>
 
-                <li><a href="<?php echo ROOT.'tp-Post-'.$id; ?>" type="button" class="orange waves-effect waves-red btn-floating">
+                <li><a href="<?php echo ROOT.'tp-Post-'.$id; ?>" class="orange waves-effect waves-red btn-floating">
 
                     <i class="material-icons left">mode_edit</i>
 

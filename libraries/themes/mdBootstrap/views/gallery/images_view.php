@@ -17,6 +17,10 @@
                     {# $block = 'title' #}
                     {# $images2 = new model() #}
                     {# $images2->query($query,$block) #}
+                    
+                    {-- if ( $images2->rows( $query  ) == 0 ) --}
+                      Gallery Not Found
+                    {-- endif --}
                 </h1>
             <hr>
         </div>
@@ -34,6 +38,10 @@
             {# $images->query($query,$block) #}
         </ul>
         
+            {-- if ( $images->rows( $query ) == 0 ) --}
+                <p>Sorry that gallery cannot be found. Please try again. <br><br> <a class="btn btn-primary" href="{% echo ROOT %}Gallery/"> &larr; Back</a> </p>
+            {-- endif --}
+        
 </div>
-<div class="clearfix"></div>
+<div class="clearfix">&nbsp;</div>
 <!--Close Cont area-->

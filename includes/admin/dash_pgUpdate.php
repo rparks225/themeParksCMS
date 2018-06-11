@@ -43,6 +43,9 @@ $site = "{$dbName}";
         $method = 'edited';
         $updated = new admin_model();
         $updated->query($query,$block);
+        if( $updated->rows($query) == 0 ){
+            echo '<h5>Sorry Page Info Not Found</h5>';
+        }
 
         //updates the record
         if(isset($_POST[''.$method.''])){

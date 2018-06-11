@@ -27,7 +27,6 @@ RewriteRule ^tp-Image index.php?url=admin/image [NC]
 RewriteRule ^tp-Settings index.php?url=admin/settings [NC]
 RewriteRule ^tp-Security index.php?url=admin/security [NC]
 RewriteRule ^tp-Products index.php?url=admin/products [NC]
-
 ## ./Admin Rewrites ##
 
 

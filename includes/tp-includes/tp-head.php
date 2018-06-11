@@ -31,13 +31,19 @@
 <?php endif; ?>    
 <!--Close Meta Tags-->  
 
-   
+
 <?php if(file_exists('images/icon.ico') ): ?>   
-    <!-- Open favicon -->
-        <link rel="SHORTCUT ICON" href="<?php echo ROOT; ?>images/files/icon.ico">
-    <!-- ./Close favicon -->   
+<!-- Open favicon -->
+    <link rel="SHORTCUT ICON" href="<?php echo ROOT; ?>images/files/icon.ico">
+<!-- ./Close favicon -->   
 <?php endif; ?>
-   
+
+<?php if( file_exists( 'manifest.json' ) ): ?>
+<!-- Open Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#28ADBA">
+<!-- ./Close Manifest -->
+<?php endif; ?>
    
 <!-- Prefetched assets -->
         <link rel="dns-prefetch" href="<?php echo ROOT; ?>" >
@@ -54,7 +60,7 @@
 
 <!--Open Styles code-->
     
-    <style type="text/css">html{-webkit-animation:fadein .5s;-moz-animation:fadein .5s;-ms-animation:fadein .5s;-o-animation:fadein .5s;animation:fadein .5s}@keyframes fadein{from{opacity:0}to{opacity:1}}@-moz-keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@-ms-keyframes fadein{from{opacity:0}to{opacity:1}}@-o-keyframes fadein{from{opacity:0}to{opacity:1}} #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { top:0;padding:15px;margin:-15px;transition:.3s;}.edit[contenteditable=true]:hover { top:-2px;border: none;box-shadow:2px 2px 9px rgba(0,0,0,.5);}.edit[contenteditable=true]:focus { border: none!important;box-shadow:5px 5px 25px rgba(0,0,0,.75);  }.edit[contenteditable=true]:focus:hover { border: none!important;box-shadow:5px 5px 25px rgba(0,0,0,.75);  }.cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}.cke_button_label.cke_button__inlinesave_label {display: inline;}.cke_button__btgrid_icon {background-position: 0 !important;}
+    <style type="text/css">html{-webkit-animation:fadein .5s;-moz-animation:fadein .5s;-ms-animation:fadein .5s;-o-animation:fadein .5s;animation:fadein .5s}@keyframes fadein{from{opacity:0}to{opacity:1}}@-moz-keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@-ms-keyframes fadein{from{opacity:0}to{opacity:1}}@-o-keyframes fadein{from{opacity:0}to{opacity:1}} #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { top:0;padding:15px;margin:-15px;transition:.3s;}.edit[contenteditable=true]:hover { top:-2px;border: none;box-shadow:2px 2px 9px rgba(0,0,0,.5);}.edit[contenteditable=true]:focus,.edit[contenteditable=true]:focus-within { border: none!important;box-shadow:5px 5px 25px rgba(0,0,0,.75);  }.edit[contenteditable=true]:focus:hover { border: none!important;box-shadow:5px 5px 25px rgba(0,0,0,.75);  }.cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}.cke_button_label.cke_button__inlinesave_label {display: inline;}.cke_button__btgrid_icon {background-position: 0 !important;}
         <?php  global $style; if(isset($style)){ echo $style; }else{ $style == false; }; ?>   
     </style>
 

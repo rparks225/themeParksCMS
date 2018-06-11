@@ -44,7 +44,9 @@ class gallery extends router{
         };
     }
 	
-    public function index() { $this->route('gallery','gallery'); }
-    public function album( $nav = '' ){ $this->route('gallery','images'); }
+    public function index( $nav = '' ) { 
+        //
+        if( !empty($nav) ){ $this->route('gallery','images'); }else{ $this->route('gallery','gallery');  };
+    }
 
 }

@@ -11,13 +11,17 @@
         {-- if ($rows == 0) --}
 
           <div class="row my-5">
-              <h1>Post not found</h1>
-              <hr>    
+              <div class="col-md-12 wow slideInLeft">
+                  <h1>Post not found</h1>
+                  <hr>
+              </div>
           </div>
           
            <div class="row my-5">
-               <p>Sorry that post doesn't exist, please try again.</p>
-               <p><a href="News-All">Back to all posts</a></p>
+              <div class="col-md-12">
+                  <p>Sorry that post doesn't exist, please try again.&nbsp;</p>
+                  <p><a href="{% echo ROOT %}Blog">Back to all posts</a></p>
+              </div>
            </div>
 
         {-- endif --}

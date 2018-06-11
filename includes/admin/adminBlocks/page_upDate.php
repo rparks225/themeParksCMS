@@ -13,8 +13,8 @@
                     <input type="hidden" name="id" value="">
 
                     <div class="form-group input-field">
-                        <label for="name">Page Name:</label>
-                        <input class="form-control" required type="text" id="name" name="name" value="">
+                        <label for="title">Page Title:</label>
+                        <input class="form-control col-md-12" requires type="text" id="title" name="title" value="">
                     </div>
 
                     <div class="form-group input-field">
@@ -24,11 +24,6 @@
                             <option value="true">Yes</option>
                         </select>
                         <label for="editable">Page Editable <span class="text-muted">(Yes or No)</span>?</label>
-                    </div>
-
-                    <div class="form-group input-field">
-                        <label for="title">Page Title:</label>
-                        <input class="form-control col-md-12" requires type="text" id="title" name="title" value="">
                     </div>
 
                     <div class="form-group input-field">

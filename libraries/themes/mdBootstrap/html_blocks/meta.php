@@ -3,7 +3,7 @@ global $sName;
 $script = substr(strip_tags('{{ script }}'),0,155);
 $title = str_replace(' ', ', ', '{{ title }}');
 ?>
-{-- if ( links() == ROOT.'Gallery-'.title(2) ) --}
+{-- if ( links() == ROOT.'gallery/'.title(2).'/' ) --}
 
     <title>{% echo $sName %} - {{ title }}</title>
     <meta name="keywords" content="{% echo $sName %}, {{ album }}" />

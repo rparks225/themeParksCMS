@@ -2,7 +2,7 @@
 <tr>
 
     <td>
-        <?php if($edit == 'false'){ echo $title; }else{ echo '<a href="'.ROOT.''.$title.'">'.$title.'</a>'; }; ?></td>
+        <?php if($edit == 'false'){ echo $title; }else{ echo '<a href="'.ROOT.$title.'">'.$title.'</a>'; }; ?></td>
 
     <td>
         <?php if($edit == 'false'){ echo '<span style="color:grey;">No</span>'; }else{ echo '<span style="color:green;">Yes</span>'; }; ?> </td>
@@ -26,7 +26,7 @@
                 <i class="large material-icons">add</i>
             </a>
         <ul>
-        <li><a href="<?php echo ROOT.'tp-Pages-Update-'.$id; ?>" type="button" class="waves-effect waves-light btn-floating orange">
+        <li><a href="<?php echo ROOT.'tp-Pages-Update-'.$id; ?>" class="waves-effect waves-light btn-floating orange">
 
             <i class="material-icons left">mode_edit</i>
 
