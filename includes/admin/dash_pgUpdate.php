@@ -3,18 +3,15 @@
 $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle');
 
 foreach($vars as $var){
-
     global $$var;
-
 }
-
-$site = "{$dbName}"; 
-
 ?>
+
+{# $site = "{$dbName}" #}
 
 <!-- Open Content area-->
 <div class="col s12">
-    <?php tpAdmin('addPage'); ?>
+    {# tpAdmin('addPage') #}
 </div>
 
 <div class="col l3 m4 s12">

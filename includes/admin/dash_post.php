@@ -2,12 +2,9 @@
 
 $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle');
 
-    foreach($vars as $var){
-
-        global $$var;
-
-    }
-    
+foreach($vars as $var){
+    global $$var;
+}
 $site = "{$dbName}";    
 
 ?>

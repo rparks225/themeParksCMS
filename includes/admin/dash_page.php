@@ -3,16 +3,12 @@
 $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle');
 
 foreach($vars as $var){
-
     global $$var;
-
 }
-
-$site = "{$dbName}"; 
-
 ?>
+{# $site = "{$dbName}" #}
 
-<?php tpAdmin('addPage'); ?>
+{# tpAdmin('addPage') #}
 
     <div class="card-panel">
         <div class="table-responsive">
@@ -28,45 +24,43 @@ $site = "{$dbName}";
                     </tr>    
                 </thead>
                 <tbody>
-                    <?php 
 
-                    $nav = title(2);
+                    {# $nav = title(2) #}
 
-                    if($nav == 'pages'){
+                    {-- if ($nav == 'pages') --}
 
-                        $nav = 0;
-                        $nums = '';
-                        $limit = '';
+                         {# $nav = 0 #}
+                         {# $nums = '' #}
+                         {# $limit = '' #}
 
-                    }else if($nav == 1){ 
+                    {-- else if($nav == 1) --}
 
-                        $nav = 0;
-                        $limit = ",10";
-                        $nums = 'LIMIT '.$nav;
+                         {# $nav = 0 #}
+                         {# $limit = ",10" #}
+                         {# $nums = 'LIMIT '.$nav #}
 
-                    }else{
+                    {-- else --}
 
-                        $nav = --$nav;
-                        $limit = ",10";
-                        $nav = $nav*10+(0);
-                        $nums = 'LIMIT '.$nav;
-                    }
+                         {# $nav = --$nav #}
+                         {# $limit = ",10" #}
+                         {# $nav = $nav*10+(0) #}
+                         {# $nums = 'LIMIT '.$nav #}
+                    {-- endif --}
 
 
-                    $location = 'page';		 
-                    $block = "tableRow2";
-                    $query = "SELECT * FROM `page` ORDER BY `page`.`Editable` ASC $nums $limit";
-                    $method = 'edited';
+                     {# $location = 'page' #}
+                     {# $block = "tableRow2" #}
+                     {# $query = "SELECT * FROM `page` ORDER BY `page`.`Editable` ASC $nums $limit" #}
+                     {# $method = 'edited' #}
 
-                    //query's the db 
-                    $table = new admin_model();
-                    $table->query($query,$block);
+                      <!-- //query's the db -->
+                     {# $table = new admin_model() #}
+                     {# $table->query($query,$block) #}
 
-                    //deletes records
-                    $delete = new delete();
-                    $delete->del($location,false);
+                     <!-- //deletes record -->
+                     {# $delete = new delete() #}
+                     {# $delete->del($location,false) #}
 
-                    ?>
                 </tbody>
             </table>
 
@@ -79,14 +73,11 @@ $site = "{$dbName}";
 
             <div class="col s8" style="text-align:center;">
                 <!--Start Pageinate-->
-                    <?php
-                    $table = 'page';
-                    $limit = 10;
-                    $currentPage = 'tp-Pages';
-                    paginate($table,$limit,$currentPage);
-                    ?>
+                     {# $table = 'page' #}
+                     {# $limit = 10 #}
+                     {# $currentPage = 'tp-Pages' #}
+                     {# paginate($table,$limit,$currentPage) #}
                 <!--Close Pageinate-->
-
             </div>
 
     <br>

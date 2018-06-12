@@ -12,7 +12,7 @@
                 <ul class="navbar-nav mr-auto">
                     {# navi( navLinks( 2 ) ) #}
                 </ul>
-                <form class="form-inline" method="post" action="Search">
+                <form class="form-inline" method="post" action="search">
                     <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
                 </form>
             </div>
