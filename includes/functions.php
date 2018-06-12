@@ -293,28 +293,6 @@ function tpBlock($blocks){
     tmpltRender($path);
 };
 
-
-<<<<<<< HEAD
-/*====================================================
-     Finds a defined Block for the admin panel
-====================================================*/
-function tpAdmin($blocks){
-    $path = 'includes/admin/adminBlocks/'.$blocks.'.php';
-    tmpltRender($path);
-};
-
-
-/*====================================================
-     Finds a defined Block for the admin panel
-====================================================*/
-function tpAdminInc($blocks){
-    $path = 'includes/admin/'.$blocks.'.php';
-    tmpltRender($path);
-};
-
-
-=======
->>>>>>> master
 /*======================================================================================
    Finds a defined theme header, footer, and CSS for page head, foot and css compiler
 ======================================================================================*/
@@ -332,12 +310,12 @@ function tpView($folder,$view){
     tmpltRender($path);
 };
 
-
 /*====================================================
      Finds a defined Block for the admin panel
 ====================================================*/
-function tpAdmin($blocks){
-    require_once 'includes/admin/adminBlocks/'.$blocks.'.php';
+    function tpAdmin($blocks){
+    $path = 'includes/admin/adminBlocks/'.$blocks.'.php';
+    tmpltRender($path);
 };
 
 
@@ -345,7 +323,8 @@ function tpAdmin($blocks){
      Finds a defined Block for the admin panel
 ====================================================*/
 function tpAdminInc($blocks){
-    require_once 'includes/admin/'.$blocks.'.php';
+    $path = 'includes/admin/'.$blocks.'.php';
+    tmpltRender($path);
 };
 
 
