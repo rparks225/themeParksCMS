@@ -1,6 +1,6 @@
 <?php
 // Initialize the session.
-// If you are using session_name("something"), don't forget it now!
+// If you are using session_id("something"), don't forget it now!
 
 require_once '../../db.php';
 require_once '../../settings.php';

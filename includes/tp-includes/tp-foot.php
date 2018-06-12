@@ -32,7 +32,11 @@ $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.''); ?>
         <?php if ( !isset( $_SESSION[''.$sessKey.'']) ): ?>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
+<<<<<<< HEAD
                 navigator.serviceWorker.register( cmsPath + 'sw2.js').then(function(registration) {                    
+=======
+                navigator.serviceWorker.register('sw2.js').then(function(registration) {                    
+>>>>>>> master
                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
                 }, function(err) {                    
                     console.log('ServiceWorker registration failed: ', err);

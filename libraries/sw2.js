@@ -62,9 +62,14 @@ this.addEventListener("install", function(e) {
     e.waitUntil(caches.delete("core-waiting").then(function() {
         return caches.open("core-waiting").then(function(core) {
             var resourceUrls = [
+<<<<<<< HEAD:sw2.js
                 "libraries/css/themeParks-styles.css", 
                 "libraries/js/themeParks-Scripts.js",
                 baseUrl,
+=======
+                "css/themeParks-styles.css", 
+                "js/themeParks-Scripts.js",
+>>>>>>> master:libraries/sw2.js
             ];
 
             return Promise.all(resourceUrls.map(function(relativeUrl) {
