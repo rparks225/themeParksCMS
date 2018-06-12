@@ -1,10 +1,10 @@
-<?php $newscript = substr(strip_tags('{{ script }}'), 0, 255); ?>
+<?php $newscript = substr( strip_tags('{{ script }}'), 0, 255 ); ?>
 
 <div class="col-md-8 col-sm-8 col-xs-12">  
 
     <h2 class="text-muted">{{ title }}</h2><br>
 
-      <p>Posted - <i>{{ date }}</i></p>
+    <p>Posted - <i>{% echo date( 'M d, Y', strtotime( '{{ date }}' ) ) %}</i></p>
 
     <p>{% echo $newscript %}...</p>
 
@@ -38,7 +38,7 @@
                 <div class="clearfix">&nbsp;</div>
                 <div class="clearfix">&nbsp;</div>
 
-        <a class="btn btn-warning pull-right" href="{% echo ROOT %}News-Post-{{ id }}" role="button">View Post &raquo;</a>
+        <a class="btn btn-warning pull-right" href="{% echo ROOT %}Blog/Post/{{ id }}" role="button">View Post &raquo;</a>
 
     </div>
 

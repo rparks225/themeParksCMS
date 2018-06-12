@@ -8,7 +8,6 @@ if($result = $mysqli->query($query)){
 
 
         $sName = $row['settings_siteName'];
-        $userName = $row['settings_uName'];
         $sUrl = $row['settings_siteUrl'];
         $sCaptcha = $row['settings_captchaKey'];
         $theme = $row['theme'];
@@ -30,10 +29,10 @@ if($result = $mysqli->query($query)){
 
     }      
 
-};       
+};
 
 $salted = md5(date('Y/m/d:h').'fe2621d3694e369e1adc0611688fee93');
-$salt = hash('sha256', $salted);
+$salt = hash('sha512', $salted);
 
 $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle','userName','salt');
 

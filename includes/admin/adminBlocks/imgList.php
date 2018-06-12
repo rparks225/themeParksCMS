@@ -28,10 +28,11 @@
                 $del->del($location,$other);
 
                 $path = $_SERVER['DOCUMENT_ROOT'].$cmsPath.'images/uploads/'.$_POST['gal'].'/'.$_POST['imgDelete'].'';
+                chmod($path);
                 echo $path;
                 unlink($path);
             }
-
+       
         ?>
 
     </div>

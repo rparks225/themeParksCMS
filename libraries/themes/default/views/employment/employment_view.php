@@ -12,10 +12,8 @@
     <div class="fancyCont">
         <div class="container">
             <div class="row">
-               
-                {# tpBlock('sideBar') #}
                 
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <div class="pull-right" id="textSize">
                         <strong>Text Size: <span id="smaller"> A</span> <span id="bigger">A</span></strong>
                     </div>

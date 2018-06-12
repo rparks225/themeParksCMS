@@ -1,6 +1,4 @@
-<?php 
-$newscript = substr(strip_tags('{{ script }}'), 0, 95); 
-?>
+<?php $newscript = substr(strip_tags('{{ script }}'), 0, 95); ?>
 
 <!--Card columnn-->
 <div class="col-md-4">
@@ -18,7 +16,7 @@ $newscript = substr(strip_tags('{{ script }}'), 0, 95);
             <p class="card-text">
             <strong>Posted -</strong> <i>{% echo date('M, d Y', strtotime("{{ date }}")) %}</i><br>
             {% echo $newscript %}...</p>
-            <a href="{% echo ROOT %}News-Post-{{ id }}" class="btn btn-info">Read more</a>
+            <a href="{% echo links() %}{{ id }}" class="btn btn-info">Read more</a>
         </div>
 
     </div>

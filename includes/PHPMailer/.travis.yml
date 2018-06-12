@@ -28,5 +28,5 @@ before_script:
 script:
   - phpunit --configuration ../travis.phpunit.xml.dist
 after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
+  - wget //scrutinizer-ci.com/ocular.phar
   - php ocular.phar code-coverage:upload --format=php-clover ../build/logs/clover.xml

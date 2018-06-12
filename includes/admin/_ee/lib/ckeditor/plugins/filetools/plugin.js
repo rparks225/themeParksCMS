@@ -180,7 +180,7 @@
 	 * The `FileLoader` class is a wrapper which handles two file operations: loading the content of the file stored on
 	 * the user's device into the memory and uploading the file to the server.
 	 *
-	 * There are two possible ways to crate a `FileLoader` instance: with a [Blob](https://developer.mozilla.org/en/docs/Web/API/Blob)
+	 * There are two possible ways to crate a `FileLoader` instance: with a [Blob](//developer.mozilla.org/en/docs/Web/API/Blob)
 	 * (e.g. acquired from the {@link CKEDITOR.plugins.clipboard.dataTransfer#getFile} method) or with data as a Base64 string.
 	 * Note that if the constructor gets the data as a Base64 string, there is no need to load the data, the data is already loaded.
 	 *
@@ -239,7 +239,7 @@
 	 * @mixins CKEDITOR.event
 	 * @constructor Creates an instance of the class and sets initial values for all properties.
 	 * @param {CKEDITOR.editor} editor The editor instance. Used only to get language data.
-	 * @param {Blob/String} fileOrData A [blob object](https://developer.mozilla.org/en/docs/Web/API/Blob) or a data
+	 * @param {Blob/String} fileOrData A [blob object](//developer.mozilla.org/en/docs/Web/API/Blob) or a data
 	 * string encoded with Base64.
 	 * @param {String} [fileName] The file name. If not set and the second parameter is a file, then its name will be used.
 	 * If not set and the second parameter is a Base64 data string, then the file name will be created based on

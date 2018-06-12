@@ -2,7 +2,6 @@
 
 // Start Jquery
  $(document).ready(function() {
-            
 /*========================
 prettyphoto
 =========================*/
@@ -82,13 +81,13 @@ Image Draggable
     $( "#sortable" ).sortable({
 		update: function (event, ui){
 		var data = $(this).sortable('serialize');
-		$.post('includes/admin/adminBlocks/save_order.php', data, function(theResponse) {
+            $.post(cmsPath + 'includes/admin/adminBlocks/save_order.php', data, function(theResponse) {
 			
-			console.log(theResponse);
+                console.log(theResponse);
 			
 			});
 			
-		console.log(data);
+                console.log(data);
 		
 			}
 		
@@ -100,13 +99,13 @@ Image Draggable
     $( "#sort" ).sortable({
 		update: function (event, ui){
 		var data = $(this).sortable('serialize');
-            $.post('includes/admin/adminBlocks/gal_order.php', data, function(theResponse) {
+            $.post(cmsPath + 'includes/admin/adminBlocks/gal_order.php', data, function(theResponse) {
 			
-			console.log(theResponse);
+                    console.log(theResponse);
 			
 			});
 			
-		console.log(data);
+                    console.log(data);
 		
 			}
 		

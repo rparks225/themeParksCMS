@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
 /* CSS Document */
-
+body{
+    background:#EEEEEE;
+    height: 100%;
+}
 .starter-template {
     padding: 40px 15px;
     text-align: center;
@@ -10,13 +13,6 @@
 nav {
     padding-left: 20px;
     padding-right: 20px;
-}
-
-header,
-.main,
-h1,
-footer {
-    padding-left: 240px;
 }
 
 .parallax-container {
@@ -35,6 +31,10 @@ div#eepanel .eeimg, .ec strong{
 
 .btn-default, .btn-primary{
     background-color: #26a69a!important;
+}
+.card .card-action {
+    padding: 16px;
+    text-align: center;
 }
 
 /*====================

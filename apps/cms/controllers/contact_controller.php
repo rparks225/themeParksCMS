@@ -1,17 +1,8 @@
 <?php
 
-class contact{
-
-	public function index( $nav = '' ){
-        
-               tpReq('head');				
-                        if($nav == ''){                                
-                                tpView('contact','contact');
-                            }else{
-                                header('Location: '.ROOT.'404');
-                            }        
-                tpReq('foot');
-
-        }
-
+class contact extends router{
+    
+    //Routes the Contact Page
+    public function index(){ $this->route('contact','contact'); }
+    
 }

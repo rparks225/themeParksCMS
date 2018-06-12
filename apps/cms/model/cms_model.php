@@ -58,11 +58,8 @@ class model{
                     'Company'=>'company',
                     'Grade'=>'grade',
                     'Caption'=>'imgCap',
-                    'Nav'=>'navs',
-                    'Navorder'=>'navOrder',
-                    'Location'=>'location',
-                    'Locationtext'=>'locText',
-                    'navId'=>'navId',
+                    'Menu_Name'=>'menNam',
+                    'Nav_Text'=>'navTxt',
                     'COUNT(*)'=>'count'
                 );	
  
@@ -129,19 +126,15 @@ class model{
 	//Queries the DB for page data
 
 	public function extra($query, $block, $other){
-
 		$this->query($query, $block, $other);
-		
 		}
     
     public function rows($query){
-
         global $mysqli;
         $newQuery = 'SELECT COUNT(*) '.substr($query,8);
         $result = $mysqli->query($newQuery);
         $row = $result->fetch_assoc();
         return $row['COUNT(*)'];
-
     }
 					
 }

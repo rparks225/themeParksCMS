@@ -65,7 +65,7 @@
 
 ## Version 5.2.9 (Sept 25th 2014)
 * **Important: The autoloader is no longer autoloaded by the PHPMailer class**
-* Update html2text from https://github.com/mtibben/html2text
+* Update html2text from //github.com/mtibben/html2text
 * Improve Arabic translations (Thanks to @tarekdj)
 * Consistent handling of connection variables in SMTP and POP3
 * PHPDoc cleanup
@@ -167,7 +167,7 @@
 * Added fake POP server and unit tests for POP-before-SMTP
 
 ## Version 5.2.6 (April 11th 2013)
-* Reflect move to PHPMailer GitHub organisation at https://github.com/PHPMailer/PHPMailer
+* Reflect move to PHPMailer GitHub organisation at //github.com/PHPMailer/PHPMailer
 * Fix unbumped version numbers
 * Update packagist.org with new location
 * Clean up Changelog
@@ -187,13 +187,13 @@
 
 ## Version 5.2.3 (February 8, 2013)
 * Fix issue with older PCREs and ValidateAddress() (Bugz: 124)
-* Add CRAM-MD5 authentication, thanks to Elijah madden, https://github.com/okonomiyaki3000
+* Add CRAM-MD5 authentication, thanks to Elijah madden, //github.com/okonomiyaki3000
 * Replacement of obsolete Quoted-Printable encoder with a much better implementation
 * Composer package definition
 * New language added: Hebrew
 
 ## Version 5.2.2 (December 3, 2012)
-* Some fixes and syncs from https://github.com/Synchro/PHPMailer
+* Some fixes and syncs from //github.com/Synchro/PHPMailer
 * Add Slovak translation, thanks to Michal Tinka
 
 ## Version 5.2.2-rc2 (November 6, 2012)

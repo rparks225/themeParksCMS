@@ -1,8 +1,18 @@
+<div class="btgrid">
+<div class="row row-1">
+<div class="col-md-6">
+<div class="content">
 <h1>Main Title</h1>
 
 <hr />
-<div id="lipsum">
-<p style="text-align: left;"><img alt="" class="img-responsive lazy" data-original="/themeparkscms/images/files/download-1.jpg" style="margin-left: 20px; margin-bottom: 20px; float: right; width: 400px;" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc massa, sagittis et nibh a, scelerisque condimentum magna. Aliquam in nulla eu dui lobortis consequat in ut neque. Donec quis nibh sem. Sed dictum, lorem id auctor ultricies, sapien magna tincidunt odio, a gravida velit massa ac lorem. Pellentesque tincidunt erat eleifend, tincidunt dui vel, consectetur turpis. Pellentesque faucibus augue sed felis hendrerit dictum. Quisque odio justo, lacinia at volutpat at, tempus at arcu. Integer euismod, risus ac consectetur finibus, lectus lacus porta tellus, ac imperdiet eros diam id sapien. Sed leo diam, cursus at ullamcorper non, ultricies ac dolor. Sed quis ultricies mi, id finibus quam. Etiam ornare fringilla ante, id vehicula turpis bibendum porttitor.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+</div>
 
-<p style="text-align: left;">Aliquam quis lacinia ante. Nunc congue urna vel nulla ultricies, at malesuada ligula commodo. Nunc a eros scelerisque, posuere orci eget, sollicitudin elit. Duis sollicitudin tortor neque. Etiam nec egestas enim. Vestibulum scelerisque enim sem, quis molestie lacus pellentesque non. Vivamus rhoncus dolor vitae lacus porttitor, id aliquam velit scelerisque. Morbi consectetur hendrerit tincidunt. Mauris ullamcorper nibh a felis semper malesuada. Vestibulum non nunc et elit bibendum malesuada id sit amet ante. Donec cursus tortor ac laoreet sollicitudin. Suspendisse egestas rhoncus justo ac elementum.</p>
+<div class="col-md-6">
+<div class="content">
+<p><img alt="" src="/themeParksCMS/images/files/download-1.jpg" style="width: 100%;" /></p>
+</div>
+</div>
+</div>
 </div>

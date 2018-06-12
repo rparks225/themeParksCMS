@@ -1,10 +1,10 @@
 {-- if (!empty("{{ cover }}")) --}   
-{# $bg = "images/uploads/{{ album }}/{{ cover }}" #}    
+    {# $bg = ROOT."images/uploads/{{ album }}/{{ cover }}" #}    
 {-- else --}     
-{# $bg = '' #}    
+    {# $bg = '' #}    
 {-- endif --}
 
-<div class="row my-5">
+<li class="row my-5" id="list-{{ id }}">
     <div class="col-md-12 wow fadeIn" data-wow-delay="0.02s">
             <div class="col-md-4 pull-left" style="border:1px solid grey;box-shadow:3px 3px 2px grey;height:250px;overflow:hidden;background:url('{% echo $bg %}') no-repeat;background-size:cover;">
 
@@ -13,7 +13,7 @@
             <div class="col-md-8 pull-left">
 
                 <h3>
-                    <a href="{% echo ROOT %}Gallery-{{ album }}">
+                    <a href="{% echo ROOT %}Gallery/{{ album }}">
                         {-- if (empty("{{ title }}")) --}
                             {{ album }}
                         {-- else --}
@@ -30,7 +30,7 @@
 
                 <br>
 
-                <a href="{% echo ROOT %}Gallery-{{ album }}" class="btn btn-warning">
+                <a href="{% echo ROOT %}Gallery/{{ album }}" class="btn btn-warning">
                     View Gallery
                 </a>
 
@@ -43,4 +43,4 @@
             <div class="clearfix">&nbsp;</div>
             <hr>
     </div>
-</div>
+</li>

@@ -1,1 +1,1 @@
-<h3 style="color:red;">Login incorrect, please try again.</h3>
+<h3 style="color:white;padding:15px;text-align:center;">Login incorrect, please try again.</h3>

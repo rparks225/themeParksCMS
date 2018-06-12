@@ -13,15 +13,16 @@
     </div>
 
     {-- if (isset($_SESSION[''.$sessKey.''])) --}
-    <span id="sort">
+        <ul class="sOrd" id="sort">
     {-- else --}
-    <span>
+        <ul>
     {-- endif --}
-        {# $query = 'SELECT * FROM  `gallery` ORDER BY  `gallery`.`Order` ASC LIMIT 0 , 30' #}
-        {# $block = 'galName' #}
-        {# $title = new model() #}
-        {# $title->query($query,$block) #}
-    </span>
+            {# $query = 'SELECT * FROM  `gallery` ORDER BY  `gallery`.`Order` ASC LIMIT 0 , 30' #}
+            {# $block = 'galName' #}
+            {# $title = new model() #}
+            {# $title->query($query,$block) #}
+        </ul>
+    
 </div>
 
 <!--Close Cont area-->

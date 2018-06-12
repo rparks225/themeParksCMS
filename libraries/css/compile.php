@@ -72,7 +72,7 @@ if(file_exists('themeParks-styles.css') && !isset($_GET['Delete'])){
                 header("Content-type: text/css; charset: UTF-8");
                 echo compress($comp);
             }else{
-                echo '<h1>Complete! CSS has been Compiled<h1>';
+                echo '<h1>Complete! CSS has been Deleted<h1>';
                 echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="tp-Dashboard">Close</a>';
                 unlink('themeParks-styles.css');   
             }

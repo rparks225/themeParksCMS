@@ -1,9 +1,9 @@
 <?php global $sName; ?>
-{# $sort = false #}
+{# $sorted = false #}
 {# $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'') #}
 
 {-- if isset($_SESSION[$sessKey]) --}
-    {# $sort = "sortable" #}
+    {# $sorted = "sortable" #}
 {-- endif --}
 
 <!--Open Cont area-->
@@ -17,6 +17,10 @@
                     {# $block = 'title' #}
                     {# $images2 = new model() #}
                     {# $images2->query($query,$block) #}
+                    
+                    {-- if ( $images2->rows( $query  ) == 0 ) --}
+                      Gallery Not Found
+                    {-- endif --}
                 </h1>
             <hr>
         </div>
@@ -24,16 +28,20 @@
 
 
     {-- if (isset($_SESSION[''.$sessKey.''])) --}
-    <div class="wow fadeIn" data-wow-delay="0.02s" id="{% echo $sort %}">
+        <ul class="wow fadeIn" data-wow-delay="0.02s" id="{% echo $sorted %}">
     {-- else --}
-    <div class="wow fadeIn" data-wow-delay="0.02s">
+        <ul class="wow fadeIn" data-wow-delay="0.02s">
     {-- endif --}
-        {# $query = 'SELECT * FROM `images` WHERE `Album` LIKE \''.title(2).'\' ORDER BY `images`.`Order` ASC ' #}
-        {# $block = 'galleryImage' #}
-        {# $images = new model() #}
-        {# $images->query($query,$block) #}
-    </div>
+            {# $query = 'SELECT * FROM `images` WHERE `Album` LIKE \''.title(2).'\' ORDER BY `images`.`Order` ASC ' #}
+            {# $block = 'galleryImage' #}
+            {# $images = new model() #}
+            {# $images->query($query,$block) #}
+        </ul>
+        
+            {-- if ( $images->rows( $query ) == 0 ) --}
+                <p>Sorry that gallery cannot be found. Please try again. <br><br> <a class="btn btn-primary" href="{% echo ROOT %}Gallery/"> &larr; Back</a> </p>
+            {-- endif --}
         
 </div>
-<div class="clearfix"></div>
+<div class="clearfix">&nbsp;</div>
 <!--Close Cont area-->

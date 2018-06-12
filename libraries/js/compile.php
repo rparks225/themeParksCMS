@@ -68,7 +68,7 @@ if( file_exists('themeParks-Scripts.js') && !isset($_GET['Delete']) ){
                 header("Content-type: application/javascript; charset: UTF-8");
                 echo $comp;
             }else{
-                echo '<h1>Complete! JS has been Compiled<h1>';
+                echo '<h1>Complete! JS has been Deleted<h1>';
                 echo '<a style="font-family:arial;font-size:12pt;padding:5px 15;text-decoration:none;border:1px solid black;border-radius:10px;" href="tp-Dashboard">Close</a>';
                 unlink('themeParks-Scripts.js');   
             }

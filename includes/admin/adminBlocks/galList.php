@@ -18,7 +18,7 @@
     <td><?php echo $title; ?></td>
     <td>
         <?php
-            if(isset($order) && $order != '' || $order != false){
+            if(isset($order) && $order != '' || isset($order) && $order != false){
 
                 echo $order;
 
@@ -30,14 +30,14 @@
         ?>
     </td>
     <td>
-        <div style="position:relative;top:0;right:0;" class="fixed-action-btn horizontal">
+        <div style="position:relative;top:0;right:0;" class="fixed-action-btn horizontal direction-left">
             <a class="btn-floating btn-large blue">
                 <i class="large material-icons">add</i>
             </a>
             <ul style="right:90%;">
 
                 <li>
-                    <a href="<?php echo ROOT.'tp-Album-'.$id; ?>" type="button" class="orange waves-effect waves-red btn-floating btn-large">
+                    <a href="<?php echo ROOT.'tp-Album-'.$id; ?>" class="orange waves-effect waves-red btn-floating">
 
                         <i class="material-icons left">mode_edit</i>
 
@@ -45,7 +45,7 @@
                 </li>
 
                 <li>
-                    <a class="modal-trigger waves-effect waves-light btn-floating btn-large red" data-toggle="modal" href="#myModal-<?php echo $id; ?>">
+                    <a class="modal-trigger waves-effect waves-light btn-floating red" data-toggle="modal" href="#myModal-<?php echo $id; ?>">
 
                         <i class="material-icons left">delete</i>
 

@@ -2,7 +2,7 @@
 <tr>
 
     <td>
-        <?php if($edit == 'false'){ echo $title; }else{ echo '<a href="'.ROOT.''.$title.'">'.$title.'</a>'; }; ?></td>
+        <?php if($edit == 'false'){ echo $title; }else{ echo '<a href="'.ROOT.$title.'">'.$title.'</a>'; }; ?></td>
 
     <td>
         <?php if($edit == 'false'){ echo '<span style="color:grey;">No</span>'; }else{ echo '<span style="color:green;">Yes</span>'; }; ?> </td>
@@ -21,18 +21,18 @@
 
     <td>
 
-        <div style="position:relative;top:0;right:0;" class="fixed-action-btn horizontal">
+        <div style="position:relative;top:0;right:0;" class="fixed-action-btn horizontal direction-left">
             <a class="btn-floating btn-large blue">
                 <i class="large material-icons">add</i>
             </a>
         <ul>
-        <li><a href="<?php echo ROOT.'tp-Pages-Update-'.$id; ?>" type="button" class="waves-effect waves-light btn-floating btn-large orange">
+        <li><a href="<?php echo ROOT.'tp-Pages-Update-'.$id; ?>" class="waves-effect waves-light btn-floating orange">
 
             <i class="material-icons left">mode_edit</i>
 
         </a></li>
         
-        <li><a class="modal-trigger waves-effect waves-light btn-floating btn-large red" data-toggle="modal" href="#myModal-<?php echo $id; ?>">
+        <li><a class="modal-trigger waves-effect waves-light btn-floating red" data-toggle="modal" href="#myModal-<?php echo $id; ?>">
 
             <i class="material-icons left">delete</i>
 

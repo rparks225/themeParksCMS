@@ -9,7 +9,7 @@
  * You can either use a self signed certificate, pay for a signed one or use free alternatives such as StartSSL/Comodo etc.
  * Check out this link for more providers: http://kb.mozillazine.org/Getting_an_SMIME_certificate
  * In this example I am using Comodo.
- * The form is directly available via https://secure.comodo.com/products/frontpage?area=SecureEmailCertificate
+ * The form is directly available via //secure.comodo.com/products/frontpage?area=SecureEmailCertificate
  * Fill it out and you'll get an email with a link to download your certificate.
  * Usually the certificate will be directly installed into your browser (FireFox/Chrome).
  * 

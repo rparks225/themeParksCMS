@@ -1,7 +1,7 @@
 <?php global $inline; ?>
 
 {-- if (!empty('{{ cover }}')) --}   
-    {# $bg = 'images/uploads/{{ album }}/{{ cover }}' #}    
+    {# $bg = ROOT.'images/uploads/{{ album }}/{{ cover }}' #}    
 {-- else --}     
     {# $bg = '' #}    
 {-- endif --}
@@ -34,7 +34,7 @@
                 
             <div class="clearfix">&nbsp;</div>
 
-                    <a href="{% echo ROOT %}Gallery-{{ album }}" class="btn btn-warning">
+                    <a href="{% echo ROOT %}Gallery/Album/{{ album }}" class="btn btn-warning">
                             View Gallery
                     </a>
 

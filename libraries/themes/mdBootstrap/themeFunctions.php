@@ -34,31 +34,34 @@ $frameWork = array(
     via array of Links Location & Link Title
 =============================================*/
 function navi($page){    
-    foreach($page as $link => $title){
-        if(links() == ROOT.$link){
+    foreach($page as $title => $links){
+        if(!is_array($links) && links() == ROOT.$links){
             $a = ' active';
         }else{
             $a = ' inactive';
         };
 
-        if($link == '#'.substr($link,1)){
-
+        if($title == '#'.substr($title,1)){
+            /* Nav Drop Down Link HTML */
             echo '
             
             <li class="nav-item btn-group">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.substr($link,1).'  
-                        </a>
+                        <a class="nav-link dropdown-toggle" 
+                              id="navbarDropdownMenuLink" 
+                              data-toggle="dropdown" 
+                              aria-haspopup="true" 
+                              aria-expanded="false"> '.substr($title,1).' </a>
+                              
                         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                        
                         ';
 
-            foreach($title as $link2 => $title2){
+            foreach($links as $title2 => $link2){
                 if(links() == ROOT.$link2){
                     $a = ' active';
                 }else{
                     $a = ' inactive';
                 };
-
+                /* Drop  */
                 echo '
                 <a class="white-text dropdown-item'.$a.'" href="'.ROOT.$link2.'">'.$title2.'</a>
                 ';
@@ -69,10 +72,10 @@ function navi($page){
             </li>';
 
         }else{
-
+            /* Single Nav Link HTML */
             echo '
             <li class="nav-item '.$a.'">
-                <a class="nav-link" href="'.ROOT.$link.'">'.$title.'</a>
+                <a class="nav-link" href="'.ROOT.$links.'">'.$title.'</a>
             </li>
             ';
 
@@ -92,20 +95,22 @@ function paginate($table,$limit,$currentPage){
     $newNum = $count/$limit;
     $newNum = ceil($newNum);
     $nums = 0;    
-    echo '<ul class="pagination">';        
-    if(!ctype_digit(title(2))){
-        echo '<li class="active disabled" style="color:white;">All Pages</li>';
-    }else{
-        echo '<li><a href="'.$currentPage.'">All Pages</a></li>';
-    }   
+    echo '
+    <div class="clearfix">&nbsp;</div>
+    <ul class="pagination">';        
     while($nums < $newNum){
         $nums++;
         if($nums == title(2) || title(2) == $nums){    
-            echo '<li class="active disabled" style="color:white;">'.$nums.'</li>';    
+            echo '<li class="active disabled" style="color:white;padding: 4px 10px;">'.$nums.'</li>';    
         }else{    
             echo '<li><a href="'.$currentPage.'-'.$nums.'">'.$nums.'</a></li>';    
         }            
     }        
+    if(!ctype_digit(title(2))){
+        echo '<li class="active disabled" style="color:white;padding: 4px 10px;">All Pages</li>';
+    }else{
+        echo '<li><a href="'.$currentPage.'">All Pages</a></li>';
+    }   
     echo '</ul>';   
 }
 
@@ -117,7 +122,7 @@ function breadcrumbs($trails){
 
     echo '<ul class="breadcrumb">';
     foreach($trails as $trail){
-        echo '<li><span><img width="27" height="16" src=""></span> '.$trail.'</li>';
+        echo '<li><span></span> '.$trail.'</li>';
     }
     echo '</ul>';
 }

@@ -4,35 +4,9 @@
 <head>
     
 <!--Open Meta Tags-->
-    
-<?php
 
-if(title(2) == ''){
+<?php tpAdminInc('metaScript'); ?>    
 
-    $query = 'SELECT * FROM `page` WHERE `Title` LIKE "Home"';
-    $block = 'metaScript2';
-
-}else if(links() == ROOT.'News-Post-'.title(2)){
-    
-    $query = 'SELECT * FROM `post` WHERE `Id` LIKE "'.title(2).'"';
-    $block = 'metaScript';
-    
-}elseif(links() == ROOT.'Gallery-'.title(2)){
-    
-    $query = 'SELECT * FROM `gallery` WHERE `Gallery` LIKE "'.title(2).'"';
-    $block = 'metaScript';
-    
-}else{
-
-    $query = 'SELECT * FROM `page` WHERE `Title` LIKE "'.title(2).'"';
-    $block = 'metaScript2';
-
-}    
-
-$metaScript = new model();
-$metaScript->query($query, $block);
-
-?>    
 <meta charset="UTF-8">
 <meta name=viewport content="width=device-width, initial-scale=1">
 
@@ -49,7 +23,7 @@ $metaScript->query($query, $block);
     };
 ?>        
     
-<?php if(title() == 'dashboard' || title() == 'pages'): ?>
+<?php if(isset($_SESSION[''.$sessKey.'']) || title() == 'dashboard' || title() == 'pages'): ?>
    
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="-1">
@@ -57,30 +31,36 @@ $metaScript->query($query, $block);
 <?php endif; ?>    
 <!--Close Meta Tags-->  
 
-   
+
 <?php if(file_exists('images/icon.ico') ): ?>   
-    <!-- Open favicon -->
-        <link rel="SHORTCUT ICON" href="<?php //echo ROOT; ?>images/files/icon.ico">
-    <!-- ./Close favicon -->   
+<!-- Open favicon -->
+    <link rel="SHORTCUT ICON" href="<?php echo ROOT; ?>images/files/icon.ico">
+<!-- ./Close favicon -->   
 <?php endif; ?>
-   
+
+<?php if( file_exists( 'manifest.json' ) ): ?>
+<!-- Open Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#28ADBA">
+<!-- ./Close Manifest -->
+<?php endif; ?>
    
 <!-- Prefetched assets -->
         <link rel="dns-prefetch" href="<?php echo ROOT; ?>" >
 
 <?php if( file_exists('libraries/css/themeParks-styles.css') ): ?>
-        <link rel="preload" href="libraries/css/themeParks-styles.css" as="style">
+        <link rel="preload" href="<?php echo ROOT; ?>libraries/css/themeParks-styles.css" as="style">
 <?php endif; ?>
 
 <?php if( file_exists('libraries/js/themeParks-Scripts.js') ): ?>
-        <link rel="preload" href="libraries/js/themeParks-Scripts.js" as="script">
+        <link rel="preload" href="<?php echo ROOT; ?>libraries/js/themeParks-Scripts.js" as="script">
 <?php endif; ?>
 <!-- ./Prefetched assets -->
 
 
 <!--Open Styles code-->
     
-    <style type="text/css">html{-webkit-animation:fadein .5s;-moz-animation:fadein .5s;-ms-animation:fadein .5s;-o-animation:fadein .5s;animation:fadein .5s}@keyframes fadein{from{opacity:0}to{opacity:1}}@-moz-keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@-ms-keyframes fadein{from{opacity:0}to{opacity:1}}@-o-keyframes fadein{from{opacity:0}to{opacity:1}} #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { border: 1px dotted grey; }.edit[contenteditable=true]:focus { border: none!important; }.cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}.cke_button_label.cke_button__inlinesave_label {display: inline;}.cke_button__btgrid_icon {background-position: 0 !important;}
+    <style type="text/css">html{-webkit-animation:fadein .5s;-moz-animation:fadein .5s;-ms-animation:fadein .5s;-o-animation:fadein .5s;animation:fadein .5s}@keyframes fadein{from{opacity:0}to{opacity:1}}@-moz-keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@-ms-keyframes fadein{from{opacity:0}to{opacity:1}}@-o-keyframes fadein{from{opacity:0}to{opacity:1}} #simplemodal-overlay {background-color:#000;}#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}.edit[contenteditable=true] { top:0;padding:15px;margin:-15px;transition:.3s;}.edit[contenteditable=true]:hover { top:-2px;border: none;box-shadow:2px 2px 9px rgba(0,0,0,.5);}.edit[contenteditable=true]:focus,.edit[contenteditable=true]:focus-within { border: none!important;box-shadow:5px 5px 25px rgba(0,0,0,.75);  }.edit[contenteditable=true]:focus:hover { border: none!important;box-shadow:5px 5px 25px rgba(0,0,0,.75);  }.cke_dialog{border: 1px solid grey;box-shadow: 2px 2px 10px;}.cke_button_label.cke_button__inlinesave_label {display: inline;}.cke_button__btgrid_icon {background-position: 0 !important;}
         <?php  global $style; if(isset($style)){ echo $style; }else{ $style == false; }; ?>   
     </style>
 
@@ -95,15 +75,13 @@ $metaScript->query($query, $block);
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 <!--[if IE]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <script>alert("You are using an oudated  version of Internet Explorer. Please update to Microsoft Edge or use Firefox/ Google Chrome.");</script>
 <![endif]-->
 
 <!-- ./Close IE Fix -->
-   
     <?php tpCompile('styles'); ?>
-    
 </head>
 
     <?php tpInc('header'); ?>

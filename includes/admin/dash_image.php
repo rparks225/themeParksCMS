@@ -43,7 +43,7 @@ if(isset($_POST['delAlb'])){
     $storeFolder = $_SERVER['DOCUMENT_ROOT'].$cmsPath.'images/uploads/'.$_POST['delAlb'].'';
     
     foreach (new DirectoryIterator($storeFolder) as $fileInfo) {
-        if(!$fileInfo->isDot()) {
+        if( !$fileInfo->isDot() ) {
             unlink($fileInfo->getPathname());
         }
     }

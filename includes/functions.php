@@ -17,12 +17,11 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
       Defines Site ROOT Path
 ===================================*/
 if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off'){
-    $proto = 'https://';
+    $proto = '//';
 }else{
     $proto = 'http://';
 }
 define("ROOT", "$proto{$sUrl}");
-
 
 /*==================================
     Defines Current URL location
@@ -96,9 +95,28 @@ function theme(){
 	if(!isset($theme)){		
 		return 'default';		
 		}	  	
-	}	
+	}
 
-	
+
+/*=============================================
+             Grabs Navigation Links From The DB
+=============================================*/
+function navLinks($a){	
+    global $mysqli;		
+    $query = 'SELECT * FROM Nav WHERE Id = "'.$a.'"';
+    
+    if($result = $mysqli->query($query)){			
+        while($row = $result->fetch_assoc()){	
+            if(isset($row['Nav_Text'])){					
+                $menu = $row['Nav_Text'];					
+                return json_decode($menu,true);		
+            }else{						
+            }						
+        }				
+    }
+}	
+
+
 /*=============================================
     Adds new cms component to desired page
 =============================================*/
@@ -112,8 +130,8 @@ function newEE($title){
       fclose($fileNew);				  
       }else{
             
-            include 'includes/admin/_ee/inc/_'.$title.'.php';
-          
+            $path = 'includes/admin/_ee/inc/_'.$title.'.php';
+            tmpltRender($path);
           }	
 	};
 
@@ -236,7 +254,6 @@ function tpCompile($e){
     };       
 };
 
-
 /*===============================================================
      Renders Views, Blocks and Loops for easier to read sytax.
 ===============================================================*/
@@ -276,7 +293,6 @@ function tpBlock($blocks){
     tmpltRender($path);
 };
 
-
 /*======================================================================================
    Finds a defined theme header, footer, and CSS for page head, foot and css compiler
 ======================================================================================*/
@@ -294,12 +310,12 @@ function tpView($folder,$view){
     tmpltRender($path);
 };
 
-
 /*====================================================
      Finds a defined Block for the admin panel
 ====================================================*/
-function tpAdmin($blocks){
-    require_once 'includes/admin/adminBlocks/'.$blocks.'.php';
+    function tpAdmin($blocks){
+    $path = 'includes/admin/adminBlocks/'.$blocks.'.php';
+    tmpltRender($path);
 };
 
 
@@ -307,7 +323,8 @@ function tpAdmin($blocks){
      Finds a defined Block for the admin panel
 ====================================================*/
 function tpAdminInc($blocks){
-    require_once 'includes/admin/'.$blocks.'.php';
+    $path = 'includes/admin/'.$blocks.'.php';
+    tmpltRender($path);
 };
 
 
@@ -410,6 +427,25 @@ $replace = array(
     
 }
 
+
+/*=============================================
+   Checks the current theme for Admin Panel
+=============================================*/
+function userInfo($q){	
+    global $mysqli;		
+    $query = 'SELECT * FROM `U_sers` WHERE User_name LIKE "'.$_SESSION['user'].'"';
+    if($result = $mysqli->query($query)){			
+        while($row = $result->fetch_assoc()){	
+            if(isset($row['Display_name'])){					
+                $userName = $row['Display_name'];			
+            }
+            if(isset($row['Privileges'])){
+                $privileges = $row['Privileges'];
+            }						
+        }				
+    }	
+    echo $$q;
+}
 
 /*====================================================
            Login timout variable in seconds

@@ -1,5 +1,5 @@
 <?php
-
+require_once 'routes_class.php';
 //Starts CMS app
 class cms{
 	

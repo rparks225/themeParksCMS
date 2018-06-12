@@ -1,0 +1,21 @@
+{
+    "short_name": "ThemeParks",
+    "name": "ThemeParks CMS",
+    "icons": [
+        {
+            "src": "includes/admin/assets/images/logo.png",
+            "type": "image/png",
+            "sizes": "370x257"
+        },
+        {
+            "src": "includes/admin/assets/images/icon.ico",
+            "type": "image/png",
+            "sizes": "27x19"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#FFFFFF",
+    "display": "minimal-ui",
+    "scope": "/",
+    "theme_color": "#28ADBA"
+}

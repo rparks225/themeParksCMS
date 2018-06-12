@@ -808,7 +808,7 @@ class PHPMailerTest extends PHPUnit_Framework_TestCase
     <body>
         <h1>PHPMailer does HTML!</h1>
         <p>This is a <strong>test message</strong> written in HTML.<br>
-        Go to <a href="https://github.com/PHPMailer/PHPMailer/">https://github.com/PHPMailer/PHPMailer/</a>
+        Go to <a href="//github.com/PHPMailer/PHPMailer/">//github.com/PHPMailer/PHPMailer/</a>
         for new versions of PHPMailer.</p>
         <p>Thank you!</p>
     </body>
@@ -1148,7 +1148,7 @@ EOT;
                 strtotime('tomorrow 11:00 Europe/Paris'),
                 'PHPMailer iCal test',
                 'A test of PHPMailer iCal support',
-                'https://github.com/PHPMailer/PHPMailer'
+                '//github.com/PHPMailer/PHPMailer'
             ),
             'Generated event string is empty'
         );
@@ -1157,7 +1157,7 @@ EOT;
             strtotime('tomorrow 11:00 Europe/Paris'),
             'PHPMailer iCal test',
             'A test of PHPMailer iCal support',
-            'https://github.com/PHPMailer/PHPMailer'
+            '//github.com/PHPMailer/PHPMailer'
         );
         $events = $ICS->getEvents();
         $this->assertEquals(2, count($events), 'Event count mismatch');
@@ -1349,7 +1349,7 @@ EOT;
 
     /**
      * Tests this denial of service attack:
-     * @link https://sourceforge.net/p/phpmailer/bugs/383/
+     * @link //sourceforge.net/p/phpmailer/bugs/383/
      * According to the ticket, this should get stuck in a loop, though I can't make it happen.
      * @TODO No assertions in here - how can you assert for this?
      */
