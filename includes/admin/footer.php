@@ -30,12 +30,6 @@
             });
         });
         M.AutoInit();
-        
-        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-            for(let registration of registrations) {
-                caches.delete("core");
-                registration.unregister()
-            } });
     </script>
        
 {-- if (links() == ROOT.'tp-Dashboard' ) --}

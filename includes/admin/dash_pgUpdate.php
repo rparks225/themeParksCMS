@@ -50,7 +50,7 @@ foreach($vars as $var){
             if(isset($_POST['id'])){
 
                 $id = addslashes($_POST['id']);
-                $name = addslashes($_POST['name']);
+                $name = addslashes( str_replace( ' ','-' ,strtolower($_POST['title']) ) );
                 $title = addslashes($_POST['title']);
                 $key = addslashes($_POST['key']);
                 $script = addslashes($_POST['script']);

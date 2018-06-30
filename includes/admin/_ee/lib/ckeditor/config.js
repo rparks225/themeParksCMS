@@ -20,7 +20,7 @@ CKEDITOR.editorConfig = function( config ) {
         onSuccess: function(editor, data) { 
             $('body').prepend(
 '<div id="tp-message" style="background: rgba(0,0,0,.5);position: fixed;z-index: 999999;width: 100%;height: 100%;">' + 
-                '<div style="box-shadow: 2px 2px 8px rgba(0,0,0,.6);background:white;margin: 0 auto;width: 200px;padding: 20px;color: grey;text-align: center;top: 45vh;position: relative;">' + 
+                '<div style="box-shadow: 2px 2px 8px rgba(0,0,0,.6);background:white;width: 25vw;margin: 0 auto;width: 25vw;padding: 20px;color: grey;text-align: center;top: 45vh;position: relative;">' + 
 '<img style="width:45%;" src="' + '//' + window.location.hostname + cmsPath + 'includes/admin/assets/img/loading.gif"><br>' +
 'Saving Please Wait...' + 
 '</div>' + 

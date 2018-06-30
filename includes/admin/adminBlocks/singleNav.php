@@ -58,7 +58,7 @@ $update->uped($location,$query,$method);
        
        <?php foreach( $linkSys as $title => $link): ?>
        
-           <?php if( $title == '#'.substr($title,1) ): ?>
+           <?php if( $title == '#'.substr($title,1) && $title != '#!' && $title != '#'  ): ?>
            <li class="ui-state-default">
                <div class ="card-panel col s12" style="padding:15px;">
                   

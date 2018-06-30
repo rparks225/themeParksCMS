@@ -7,7 +7,8 @@
     <div class="form-group col s6">
         <label>Page Title:</label>
         <br>
-        <input class="form-control col-md-12" requires type="text" name="title" value="<?php echo $heading; ?>">
+        <input class="form-control col-md-12" required type="text" name="title" value="<?php echo $heading; ?>">
+        <input type="hidden" name="name" value="<?php echo $title; ?>">
         
     </div>
 
@@ -34,17 +35,17 @@
                 <br><br>
             </div>
         <?php endif; ?>
-
+    
     <div class="form-group col s12">
-        <label>Page Key Words:</label>
+        <label>SEO Page Key Words:</label>
         <br>
-        <input class="form-control col-md-12" requires type="text" name="key" value="<?php echo $keywords; ?>">
+        <input class="form-control col-md-12" type="text" name="key" value="<?php echo $keywords; ?>">
         <br>
         <br>
     </div>
 
     <div style="margin-bottom:10px;" class="form-group col s12">
-        <label>Page Description:</label>
+        <label>SEO Page Description:</label>
         <br>
         <textarea class="form-control materialize-textarea" rows="5" length="120" name="script" value=""><?php echo $script; ?></textarea>
         <br>
@@ -52,8 +53,8 @@
     </div>
     
     <div class="col s12">
+        <input type="submit" name="edited" class="btn btn-default" value="Submit" />
         <a class="btn btn-primary" href="<?php echo ROOT.strtolower($title); ?>">Preview Page</a>
-        <input type="submit" name="edited" class="btn btn-default" value="Edit" />
     </div>
     <div class="clearfix"></div>
 

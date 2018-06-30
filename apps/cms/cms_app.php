@@ -11,9 +11,9 @@ class cms{
 			
 		$url = $this->parseUrl();	
 	
-  if(file_exists('apps/cms/controllers/'.$url[0].'_controller.php')){
+  if(file_exists('apps/cms/controllers/'.strtolower( $url[0] ).'_controller.php')){
 	  
-	  $this->controller = $url[0];
+	  $this->controller = strtolower( $url[0] );
 	  unset($url[0]);
 	  
 	  }

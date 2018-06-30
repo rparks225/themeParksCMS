@@ -15,6 +15,7 @@ Block to call dynamic cms portion
   
 <!-- First Row -->
 <div class="row">
+
 <div class="col-md-12 wow slideInUp my-5" data-wow-delay="0.2s">          
       <div id="_home1"{% echo $inline %}>
           {# newEE('home1') #}

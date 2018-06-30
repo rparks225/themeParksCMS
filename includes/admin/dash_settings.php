@@ -199,7 +199,6 @@ if(isset($_POST[''.$method.''])){
 
     $id = addslashes($_POST['id']);  
     $sName = addslashes($_POST['settings_siteName']);
-    $userName = addslashes($_POST['settings_uName']);
     $sUrl = addslashes($_POST['settings_siteUrl']);
     $sCaptcha = addslashes($_POST['settings_captchaKey']);
     $cmsPath = addslashes($_POST['settings_cmsPath']);
@@ -217,7 +216,7 @@ if(isset($_POST[''.$method.''])){
     $eReplyTitle = addslashes($_POST['settings_emailReplyTitle']);
     $dbName = addslashes($_POST['settings_dbName']);
 
-        $query = 'UPDATE `'.$dbName.'`.`'.$location.'` SET `Id` = \''.$id.'\', `settings_siteName` = \''.$sName.'\', `settings_uName` = \''.$userName.'\', `settings_siteUrl` = \''.$sUrl.'\', `settings_captchaKey` = \''.$sCaptcha.'\', `settings_cmsPath` = \''.$cmsPath.'\', `settings_eePath` = \''.$eePath.'\', `settings_emailHost` = \''.$emailHost.'\', `settings_emailAuth` = \''.$emailAuth.'\', `settings_emailUser` = \''.$emailUser.'\', `settings_emailPass` = \''.$emailPass.'\', `settings_emailEncrypt` = \''.$emailEnc.'\', `settings_emailPort` = \''.$emailPort.'\', `settings_emailFrom` = \''.$emailFrom.'\', `settings_emailName` = \''.$emailName.'\', `settings_emailAddress` = \''.$emailAdd.'\', `settings_emailReply` = \''.$emailReply.'\', `settings_emailReplyTitle` = \''.$eReplyTitle.'\', `settings_dbName` = \''.$dbName.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
+        $query = 'UPDATE `'.$dbName.'`.`'.$location.'` SET `Id` = \''.$id.'\', `settings_siteName` = \''.$sName.'\', `settings_siteUrl` = \''.$sUrl.'\', `settings_captchaKey` = \''.$sCaptcha.'\', `settings_cmsPath` = \''.$cmsPath.'\', `settings_eePath` = \''.$eePath.'\', `settings_emailHost` = \''.$emailHost.'\', `settings_emailAuth` = \''.$emailAuth.'\', `settings_emailUser` = \''.$emailUser.'\', `settings_emailPass` = \''.$emailPass.'\', `settings_emailEncrypt` = \''.$emailEnc.'\', `settings_emailPort` = \''.$emailPort.'\', `settings_emailFrom` = \''.$emailFrom.'\', `settings_emailName` = \''.$emailName.'\', `settings_emailAddress` = \''.$emailAdd.'\', `settings_emailReply` = \''.$emailReply.'\', `settings_emailReplyTitle` = \''.$eReplyTitle.'\', `settings_dbName` = \''.$dbName.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
 
     }
 

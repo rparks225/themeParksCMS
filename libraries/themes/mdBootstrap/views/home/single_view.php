@@ -1,4 +1,4 @@
-{# $query = 'SELECT * FROM page WHERE Title LIKE \''.title().'\' ' #}
+{# $query = 'SELECT * FROM page WHERE Title LIKE \''.strtolower( title() ).'\' ' #}
 {# $block = 'single' #}
 {# $page = new model() #}
 {# $page->query($query, $block) #}

@@ -4,63 +4,60 @@ class model{
 	
 	public $query;
 	public $block;	
+    
+    //Makes Vars Global
+    public function __construct(){
+        $this->query = true;
+        $this->block = true;
+    }
 	
-//Queries the DB for home page	
-
+    //Queries the DB for home page	
 	public function query($query, $block){
-		
-		$this->query = $query;
-		$this->block = $block;
-		
-		if (isset($other)){
-			
-			$this->other = $other;
-			return $other;
-	
+            if (isset($other)){
+                $this->other = $other;
+                return $other;
 			}else{
-				
 			}
 		
 		global $mysqli;
-		
+        
 		if($result = $mysqli->query($query)){
-			
 			while($row = $result->fetch_assoc()){
-                
                 $loops = array(
+                    //General Vars
                     'Id'=>'id',
                     'Title'=>'title',
-                    'Html'=>'html',
-                    'Description'=>'script',
-                    'Links'=>'links',
-                    'Image'=>'img',
-                    'Alt'=>'alt',
-                    'Price'=>'price',
-                    'Gallery'=>'album',
-                    'Links'=>'link',
-                    'First'=>'first',
-                    'Last'=>'last',
-                    'Email'=>'email',
-                    'Phone'=>'phone',
-                    'State'=>'state',
-                    'Message'=>'message',
-                    'Date'=>'date',
                     'Heading'=>'heading',
-                    'KeyWords'=>'keywords',
+                    'Description'=>'script',
+                    'Image'=>'img',
+                    'COUNT(*)'=>'count',
+                    
+                    //Page Vars
+                    'Html'=>'html',
                     'Editable'=>'edit',
-                    'Job'=>'job',
-                    'Facility'=>'facility',
-                    'Updated'=>'update',
+                    'KeyWords'=>'keywords',
+                    
+                    //Image & Gallery Vars
+                    'Alt'=>'alt',
+                    'Gallery'=>'album',
                     'Cover'=>'cover',
                     'Album'=>'gallery',
-                    'fourth'=>'fourth',
-                    'Badges'=>'badges',
-                    'Company'=>'company',
-                    'Grade'=>'grade',
+                    
+                    //Product Vars
+                    'Price'=>'price',
+                    
+                    //Post Vars
+                    'Date'=>'date',
+                    'Updated'=>'update',
                     'Caption'=>'imgCap',
+                    
+                    //Job Vars
+                    'Job'=>'job',
+                    'Facility'=>'facility',
+
+                    //Nav Menu Vars
                     'Menu_Name'=>'menNam',
                     'Nav_Text'=>'navTxt',
-                    'COUNT(*)'=>'count'
                 );	
  
                 foreach($loops as $loop => $val){
@@ -114,20 +111,29 @@ class model{
                           eval(' ?>'.$fileConts.'<?php ');
                             
 					  }
-					  
 				}
-				
-		  
 		  }
-		  
-	  
 	}
 	
 	//Queries the DB for page data
 
 	public function extra($query, $block, $other){
 		$this->query($query, $block, $other);
-		}
+    }
+    
+    public function singleQuery( $query, $dbVar ){
+            global $mysqli;
+            if( $result = $mysqli->query($query) ){
+                while( $row = $result->fetch_assoc() ){
+                        if( isset( $row[$dbVar] ) ){
+                            $val = $row[$dbVar];
+                            return $val;
+                        }else{
+                            return 'Not Working';
+                        }
+                   }
+              }
+        }
     
     public function rows($query){
         global $mysqli;
