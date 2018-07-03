@@ -14,7 +14,7 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
 
 $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
 session_start();
-session_name(''.$sessKey.'');
+session_id(''.$sessKey.'');
 
 if($mysqli->connect_errno){
 	
