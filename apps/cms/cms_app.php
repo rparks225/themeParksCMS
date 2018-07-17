@@ -9,9 +9,9 @@ class cms{
 	
 	public function spa(){
 			
-		$url = $this->parseUrl();	
+      $url = $this->parseUrl();	
 	
-  if(file_exists('apps/cms/controllers/'.strtolower( $url[0] ).'_controller.php')){
+      if(file_exists('apps/cms/controllers/'.strtolower( $url[0] ).'_controller.php')){
 	  
 	  $this->controller = strtolower( $url[0] );
 	  unset($url[0]);

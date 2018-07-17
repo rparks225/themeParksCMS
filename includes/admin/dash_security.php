@@ -34,8 +34,9 @@
             </div>
 
             <div class="input-field col s6">
-                <label>Authorized Ip Addresses ( Example: allow from 127.0.0.1 )</label>
-                <textarea id="sec" name="sec" type="text" class="materialize-textarea form-control"><?php echo file_get_contents('includes/admin/.htaccess'); ?></textarea>
+                <label>Authorized Ip Addresses ( Example: >>127.0.0.1 )</label>
+                <textarea id="sec" name="sec" type="text" class="materialize-textarea form-control"><?php echo str_replace('>>','
+', file_get_contents('includes/admin/sec.txt') ); ?></textarea>
                 <br>
                 <input onclick="alert('Ip Added Successfully')" type="submit" name="edited" class="btn btn-primary" value="Submit" />
             </div>
@@ -44,23 +45,15 @@
 
 
         <?php
-        if(!file_exists('includes/admin/.htaccess')){    
-            $file = fopen('includes/admin/.htaccess','w');
-            fwrite($file,
-                   "order deny,allow
-deny from all
-allow from localhost" );
-            fclose($file);
-            header('Location: //'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'');    
-        }else{    
+        if(file_exists('includes/admin/sec.txt')){      
             if(isset($_POST['sec'])){
-
-                unlink('includes/admin/.htaccess');
-                $file = fopen('includes/admin/.htaccess','w');
-                fwrite($file, $_POST['sec']);
+                $replaced = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '>>',$_POST['sec']);
+                unlink('includes/admin/sec.txt');
+                $file = fopen('includes/admin/sec.txt','w');
+                fwrite($file, '>>'.$replaced);
                 fclose($file);
                 header('Location: //'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'');
-            }      
+            }
         }
 
         ?>

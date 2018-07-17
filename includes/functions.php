@@ -5,7 +5,7 @@ require_once 'includes/settings.php';
 
 
 /*==================================
-  Globalize all app admin setting
+    Globalize all app admin setting
 ===================================*/
 $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle','userName','sName');
     foreach($vars as $var){
@@ -14,12 +14,12 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
 
 
 /*==================================
-      Defines Site ROOT Path
+    Defines Site ROOT Path
 ===================================*/
 if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off'){
-    $proto = '//';
-}else{
     $proto = 'http://';
+}else{
+    $proto = 'https://';
 }
 define("ROOT", "$proto{$sUrl}");
 
@@ -65,20 +65,20 @@ function title($numb = ''){
 
 
 /*==================================
-  Style Class for active page link
+    Style Class for active page link
 ===================================*/
 function active($name) {
 	$tits = ''.ROOT.$name.'';
 	if($tits == links()){
-		echo 'active';
-		}else{
-			return 'inactive';
-			}
-	  }		
+            echo 'active';
+     }else{
+         echo 'inactive';
+     }
+}		
 
 
 /*=============================================
-   Checks the current theme for Admin Panel
+    Checks the current theme for Admin Panel
 =============================================*/
 function theme(){	
 	global $mysqli;		
@@ -99,7 +99,7 @@ function theme(){
 
 
 /*=============================================
-             Grabs Navigation Links From The DB
+    Grabs Navigation Links From The DB
 =============================================*/
 function navLinks($a){	
     global $mysqli;		
@@ -120,7 +120,8 @@ function navLinks($a){
 /*=============================================
     Adds new cms component to desired page
 =============================================*/
-function newEE($title){	
+function newEE( $title ){	
+    $title = strtolower($title);
     $filename = 'includes/admin/_ee/inc/_'.$title.'.php';				  
       if(!file_exists($filename)){				  
        touch($filename);
@@ -137,7 +138,7 @@ function newEE($title){
 
 
 /*=============================================
-      Loops through files in directory
+    Loops through files in directory
 =============================================*/
 function direct($directory, $blocks, $other){
     if(isset($other)){ echo $other; }
@@ -158,7 +159,7 @@ function direct($directory, $blocks, $other){
 
 
 /*====================================================
-   Loops through files in directory for Admin Panel
+    Loops through files in directory for Admin Panel
 ====================================================*/
 function tpDirect($directory, $blocks, $other){
     if(isset($other[''])){ echo $other; }
@@ -179,7 +180,7 @@ function tpDirect($directory, $blocks, $other){
 
 
 /*====================================================
-            Makes New Image Album
+    Makes New Image Album
 ====================================================*/
 $albums = isset($_POST['album'])? $_POST['album']: '';
 $ds          = DIRECTORY_SEPARATOR;  //1
@@ -194,7 +195,7 @@ if (!file_exists($storeFolder)) {
 
 
 /*====================================================
-             Adds images to folders 
+    Adds images to folders 
 ====================================================*/
 if (!empty($_FILES)) {
     $tempFile = $_FILES['file']['tmp_name'];          //3   
@@ -214,7 +215,7 @@ if (!empty($_FILES)) {
 
 
 /*====================================================
-                gallery sort
+    gallery sort
 ====================================================*/
 function uped($method,$location,$query,$site){	
 	$i = 0;							
@@ -230,7 +231,7 @@ function uped($method,$location,$query,$site){
 
 
 /*====================================================
-  Compiles Styles and or JS from folders to 1 sheet
+    Compiles Styles and or JS from folders to 1 sheet
 ====================================================*/
 function tpCompile($e){    
     if($e == 'styles'){        
@@ -255,7 +256,7 @@ function tpCompile($e){
 };
 
 /*===============================================================
-     Renders Views, Blocks and Loops for easier to read sytax.
+    Renders Views, Blocks and Loops for easier to read sytax.
 ===============================================================*/
 function tmpltRender($path){
     global $inline;
@@ -286,7 +287,7 @@ function tmpltRender($path){
 
 
 /*====================================================
-     Finds a defined Block to be viewed on page
+    Finds a defined Block to be viewed on page
 ====================================================*/
 function tpBlock($blocks){        
     $path = 'libraries/themes/'.theme().'/html_blocks/'.$blocks.'.php';
@@ -294,7 +295,7 @@ function tpBlock($blocks){
 };
 
 /*======================================================================================
-   Finds a defined theme header, footer, and CSS for page head, foot and css compiler
+    Finds a defined theme header, footer, and CSS for page head, foot and css compiler
 ======================================================================================*/
 function tpInc($inc){        
     $path = 'libraries/themes/'.theme().'/'.$inc.'.php';
@@ -303,7 +304,7 @@ function tpInc($inc){
 
 
 /*====================================================
-         Finds a defined View for controller
+    Finds a defined View for controller
 ====================================================*/
 function tpView($folder,$view){      
     $path = 'libraries/themes/'.theme().'/views/'.$folder.'/'.$view.'_view.php';
@@ -311,7 +312,7 @@ function tpView($folder,$view){
 };
 
 /*====================================================
-     Finds a defined Block for the admin panel
+    Finds a defined Block for the admin panel
 ====================================================*/
     function tpAdmin($blocks){
     $path = 'includes/admin/adminBlocks/'.$blocks.'.php';
@@ -320,7 +321,7 @@ function tpView($folder,$view){
 
 
 /*====================================================
-     Finds a defined Block for the admin panel
+    Finds a defined Block for the admin panel
 ====================================================*/
 function tpAdminInc($blocks){
     $path = 'includes/admin/'.$blocks.'.php';
@@ -329,7 +330,7 @@ function tpAdminInc($blocks){
 
 
 /*====================================================
-  Finds a defined Block for theme header and footer
+    Finds a defined Block for theme header and footer
 ====================================================*/
 function tpReq($req){        
     require_once 'includes/tp-includes/tp-'.$req.'.php';    
@@ -337,7 +338,7 @@ function tpReq($req){
 
 
 /*====================================================
-                For secure login
+    For secure login
 ====================================================*/    
 session_start();
 $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
@@ -345,7 +346,7 @@ session_id(''.$sessKey.'');
 
 
 /*====================================================
-        Always clear cookies unless logged in
+    Always clear cookies unless logged in
 ====================================================*/
 function delCook(){
     global $sessKey;
@@ -365,7 +366,7 @@ function delCook(){
 }
 
 /*====================================================
-            Error Reporting On or Off
+    Error Reporting On or Off
 ====================================================*/
 function showErrors($switch){
     
@@ -386,7 +387,7 @@ function showErrors($switch){
 
 
 /*====================================================
-                   Html minify
+    Html minify
 ====================================================*/
 
 function compress($switch){
@@ -430,7 +431,7 @@ $replace = array(
 
 
 /*=============================================
-   Checks the current theme for Admin Panel
+    Checks the current theme for Admin Panel
 =============================================*/
 function userInfo($q){	
     global $mysqli;		
@@ -449,7 +450,7 @@ function userInfo($q){
 }
 
 /*====================================================
-           Login timout variable in seconds
+    Login timout variable in seconds
 ====================================================*/
 $destroy = '<meta http-equiv="refresh" content="1800;url='.ROOT.'includes/admin/_ee/sess-destroy.php" />';
 
@@ -463,4 +464,42 @@ if(file_exists($_SERVER['DOCUMENT_ROOT'].$cmsPath.'libraries/themes/'.theme().'/
     
 }
 
-?>
+/*========================================
+    Secure Pages
+========================================*/
+class secPage{
+    public $ips;
+    public $newIps;
+    
+    private function vars(){
+        if( file_exists('includes/admin/sec.txt') ){ $this->ips = file_get_contents('includes/admin/sec.txt'); }
+        $this->newIps = explode('>>', $this->ips);
+    }
+    
+    public function listed(){
+        $this->vars();
+        echo '<ul>';
+            foreach( $this->newIps as $ips ){
+                echo '<li>'.$ips.'</li>';
+            }
+        echo '</ul>';
+    }
+    
+    public function authorize(){
+        $this->vars();
+        if( file_exists( 'includes/admin/sec.txt' ) ){
+            if( in_array( $_SERVER['REMOTE_ADDR'],$this->newIps ) ){
+                return 'true';
+            }else{
+                return 'false';
+            }
+        }else{
+            return 'false';
+        }
+    }
+    
+    public function currentIp(){
+        echo $_SERVER['REMOTE_ADDR'];
+    }
+    
+}

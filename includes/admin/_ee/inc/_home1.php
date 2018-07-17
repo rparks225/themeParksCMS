@@ -11,7 +11,7 @@
 
 <div class="col-md-6">
 <div class="content">
-<p><img alt="" src="/themeParksCMS/images/files/download-1.jpg" style="width: 100%;" /></p>
+<p><img alt="" src="/images/files/download-1.jpg" style="width: 100%;" /></p>
 </div>
 </div>
 </div>

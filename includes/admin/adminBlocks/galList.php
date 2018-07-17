@@ -1,4 +1,3 @@
-
 <tr>
     <td><?php echo $id; ?></td>
     <td><?php echo $album; ?></td>

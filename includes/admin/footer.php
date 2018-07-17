@@ -8,8 +8,8 @@
     {# tpCompile('js') #}
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script type="text/javascript" src="{% echo ROOT %}includes/admin/_ee/lib/ckeditor/ckeditor.js"></script>
-    <script src="{% echo ROOT %}includes/admin/_ee/editease.jquery.js" type="text/javascript"></script>
+    <script src="{% echo ROOT %}includes/admin/_ee/lib/ckeditor/ckeditor.js"></script>
+    <script src="{% echo ROOT %}includes/admin/_ee/editease.jquery.js"></script>
     <script>
         $(document).ready(function(){$("#loginform").editease(),$("#loginform").submit(function(){return doLogin(loginform)}),$(".gone").click(function(){$("ul li b").toggle(),$("div.wrap").delay(1e3).toggleClass("col-md-1 col-md-2"),$("div.container").toggleClass("col-md-11 col-md-10")}) });
         
@@ -21,7 +21,7 @@
             });       
             
             $('#ipUp').click(function() {                
-                $('#sec').append("\n" + "allow from " + $('input#ips').val());
+                $('#sec').append("\n" + $('input#ips').val());
                 $('input#ips').val('');
                 M.textareaAutoResize($('#sec'));
             });            

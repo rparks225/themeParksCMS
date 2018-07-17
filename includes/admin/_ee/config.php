@@ -29,7 +29,6 @@ if($result = $mysqli->query($query)){
 };  
 
 define('newPath',''.$cmsPath.'');
-
 if( !isset($_SESSION) ){ 
 	session_start(); // required for file system
 }

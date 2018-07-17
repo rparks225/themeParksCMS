@@ -1,10 +1,7 @@
 <!-- Open Content area-->
+{# $ips = new secPage() #}
 
-{# $ip = file_get_contents('includes/admin/.htaccess') #}
-{# $ip = substr($ip,44) #}
-{# $newIps = explode('allow from ',$ip) #}
-
-{-- if ( in_array($_SERVER['REMOTE_ADDR'], $newIps) || $_SERVER['REMOTE_ADDR'] == '::1' ) --}
+{-- if ( $ips->authorize() == 'true' ) --}
 
 <!--Form with header-->
 <div class="card wow fadeInDown" data-wow-delay="0.3s">
@@ -19,7 +16,7 @@
                 <div class="form-header" style="text-align:center;">
                     <img src="{% echo ROOT %}includes/admin/assets/images/logo.png" style="width:50%;margin:0 auto;">
                 </div>
-
+                
                 <!--Body-->
                 <div class="md-form">
                     <i class="fa fa-user prefix white-text"></i>
@@ -46,9 +43,11 @@
 
     </div>
 </div>
+
 {-- else --}
 
 <div style="text-align:center;">
+<h1> {% echo $ips->currentIp() %} </h1>
 <h1 class="text-white">Sorry!</h1>
 <p class="text-white">You are not authorized to use this app</p>
 </div>

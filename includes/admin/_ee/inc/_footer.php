@@ -26,16 +26,16 @@
 <div class="row row-1">
 <div class="col-md-6">
 <div class="content">
-<p><a href="/themeparkscms/Home">Home</a><br />
-<a href="/themeparkscms/Page/About">About</a><br />
-<a href="/themeparkscms/Blog">News</a></p>
+<p><a href="Home">Home</a><br />
+<a href="About">About</a><br />
+<a href="Blog">News</a></p>
 </div>
 </div>
 
 <div class="col-md-6">
 <div class="content">
-<p><a href="/themeparkscms/Gallery">Gallery</a><br />
-<a href="/themeparkscms/Contact">Contact</a></p>
+<p><a href="Gallery">Gallery</a><br />
+<a href="Contact">Contact</a></p>
 </div>
 </div>
 </div>
@@ -63,4 +63,4 @@
 <p style="text-align: center;">&copy;Copyright 2016 ThemeParks Cms Inc. All rights reserved.<br />
 Veniam ut et aliquam. Ratione tempora, excepturi eveniet cupiditaes.</p>
 
-<p style="text-align: center;"><a href="http://localhost/themeParksCMS/tp-login">Admin Login</a></p>
+<p style="text-align: center;"><a href="tp-login">Admin Login</a></p>

@@ -1,6 +1,6 @@
 <?php global $userName; ?>
 {# $tits = explode('/',$_SERVER['REQUEST_URI']) #}
-{# $tits =str_replace('-', ' ',ucwords($tits[2])) #}
+{# $tits =str_replace('-', ' ',ucwords($tits[1])) #}
 <!DOCTYPE html>
 <html lang="">
     
@@ -90,7 +90,7 @@ global $sName; ?>
     </div>
 
     <!--Open Nav-Sidebar-->
-    <nav  class="light" style="background:#3f3f3f;">
+    <nav  class="light navbar" style="background:#3f3f3f;">
         <div class="nav-wrapper">
             <div class="row">
                 <b style="color:white;padding:0;margin-top:1.1rem;">
@@ -130,7 +130,7 @@ global $sName; ?>
         <li><div class="user-view">
             <div class="overlays" style="position:absolute;left:0;top:0;height:100%;width:100%;background:rgba(63,63,63,.75);z-index:2;"></div>
             <div class="background" style="z-index:-1;">
-                <img width="100%" src="{% echo ROOT %}ncludes/admin/assets/images/newBg.jpg">
+                <img width="100%" src="{% echo ROOT %}includes/admin/assets/images/newBg.jpg">
             </div>
             <a style="z-index:10;position:relative;" href="#user"><img width="35%" src="{% echo ROOT %}includes/admin/assets/images/logo.png"></a>
             <a style="z-index:10;position:relative;" href="#name"><span class="white-text name">You are logged in as:</span></a>

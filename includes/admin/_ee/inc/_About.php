@@ -2,7 +2,7 @@
 <div class="row row-1">
 <div class="col-md-6">
 <div class="content">
-<p><img alt="" class="lazy" data-original="/themeParksCMS/images/files/ScreenShot3.png" src="/themeParksCMS/images/files/ScreenShot3.png" style="width: 100%;" /></p>
+<p><img alt="" class="lazy" data-original="/images/files/ScreenShot3.png" src="/images/files/ScreenShot3.png" style="width: 100%;" /></p>
 </div>
 </div>
 

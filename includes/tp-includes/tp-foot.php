@@ -27,6 +27,7 @@ $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.''); ?>
                     form.submit();
                   }
             });
+            $('.tpStyle').attr('rel','stylesheet');
         });
         
         <?php if ( !isset( $_SESSION[''.$sessKey.'']) ): ?>

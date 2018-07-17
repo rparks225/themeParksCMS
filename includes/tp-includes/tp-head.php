@@ -49,7 +49,7 @@
         <link rel="dns-prefetch" href="<?php echo ROOT; ?>" >
 
 <?php if( file_exists('libraries/css/themeParks-styles.css') ): ?>
-        <link rel="preload" href="<?php echo ROOT; ?>libraries/css/themeParks-styles.css" as="style">
+        <link rel="preload" class="tpStyle" href="<?php echo ROOT; ?>libraries/css/themeParks-styles.css" as="style">
 <?php endif; ?>
 
 <?php if( file_exists('libraries/js/themeParks-Scripts.js') ): ?>

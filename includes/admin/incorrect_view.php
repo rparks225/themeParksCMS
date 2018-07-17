@@ -1,11 +1,14 @@
 <!-- Open Content area-->
+{# $ips = new secPage() #}
+
+{-- if ( $ips->authorize() == 'true' ) --}
 
 <!--Form with header-->
 <div class="card wow fadeInDown" data-wow-delay="0.3s">
     <div class="card-body">
 
         <form action="" 
-              id="loginform" 
+              id="loginform"  
               method="post" 
               role="form" 
               autocomplete="off">
@@ -42,6 +45,14 @@
 
     </div>
 </div>
+{-- else --}
+
+<div style="text-align:center;">
+    <h1 class="text-white">Sorry!</h1>
+    <p class="text-white">You are not authorized to use this app</p>
+</div>
+
+{-- endif --}
 <!--/Form with header-->
 
 <!-- Close Content area-->

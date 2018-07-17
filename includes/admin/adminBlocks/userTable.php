@@ -1,3 +1,11 @@
+<?php
+$vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost',
+              'emailAuth','emailUser','emailPass','emailEnc','emailPort',
+              'emailFrom','emailName','emailAdd','emailReply','eReplyTitle');
+foreach($vars as $var){
+    global $$var;
+}
+?>
 <!--Table row for post # <?php echo $id; ?> -->
 <tr>
 
@@ -142,12 +150,13 @@
     </td>
 
 </tr>
-<!--End table row for post # <? echo $id; ?> -->
+<!--End table row for post # <?php echo $id; ?> -->
 
 
 <?php
 
 $method = 'Updated';
+$location = 'U_sers';
 
 //updates the record
 if(isset($_POST[''.$method.''])){
@@ -160,8 +169,14 @@ if(isset($_POST[''.$method.''])){
         $pass = addslashes($_POST['pas']);
         $email = addslashes($_POST['email']);
         $privs = addslashes($_POST['privi']);
+        
+        if( strlen($pass) > 75 ){
+            $pass2 = addslashes($_POST['pas']);
+        }else{
+            $pass2 = hash('sha512',$pass);
+        }
 
-        $query = 'UPDATE `'.$dbName.'`.`U_sers` SET `User_name` = \''.$user.'\', `Display_name` = \''.$displayName.'\', `Pass_word` = \''.hash('sha512',$pass).'\', `Email` = \''.$email.'\', `Privileges` = \''.$privs.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
+        $query = 'UPDATE `'.$dbName.'`.`U_sers` SET `User_name` = \''.$user.'\', `Display_name` = \''.$displayName.'\', `Pass_word` = \''.$pass2.'\', `Email` = \''.$email.'\', `Privileges` = \''.$privs.'\' WHERE `'.$location.'`.`Id` = \''.$id.'\'';
 
     }
 

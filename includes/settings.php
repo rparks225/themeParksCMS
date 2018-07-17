@@ -35,11 +35,8 @@ $salted = md5(date('Y/m/d:h').'fe2621d3694e369e1adc0611688fee93');
 $salt = hash('sha512', $salted);
 
 $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle','userName','salt');
-
     foreach($vars as $var){
-
         global $$var;
-
     }
 
 ?>

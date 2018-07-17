@@ -34,8 +34,49 @@ function userInfo($q){
     }	
     echo $$q;
 }
+
+/*========================================
+    Secure Pages
+========================================*/
+class secPage{
+    public $ips;
+    public $newIps;
+
+    private function vars(){
+        if( file_exists('../includes/admin/sec.txt') ){ $this->ips = file_get_contents( realpath(__DIR__ . '/..').'/sec.txt' ); }
+        $this->newIps = explode('>>', $this->ips);
+    }
+
+    public function listed(){
+        $this->vars();
+        echo '<ul>';
+        foreach( $this->newIps as $ips ){
+            echo '<li>'.$ips.'</li>';
+        }
+        echo '</ul>';
+    }
+
+    public function authorize(){
+        $this->vars();
+        if( file_exists('../includes/admin/sec.txt') ){
+            if( in_array( $_SERVER['REMOTE_ADDR'],$this->newIps ) ){
+                return 'true';
+            }else{
+                return 'false';
+            }
+        }else{
+            return 'true';
+        }
+    }
+
+    public function currentIp(){
+        echo $_SERVER['REMOTE_ADDR'];
+    }
+}
+$sec = new secPage();
 ?>
 
+<?php if( $sec->authorize() == 'true' ):?>
 <ul class="ee_sideNav">
     <li><div class="user-view">
             <div class="overlays"></div>
@@ -118,10 +159,4 @@ $(document).ready(function(){$('.openSide').click(function(){if($('.ee_sideNav')
 if($('#eeIni').hasClass('fa-angle-double-up')){$('#eeIni').removeClass('fa-angle-double-up');$('#eeIni').addClass('fa-angle-double-down')}else{$('#eeIni').removeClass('fa-angle-double-down');$('#eeIni').addClass('fa-angle-double-up');$('.overlay').fadeIn('slow');$('.ee_sideNav').animate({left:"0px"},"300")}
 $('#eepanel').slideToggle()});$('.tpPreview').click(function(){$('.overlay').fadeOut('slow');$('.ee_sideNav').animate({left:"-315px"},"300");$('.changed').empty();if($('.edit').attr('contenteditable')){jQuery.each(CKEDITOR.instances,function(){eval("CKEDITOR.instances."+this.name+".destroy()")});$('.edit').removeAttr('contenteditable');$('.changed').append('Edit')}else{$('.edit').attr('contenteditable','true');$('.changed').append('Preview');CKEDITOR.inlineAll()}});$('.overlay').click(function(){$('.ee_sideNav').animate({left:"-315px"},"300");$('.overlay').fadeOut('slow')})});
 </script>
-
-
-
-
-
-
-
+<?php endif; ?>

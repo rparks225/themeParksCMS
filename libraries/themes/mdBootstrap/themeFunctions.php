@@ -15,7 +15,7 @@ $frameWork = array(
         'customStyles.css',
     ),
     'js'=>array(
-        '01jquery3.11.1.min.js',
+        '01jquery3.3.1.min.js',
         '02jQueryMigrate.min.js',
         '04dropZone.min.js',
         '05lazyload.min.js',
