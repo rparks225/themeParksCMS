@@ -4,7 +4,7 @@
 Block to call dynamic cms portion
 
 <div id="_changeThis"{% echo $inline %}>
-    {# newEE('changeThis') #}
+    { # newEE('changeThis') # }
 </div>
 
 =============================================*/

@@ -5,7 +5,6 @@
         {# $query = 'SELECT * FROM post WHERE ID LIKE '.title(2).'' #}
         {# $block = 'post' #}
         {# $heading = new model() #}
-        {# $heading->query($query,$block) #}
         {# $rows = $heading->rows($query) #}
 
         {-- if ($rows == 0) --}
@@ -23,7 +22,10 @@
                   <p><a href="{% echo ROOT %}Blog">Back to all posts</a></p>
               </div>
            </div>
-
+        {-- else --}
+           
+            {# $heading->query($query,$block) #}
+            
         {-- endif --}
         
 </div>

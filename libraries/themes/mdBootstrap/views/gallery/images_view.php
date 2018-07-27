@@ -35,7 +35,10 @@
             {# $query = 'SELECT * FROM `images` WHERE `Album` LIKE \''.title(2).'\' ORDER BY `images`.`Order` ASC ' #}
             {# $block = 'galleryImage' #}
             {# $images = new model() #}
-            {# $images->query($query,$block) #}
+            
+            {-- if ( $images->rows( $query ) != 0 ) --}
+                {# $images->query($query,$block) #}
+            {-- endif --}    
         </ul>
         
             {-- if ( $images->rows( $query ) == 0 ) --}

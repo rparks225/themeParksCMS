@@ -17,9 +17,9 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
     Defines Site ROOT Path
 ===================================*/
 if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off'){
-    $proto = 'http://';
-}else{
     $proto = 'https://';
+}else{
+    $proto = 'http://';
 }
 define("ROOT", "$proto{$sUrl}");
 
@@ -130,7 +130,6 @@ function newEE( $title ){
       return $fileNew;
       fclose($fileNew);				  
       }else{
-            
             $path = 'includes/admin/_ee/inc/_'.$title.'.php';
             tmpltRender($path);
           }	
@@ -486,6 +485,9 @@ class secPage{
     }
     
     public function authorize(){
+        if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
+            $_SERVER['REMOTE_ADDR'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
+        }
         $this->vars();
         if( file_exists( 'includes/admin/sec.txt' ) ){
             if( in_array( $_SERVER['REMOTE_ADDR'],$this->newIps ) ){
@@ -499,6 +501,9 @@ class secPage{
     }
     
     public function currentIp(){
+        if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
+            $_SERVER['REMOTE_ADDR'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
+        }
         echo $_SERVER['REMOTE_ADDR'];
     }
     

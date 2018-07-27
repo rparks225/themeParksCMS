@@ -16,7 +16,7 @@
             <p class="card-text">
             <strong>Posted -</strong> <i>{% echo date('M, d Y', strtotime("{{ date }}")) %}</i><br>
             {% echo $newscript %}...</p>
-            <a href="{% echo links() %}{{ id }}" class="btn btn-info">Read more</a>
+            <a href="{% echo links() %}{{ id }}/" class="btn btn-info">Read more</a>
         </div>
 
     </div>
