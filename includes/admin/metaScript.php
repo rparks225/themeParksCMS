@@ -4,7 +4,7 @@
 {-- elseif (links() == ROOT.'blog/'.title(2).'/' ) --}
     {# $query = 'SELECT * FROM `post` WHERE `Id` LIKE "'.title(2).'"' #}
     {# $block = 'meta' #}
-{--elseif (links() == ROOT.'gallery/'.title(2).'/' ) --}
+{-- elseif (links() == ROOT.'gallery/'.title(2).'/' ) --}
     {# $query = 'SELECT * FROM `gallery` WHERE `Gallery` LIKE "'.title(2).'"' #}
     {# $block = 'meta' #}
 {-- else --}

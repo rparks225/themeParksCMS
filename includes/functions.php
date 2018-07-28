@@ -121,7 +121,7 @@ function navLinks($a){
     Adds new cms component to desired page
 =============================================*/
 function newEE( $title ){	
-    $title = strtolower($title);
+    $title = str_replace( '-','_',strtolower($title) );
     $filename = 'includes/admin/_ee/inc/_'.$title.'.php';				  
       if(!file_exists($filename)){				  
        touch($filename);
