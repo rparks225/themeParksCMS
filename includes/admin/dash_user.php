@@ -54,7 +54,7 @@
                     global $site;
                     $nav = title(2);
 
-                    if($nav == 'pages'){
+                    if($nav == 'users'){
 
                         $nav = 0;
                         $nums = '';
