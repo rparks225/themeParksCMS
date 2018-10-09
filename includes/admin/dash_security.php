@@ -27,6 +27,10 @@
             <div class="input-field col s4">
                 <input name="ips" id="ips" type="text" class="" value="" placeholder="1.1.1.1"  />
                 <label for="ip">Add IP Address</label>
+				<?php if( isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) || isset( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ): ?>
+					<div class="clearfix">&nbsp;</div>
+					<p><b>Cloud Flare Ip:</b> <?php echo $_SERVER['HTTP_CF_CONNECTING_IP']; ?></p>
+			    <?php endif; ?>
             </div>
 
             <div class="input-field col s2">
@@ -45,6 +49,11 @@
 
 
         <?php
+		
+		$base = 'order deny,allow
+deny from all
+allow from localhost';
+		/* Creates Security File */
         if(file_exists('includes/admin/sec.txt')){      
             if(isset($_POST['sec'])){
                 $replaced = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '>>',$_POST['sec']);
@@ -55,6 +64,34 @@
                 header('Location: //'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'');
             }
         }
+		
+		/* Creates htaccess Ip block file */
+		if(!file_exists('includes/admin/.htaccess')){    
+			if( !isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) || !isset( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ){
+				$file = fopen('includes/admin/.htaccess','w');
+				fwrite($file, $base);
+				fclose($file);	
+			}
+		}else{
+			$file_one = file_get_contents('includes/admin/.htaccess');
+			$file_two = $base.str_replace('>>','
+allow from ', file_get_contents('includes/admin/sec.txt') );
+			if( $file_one != $file_two ){
+				if(isset($_POST['sec'])){
+					if( !isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) || !isset( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ){
+						unlink('includes/admin/.htaccess');
+						$file = fopen('includes/admin/.htaccess','w');
+						fwrite($file, $file_two);
+						fclose($file);
+					}
+				}
+			}
+		}
+		
+		/* Deletes htaccess Ip block file if theres a CDN */
+		if( isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) || isset( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ){
+			unlink('includes/admin/.htaccess');
+		}
 
         ?>
         <div class="clearfix"></div>
