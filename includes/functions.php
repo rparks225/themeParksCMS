@@ -5,7 +5,7 @@ require_once 'includes/settings.php';
 
 
 /*==================================
-    Globalize all app admin setting
+>> Globalize all app admin setting
 ===================================*/
 $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','emailAuth','emailUser','emailPass','emailEnc','emailPort','emailFrom','emailName','emailAdd','emailReply','eReplyTitle','userName','sName');
     foreach($vars as $var){
@@ -14,7 +14,7 @@ $vars = array('id','sUrl','dbName','sCaptcha','cmsPath','eePath','emailHost','em
 
 
 /*==================================
-    Defines Site ROOT Path
+>> Defines Site ROOT Path
 ===================================*/
 if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off'){
     $proto = 'https://';
@@ -24,7 +24,7 @@ if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off'){
 define("ROOT", "$proto{$sUrl}");
 
 /*==================================
-    Defines Current URL location
+>> Defines Current URL location
 ===================================*/
 function links(){
     global $proto;
@@ -34,7 +34,7 @@ function links(){
 
 
 /*===========================================
-    Defines The page you are on from URL
+>> Defines The page you are on from URL
 ===========================================*/
 function title($numb = ''){
 	
@@ -65,7 +65,7 @@ function title($numb = ''){
 
 
 /*==================================
-    Style Class for active page link
+>> Style Class for active page link
 ===================================*/
 function active($name) {
 	$tits = ''.ROOT.$name.'';
@@ -78,7 +78,7 @@ function active($name) {
 
 
 /*=============================================
-    Checks the current theme for Admin Panel
+>> Checks the current theme for Admin Panel
 =============================================*/
 function theme(){	
 	global $mysqli;		
@@ -99,7 +99,7 @@ function theme(){
 
 
 /*=============================================
-    Grabs Navigation Links From The DB
+>> Grabs Navigation Links From The DB
 =============================================*/
 function navLinks($a){	
     global $mysqli;		
@@ -118,7 +118,7 @@ function navLinks($a){
 
 
 /*=============================================
-    Adds new cms component to desired page
+>> Adds new cms component to desired page
 =============================================*/
 function newEE( $title ){	
     $title = str_replace( '-','_',strtolower($title) );
@@ -137,7 +137,7 @@ function newEE( $title ){
 
 
 /*=============================================
-    Loops through files in directory
+>> Loops through files in directory
 =============================================*/
 function direct($directory, $blocks, $other){
     if(isset($other)){ echo $other; }
@@ -158,7 +158,7 @@ function direct($directory, $blocks, $other){
 
 
 /*====================================================
-    Loops through files in directory for Admin Panel
+>> Loops through files in directory for Admin Panel
 ====================================================*/
 function tpDirect($directory, $blocks, $other){
     if(isset($other[''])){ echo $other; }
@@ -179,7 +179,7 @@ function tpDirect($directory, $blocks, $other){
 
 
 /*====================================================
-    Makes New Image Album
+>> Makes New Image Album
 ====================================================*/
 $albums = isset($_POST['album'])? $_POST['album']: '';
 $ds          = DIRECTORY_SEPARATOR;  //1
@@ -194,7 +194,7 @@ if (!file_exists($storeFolder)) {
 
 
 /*====================================================
-    Adds images to folders 
+>> Adds images to folders 
 ====================================================*/
 if (!empty($_FILES)) {
     $tempFile = $_FILES['file']['tmp_name'];          //3   
@@ -214,7 +214,7 @@ if (!empty($_FILES)) {
 
 
 /*====================================================
-    gallery sort
+>> gallery sort
 ====================================================*/
 function uped($method,$location,$query,$site){	
 	$i = 0;							
@@ -230,7 +230,7 @@ function uped($method,$location,$query,$site){
 
 
 /*====================================================
-    Compiles Styles and or JS from folders to 1 sheet
+>> Compiles Styles and or JS from folders to 1 sheet
 ====================================================*/
 function tpCompile($e){    
     if($e == 'styles'){        
@@ -255,7 +255,7 @@ function tpCompile($e){
 };
 
 /*===============================================================
-    Renders Views, Blocks and Loops for easier to read sytax.
+>> Renders Views, Blocks and Loops for easier to read sytax.
 ===============================================================*/
 function tmpltRender($path){
     global $inline;
@@ -286,7 +286,7 @@ function tmpltRender($path){
 
 
 /*====================================================
-    Finds a defined Block to be viewed on page
+>> Finds a defined Block to be viewed on page
 ====================================================*/
 function tpBlock($blocks){        
     $path = 'libraries/themes/'.theme().'/html_blocks/'.$blocks.'.php';
@@ -294,7 +294,7 @@ function tpBlock($blocks){
 };
 
 /*======================================================================================
-    Finds a defined theme header, footer, and CSS for page head, foot and css compiler
+>> Finds a defined theme header, footer, and CSS for page head, foot and css compiler
 ======================================================================================*/
 function tpInc($inc){        
     $path = 'libraries/themes/'.theme().'/'.$inc.'.php';
@@ -303,7 +303,7 @@ function tpInc($inc){
 
 
 /*====================================================
-    Finds a defined View for controller
+>> Finds a defined View for controller
 ====================================================*/
 function tpView($folder,$view){      
     $path = 'libraries/themes/'.theme().'/views/'.$folder.'/'.$view.'_view.php';
@@ -311,7 +311,7 @@ function tpView($folder,$view){
 };
 
 /*====================================================
-    Finds a defined Block for the admin panel
+>> Finds a defined Block for the admin panel
 ====================================================*/
     function tpAdmin($blocks){
     $path = 'includes/admin/adminBlocks/'.$blocks.'.php';
@@ -320,7 +320,7 @@ function tpView($folder,$view){
 
 
 /*====================================================
-    Finds a defined Block for the admin panel
+>> Finds a defined Block for the admin panel
 ====================================================*/
 function tpAdminInc($blocks){
     $path = 'includes/admin/'.$blocks.'.php';
@@ -329,7 +329,7 @@ function tpAdminInc($blocks){
 
 
 /*====================================================
-    Finds a defined Block for theme header and footer
+>> Finds a defined Block for theme header and footer
 ====================================================*/
 function tpReq($req){        
     require_once 'includes/tp-includes/tp-'.$req.'.php';    
@@ -337,7 +337,7 @@ function tpReq($req){
 
 
 /*====================================================
-    For secure login
+>> For secure login
 ====================================================*/    
 session_start();
 $sessKey = md5($_SERVER['SERVER_ADDR'].' - '.$sName.'');
@@ -345,7 +345,7 @@ session_id(''.$sessKey.'');
 
 
 /*====================================================
-    Always clear cookies unless logged in
+>> Always clear cookies unless logged in
 ====================================================*/
 function delCook(){
     global $sessKey;
@@ -365,7 +365,7 @@ function delCook(){
 }
 
 /*====================================================
-    Error Reporting On or Off
+>> Error Reporting On or Off
 ====================================================*/
 function showErrors($switch){
     
@@ -386,7 +386,7 @@ function showErrors($switch){
 
 
 /*====================================================
-    Html minify
+>> Html minify
 ====================================================*/
 
 function compress($switch){
@@ -430,7 +430,7 @@ $replace = array(
 
 
 /*=============================================
-    Checks the current theme for Admin Panel
+>> Checks the current theme for Admin Panel
 =============================================*/
 function userInfo($q){	
     global $mysqli;		
@@ -449,13 +449,13 @@ function userInfo($q){
 }
 
 /*====================================================
-    Login timout variable in seconds
+>> Login timout variable in seconds
 ====================================================*/
 $destroy = '<meta http-equiv="refresh" content="1800;url='.ROOT.'includes/admin/_ee/sess-destroy.php" />';
 
 
 /*====================================================
-           Checks for Theme Functions
+>> Checks for Theme Functions
 ====================================================*/
 if(file_exists($_SERVER['DOCUMENT_ROOT'].$cmsPath.'libraries/themes/'.theme().'/themeFunctions.php')){
     
@@ -464,7 +464,49 @@ if(file_exists($_SERVER['DOCUMENT_ROOT'].$cmsPath.'libraries/themes/'.theme().'/
 }
 
 /*========================================
-    Secure Pages
+>> Adds Service worker to page
+========================================*/
+
+function serviceWorker( $a = 'off' ){
+    
+    if( $a != 'off' && $a == 'on' ){
+        global $sessKey;
+        echo '<script>';
+            if( !isset( $_SESSION[''.$sessKey.'']) ){
+                echo "if ('serviceWorker' in navigator) {
+                    window.addEventListener('load', function() {
+                        navigator.serviceWorker.register( cmsPath + 'sw2.js').then(function(registration) {                    
+                            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                        }, function(err) {                    
+                            console.log('ServiceWorker registration failed: ', err);
+                        });
+                    });
+                }";
+            }else{
+                echo "
+                navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                console.log('Service Worker is off while logged in.');
+                 for(let registration of registrations) {
+                     registration.unregister()
+                 } });";
+            }
+        
+        echo '</script>';
+    }else{
+        echo "<script>
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                console.log('Service Worker has been deleted and is inactive.');
+                 for(let registration of registrations) {
+                     caches.delete('core');
+                     registration.unregister();
+                 } });
+        </script>";
+    }
+    
+}
+
+/*========================================
+>> Secure Pages
 ========================================*/
 class secPage{
     public $ips;
