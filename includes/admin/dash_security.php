@@ -29,7 +29,7 @@
                 <label for="ip">Add IP Address</label>
 				<?php if( isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) || isset( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ): ?>
 					<div class="clearfix">&nbsp;</div>
-					<p><b>Cloud Flare Ip:</b> <?php echo $_SERVER['HTTP_CF_CONNECTING_IP']; ?></p>
+					<p><b>CDN Ip:</b> <?php echo $_SERVER['HTTP_X_FORWARDED_FOR']; ?></p>
 			    <?php endif; ?>
             </div>
 
