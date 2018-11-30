@@ -1,6 +1,6 @@
 <?php global $userName; ?>
-{# $tits = explode('/',$_SERVER['REQUEST_URI']) #}
-{# $tits =str_replace('-', ' ',ucwords($tits[1])) #}
+	{# $tits = explode('/',$_SERVER['REQUEST_URI']) #}
+	{# $tits =str_replace('-', ' ',ucwords($tits[1])) #}
 <!DOCTYPE html>
 <html lang="">
     
@@ -33,7 +33,7 @@ global $sName; ?>
 
 <!--Close Meta Tags-->
 
-<link rel="shortcut icon" href="icon.ico">
+<link rel="shortcut icon" href="<?php echo $_SERVER['REQUEST_URI']; ?>/includes/admin/assets/images/icon.ico">
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />

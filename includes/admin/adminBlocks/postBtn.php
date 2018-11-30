@@ -1,15 +1,13 @@
-<button class="waves-effect waves-red btn modal-trigger left" data-target="postAdded" class="btn modal-trigger">Add New Post</button>
+<button class="waves-effect waves-red btn" onclick="$('.postBox').slideToggle();">Add New Post</button>
 <div class="clearfix">&nbsp;</div>    
 
-
-<!-- Modal -->
-<div class="modal" id="postAdded" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <?php tpAdmin('insert_form'); ?>
-            </div>
-        </div>
-    </div>
+<!-- Post Box -->
+<div class="postBox" style="display:none;">
+	<div class="card" style="padding:40px;">
+		<?php tpAdmin('insert_form'); ?>
+		<div class="clearfix">&nbsp;</div>
+	</div>    
 </div>
-<!--Close Modal-->
+<!-- ./Post Box -->
+
+<div class="clearfix">&nbsp;</div>    

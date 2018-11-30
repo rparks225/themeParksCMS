@@ -1,3 +1,4 @@
+<?php global $cmsPath; ?>
 </div>
 <!--Close Content Area-->
 
@@ -5,7 +6,13 @@
 </div>
 </div>
 <!--Close Main Area-->
-    {# tpCompile('js') #}
+	<script>
+		var cmsPath = '<?php echo $cmsPath?>';
+	</script>
+	<script
+			src="https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="{% echo ROOT %}includes/admin/_ee/lib/ckeditor/ckeditor.js"></script>
@@ -26,7 +33,9 @@
                 M.textareaAutoResize($('#sec'));
             });            
             $(document).ready(function(){
-                $('.fixed-action-btn').floatingActionButton();
+                $('.fixed-action-btn').floatingActionButton({
+					hoverEnabled: false
+				});
             });
         });
         M.AutoInit();
@@ -35,7 +44,7 @@
 {-- if (links() == ROOT.'tp-Dashboard' ) --}
     <script>
         function checkDate(){if($('#date').val()==''){$('#date').addClass('invalid')}else{$('#date').removeClass('invalid')}}
-        $('form').submit(function(){checkDate();if($('#date').val()==''){return!1;alert('Please add a date')}else{return!0}});$('#date').change(function(){checkDate()});
+		$('form').submit(function(){checkDate();if($('#date').val()==''){alert('Please add a date');return!1;}else{return!0}});$('#date').change(function(){checkDate()});
     </script>
 {-- endif --}
 
